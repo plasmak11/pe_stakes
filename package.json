@@ -4,9 +4,8 @@
   "scripts": {
     "clean": "rimraf docs/.observablehq/cache",
     "build": "rimraf dist && observable build",
-    "dev": "observable preview",
-    "deploy": "observable deploy",
-    "observable": "observable"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@observablehq/framework": "latest",
@@ -14,6 +13,7 @@
     "d3-time-format": "^4.1.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "rimraf": "^5.0.5"
   },
   "engines": {
