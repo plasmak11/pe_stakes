@@ -250,10 +250,56 @@ pe_hospital_table
 <script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
 <aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
 <nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#data-source">Data Source</a></li>
+<li class="observablehq-secondary-link"><a href="#private-equity-%2F-hospital-ownernship">Private Equity / Hospital Ownernship</a></li>
+</ol>
 </nav>
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
+<style>
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-family: var(--sans-serif);
+  /* margin: 0; */
+  text-wrap: balance;
+  text-align: start;
+}
+
+.hero h1 {
+  /* margin: 2rem 0; */
+  max-width: none;
+  font-size: 14vw;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(30deg, var(--theme-foreground-focus), currentColor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero h2 {
+  margin: 0;
+  max-width: 34em;
+  font-size: 14px;
+  font-style: initial;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--theme-foreground-muted);
+}
+
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+</style>
 <div id="cell-fcdebc59" class="observablehq observablehq--block"></div>
 <div id="cell-fb782ea1" class="observablehq observablehq--block"></div>
 <div id="cell-e48416c1" class="observablehq observablehq--block"></div>
@@ -262,9 +308,22 @@ pe_hospital_table
 <div id="cell-6a05e471" class="observablehq observablehq--block"></div>
 <div id="cell-85ff3596" class="observablehq observablehq--block"></div>
 <div id="cell-abe4e1e3" class="observablehq observablehq--block"></div>
+<div class="hero">
+  <h1>Clinicians.fyi</h1>
+  <h2>Equipping clinicians with awareness and knowledge</h2>
+</div>
+<hr>
+<h2 id="data-source" tabindex="-1"><a class="observablehq-header-anchor" href="#data-source">Data Source</a></h2>
+<p>From <a href="https://pestakeholder.org/" target="_blank" rel="noopener noreferrer">PE Stakeholder Project<span style="display: inline-block; margin-left: 0.25rem;"></span></a>
+website:</p>
+<blockquote>
+<p><em>To bring transparency and accountability to the private equity industry and empower impacted communities.</em></p>
+</blockquote>
+<hr>
+<h2 id="private-equity-%2F-hospital-ownernship" tabindex="-1"><a class="observablehq-header-anchor" href="#private-equity-%2F-hospital-ownernship">Private Equity / Hospital Ownernship</a></h2>
 <div class="grid grid-cols-1">
     <div class="grid-colspan-1">
-        <h3><span id="cell-0c93443b" class="observablehq--loading"></span></h3>
+        <h3 style="color: blue"><span id="cell-0c93443b" class="observablehq--loading"></span></h3>
     </div>
 </div>
 <div class="grid grid-cols-4">
