@@ -5,7 +5,7 @@
     "clean": "rimraf docs/.observablehq/cache",
     "build": "rimraf dist && observable build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@observablehq/framework": "latest",
