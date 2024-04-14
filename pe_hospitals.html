@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>PE Hospitals | Clinicians.fyi</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight,wide.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight,wide.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/topojson-client@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile} from "./_observablehq/stdlib.js";
+
+registerFile("./dataloaders/cms_inpatient_hospitals.json", {"name":"./dataloaders/cms_inpatient_hospitals.json","mimeType":"application/json","path":"./_file/dataloaders/cms_inpatient_hospitals.83327841.json","lastModified":1712658931148});
+registerFile("./dataloaders/counties-10m.json", {"name":"./dataloaders/counties-10m.json","mimeType":"application/json","path":"./_file/dataloaders/counties-10m.145aaf5d.json","lastModified":1712986955947});
+registerFile("./dataloaders/pe-hospital-tracker.csv", {"name":"./dataloaders/pe-hospital-tracker.csv","mimeType":"text/csv","path":"./_file/dataloaders/pe-hospital-tracker.848d3d00.csv","lastModified":1712659086538});
+
+define({id: "fcdebc59", inputs: ["FileAttachment"], outputs: ["pe_hospitals","cms_inpatient_hospitals","us"], body: (FileAttachment) => {
+const pe_hospitals = FileAttachment("./dataloaders/pe-hospital-tracker.csv").csv({typed: true})
+const cms_inpatient_hospitals = FileAttachment("./dataloaders/cms_inpatient_hospitals.json").json()
+const us = FileAttachment("./dataloaders/counties-10m.json").json()
+return {pe_hospitals,cms_inpatient_hospitals,us};
+}});
+
+define({id: "fb782ea1", inputs: ["Inputs","pe_hospitals","Generators"], outputs: ["pe_names_input","selected_pe_names"], body: (Inputs,pe_hospitals,Generators) => {
+const pe_names_input = Inputs.select(
+  pe_hospitals.filter(d => d['PE Firm'] !== null && d['PE Firm'].trim() !== '').map((d) => d['PE Firm']),
+  {
+    label: "PE Firm",  // Set the label for the input field
+    sort: true,  // Sort the options alphabetically
+    value: ["formerly Leonard Green & Partners"],  // initial value
+    multiple: 10,
+    unique: true,
+    // width: "",
+  }
+)
+// Generate an input based on the pe_names_input configuration
+const selected_pe_names = Generators.input(pe_names_input);
+return {pe_names_input,selected_pe_names};
+}});
+
+define({id: "e48416c1", inputs: ["pe_hospitals","selected_pe_names","Inputs","Generators"], outputs: ["pe_hospitals_filtered","pe_hospital_table","pe_hospitals_selected"], body: (pe_hospitals,selected_pe_names,Inputs,Generators) => {
+const pe_hospitals_filtered = pe_hospitals.filter(d => [...selected_pe_names].includes(d['PE Firm']))
+const pe_hospital_table = Inputs.table(
+    pe_hospitals_filtered,
+    {
+        rows: 15,
+        sort: "Facility Name",
+        value: pe_hospitals_filtered,
+        width: {
+            NAME: 250,
+        },
+        // format:{
+        //     "Facility ID (CCN)": 
+        // },
+        layout: "auto",
+        required: false,
+    })
+const pe_hospitals_selected = Generators.input(pe_hospital_table)
+return {pe_hospitals_filtered,pe_hospital_table,pe_hospitals_selected};
+}});
+
+define({id: "161c90f1", inputs: ["topojson","us"], outputs: ["nation","statemesh"], body: (topojson,us) => {
+// Extract the nation feature from the TopoJSON data
+// 'us' is assumed to be a TopoJSON data object
+// 'us.objects.nation' specifies the path to the nation object within the 'us' data
+const nation = topojson.feature(us, us.objects.nation);
+
+// Generate a mesh representing the state boundaries
+// 'us' is the same TopoJSON data object as above
+// 'us.objects.states' specifies the path to the states object within the 'us' data
+// The filter function `(a, b) => a !== b` includes boundaries between different states
+const statemesh = topojson.mesh(us, us.objects.states, (a, b) => a !== b);
+return {nation,statemesh};
+}});
+
+define({id: "0dafb552", inputs: ["pe_hospitals","selected_pe_names"], outputs: ["uniqueCompanies","unique_companies_label"], body: (pe_hospitals,selected_pe_names) => {
+// pe_hospitals_filtered
+const uniqueCompanies = [
+  ...new Set(
+    pe_hospitals
+      .filter(d => d['PE Firm'] !== null && d['PE Firm'].trim() !== '' && [...selected_pe_names].includes(d['PE Firm']))
+      .map(d => d["Parent System/Company"])
+  )
+]
+const unique_companies_label = uniqueCompanies.length > 0 ? uniqueCompanies : ["No Companies Found"]
+return {uniqueCompanies,unique_companies_label};
+}});
+
+define({id: "6a05e471", inputs: ["pe_hospitals_filtered","topojson","us"], outputs: ["selected_states_fips","states"], body: (pe_hospitals_filtered,topojson,us) => {
+const selected_states_fips = pe_hospitals_filtered.map(item => String(item.fips).padStart(2, '0'))
+const states = topojson.feature(us, us.objects.states).features
+return {selected_states_fips,states};
+}});
+
+define({id: "85ff3596", inputs: ["selected_states_fips","states"], outputs: ["fipsCounts","stateDataMap"], body: (selected_states_fips,states) => {
+// Count the occurrences of each FIPS code in selected_states_fips
+const fipsCounts = selected_states_fips.reduce((counts, fips) => {
+  counts[fips] = (counts[fips] || 0) + 1;
+  return counts;
+}, {});
+
+// Join the count data with the state features based on the FIPS code
+const stateDataMap = new Map(
+  states.map(state => {
+    const fips = String(state.id).padStart(2, '0');
+    const count = fipsCounts[fips] || 0;
+    return [fips, count];
+  })
+);
+return {fipsCounts,stateDataMap};
+}});
+
+define({id: "abe4e1e3", inputs: ["Plot","statemesh","nation","states","stateDataMap"], outputs: ["us_map"], body: (Plot,statemesh,nation,states,stateDataMap) => {
+const us_map = Plot.plot({
+  marginLeft: 0,
+  marginRight: 0,
+  projection: "albers-usa",
+  marks: [
+    Plot.geo(statemesh, {strokeOpacity: 0.5}),
+    Plot.geo(nation),
+    Plot.geo(states,
+    {
+      fill: d => stateDataMap.get(d.id),
+      opacity: 0.5
+    }),
+    Plot.text(states, Plot.centroid({text: (d) => d.properties.name, fill: "currentColor"}))
+  ],
+  color: {
+    scheme: "reds",
+    domain: [0, 1]
+    // legend: true
+  }
+})
+
+return {us_map};
+}});
+
+define({id: "0c93443b", inline: true, inputs: ["selected_pe_names","display"], body: async (selected_pe_names,display) => {
+display(await(
+selected_pe_names.length > 1 ? "Multiple PEs" : selected_pe_names[0]
+))
+}});
+
+define({id: "151e6834", inline: true, inputs: ["pe_names_input","display"], body: async (pe_names_input,display) => {
+display(await(
+pe_names_input
+))
+}});
+
+define({id: "30d15991", inline: true, inputs: ["pe_hospitals_filtered","display"], body: async (pe_hospitals_filtered,display) => {
+display(await(
+pe_hospitals_filtered.length.toLocaleString("en-US")
+))
+}});
+
+define({id: "e225cd88", inline: true, inputs: ["html","unique_companies_label","display"], body: async (html,unique_companies_label,display) => {
+display(await(
+html`${unique_companies_label.map(item => html`${item}<br>`)}`
+))
+}});
+
+define({id: "1c240de0", inline: true, inputs: ["us_map","display"], body: async (us_map,display) => {
+display(await(
+us_map
+))
+}});
+
+define({id: "6335e62c", inline: true, inputs: ["pe_hospital_table","display"], body: async (pe_hospital_table,display) => {
+display(await(
+pe_hospital_table
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Clinicians.fyi</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
+  <ol>
+    <details open class="observablehq-section-active">
+      <summary>PE Hospitals</summary>
+      <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
+    <li class="observablehq-link"><a href="./pe_hospitals_tutorial">Observable Tutorial</a></li>
+      </ol>
+    </details>
+    <details open>
+      <summary>Looking for data</summary>
+      <ol>
+    <li class="observablehq-link"><a href="./340b">340B (WIP)</a></li>
+    <li class="observablehq-link"><a href="./pbm">PBM (WIP)</a></li>
+      </ol>
+    </details>
+  </ol>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
+<nav>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<div id="cell-fcdebc59" class="observablehq observablehq--block"></div>
+<div id="cell-fb782ea1" class="observablehq observablehq--block"></div>
+<div id="cell-e48416c1" class="observablehq observablehq--block"></div>
+<div id="cell-161c90f1" class="observablehq observablehq--block"></div>
+<div id="cell-0dafb552" class="observablehq observablehq--block"></div>
+<div id="cell-6a05e471" class="observablehq observablehq--block"></div>
+<div id="cell-85ff3596" class="observablehq observablehq--block"></div>
+<div id="cell-abe4e1e3" class="observablehq observablehq--block"></div>
+<div class="grid grid-cols-1">
+    <div class="grid-colspan-1">
+        <h3><span id="cell-0c93443b" class="observablehq--loading"></span></h3>
+    </div>
+</div>
+<div class="grid grid-cols-4">
+    <div class="grid-colspan-1">
+        <div class="card"><span id="cell-151e6834" class="observablehq--loading"></span></div>
+        <div class="card">
+            <h3>Hospitals</h3>
+            <span class="big"><span id="cell-30d15991" class="observablehq--loading"></span></span>
+        </div>
+        <div class="card">
+            <h3>Companies</h3>
+            <span><span id="cell-e225cd88" class="observablehq--loading"></span></span>
+        </div>
+    </div>
+    <div class="grid-colspan-2 grid-row-span-2 ">
+        <div class="card grid-rowspan-1">
+            <h4>U.S. Map</h4>
+            <span><span id="cell-1c240de0" class="observablehq--loading"></span></span>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="grid-row-span-2 grid-colspan-4">
+        <!-- Hospitals card -->
+        <div class="card grid-colspan-2">
+            <h4>Hospitals</h4>
+            <span><span id="cell-6335e62c" class="observablehq--loading"></span></span>
+        </div>
+    </div>
+</div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./"><span>Clinicians.fyi</span></a><a rel="next" href="./pe_hospitals_tutorial"><span>Observable Tutorial</span></a></nav>
+<div>Built with Observable.</div>
+</footer>
+</div>
