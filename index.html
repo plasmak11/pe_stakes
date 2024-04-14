@@ -10,20 +10,9 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
-<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
 <script type="module">
 
-import {define} from "./_observablehq/client.js";
-import {registerFile} from "./_observablehq/stdlib.js";
-
-registerFile("./aapl.csv", {"name":"./aapl.csv","mimeType":"text/csv","path":"./aapl.csv"});
-registerFile("./penguins.csv", {"name":"./penguins.csv","mimeType":"text/csv","path":"./penguins.csv"});
-
-define({id: "74b65852", inputs: ["FileAttachment"], outputs: ["aapl","penguins"], body: (FileAttachment) => {
-const aapl = FileAttachment("./aapl.csv").csv({typed: true});
-const penguins = FileAttachment("./penguins.csv").csv({typed: true});
-return {aapl,penguins};
-}});
+import "./_observablehq/client.js";
 
 </script>
 <input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
@@ -100,27 +89,7 @@ return {aapl,penguins};
 <div class="hero">
   <h1>Clinicians.fyi</h1>
   <h2>Clinicians need to be equipped with awareness and knowledge.</h2>
-  <a href="https://observablehq.com/framework/getting-started" target="_blank" rel="noopener noreferrer">Get started<span style="display: inline-block; margin-left: 0.25rem;">↗︎</span></a>
-</div>
-<div class="grid grid-cols-2" style="grid-auto-rows: 204px;">
-  <div class="card"></div>
-  <div class="card"></div>
-</div>
-<div id="cell-74b65852" class="observablehq observablehq--block"></div>
-<hr>
-<h2 id="featured" tabindex="-1"><a class="observablehq-header-anchor" href="#featured">Featured</a></h2>
-<p>Populating</p>
-<div class="grid grid-cols-4">
-  <div class="card">
-    <span class="big"><a href="pe_hospitals">PE Hospitals Dashboard</a></span>
-  </div>
-  <div class="card">
-  </div>
-  <div class="card">
-  </div>
-  <div class="card">
-    Write a <a href="https://observablehq.com/framework/loaders" target="_blank" rel="noopener noreferrer">data loader</a> that queries a local database or API, generating a data snapshot on build.
-  </div>
+  <a href="https://github.com/plasmak11/pe_stakes" target="_blank" rel="noopener noreferrer">Github<span style="display: inline-block; margin-left: 0.25rem;">↗︎</span></a>
 </div>
 </main>
 <footer id="observablehq-footer">
