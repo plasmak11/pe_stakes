@@ -118,17 +118,17 @@ pe_hospital_table
   <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
   <ol>
     <details open class="observablehq-section-active">
-      <summary>PE Hospitals</summary>
+      <summary>Hospital Ownership</summary>
       <ol>
     <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
-    <li class="observablehq-link observablehq-link-active"><a href="./pe_hospitals_tutorial">💻 Tutorial</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./pe_hospitals_tutorial"> ➟ Tutorial</a></li>
       </ol>
     </details>
     <details open>
       <summary>🔍 Looking for data</summary>
       <ol>
-    <li class="observablehq-link"><a href="./340b">💊🏥 340B (WIP)</a></li>
-    <li class="observablehq-link"><a href="./pbm">💊🏢 PBM (WIP)</a></li>
+    <li class="observablehq-link"><a href="./340b"> ➟ 340B (WIP)</a></li>
+    <li class="observablehq-link"><a href="./pbm"> ➟ PBM (WIP)</a></li>
       </ol>
     </details>
   </ol>
@@ -142,7 +142,7 @@ pe_hospital_table
 <li class="observablehq-secondary-link"><a href="#1.1-write-your-dataloader">1.1 Write your dataloader</a></li>
 <li class="observablehq-secondary-link"><a href="#1.2-load-the-dataloader">1.2 Load the dataloader</a></li>
 <li class="observablehq-secondary-link"><a href="#1.3-input-selector">1.3 Input selector</a></li>
-<li class="observablehq-secondary-link"><a href="#1.3%3A-interactive-table">1.3: Interactive Table</a></li>
+<li class="observablehq-secondary-link"><a href="#1.4%3A-interactive-table">1.4: Interactive Table</a></li>
 </ol>
 </nav>
 </aside>
@@ -231,7 +231,7 @@ df.write_csv(sys.stdout)
 <div id="cell-c33dd523" class="observablehq observablehq--block observablehq--loading"></div>
 <div id="cell-e740f788" class="observablehq observablehq--block observablehq--loading"></div>
 <hr>
-<h2 id="1.3%3A-interactive-table" tabindex="-1"><a class="observablehq-header-anchor" href="#1.3%3A-interactive-table">1.3: Interactive Table</a></h2>
+<h2 id="1.4%3A-interactive-table" tabindex="-1"><a class="observablehq-header-anchor" href="#1.4%3A-interactive-table">1.4: Interactive Table</a></h2>
 <p>Using the selected names of the PEs, we can filter the JavaScript Array of <strong><code>pe_hospitals</code></strong>. I this the syntax will be unusual for python users but for people who've dabbled in JavaScript, the <strong><code>filter()</code></strong> and the hash rocket (=&gt;) syntax translated as python/pandas will very similar to:</p>
 <ul>
 <li>Python/pandas: <strong><code>df.apply(lambda row: selected_pe_names in row['PE Firm'])</code></strong></li>
@@ -254,10 +254,11 @@ df.write_csv(sys.stdout)
 <span class="hljs-comment">// Assign the selected choices as an Array</span>
 <span class="hljs-keyword">const</span> pe_hospitals_selected = <span class="hljs-title class_">Generators</span>.<span class="hljs-title function_">input</span>(pe_hospital_table)
 </code></pre>
+<h3 id="output-pe_hospital_table" tabindex="-1"><a class="observablehq-header-anchor" href="#output-pe_hospital_table">Output <code>pe_hospital_table</code></a></h3>
 <p><span id="cell-6335e62c" class="observablehq--loading"></span></p>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a><a rel="next" href="./340b"><span>💊🏥 340B (WIP)</span></a></nav>
+<nav><a rel="prev" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a><a rel="next" href="./340b"><span> ➟ 340B (WIP)</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>

@@ -27,17 +27,17 @@ import "./_observablehq/client.js";
   <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
   <ol>
     <details open>
-      <summary>PE Hospitals</summary>
+      <summary>Hospital Ownership</summary>
       <ol>
     <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
-    <li class="observablehq-link"><a href="./pe_hospitals_tutorial">💻 Tutorial</a></li>
+    <li class="observablehq-link"><a href="./pe_hospitals_tutorial"> ➟ Tutorial</a></li>
       </ol>
     </details>
     <details open class="observablehq-section-active">
       <summary>🔍 Looking for data</summary>
       <ol>
-    <li class="observablehq-link observablehq-link-active"><a href="./340b">💊🏥 340B (WIP)</a></li>
-    <li class="observablehq-link"><a href="./pbm">💊🏢 PBM (WIP)</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./340b"> ➟ 340B (WIP)</a></li>
+    <li class="observablehq-link"><a href="./pbm"> ➟ PBM (WIP)</a></li>
       </ol>
     </details>
   </ol>
@@ -53,7 +53,7 @@ import "./_observablehq/client.js";
 <h2 id="looking-for-public-datasets" tabindex="-1"><a class="observablehq-header-anchor" href="#looking-for-public-datasets">Looking for public datasets</a></h2>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./pe_hospitals_tutorial"><span>💻 Tutorial</span></a><a rel="next" href="./pbm"><span>💊🏢 PBM (WIP)</span></a></nav>
+<nav><a rel="prev" href="./pe_hospitals_tutorial"><span> ➟ Tutorial</span></a><a rel="next" href="./pbm"><span> ➟ PBM (WIP)</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>
