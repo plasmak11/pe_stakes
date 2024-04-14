@@ -4,6 +4,49 @@ title: PE Hospitals
 toc: true
 ---
 
+<style>
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-family: var(--sans-serif);
+  /* margin: 0; */
+  text-wrap: balance;
+  text-align: start;
+}
+
+.hero h1 {
+  /* margin: 2rem 0; */
+  max-width: none;
+  font-size: 14vw;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(30deg, var(--theme-foreground-focus), currentColor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero h2 {
+  margin: 0;
+  max-width: 34em;
+  font-size: 14px;
+  font-style: initial;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--theme-foreground-muted);
+}
+
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+</style>
+
+
 ```js
 const pe_hospitals = FileAttachment("dataloaders/pe-hospital-tracker.csv").csv({typed: true})
 const cms_inpatient_hospitals = FileAttachment("dataloaders/cms_inpatient_hospitals.json").json()
@@ -117,9 +160,29 @@ const us_map = Plot.plot({
 
 ```
 
+
+<div class="hero">
+  <h1>Clinicians.fyi</h1>
+  <h2>Equipping clinicians with awareness and knowledge</h2>
+</div>
+
+---
+
+## Data Source
+
+From <a href="https://pestakeholder.org/" target="_blank">PE Stakeholder Project<span style="display: inline-block; margin-left: 0.25rem;"></span></a>
+ website:
+
+> _To bring transparency and accountability to the private equity industry and empower impacted communities._
+
+
+---
+
+## Private Equity / Hospital Ownernship
+
 <div class="grid grid-cols-1">
     <div class="grid-colspan-1">
-        <h3>${selected_pe_names.length > 1 ? "Multiple PEs" : selected_pe_names[0]}</h3>
+        <h3 style="color: blue">${selected_pe_names.length > 1 ? "Multiple PEs" : selected_pe_names[0]}</h3>
     </div>
 </div>
 
