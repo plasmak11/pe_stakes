@@ -79,7 +79,7 @@ selected_pe_names
 ))
 }});
 
-define({id: "24e8a51c", inputs: ["pe_hospitals","selected_pe_names","Inputs","Generators"], outputs: ["pe_hospitals_filtered","pe_hospital_table","pe_hospitals_selected"], body: (pe_hospitals,selected_pe_names,Inputs,Generators) => {
+define({id: "b6ed1b60", inputs: ["pe_hospitals","selected_pe_names","Inputs","Generators"], outputs: ["pe_hospitals_filtered","pe_hospital_table","pe_hospitals_selected"], body: (pe_hospitals,selected_pe_names,Inputs,Generators) => {
 const pe_hospitals_filtered = pe_hospitals.filter(d => [...selected_pe_names].includes(d['PE Firm']))
 const pe_hospital_table = Inputs.table(
     pe_hospitals_filtered,
@@ -90,9 +90,6 @@ const pe_hospital_table = Inputs.table(
         width: {
             NAME: 250,
         },
-        // format:{
-        //     "Facility ID (CCN)": 
-        // },
         layout: "auto",
         required: false,
     })
@@ -239,7 +236,7 @@ df.write_csv(sys.stdout)
 <ul>
 <li>Python/pandas: <strong><code>df.apply(lambda row: selected_pe_names in row['PE Firm'])</code></strong></li>
 </ul>
-<div id="cell-24e8a51c" class="observablehq observablehq--block"></div>
+<div id="cell-b6ed1b60" class="observablehq observablehq--block"></div>
 <pre data-language="js"><code class="language-js"><span class="hljs-keyword">const</span> pe_hospitals_filtered = pe_hospitals.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> [...selected_pe_names].<span class="hljs-title function_">includes</span>(d[<span class="hljs-string">'PE Firm'</span>]))
 <span class="hljs-keyword">const</span> pe_hospital_table = <span class="hljs-title class_">Inputs</span>.<span class="hljs-title function_">table</span>(
     pe_hospitals_filtered,
@@ -250,9 +247,6 @@ df.write_csv(sys.stdout)
         <span class="hljs-attr">width</span>: {
             <span class="hljs-attr">NAME</span>: <span class="hljs-number">250</span>,
         },
-        <span class="hljs-comment">// format:{</span>
-        <span class="hljs-comment">//     "Facility ID (CCN)": </span>
-        <span class="hljs-comment">// },</span>
         <span class="hljs-attr">layout</span>: <span class="hljs-string">"auto"</span>,
         <span class="hljs-attr">required</span>: <span class="hljs-literal">false</span>,
     })
