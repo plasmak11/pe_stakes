@@ -5,7 +5,7 @@
     "clean": "rimraf docs/.observablehq/cache",
     "build": "rimraf dist && observable build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "touch dist/.nojekyll && gh-pages -d dist -t true --cname www.clinicians.fyi"
   },
   "dependencies": {
     "@observablehq/framework": "latest",

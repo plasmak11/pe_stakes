@@ -8,11 +8,11 @@ export default {
   // lets you organize them into sections and have unlisted pages.
   pages: [
     {
-      name: "PE Hospitals",
+      name: "Hospital Ownership",
       path: "index",
       pages: [
         {name: "PE Hospitals Tracker", path: "pe_hospitals"},
-        {name: "Observable Tutorial", path: "pe_hospitals_tutorial"},
+        {name: " ➟ Tutorial", path: "pe_hospitals_tutorial"},
         // {name: "Step 2: Observable Inputs", path: "step2"},
         // {name: "Step 3: Layout", path: "step4"},
         // {name: "Step 4: Map", path: "step3"},
@@ -20,10 +20,10 @@ export default {
       ]
     },
     {
-      name: "Looking for data",
+      name: "🔍 Looking for data",
       pages: [
-        {name: "340B (WIP)", path: "340b"},
-        {name: "PBM (WIP)", path: "pbm"},
+        {name: " ➟ 340B (WIP)", path: "340b"},
+        {name: " ➟ PBM (WIP)", path: "pbm"},
       ]
     },
   ],

@@ -4,7 +4,7 @@ toc: true
 ---
 
 
-# Project: PE Hospitals Tracker Tutorial
+# Tutorial: PE Hospitals Tracker
 
 ------
 
@@ -132,9 +132,9 @@ selected_pe_names
 
 ------
 
-## 1.3: Interactive Table 
+## 1.4: Interactive Table 
 
-Using the selected names of the PEs, we can filter the JavaScript Array of **`pe_hospitals`**. I this the syntax will be unusual for python users but for people who've dabbled in JavaScript **``filter()``** and the hash rocket (=>) syntax, it'll be very similar to:
+Using the selected names of the PEs, we can filter the JavaScript Array of **`pe_hospitals`**. I this the syntax will be unusual for python users but for people who've dabbled in JavaScript, the **``filter()``** and the hash rocket (=>) syntax translated as python/pandas will very similar to:
 
 - Python/pandas: **`df.apply(lambda row: selected_pe_names in row['PE Firm'])`**
 
@@ -150,9 +150,6 @@ const pe_hospital_table = Inputs.table(
         width: {
             NAME: 250,
         },
-        // format:{
-        //     "Facility ID (CCN)": 
-        // },
         layout: "auto",
         required: false,
     })
@@ -160,5 +157,7 @@ const pe_hospital_table = Inputs.table(
 // Assign the selected choices as an Array
 const pe_hospitals_selected = Generators.input(pe_hospital_table)
 ```
+
+### Output `pe_hospital_table`
 
 ${pe_hospital_table}
