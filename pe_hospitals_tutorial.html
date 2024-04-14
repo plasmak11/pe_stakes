@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Project: PE Hospitals Tracker Tutorial | Clinicians.fyi</title>
+<title>Tutorial: PE Hospitals Tracker | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
 <link rel="preload" as="style" href="./_observablehq/theme-air.css">
@@ -121,7 +121,7 @@ pe_hospital_table
       <summary>PE Hospitals</summary>
       <ol>
     <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
-    <li class="observablehq-link observablehq-link-active"><a href="./pe_hospitals_tutorial">Observable Tutorial</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./pe_hospitals_tutorial">Tutorial</a></li>
       </ol>
     </details>
     <details open>
@@ -148,7 +148,7 @@ pe_hospital_table
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1 id="project%3A-pe-hospitals-tracker-tutorial" tabindex="-1"><a class="observablehq-header-anchor" href="#project%3A-pe-hospitals-tracker-tutorial">Project: PE Hospitals Tracker Tutorial</a></h1>
+<h1 id="tutorial%3A-pe-hospitals-tracker" tabindex="-1"><a class="observablehq-header-anchor" href="#tutorial%3A-pe-hospitals-tracker">Tutorial: PE Hospitals Tracker</a></h1>
 <hr>
 <h1 id="1-dataloaders-basics" tabindex="-1"><a class="observablehq-header-anchor" href="#1-dataloaders-basics">1 Dataloaders Basics</a></h1>
 <p>Note that <code>Observable</code> likes to show the result output of the code first, followed by source code.</p>
@@ -232,7 +232,7 @@ df.write_csv(sys.stdout)
 <div id="cell-e740f788" class="observablehq observablehq--block observablehq--loading"></div>
 <hr>
 <h2 id="1.3%3A-interactive-table" tabindex="-1"><a class="observablehq-header-anchor" href="#1.3%3A-interactive-table">1.3: Interactive Table</a></h2>
-<p>Using the selected names of the PEs, we can filter the JavaScript Array of <strong><code>pe_hospitals</code></strong>. I this the syntax will be unusual for python users but for people who've dabbled in JavaScript <strong><code>filter()</code></strong> and the hash rocket (=&gt;) syntax, it'll be very similar to:</p>
+<p>Using the selected names of the PEs, we can filter the JavaScript Array of <strong><code>pe_hospitals</code></strong>. I this the syntax will be unusual for python users but for people who've dabbled in JavaScript, the <strong><code>filter()</code></strong> and the hash rocket (=&gt;) syntax translated as python/pandas will very similar to:</p>
 <ul>
 <li>Python/pandas: <strong><code>df.apply(lambda row: selected_pe_names in row['PE Firm'])</code></strong></li>
 </ul>
