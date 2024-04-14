@@ -23,12 +23,12 @@ const pe_names_input = Inputs.select(
   }
 )
 // Generate an input based on the pe_names_input configuration
-const pe_names = Generators.input(pe_names_input);
+const selected_pe_names = Generators.input(pe_names_input);
 ```
 
 ```js
-const pe_hospitals_filtered = pe_hospitals.filter(d => [...pe_names].includes(d['PE Firm']))
-const pe_hospital_table_selection = Inputs.table(
+const pe_hospitals_filtered = pe_hospitals.filter(d => [...selected_pe_names].includes(d['PE Firm']))
+const pe_hospital_table = Inputs.table(
     pe_hospitals_filtered,
     {
         rows: 15,
@@ -43,7 +43,7 @@ const pe_hospital_table_selection = Inputs.table(
         layout: "auto",
         required: false,
     })
-const pe_hospital_table = Generators.input(pe_hospital_table_selection)
+const pe_hospitals_selected = Generators.input(pe_hospital_table)
 ```
 
 ```js
@@ -64,7 +64,7 @@ const statemesh = topojson.mesh(us, us.objects.states, (a, b) => a !== b);
 const uniqueCompanies = [
   ...new Set(
     pe_hospitals
-      .filter(d => d['PE Firm'] !== null && d['PE Firm'].trim() !== '' && [...pe_names].includes(d['PE Firm']))
+      .filter(d => d['PE Firm'] !== null && d['PE Firm'].trim() !== '' && [...selected_pe_names].includes(d['PE Firm']))
       .map(d => d["Parent System/Company"])
   )
 ]
@@ -119,7 +119,7 @@ const us_map = Plot.plot({
 
 <div class="grid grid-cols-1">
     <div class="grid-colspan-1">
-        <h3>${pe_names.length > 1 ? "Multiple PEs" : pe_names[0]}</h3>
+        <h3>${selected_pe_names.length > 1 ? "Multiple PEs" : selected_pe_names[0]}</h3>
     </div>
 </div>
 
@@ -148,7 +148,7 @@ const us_map = Plot.plot({
         <!-- Hospitals card -->
         <div class="card grid-colspan-2">
             <h4>Hospitals</h4>
-            <span>${pe_hospital_table_selection}</span>
+            <span>${pe_hospital_table}</span>
         </div>
     </div>
 </div>

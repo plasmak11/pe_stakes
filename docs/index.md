@@ -1,6 +1,6 @@
 ---
 toc: false
-title: Clinicals.fyi
+title: Clinicians.fyi
 ---
 
 <style>
