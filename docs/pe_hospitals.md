@@ -62,7 +62,7 @@ const pe_names_input = Inputs.select(
     value: ["formerly Leonard Green & Partners"],  // initial value
     multiple: 10,
     unique: true,
-    // width: "",
+    width: "100%",
   }
 )
 // Generate an input based on the pe_names_input configuration
@@ -170,24 +170,19 @@ const us_map = Plot.plot({
 
 ## Data Source
 
-From <a href="https://pestakeholder.org/" target="_blank">PE Stakeholder Project<span style="display: inline-block; margin-left: 0.25rem;"></span></a>
- website:
-
-> _To bring transparency and accountability to the private equity industry and empower impacted communities._
-
+Data is from <a href="https://pestakeholder.org/private-equity-hospital-tracker/" target="_blank">PE Stakeholder Project<span style="display: inline-block; margin-left: 0.25rem;"></span></a>website, organization with the mission statement: "_To bring transparency and accountability to the private equity industry and empower impacted communities._"
 
 ---
 
-## Private Equity / Hospital Ownernship
+## Private Equity / Hospital Ownership
 
 <div class="grid grid-cols-1">
     <div class="grid-colspan-1">
         <h3 style="color: blue">${selected_pe_names.length > 1 ? "Multiple PEs" : selected_pe_names[0]}</h3>
     </div>
 </div>
-
-<div class="grid grid-cols-4">
-    <div class="grid-colspan-1">
+<div class="grid grid-cols-2" style="padding: 0px;">
+    <div class="grid-colspan-1 grid-rowspan-3">
         <div class="card">${pe_names_input}</div>
         <div class="card">
             <h3>Hospitals</h3>
@@ -198,8 +193,8 @@ From <a href="https://pestakeholder.org/" target="_blank">PE Stakeholder Project
             <span>${html`${unique_companies_label.map(item => html`${item}<br>`)}`}</span>
         </div>
     </div>
-    <div class="grid-colspan-2 grid-row-span-2 ">
-        <div class="card grid-rowspan-1">
+    <div class="grid-colspan-1 grid-rowspan-3">
+        <div class="card">
             <h4>U.S. Map</h4>
             <span>${us_map}</span>
         </div>

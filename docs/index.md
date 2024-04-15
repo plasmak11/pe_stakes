@@ -1,6 +1,7 @@
 ---
 toc: false
 title: Clinicians.fyi
+pager: false
 ---
 
 <style>
@@ -50,6 +51,7 @@ title: Clinicians.fyi
   <h1>Clinicians.fyi</h1>
   <h2>Clinicians need to be equipped with awareness and knowledge.</h2>
   <a href="https://github.com/plasmak11/pe_stakes" target="_blank">Github<span style="display: inline-block; margin-left: 0.25rem;">↗︎</span></a>
+  <span style="font-size: 12px;color: #888888;">( @Observable team, the hero banner font CSS was too cool so temporarily borrowing it )</span>
 </div>
 
-
+#### 
