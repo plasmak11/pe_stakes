@@ -4,15 +4,19 @@
 <title>Healthcare Fraud | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/custom-style.8717b9f6.css">
+<link rel="preload" as="style" href="./_import/custom-style.659d7a9d.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/custom-style.8717b9f6.css">
+<link rel="stylesheet" type="text/css" href="./_import/custom-style.659d7a9d.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
@@ -43,7 +47,6 @@
 <link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
-<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
 <link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
 <link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
 <link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
@@ -52,6 +55,27 @@
 <script type="module">
 
 import {define} from "./_observablehq/client.js";
+
+define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
+const search_input = Inputs.search(data, {placeholder: "Search cases"});
+return {search_input};
+}});
+
+define({id: "9dc7af27", inputs: ["Generators","search_input"], outputs: ["search_string"], body: (Generators,search_input) => {
+const search_string = Generators.input(search_input);
+return {search_string};
+}});
+
+define({id: "cf32e016", inputs: ["search_string"], outputs: ["filtered_data"], body: (search_string) => {
+const filtered_data = search_string;
+return {filtered_data};
+}});
+
+define({id: "52c1d7cf", mode: "inline", inputs: ["search_input","display"], body: async (search_input,display) => {
+display(await(
+search_input
+))
+}});
 
 define({id: "1d43f859", inputs: ["d3","Plot"], outputs: ["yearHeatmap"], body: (d3,Plot) => {
 const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
@@ -103,8 +127,14 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
 return {yearHeatmap};
 }});
 
-define({id: "a439aa44", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
-const cardTemplate = (data) => html`<div class="card">
+define({id: "aa4f11c4", mode: "inline", inputs: ["filtered_data","display"], body: async (filtered_data,display) => {
+display(await(
+filtered_data.length
+))
+}});
+
+define({id: "a9a5471d", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
+const cardTemplate = (data) => html`<div class="fraud-card">
     <div class="card-header">
         <div class="case-title">${data.title}</div>
         <div class="case-number">${data.caseNumber}</div>
@@ -288,9 +318,9 @@ const data = new Array({
 return {data};
 }});
 
-define({id: "281042e9", mode: "inline", inputs: ["data","cardTemplate","display"], body: async (data,cardTemplate,display) => {
+define({id: "4c253b46", mode: "inline", inputs: ["filtered_data","cardTemplate","display"], body: async (filtered_data,cardTemplate,display) => {
 display(await(
-data.map(entry => cardTemplate(entry))
+filtered_data.map(entry => cardTemplate(entry))
 ))
 }});
 
@@ -319,17 +349,25 @@ data.map(entry => cardTemplate(entry))
   </section>
 </nav>
 <script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <h1 id="healthcare-fraud-database" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-fraud-database">Healthcare Fraud Database</a></h1>
 <h2 id="intro" tabindex="-1"><a class="observablehq-header-anchor" href="#intro">Intro</a></h2>
 <p style="font-size: 0.7em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Our database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This compilation aims to provide with a robust collection of publicly available data to study trends of common fraudulent behaviors in the healthcare sector. By offering a wealth of curated information from reputable sources, we enable users to conduct their own analyses and gain insights into the complex landscape of healthcare fraud, supporting efforts to protect the integrity of our healthcare system.</p>
-<!-- ## Telemedicine Case Summaries -->
+<div class="observablehq observablehq--block"><!--:1662f5b4:--></div>
+<div class="observablehq observablehq--block"><!--:9dc7af27:--></div>
+<div class="observablehq observablehq--block"><!--:cf32e016:--></div>
+<h3 id="simple-search" tabindex="-1"><a class="observablehq-header-anchor" href="#simple-search">Simple Search</a></h3>
+<p><observablehq-loading></observablehq-loading><!--:52c1d7cf:--></p>
 <div class="observablehq observablehq--block"><!--:1d43f859:--></div>
-<h2 id="cases" tabindex="-1"><a class="observablehq-header-anchor" href="#cases">Cases</a></h2>
-<div class="observablehq observablehq--block"><!--:a439aa44:--></div>
+<h3 id="cases-found" tabindex="-1"><a class="observablehq-header-anchor" href="#cases-found"><observablehq-loading></observablehq-loading><!--:aa4f11c4:--> Cases Found</a></h3>
+<div class="observablehq observablehq--block"><!--:a9a5471d:--></div>
 <div class="observablehq observablehq--block"><!--:3209594d:--></div>
-<p><observablehq-loading></observablehq-loading><!--:281042e9:--></p>
+<p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="prev" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a></nav>
