@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Healthcare Fraud | Clinicians.fyi</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/custom-style.fbca3ac4.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/custom-style.fbca3ac4.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+
+define({id: "1d43f859", inputs: ["d3","Plot"], outputs: ["yearHeatmap"], body: (d3,Plot) => {
+const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
+  const years = d3.range(startYear, endYear + 1);
+  const data = years.map(year => ({
+    year,
+    highlight: year >= highlightStart && year <= highlightEnd
+  }));
+  return Plot.plot({
+    height: 45,
+    // width: Math.min(800, window.innerWidth - 20),
+    x: {
+      type: "band", 
+      domain: years, 
+      padding: 0,
+      label: null,  // Remove X-axis title
+      tickSize: 0,  // Remove tick marks
+      tickPadding: 3,  // Remove padding between ticks and labels
+      tickFormat: d => d.toString()
+    },
+    y: {
+      domain: [0, 1], 
+      padding: 0.1,
+      axis: null
+    },
+    color: {
+      domain: [false, true],
+      range: ["#f0f0f0", "#3182bd"]  // Light gray for non-highlighted, blue for highlighted
+    },
+    marks: [
+      Plot.cell(data, {
+        x: "year",
+        fill: d => d.highlight,
+        title: d => `Year: ${d.year}${d.highlight ? " (Highlighted)" : ""}`,
+        stroke: "white",
+        strokeWidth: 1
+      }),
+    ],
+    style: {
+      backgroundColor: "white",
+      fontSize: "9px",
+      fontColor: "#f0f0f0"
+    },
+    marginLeft: 0,
+    marginRight: 0,
+    marginBottom: 30  // Add some bottom margin for year labels
+  });
+}
+return {yearHeatmap};
+}});
+
+define({id: "a439aa44", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
+const cardTemplate = (data) => html`<div class="card">
+    <div class="card-header">
+        <div class="case-title">${data.title}</div>
+        <div class="case-number">${data.caseNumber}</div>
+    </div>
+    <div class="card-content">
+        <div class="main-content">
+            <div class="state-container">
+                <span class="badge state-badge">${data.state}</span>
+            </div>
+            <div class="battle-container">
+                    <div class="party-card winner">
+                        <span class="party-label">Plaintiff:</span>
+                        <div>${data.plaintiff}</div>
+                    </div>
+                    <div class="party-card">
+                        <span class="party-label">Defendant:</span>
+                        <div><span class="key-entity">${data.defendant}</span></div>
+                    </div>
+                </div>
+            <div class="summary">
+                ${data.summary}
+            </div>
+        </div>
+        <div class="number-column">
+            <div class="category">${data.category}</div>
+            <div class="fraud-amount-container">
+                <div class="number-label">Alleged Fraud</div>
+                <div class="fraud-amount">$${d3.format(".2s")(data.fraudAmount)}</div>
+            </div>
+            <!-- <div class="number-label">${data.affectedLabel}</div> !-->
+            <div>${data.affectedCount}</div>
+            <h4>Related:</h4>
+            <div class="related-links">
+                ${data.relatedLinks.map(link => html`
+                    <a href="${link.url}" class="related-link">${link.text}</a>
+                `)}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="timeline">
+            <h4>Years:</h4>
+            ${yearHeatmap(2014, 2024, data.timeline.start_year, data.timeline.end_year)}
+        </div>
+    </div>
+</div>`;
+return {cardTemplate};
+}});
+
+define({id: "3209594d", outputs: ["data"], body: () => {
+const data = new Array({
+    title: 'United States v. Tara Pendergraft',
+    caseNumber: 'Case Number: 22-cr-00488-BRM',
+    state: 'New Jersey',
+    plaintiff: 'United States Department of Justice',
+    defendant: 'Tara Pendergraft',
+    summary: 'Tara Pendergraft, 45, of Chalfont, Pennsylvania, was charged by information for conspiring with others to defraud Medicare by billing for genetic testing that was medically unnecessary, ineligible for reimbursement, not provided as represented, and/or procured through kickbacks and bribes. Pendergraft, a laboratory owner, caused more than $93 million in fraudulent claims to be submitted to Medicare. Medicare paid approximately $14.3 million based on these claims. The case is being prosecuted by Acting Assistant Chief Rebecca Yuan and Trial Attorney S. Babu Kaza of the National Rapid Response Strike Force.',
+    timeline: {
+        "start_year": 2018,
+        "end_year": 2019
+    },
+    violation: [
+        "42 U.S. Code § 1320a–7b"
+    ],
+    relatedLinks: [
+        {url: 'https://www.law.cornell.edu/uscode/text/42/1320a-7b', text: '42 U.S. Code § 1320a–7b'},
+        {url: '#', text: 'Genetic Testing'},
+        {url: '#', text: 'Kickbacks'},
+        {url: '#', text: 'Bribes'}
+    ],
+    category: 'Genetic Testing',
+    fraudAmount: 93000000,
+    affectedLabel: 'Beneficiaries Affected',
+    // affectedCount: "Unknown",
+    }, 
+    {
+  "title": "United States v. Luis Lacerda",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Florida",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Luis Lacerda",
+  "summary": "Luis Lacerda, 35, of Fort Lauderdale, Florida, was charged by information for his role in a health care fraud scheme that resulted in Medicare payments of approximately $54.3 million. Lacerda was the owner of pharmacies in several states, including Cure Pharmacy in Jacksonville, Florida. From in or around 2017 through in or around 2021, Lacerda, through his call center and through the payment of kickbacks and bribes to telemarketing companies, targeted Medicare beneficiaries and encouraged them to accept expensive prescription medications they neither wanted nor needed. He also paid kickbacks and bribes to purported telemedicine companies to obtain signed prescriptions from physicians who had no relationship with the patients, rarely spoke to them, and made no determination of the medical necessity of the prescriptions. Through his pharmacy network, Lacerda caused false and fraudulent claims for the medications to be submitted to Medicare Part D plans. The case is being prosecuted by Trial Attorney Gary Winters of the National Rapid Response Strike Force and Assistant United States Attorney David Mesrobian of the Middle District of Florida.",
+  "timeline": {
+    "start_year": 2017,
+    "end_year": 2021
+  },
+  "violation": [
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Bribes"}
+  ],
+  "category": "Health Care Fraud",
+  "fraudAmount": 54300000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+    {
+  "title": "United States v. Vincent R. Sperti II",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Florida",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Vincent R. Sperti II",
+  "summary": "Vincent R. Sperti II, 43, of Oviedo, Florida, was charged by information for his involvement in an approximately $400,000 kickback scheme and with possession with intent to distribute a controlled substance. Between in or around September 2018 and in or around September 2019, Sperti worked with a purported marketing company that purchased and resold doctors' orders for braces for Medicare beneficiaries. Sperti and his co-conspirators also purchased Medicare beneficiaries' personally identifiable information and purported personal health information and paid kickbacks and bribes to purported telemedicine companies to obtain signed doctors' orders. Additionally, on or about September 30, 2020, Sperti was found in possession of a large volume of illegal steroids, a Schedule III controlled substance. The case is being prosecuted by Trial Attorney Catherine Wagner of the National Rapid Response Strike Force.",
+  "timeline": {
+    "start_year": 2018,
+    "end_year": 2019
+  },
+  "violation": [
+    "42 U.S. Code § 1320a–7b",
+    "21 U.S. Code § 841"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "https://www.law.cornell.edu/uscode/text/21/841", "text": "21 U.S. Code § 841"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Controlled Substances"}
+  ],
+  "category": "Kickback Scheme and Drug Possession",
+  "fraudAmount": 400000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Luis Perez and Jestil Tapia",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Florida",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Luis Perez and Jestil Tapia",
+  "summary": "Luis Perez, 35, of Coral Springs, Florida, and Jestil Tapia, 28, of Parkland, Florida, were charged by indictment with conspiracy to defraud the United States and to pay and receive health care kickbacks and payment of kickbacks in connection with a federal health care program. Perez also was charged with conspiracy to commit health care fraud, health care fraud, and misusing COVID-19 relief funds to pay an approximately $85,000 payment to a luxury car dealership. From in or around January 2019 through in or around August 2020, Perez and Tapia owned and operated a network of DME and marketing companies they used to submit over $18 million in false and fraudulent claims to Medicare for DME, of which over $8 million was paid by Medicare. They submitted false enrollment records, inserted nominee owners of certain DME companies to conceal their interests, paid kickbacks to purported telemedicine and marketing companies, and profited millions from the scheme. The case is being prosecuted by Trial Attorney Patrick Queenan of the Miami Strike Force and Trial Attorney Catherine Wagner of the National Rapid Response Strike Force.",
+  "timeline": {
+    "start_year": 2019,
+    "end_year": 2020
+  },
+  "violation": [
+    "42 U.S. Code § 1320a–7b",
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 371"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "COVID-19 Relief Fraud"}
+  ],
+  "category": "Health Care Fraud and COVID-19 Relief Fraud",
+  "fraudAmount": 18000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Lucia Miranda Oro Taboada",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Florida",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Lucia Miranda Oro Taboada",
+  "summary": "Lucia Miranda Oro Taboada, 27, of Boca Raton, Florida, was charged by indictment for her role in a health care fraud and wire fraud conspiracy. From in or around April 2020 to in or around November 2020, Oro allegedly conspired with others to operate two DME companies used to fraudulently bill Medicare over $1.7 million. Oro executed and submitted false enrollment records with Medicare concealing from Medicare the ownership interest and managing control of two co-conspirators, one of whom was a convicted felon. Oro also controlled the banking activities and transferred fraud proceeds from the DME companies to accounts owned and controlled by the beneficial owners. The case is being prosecuted by Trial Attorney Patrick Queenan of the Miami Strike Force.",
+  "timeline": {
+    "start_year": 2020,
+    "end_year": 2020
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 1343",
+    "18 U.S. Code § 371"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Wire Fraud"}
+  ],
+  "category": "Health Care Fraud and Wire Fraud",
+  "fraudAmount": 170000000,
+  "affectedLabel": "Beneficiaries Affected"
+}
+);
+return {data};
+}});
+
+define({id: "281042e9", mode: "inline", inputs: ["data","cardTemplate","display"], body: async (data,cardTemplate,display) => {
+display(await(
+data.map(entry => cardTemplate(entry))
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Clinicians.fyi</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section>
+    <summary class="observablehq-link"><a href="./">Hospital Ownership</a></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
+    <li class="observablehq-link"><a href="./pe_hospitals_tutorial"> ➟ Tutorial</a></li>
+    </ol>
+  </section>
+  <section class="observablehq-section-active">
+    <summary>Healthcare Fraud</summary>
+    <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud">Report</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="healthcare-fraud-database" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-fraud-database">Healthcare Fraud Database</a></h1>
+<!-- ## Telemedicine Case Summaries -->
+<div class="observablehq observablehq--block"><!--:1d43f859:--></div>
+<h2 id="cases" tabindex="-1"><a class="observablehq-header-anchor" href="#cases">Cases</a></h2>
+<div class="observablehq observablehq--block"><!--:a439aa44:--></div>
+<div class="observablehq observablehq--block"><!--:3209594d:--></div>
+<p><observablehq-loading></observablehq-loading><!--:281042e9:--></p>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./pe_hospitals_tutorial"><span> ➟ Tutorial</span></a></nav>
+<div>Built with Observable.</div>
+</footer>
+</div>

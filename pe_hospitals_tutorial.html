@@ -99,7 +99,7 @@ const pe_hospitals_selected = Generators.input(pe_hospital_table)
 return {pe_hospitals_filtered,pe_hospital_table,pe_hospitals_selected};
 }});
 
-define({id: "6335e62c", inline: true, inputs: ["pe_hospital_table","display"], body: async (pe_hospital_table,display) => {
+define({id: "6335e62c", mode: "inline", inputs: ["pe_hospital_table","display"], body: async (pe_hospital_table,display) => {
 display(await(
 pe_hospital_table
 ))
@@ -115,26 +115,23 @@ pe_hospital_table
   </ol>
   <div id="observablehq-search"><input type="search" placeholder="Search"></div>
   <div id="observablehq-search-results"></div>
-  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
-  <ol>
-    <details open class="observablehq-section-active">
-      <summary>Healthcare Ownership</summary>
-      <ol>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section class="observablehq-section-active">
+    <summary class="observablehq-link"><a href="./">Hospital Ownership</a></summary>
+    <ol>
     <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
     <li class="observablehq-link observablehq-link-active"><a href="./pe_hospitals_tutorial"> ➟ Tutorial</a></li>
-      </ol>
-    </details>
-    <details open>
-      <summary>🔍 Looking for data</summary>
-      <ol>
-    <li class="observablehq-link"><a href="./340b"> ➟ 340B (WIP)</a></li>
-    <li class="observablehq-link"><a href="./pbm"> ➟ PBM (WIP)</a></li>
-      </ol>
-    </details>
-  </ol>
+    </ol>
+  </section>
+  <section>
+    <summary>Healthcare Fraud</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-fraud">Report</a></li>
+    </ol>
+  </section>
 </nav>
-<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
-<aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
 <nav>
 <div>Contents</div>
 <ol>
@@ -184,16 +181,16 @@ df.write_csv(sys.stdout)
 <hr>
 <h2 id="1.2-load-the-dataloader" tabindex="-1"><a class="observablehq-header-anchor" href="#1.2-load-the-dataloader">1.2 Load the dataloader</a></h2>
 <p><code>FileAttachment()</code> can read either actual file or the dataloader-based file name re-routing (without the <code>.py</code> extension), as if you are loading a CSV file. Despite</p>
-<div id="cell-e0ad8bd7" class="observablehq observablehq--block"></div>
+<div class="observablehq observablehq--block"><!--:e0ad8bd7:--></div>
 <pre data-language="js"><code class="language-js"><span class="hljs-keyword">const</span> pe_hospitals = <span class="hljs-title class_">FileAttachment</span>(<span class="hljs-string">"dataloaders/pe-hospital-tracker.csv"</span>).<span class="hljs-title function_">csv</span>({<span class="hljs-attr">typed</span>: <span class="hljs-literal">true</span>})
 </code></pre>
-<div id="cell-c8cdba37" class="observablehq observablehq--block observablehq--loading"></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c8cdba37:--></div>
 <pre data-language="js"><code class="language-js">pe_hospitals
 </code></pre>
 <hr>
 <h2 id="1.3-input-selector" tabindex="-1"><a class="observablehq-header-anchor" href="#1.3-input-selector">1.3 Input selector</a></h2>
 <p>Select unique values of <strong><code>PE Firm</code></strong> from the <strong><code>pe_hospitals</code></strong> Array object. These are private equity firms.</p>
-<div id="cell-f549d640" class="observablehq observablehq--block"></div>
+<div class="observablehq observablehq--block"><!--:f549d640:--></div>
 <pre data-language="js"><code class="language-js"><span class="hljs-keyword">const</span> pe_options = (
   pe_hospitals
   .<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> d[<span class="hljs-string">'PE Firm'</span>] !== <span class="hljs-literal">null</span> &amp;&amp; d[<span class="hljs-string">'PE Firm'</span>].<span class="hljs-title function_">trim</span>() !== <span class="hljs-string">''</span>)
@@ -201,7 +198,7 @@ df.write_csv(sys.stdout)
 )
 </code></pre>
 <h4 id="pe_options" tabindex="-1"><a class="observablehq-header-anchor" href="#pe_options"><code>pe_options</code></a></h4>
-<div id="cell-41d330fb" class="observablehq observablehq--block observablehq--loading"></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:41d330fb:--></div>
 <hr>
 <p>Then display it using <strong><code>Input.select()</code></strong> with options to make it multi-selectable with 10 rows displayed.</p>
 <p>Notes:</p>
@@ -210,7 +207,7 @@ df.write_csv(sys.stdout)
 <li><strong><code>value: [default_selection]</code></strong></li>
 </ul>
 <h3 id="code" tabindex="-1"><a class="observablehq-header-anchor" href="#code">Code</a></h3>
-<div id="cell-91bfc200" class="observablehq observablehq--block"></div>
+<div class="observablehq observablehq--block"><!--:91bfc200:--></div>
 <pre data-language="js"><code class="language-js"><span class="hljs-keyword">const</span> pe_firm_input = <span class="hljs-title class_">Inputs</span>.<span class="hljs-title function_">select</span>(
   pe_options,
   {
@@ -228,15 +225,15 @@ df.write_csv(sys.stdout)
 </code></pre>
 <h3 id="output" tabindex="-1"><a class="observablehq-header-anchor" href="#output">Output</a></h3>
 <p>Simple calling the <strong><code>pe_firm_input</code></strong> and <strong><code>selected_pe_names</code></strong> within <strong>```js</strong>``` code blocks will generate these:</p>
-<div id="cell-c33dd523" class="observablehq observablehq--block observablehq--loading"></div>
-<div id="cell-e740f788" class="observablehq observablehq--block observablehq--loading"></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c33dd523:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:e740f788:--></div>
 <hr>
 <h2 id="1.4%3A-interactive-table" tabindex="-1"><a class="observablehq-header-anchor" href="#1.4%3A-interactive-table">1.4: Interactive Table</a></h2>
 <p>Using the selected names of the PEs, we can filter the JavaScript Array of <strong><code>pe_hospitals</code></strong>. I this the syntax will be unusual for python users but for people who've dabbled in JavaScript, the <strong><code>filter()</code></strong> and the hash rocket (=&gt;) syntax translated as python/pandas will very similar to:</p>
 <ul>
 <li>Python/pandas: <strong><code>df.apply(lambda row: selected_pe_names in row['PE Firm'])</code></strong></li>
 </ul>
-<div id="cell-b6ed1b60" class="observablehq observablehq--block"></div>
+<div class="observablehq observablehq--block"><!--:b6ed1b60:--></div>
 <pre data-language="js"><code class="language-js"><span class="hljs-keyword">const</span> pe_hospitals_filtered = pe_hospitals.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> [...selected_pe_names].<span class="hljs-title function_">includes</span>(d[<span class="hljs-string">'PE Firm'</span>]))
 <span class="hljs-keyword">const</span> pe_hospital_table = <span class="hljs-title class_">Inputs</span>.<span class="hljs-title function_">table</span>(
     pe_hospitals_filtered,
@@ -255,10 +252,10 @@ df.write_csv(sys.stdout)
 <span class="hljs-keyword">const</span> pe_hospitals_selected = <span class="hljs-title class_">Generators</span>.<span class="hljs-title function_">input</span>(pe_hospital_table)
 </code></pre>
 <h3 id="output-pe_hospital_table" tabindex="-1"><a class="observablehq-header-anchor" href="#output-pe_hospital_table">Output <code>pe_hospital_table</code></a></h3>
-<p><span id="cell-6335e62c" class="observablehq--loading"></span></p>
+<p><observablehq-loading></observablehq-loading><!--:6335e62c:--></p>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a><a rel="next" href="./340b"><span> ➟ 340B (WIP)</span></a></nav>
+<nav><a rel="prev" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a><a rel="next" href="./healthcare-fraud"><span>Report</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>

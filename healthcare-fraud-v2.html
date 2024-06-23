@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Healthcare Fraud | Clinicians.fyi</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/custom-style-v2.c46d4f8a.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/custom-style-v2.c46d4f8a.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+
+define({id: "f97ca399", inputs: ["d3","Plot"], outputs: ["yearHeatmap"], body: (d3,Plot) => {
+const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
+  const years = d3.range(startYear, endYear + 1);
+  const data = years.map(year => ({
+    year,
+    highlight: year >= highlightStart && year <= highlightEnd
+  }));
+  return Plot.plot({
+    height: 50,
+    // width: Math.min(800, window.innerWidth - 20),
+    x: {
+      type: "band", 
+      domain: years, 
+      padding: 0,
+      label: null,  // Remove X-axis title
+      tickSize: 0,  // Remove tick marks
+      tickPadding: 3,  // Remove padding between ticks and labels
+      tickFormat: d => d.toString()
+    },
+    y: {
+      domain: [0, 1], 
+      padding: 0.1,
+      axis: null
+    },
+    color: {
+      domain: [false, true],
+      range: ["#f0f0f0", "#3182bd"]  // Light gray for non-highlighted, blue for highlighted
+    },
+    marks: [
+      Plot.cell(data, {
+        x: "year",
+        fill: d => d.highlight,
+        title: d => `Year: ${d.year}${d.highlight ? " (Highlighted)" : ""}`,
+        stroke: "white",
+        strokeWidth: 1
+      }),
+    ],
+    style: {
+      backgroundColor: "white",
+      fontSize: "9px",
+      fontColor: "#f0f0f0"
+    },
+    marginLeft: 0,
+    marginRight: 0,
+    marginBottom: 30  // Add some bottom margin for year labels
+  });
+}
+return {yearHeatmap};
+}});
+
+define({id: "f54cbfa2", inputs: ["html","yearHeatmap","d3"], outputs: ["cardTemplate"], body: (html,yearHeatmap,d3) => {
+const cardTemplate = (data) => html`<div class="card">
+    <div class="card-header">
+        <div class="case-title">${data.title}</div>
+        <div class="case-number">${data.caseNumber}</div>
+    </div>
+    <div class="card-content">
+        <div class="main-content">
+            <div class="state-container">
+                <span class="badge state-badge">${data.state}</span>
+            </div>
+            <div class="battle-container">
+                    <div class="party-card winner">
+                        <span class="party-label">Plaintiff:</span>
+                        <div>${data.plaintiff}</div>
+                    </div>
+                    <div class="party-card">
+                        <span class="party-label">Defendant:</span>
+                        <div><span class="key-entity">${data.defendant}</span></div>
+                    </div>
+                </div>
+            <div class="summary">
+                ${data.summary}
+            </div>
+            <div class="timeline">
+                ${yearHeatmap(2014, 2024, data.timeline.start_year, data.timeline.end_year)}
+            </div>
+            <div class="related-links">
+                <h4>Related:</h4>
+                ${data.relatedLinks.map(link => html`
+                    <a href="${link.url}" class="related-link">${link.text}</a>
+                `)}
+            </div>
+        </div>
+        <div class="number-column">
+            <div class="category">${data.category}</div>
+            <div class="fraud-amount-container">
+                <div class="number-label">Alleged Fraud</div>
+                <div class="fraud-amount">${d3.format(".2s")(data.fraudAmount)}</div>
+            </div>
+            <div class="number-label">${data.affectedLabel}</div>
+            <div>${data.affectedCount}</div>
+        </div>
+    </div>
+</div>`;
+return {cardTemplate};
+}});
+
+define({id: "8faa1bfb", inputs: ["html","d3"], outputs: ["cardTemplateV2"], body: (html,d3) => {
+const cardTemplateV2 = (data) => html`<div class="card" x-data="{ expanded: true }">
+        <div class="card-header">
+            <div class="header-left">
+                <div class="case-title">${data.title}</div>
+                <div class="case-number">${data.caseNumber}</div>
+            </div>
+            <div class="header-center">
+                <div class="fraud-categories">
+                    ${data.category.map(category => html`
+                        <span class="fraud-category"><a href="${category.link}" class="fraud-category">${category.text}</a></span>
+                    `)}
+                </div>
+            </div>
+            <div class="fraud-column">
+                <div class="fraud-label">Alleged Fraud</div>
+                <div class="fraud-amount">${d3.format(".2s")(data.fraudAmount)}</div>
+            </div>
+            <div class="toggle-icon">▼</div>
+        </div>
+        <div class="card-content">
+            <span class="state-badge">${data.state}</span>
+            <div class="battle-container">
+                <div class="party-card winner">
+                    <span class="party-label">Plaintiff:</span>
+                    <div>${data.plaintiff}</div>
+                    <span class="winner-label">Winner</span>
+                </div>
+                <div class="party-card">
+                    <span class="party-label">Defendant:</span>
+                    <div><span class="key-entity">${data.defendant}</span></div>
+                </div>
+            </div>
+            <div class="summary">
+                ${data.summary}
+            </div>
+            <div class="related-links">
+                <h4>Related:</h4>
+                <a href="#" class="related-link">MedSupply Corp</a>
+                <a href="#" class="related-link">Medicare Fraud</a>
+                <a href="#" class="related-link">DME Cases</a>
+                <a href="#" class="related-link">Telemedicine Fraud</a>
+            </div>
+        </div>
+    </div>`;
+return {cardTemplateV2};
+}});
+
+define({id: "d3643729", outputs: ["caseData1","caseData2"], body: () => {
+const caseData1 = {
+    title: 'United States v. Tara Pendergraft',
+    caseNumber: 'Case Number: 22-cr-00488-BRM',
+    state: 'New Jersey',
+    plaintiff: 'United States Department of Justice',
+    defendant: 'Tara Pendergraft',
+    summary: 'Tara Pendergraft, 45, of Chalfont, Pennsylvania, was charged by information for conspiring with others to defraud Medicare by billing for genetic testing that was medically unnecessary, ineligible for reimbursement, not provided as represented, and/or procured through kickbacks and bribes. Pendergraft, a laboratory owner, caused more than $93 million in fraudulent claims to be submitted to Medicare. Medicare paid approximately $14.3 million based on these claims. The case is being prosecuted by Acting Assistant Chief Rebecca Yuan and Trial Attorney S. Babu Kaza of the National Rapid Response Strike Force.',
+    timeline: {
+        "start_year": 2018,
+        "end_year": 2019
+    },
+    violation: [
+        "42 U.S. Code § 1320a–7b"
+    ],
+    relatedLinks: [
+        {url: 'https://www.law.cornell.edu/uscode/text/42/1320a-7b', text: '42 U.S. Code § 1320a–7b'},
+        {url: '#', text: 'Genetic Testing'},
+        {url: '#', text: 'Kickbacks'},
+        {url: '#', text: 'Bribes'}
+    ],
+    category: [
+        {link: '#', text: 'Genetic Testing'},
+        {link: '#', text: 'Telemedicine'},
+    ],
+    fraudAmount: 93000000,
+    affectedLabel: 'Beneficiaries Affected',
+    affectedCount: "Unknown",
+};
+
+const caseData2 = {
+    title: 'FTC v. TeleHealth Solutions, Inc.',
+    caseNumber: 'Case No. 2022-CV-98765',
+    state: 'California',
+    plaintiff: 'Federal Trade Commission',
+    defendant: 'TeleHealth Solutions, Inc.',
+    summary: 'FTC alleges TeleHealth Solutions, Inc. engaged in deceptive practices, misrepresenting qualifications of medical professionals, efficacy of remote diagnostics, and billing for unrendered services. The company contests all claims, asserting industry-standard compliance and pioneering healthcare access through technology.',
+    timeline: {
+        "start_year": 2020,
+        "end_year": 2022
+    },
+    relatedLinks: [
+        {url: '#', text: 'TeleHealth Solutions'},
+        {url: '#', text: 'Telemedicine Fraud'},
+        {url: '#', text: 'FTC Cases'}
+    ],
+    category: 'Telemedicine',
+    fraudAmount: '$75M',
+    affectedLabel: 'Patients Affected',
+    affectedCount: null,
+};
+return {caseData1,caseData2};
+}});
+
+define({id: "c0b5c9c1", inputs: ["cardTemplate","caseData1","display"], body: async (cardTemplate,caseData1,display) => {
+display(await(
+cardTemplate(caseData1)
+))
+}});
+
+define({id: "43d77969", inputs: ["cardTemplateV2","caseData1","display"], body: async (cardTemplateV2,caseData1,display) => {
+display(await(
+cardTemplateV2(caseData1)
+))
+}});
+
+define({id: "9120f3f6", inputs: ["Inputs"], outputs: ["startYear","endYear"], body: (Inputs) => {
+const startYear = Inputs.number({label: "Start Year", value: 2010, step: 1});
+const endYear = Inputs.number({label: "End Year", value: 2023, step: 1});
+return {startYear,endYear};
+}});
+
+define({id: "39131cba", mode: "inline", inputs: ["startYear","display"], body: async (startYear,display) => {
+display(await(
+startYear
+))
+}});
+
+define({id: "d2a8b41a", mode: "inline", inputs: ["endYear","display"], body: async (endYear,display) => {
+display(await(
+endYear
+))
+}});
+
+define({id: "16cf2a19", inputs: ["Generators","startYear","endYear"], outputs: ["startYearValue","endYearValue"], body: (Generators,startYear,endYear) => {
+const startYearValue = Generators.input(startYear);
+const endYearValue = Generators.input(endYear);
+return {startYearValue,endYearValue};
+}});
+
+define({id: "77b95765", mode: "inline", inputs: ["startYearValue","display"], body: async (startYearValue,display) => {
+display(await(
+startYearValue
+))
+}});
+
+define({id: "27009140", mode: "inline", inputs: ["endYearValue","display"], body: async (endYearValue,display) => {
+display(await(
+endYearValue
+))
+}});
+
+define({id: "413c0f9c", body: () => {
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        const header = card.querySelector('.card-header');
+        header.addEventListener('click', () => {
+            card.classList.toggle('expanded');
+        });
+    });
+});
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Clinicians.fyi</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section>
+    <summary class="observablehq-link"><a href="./">Hospital Ownership</a></summary>
+    <ol>
+    <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
+    <li class="observablehq-link"><a href="./pe_hospitals_tutorial"> ➟ Tutorial</a></li>
+    </ol>
+  </section>
+  <section>
+    <summary>Healthcare Fraud</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-fraud">Report</a></li>
+    </ol>
+  </section>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="healthcare-fraud-report" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-fraud-report">Healthcare Fraud Report</a></h1>
+<!-- ## Telemedicine Case Summaries -->
+<div class="observablehq observablehq--block"><!--:f97ca399:--></div>
+<div class="observablehq observablehq--block"><!--:f54cbfa2:--></div>
+<div class="observablehq observablehq--block"><!--:8faa1bfb:--></div>
+<div class="observablehq observablehq--block"><!--:d3643729:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c0b5c9c1:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43d77969:--></div>
+<div class="observablehq observablehq--block"><!--:9120f3f6:--></div>
+<p><observablehq-loading></observablehq-loading><!--:39131cba:--></p>
+<p><observablehq-loading></observablehq-loading><!--:d2a8b41a:--></p>
+<div class="observablehq observablehq--block"><!--:16cf2a19:--></div>
+<p><observablehq-loading></observablehq-loading><!--:77b95765:-->
+<observablehq-loading></observablehq-loading><!--:27009140:--></p>
+<div class="observablehq observablehq--block"><!--:413c0f9c:--></div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with Observable.</div>
+</footer>
+</div>
