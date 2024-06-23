@@ -12,7 +12,7 @@ export default {
       path: "index",
       pages: [
         {name: "PE Hospitals Tracker", path: "pe_hospitals"},
-        {name: " ➟ Tutorial", path: "pe_hospitals_tutorial"},
+        // {name: " ➟ Tutorial", path: "pe_hospitals_tutorial"},
         // {name: "Step 2: Observable Inputs", path: "step2"},
         // {name: "Step 3: Layout", path: "step4"},
         // {name: "Step 4: Map", path: "step3"},
@@ -20,12 +20,19 @@ export default {
       ]
     },
     {
-      name: "🔍 Looking for data",
+      name: "Healthcare Fraud",
       pages: [
-        {name: " ➟ 340B (WIP)", path: "340b"},
-        {name: " ➟ PBM (WIP)", path: "pbm"},
+        {name: "Report", path: "healthcare-fraud"},
+        // {name: "Report-V2", path: "healthcare-fraud-v2"}
       ]
-    },
+    }
+    // {
+    //   name: "🔍 Looking for data",
+    //   pages: [
+    //     {name: " ➟ 340B (WIP)", path: "340b"},
+    //     {name: " ➟ PBM (WIP)", path: "pbm"},
+    //   ]
+    // },
   ],
 
   // Some additional configuration options and their defaults:
@@ -41,3 +48,5 @@ export default {
     ".py": ["/Users/jung/Library/Caches/pypoetry/virtualenvs/hospital-map-_kHyWl-y-py3.11/bin/python3"],
   }
 };
+
+

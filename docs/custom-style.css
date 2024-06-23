@@ -1,0 +1,248 @@
+@import url("observablehq:default.css");
+
+/* :root {
+  --theme-foreground-focus: green;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+    --monospace: Menlo, Consolas, monospace;
+    --monospace-font: 14px/1.5 var(--monospace);
+    --serif: "Source Serif Pro", "Iowan Old Style", "Apple Garamond", "Palatino Linotype", "Times New Roman",
+      "Droid Serif", Times, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --sans-serif: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto,
+      noto, "segoe ui", arial, sans-serif;
+    --theme-blue: #4269d0;
+    --theme-green: #3ca951;
+    --theme-red: #ff725c;
+    --theme-yellow: #efb118;
+  }
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    line-height: 1.1;
+    color: #333;
+    max-width: 100%;
+    /* width: 100%; */
+    margin: 0 auto;
+    padding: 10px;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+.card {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 0.7em;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0;
+}
+.card-header {
+    background-color: #e9ecef;
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+.case-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+.case-number {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+.card-content {
+    display: flex;
+}
+.main-content {
+    flex: 1;
+    padding: 15px;
+}
+.number-column {
+    width: 180px;
+    flex-shrink: 0;
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-left: 1px solid #dee2e6;
+}
+.category {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.state-container {
+    margin-bottom: 10px;
+}
+.battle-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    gap: 15px;
+}
+.party-card {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.party-card.winner {
+    border-color: #28a745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.3);
+}
+.party-label {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    color: #34495e;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+.winner-label {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+.summary {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+.timeline {
+    padding: 12px 15px;
+    position: relative;
+    border-top: 1px solid #dee2e6;
+}
+.timeline h4 {
+    font-family: 'Roboto Slab', serif;
+}
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 2px;
+    margin-bottom: 5px;
+}
+.year-box {
+    height: 15px;
+    background-color: #e9ecef;
+    position: relative;
+}
+.year-box.active {
+    background-color: #3498db;
+}
+.year-label {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+    color: #7f8c8d;
+}
+.case-marker {
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+.badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.state-badge { 
+    background-color: #3498db; 
+    color: #fff; 
+}
+.fraud-amount-container {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+.fraud-amount {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #e74c3c;
+}
+.number-label {
+    color: #7f8c8d;
+    font-size: 0.85em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.key-entity {
+    color: #3498db;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 700;
+}
+.related-links {
+    padding: 12px 10px;
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+.related-links h4 {
+    font-family: 'Roboto Slab', serif;
+    margin: 0 0 8px 0;
+    font-size: 1em;
+    color: #34495e;
+}
+.related-link {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #34495e;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    border: 1px solid #ced4da;
+    transition: background-color 0.2s ease;
+}
+.related-link:hover {
+    background-color: #dee2e6;
+}
+@media (max-width: 768px) {
+    .card-content {
+        flex-direction: column;
+    }
+    .number-column {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #dee2e6;
+    }
+    .battle-container {
+        flex-direction: column;
+    }
+    .party-card {
+        flex: 0 0 100%;
+        margin-bottom: 10px;
+    }
+}
