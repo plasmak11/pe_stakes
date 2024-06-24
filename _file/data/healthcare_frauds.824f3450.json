@@ -1341,7 +1341,7 @@
         "clinicianType": "Laboratory Operator",
         "affiliatedEntities": [
             {
-                "npi": "",
+                "npi": "1962546176",
                 "label": "Matias Clinical Laboratory, Inc. (also known as Health Care Providers Laboratory)"
             }
         ],
@@ -1483,5 +1483,231 @@
         "category": "Health Care Fraud, Wire Fraud, Bank Fraud, and False Statements",
         "fraudAmount": 233000000,
         "affectedLabel": "Beneficiaries and Programs Affected"
-    }
+    },
+    {
+        "title": "United States v. Latresia Wilson and Corey Alston",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Dr. Latresia Wilson", "Corey Alston"],
+        "clinicianType": "Physician",
+        "affiliatedEntities": [],
+        "summary": "Dr. Latresia Wilson, 60, of Ocala, Florida, and Corey Alston, 45, were charged by indictment with conspiring to defraud the United States and to illegally purchase and arrange for the purchase of Medicare beneficiary identification numbers in connection with a scheme to bill Medicare for over-the-counter COVID-19 test kits that were ineligible for reimbursement. Wilson and Alston allegedly conspired to unlawfully purchase Medicare beneficiary information, including Medicare Beneficiary Identification Numbers used for billing, and submitted more than $8.4 million in claims to Medicare for over-the-counter COVID-19 test kits for Medicare beneficiaries throughout the United States regardless of whether those beneficiaries requested or wanted the test kits. The case is being prosecuted by Trial Attorney D. Keith Clouser of the National Rapid Response Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 1347",
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Illegal Purchase of Medicare Beneficiary Information"},
+          {"url": "#", "text": "COVID-19 Related Fraud"}
+        ],
+        "category": "Health Care Fraud and Conspiracy",
+        "fraudAmount": 8400000,
+        "affectedLabel": "Beneficiaries Affected"
+      },
+      {
+        "title": "United States v. Melissa J. Watson",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Louisiana",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Melissa J. Watson",
+        "clinicianType": "Primary Care Clinic Operator",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed primary care clinic"
+          },
+          {
+            "npi": "",
+            "label": "Unnamed purported spa"
+          }
+        ],
+        "summary": "Melissa J. Watson, 50, of Slidell, Louisiana, was charged by indictment with theft of public money, wire fraud, and money laundering in connection with an alleged scheme to misappropriate over $1.1 million in funds from the Provider Relief Fund (PRF), administered by HRSA, and the EIDL Program, administered by the Small Business Association (SBA), for the enrichment of herself and others. Watson, who operated a primary care clinic and a purported spa prior to the COVID-19 pandemic, allegedly caused the submission of false and fraudulent loan agreements, attestations, and other documentation on behalf of her clinic to HRSA and the SBA. She then allegedly used the PRF and EIDL Program funds for personal gain, including cash withdrawals, purchasing luxury vehicles, real estate, a boat, a trailer, a time share, and multiple luxury vacations. The government seized over $500,000 in bank accounts held by Watson, and several assets. The case is being prosecuted by Trial Attorney Kelly Z. Walters of the Gulf Coast Strike Force and Assistant U.S. Attorney Nicholas Moses of the U.S. Attorney's Office for the Eastern District of Louisiana.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 641",
+          "18 U.S. Code § 1343",
+          "18 U.S. Code § 1957"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/641", "text": "18 U.S. Code § 641"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1957", "text": "18 U.S. Code § 1957"},
+          {"url": "#", "text": "Theft of Public Money"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Provider Relief Fund Fraud"},
+          {"url": "#", "text": "EIDL Program Fraud"}
+        ],
+        "category": "Theft of Public Money, Wire Fraud, and Money Laundering",
+        "fraudAmount": 1100000,
+        "affectedLabel": "Funds Misappropriated"
+      },
+      {
+        "title": "United States v. Adolphus A. Obioha",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Louisiana",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Adolphus A. Obioha",
+        "clinicianType": "Medical Transport Business Operator",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed medical transport business"
+          }
+        ],
+        "summary": "Adolphus A. Obioha, 64, of Baton Rouge, Louisiana, was charged by indictment with wire fraud and money laundering in connection with an alleged scheme to fraudulently obtain over $425,000 in funds under the EIDL Program. According to the indictment, Obioha, who operated a medical transport business prior to the onset of the COVID-19 pandemic, submitted multiple fraudulent loan documents to the SBA. Obioha allegedly used the EIDL Program funds to purchase a rental property and personal vehicle and to wire nearly $175,000 overseas. The government seized a total of $136,234.09 from multiple bank accounts held by Obioha. The case is being prosecuted by Assistant Chief Justin M. Woodard of the Gulf Coast Strike Force and Assistant U.S. Attorney Caroline B. Gardner of the U.S. Attorney's Office for the Middle District of Louisiana.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1343",
+          "18 U.S. Code § 1957"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1957", "text": "18 U.S. Code § 1957"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "EIDL Program Fraud"}
+        ],
+        "category": "Wire Fraud and Money Laundering",
+        "fraudAmount": 425000,
+        "affectedLabel": "Funds Fraudulently Obtained"
+      },
+      {
+        "title": "United States v. Kelly McDermott, Kathleen Breault, and Sherilyn Pellitteri",
+        "caseNumber": "Case Number: Unknown",
+        "state": "New York",
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Kelly McDermott", "Kathleen Breault", "Sherilyn Pellitteri"],
+        "clinicianType": "Certified Nurse Midwives",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Sage-Femme Midwifery PLLC"
+          }
+        ],
+        "summary": "Kelly McDermott, 61, of Albany, New York, and Kathleen Breault, 65, of Cambridge, New York, were charged by indictment with conspiracy to defraud the United States in connection with a scheme to distribute nearly 2,700 forged COVID-19 vaccination record cards. McDermott, a certified nurse midwife and the owner of Sage-Femme Midwifery PLLC, and Breault, a certified nurse midwife who worked at Sage-Femme, conspired to enroll Sage-Femme as an authorized COVID-19 vaccine administration site and to provide COVID-19 vaccination record cards to individuals who were not vaccinated, including minors who were not at the time eligible to be vaccinated and non-United States citizens who were not present in the United States when they were purportedly vaccinated. Sage-Femme was one of the busiest vaccination sites in New York State, outpacing large, state-run vaccination sites despite being a small midwife practice. Sherilyn Pellitteri, 41, of Somerset, Kentucky, previously pleaded guilty to an information charging the same conspiracy. This case is being prosecuted by Trial Attorney Patrick J. Campbell of the Brooklyn Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Forged Vaccination Records"}
+        ],
+        "category": "Conspiracy to Defraud the United States",
+        "fraudAmount": 0,
+        "affectedLabel": "Forged Vaccination Cards Distributed"
+      },
+      {
+        "title": "United States v. Kate Spencer and Ziv Biton",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Kate Spencer", "Ziv Biton"],
+        "clinicianType": "Not specified",
+        "affiliatedEntities": [],
+        "summary": "Kate Spencer, 39, and Ziv Biton, 34, of North Miami Beach, Florida, were charged by indictment with conspiracy to commit wire fraud and bank fraud, money laundering conspiracy, and money laundering in connection with an alleged scheme to fraudulently obtain over $1.7 million in funds under the PPP and EIDL Program. According to the indictment, Spencer and Biton caused the submission of numerous fraudulent loan applications on behalf of purported health care businesses, among others, that contained false statements and falsified documents regarding the purported businesses and the intended use of the loan funds. The funds were allegedly used for personal expenses, such as purchases of residential properties. The case is being prosecuted by Trial Attorney Andrew Estes of the Brooklyn Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1349",
+          "18 U.S. Code § 1956",
+          "18 U.S. Code § 1957"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1349", "text": "18 U.S. Code § 1349"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1957", "text": "18 U.S. Code § 1957"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Bank Fraud"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "PPP Fraud"},
+          {"url": "#", "text": "EIDL Program Fraud"}
+        ],
+        "category": "Wire Fraud, Bank Fraud, and Money Laundering",
+        "fraudAmount": 1700000,
+        "affectedLabel": "Funds Fraudulently Obtained"
+      },
+      {
+        "title": "United States v. Jose A. Burgos-Millan",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Puerto Rico",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Dr. Jose A. Burgos-Millan",
+        "clinicianType": "Dentist",
+        "affiliatedEntities": [],
+        "summary": "Dr. Jose A. Burgos-Millan, 55, of San Juan, Puerto Rico, was charged by information with health care fraud. According to the information, Burgos-Millan, a dentist, caused the submission of fraudulent claims to Medicaid using billing code D1999, which was meant to reimburse providers for the cost of COVID-19 infection control materials, and was known as a 'COVID Fee.' From in or around August 2020 through November 2022, Burgos-Millan allegedly submitted approximately $108,052 in false and fraudulent claims to Medicaid using the billing code D1999 for encounters that never took place. In particular, Burgos-Millan would see Medicaid beneficiaries on one day, but then for billing purposes would split the services into multiple subsequent dates and bill a COVID Fee for each day he did not see of the beneficiaries. The case is being prosecuted by Special Assistant United States Attorney Wallace A. Bustelo for the District of Puerto Rico.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2022
+        },
+        "violation": [
+          "18 U.S. Code § 1347"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Medicaid Fraud"}
+        ],
+        "category": "Health Care Fraud",
+        "fraudAmount": 108052,
+        "affectedLabel": "Fraudulent Claims Submitted"
+      },
+      {
+        "title": "United States v. Nicholas Frank Sciotto and Kyle Blake Burbage",
+        "caseNumber": "Case Number: Unknown",
+        "state": ["Utah", "South Carolina"],
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Nicholas Frank Sciotto", "Kyle Blake Burbage"],
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [],
+        "summary": "Nicholas Frank Sciotto, 32, of Salt Lake City, Utah, and Kyle Blake Burbage, 32, of Goose Creek, South Carolina, were charged by indictment for conspiring to defraud the United States by obstructing the Centers for Disease Control and Prevention's (CDC) COVID-19 vaccination program. Between March 2021 through September 2021, Sciotto allegedly manufactured and sold online approximately 120,000 counterfeit COVID-19 vaccination record cards across the country, with most buyers living in New York. Burbage, Sciotto's alleged co-conspirator, purchased counterfeit vaccination record cards from Sciotto and then resold some of them and distributed them to others in South Carolina. The indictment alleges that by collectively manufacturing, selling, and distributing these counterfeit cards during the COVID-19 pandemic, the defendants significantly undermined the CDC's COVID-19 vaccination program and other governmental health-and-safety regulations and protocols. This case is being prosecuted by Assistant U.S. Attorney Todd Bouton of the U.S. Attorney's Office for the District of Utah.",
+        "timeline": {
+          "start_year": 2021,
+          "end_year": 2021
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 1017"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1017", "text": "18 U.S. Code § 1017"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Fraudulent Use of Government Seals"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Counterfeit Vaccination Records"}
+        ],
+        "category": "Conspiracy to Defraud the United States and Fraudulent Use of Government Seals",
+        "fraudAmount": 0,
+        "affectedLabel": "Counterfeit Vaccination Cards Distributed"
+      }
 ]
