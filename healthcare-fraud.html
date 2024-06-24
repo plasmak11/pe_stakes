@@ -4,10 +4,10 @@
 <title>Healthcare Fraud | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/custom-style.0a78619c.css">
+<link rel="preload" as="style" href="./_import/custom-style.b1f4c5ee.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/custom-style.0a78619c.css">
+<link rel="stylesheet" type="text/css" href="./_import/custom-style.b1f4c5ee.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -71,9 +71,23 @@ const filtered_data = search_string;
 return {filtered_data};
 }});
 
-define({id: "52c1d7cf", mode: "inline", inputs: ["search_input","display"], body: async (search_input,display) => {
+define({id: "203f9938", inputs: ["search_input","display"], body: async (search_input,display) => {
 display(await(
 search_input
+))
+}});
+
+define({id: "f19dfcad", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
+display(await(
+d3.format(".2s")(filtered_data.reduce((total, item) => {
+    return total + (Number(item.fraudAmount) || 0);
+  }, 0))
+))
+}});
+
+define({id: "aa4f11c4", mode: "inline", inputs: ["filtered_data","display"], body: async (filtered_data,display) => {
+display(await(
+filtered_data.length
 ))
 }});
 
@@ -127,7 +141,7 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
 return {yearHeatmap};
 }});
 
-define({id: "aa4f11c4", mode: "inline", inputs: ["filtered_data","display"], body: async (filtered_data,display) => {
+define({id: "aa4f11c4-1", mode: "inline", inputs: ["filtered_data","display"], body: async (filtered_data,display) => {
 display(await(
 filtered_data.length
 ))
@@ -526,9 +540,21 @@ filtered_data.map(entry => cardTemplate(entry))
 <div class="observablehq observablehq--block"><!--:9dc7af27:--></div>
 <div class="observablehq observablehq--block"><!--:cf32e016:--></div>
 <h3 id="simple-search" tabindex="-1"><a class="observablehq-header-anchor" href="#simple-search">Simple Search</a></h3>
-<p><observablehq-loading></observablehq-loading><!--:52c1d7cf:--></p>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:203f9938:--></div>
+<h3 id="selected-cases-statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#selected-cases-statistics">Selected Cases Statistics</a></h3>
+<div class="stats-container">
+    <div class="big-number-card">
+        <div class="big-number">$<observablehq-loading></observablehq-loading><!--:f19dfcad:--></div>
+        <div class="big-number-caption">Total Fraud Amount</div>
+    </div>
+    <div class="big-number-card">
+        <div class="big-number"><observablehq-loading></observablehq-loading><!--:aa4f11c4:--></div>
+        <div class="big-number-caption">Cases</div>
+    </div>
+</div>
+<hr>
 <div class="observablehq observablehq--block"><!--:1d43f859:--></div>
-<h3 id="cases-found" tabindex="-1"><a class="observablehq-header-anchor" href="#cases-found"><observablehq-loading></observablehq-loading><!--:aa4f11c4:--> Cases Found</a></h3>
+<h3 id="cases-found" tabindex="-1"><a class="observablehq-header-anchor" href="#cases-found"><observablehq-loading></observablehq-loading><!--:aa4f11c4-1:--> Cases Found</a></h3>
 <div class="observablehq observablehq--block"><!--:a9a5471d:--></div>
 <div class="observablehq observablehq--block"><!--:9995f885:--></div>
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
