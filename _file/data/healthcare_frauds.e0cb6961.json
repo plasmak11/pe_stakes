@@ -33,7 +33,8 @@
         ],
         "category": "Genetic Testing",
         "fraudAmount": 93000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Luis Lacerda",
@@ -69,7 +70,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 54300000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Vincent R. Sperti II",
@@ -106,7 +108,8 @@
         ],
         "category": "Kickback Scheme and Drug Possession",
         "fraudAmount": 400000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Luis Perez and Jestil Tapia",
@@ -152,7 +155,8 @@
         ],
         "category": "Health Care Fraud and COVID-19 Relief Fraud",
         "fraudAmount": 18000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Lucia Miranda Oro Taboada",
@@ -195,7 +199,8 @@
         "category": "Health Care Fraud and Wire Fraud",
         "fraudAmount": 1700000,
         "affectedLabel": "Beneficiaries Affected",
-        "source": ""
+        "source": "",
+        "commentary": []
     },
     {
         "title": "United States v. Joseph Dauch",
@@ -236,7 +241,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 21000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Todd Shull",
@@ -277,7 +283,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 3400000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Omar Saleh",
@@ -318,7 +325,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 2600000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Kamran Choudhry",
@@ -359,7 +367,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 1700000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Brian Tisdale",
@@ -410,6 +419,7 @@
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 5900000,
         "affectedLabel": "Beneficiaries Affected",
+        "commentary": [],
         "citations": [
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
@@ -469,7 +479,8 @@
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
             }
-        ]
+        ],
+        "commentary": []
     },
     {
         "title": "United States v. Christopher Thigpen",
@@ -528,7 +539,8 @@
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
             }
-        ]
+        ],
+        "commentary": []
     },
     {
         "title": "United States v. Fawn Munro",
@@ -574,7 +586,8 @@
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
             }
-        ]
+        ],
+        "commentary": []
     },
     {
         "title": "United States v. Joseph Hagen",
@@ -615,7 +628,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 1900000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Mark Gulow",
@@ -655,7 +669,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 3000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Marion Shaun Lund",
@@ -700,7 +715,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 3800000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Jean Wilson",
@@ -789,7 +805,8 @@
         ],
         "category": "Health Care Fraud, Kickbacks, Money Laundering, and Tax Evasion",
         "fraudAmount": 137000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Ronnie Spiegel",
@@ -841,7 +858,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 18000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Henry Rojas",
@@ -889,7 +907,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 7900000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Ingrid Estephan",
@@ -936,7 +955,8 @@
         ],
         "category": "Health Care Fraud and False Statements",
         "fraudAmount": 4600000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Tara Pendergraft",
@@ -988,7 +1008,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 93000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Vinit Patel",
@@ -1040,7 +1061,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 3400000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Colby Edward Joyner",
@@ -1087,7 +1109,8 @@
         ],
         "category": "Health Care Fraud and False Statements",
         "fraudAmount": 10000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Wendy Cipriani",
@@ -1134,7 +1157,8 @@
         ],
         "category": "Health Care Fraud and False Statements",
         "fraudAmount": 8000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. John Manning",
@@ -1194,7 +1218,8 @@
         ],
         "category": "Health Care Fraud and Conspiracy",
         "fraudAmount": 41000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Susan L. Hertzberg, et al.",
@@ -1273,7 +1298,8 @@
         ],
         "category": "Health Care Fraud, Kickbacks, and Money Laundering",
         "fraudAmount": 11256241,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Emylee Thai",
@@ -1330,7 +1356,8 @@
         ],
         "category": "Health Care Fraud, Kickbacks, and Conspiracy",
         "fraudAmount": 142000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Lourdes Navarro",
@@ -1405,7 +1432,14 @@
         ],
         "category": "Health Care Fraud, Wire Fraud, Money Laundering, and False Statements",
         "fraudAmount": 241000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": [
+            {
+                "comment": "Shams had been excluded from all participation in Medicare since he and Navarro were convicted in 2000 on felony counts of Medi Cal fraud, grand theft, money laundering and identity theft, according to court documents.",
+                "source": "https://www.labpulse.com/business-insights/trends-and-finance/kickback/article/15663201/lab-fraud-repeat-offender-sentenced-in-234m-medicare-case",
+                "added_by": "Jung Hoon Son"
+            }
+        ]
     },
     {
         "title": "United States v. Anthony Hao Dinh, et al.",
@@ -1482,7 +1516,8 @@
         ],
         "category": "Health Care Fraud, Wire Fraud, Bank Fraud, and False Statements",
         "fraudAmount": 233000000,
-        "affectedLabel": "Beneficiaries and Programs Affected"
+        "affectedLabel": "Beneficiaries and Programs Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Latresia Wilson and Corey Alston",
@@ -1555,7 +1590,8 @@
         ],
         "category": "Theft of Public Money, Wire Fraud, and Money Laundering",
         "fraudAmount": 1100000,
-        "affectedLabel": "Funds Misappropriated"
+        "affectedLabel": "Funds Misappropriated",
+        "commentary": []
       },
       {
         "title": "United States v. Adolphus A. Obioha",
@@ -1589,7 +1625,8 @@
         ],
         "category": "Wire Fraud and Money Laundering",
         "fraudAmount": 425000,
-        "affectedLabel": "Funds Fraudulently Obtained"
+        "affectedLabel": "Funds Fraudulently Obtained",
+        "commentary": []
       },
       {
         "title": "United States v. Kelly McDermott, Kathleen Breault, and Sherilyn Pellitteri",
@@ -1620,7 +1657,8 @@
         ],
         "category": "Conspiracy to Defraud the United States",
         "fraudAmount": 0,
-        "affectedLabel": "Forged Vaccination Cards Distributed"
+        "affectedLabel": "Forged Vaccination Cards Distributed",
+        "commentary": []
       },
       {
         "title": "United States v. Kate Spencer and Ziv Biton",
@@ -1653,7 +1691,8 @@
         ],
         "category": "Wire Fraud, Bank Fraud, and Money Laundering",
         "fraudAmount": 1700000,
-        "affectedLabel": "Funds Fraudulently Obtained"
+        "affectedLabel": "Funds Fraudulently Obtained",
+        "commentary": []
       },
       {
         "title": "United States v. Jose A. Burgos-Millan",
@@ -1679,7 +1718,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 108052,
-        "affectedLabel": "Fraudulent Claims Submitted"
+        "affectedLabel": "Fraudulent Claims Submitted",
+        "commentary": []
       },
       {
         "title": "United States v. Nicholas Frank Sciotto and Kyle Blake Burbage",
@@ -1708,6 +1748,224 @@
         ],
         "category": "Conspiracy to Defraud the United States and Fraudulent Use of Government Seals",
         "fraudAmount": 0,
-        "affectedLabel": "Counterfeit Vaccination Cards Distributed"
+        "affectedLabel": "Counterfeit Vaccination Cards Distributed",
+        "commentary": []
+      },
+      {
+        "title": "United States v. GoodRx Holdings, Inc.",
+        "caseNumber": "Case No. 23-cv-460",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "GoodRx Holdings, Inc.",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "HeyDoctor, LLC"
+          }
+        ],
+        "summary": "The United States Department of Justice, on behalf of the Federal Trade Commission, filed a complaint against GoodRx Holdings, Inc. for violating Section 5 of the FTC Act and the Health Breach Notification Rule. GoodRx is accused of sharing users' sensitive health information with third-party advertising companies and platforms without users' knowledge or consent, despite promises to keep such information private. The company also allegedly used this information to target users with health-related advertisements on Facebook and Instagram. GoodRx is charged with deceptive privacy practices, unfair data sharing, and failing to report unauthorized disclosures of health information as required by the Health Breach Notification Rule.",
+        "timeline": {
+          "start_year": 2017,
+          "end_year": 2022
+        },
+        "violation": [
+          "15 U.S. Code § 45(a)",
+          "16 CFR § 318"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/15/45", "text": "15 U.S. Code § 45 - Unfair methods of competition unlawful; prevention by Commission"},
+          {"url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-318", "text": "16 CFR Part 318 - Health Breach Notification Rule"},
+          {"url": "#", "text": "Health Information Privacy"},
+          {"url": "#", "text": "Data Sharing"},
+          {"url": "#", "text": "Targeted Advertising"},
+          {"url": "#", "text": "Health Breach Notification"}
+        ],
+        "category": "Health Information Privacy, Deceptive Practices, and Health Breach Notification",
+        "fraudAmount": 0,
+        "affectedLabel": "Users Affected",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Artur Chanchikyan",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Artur Chanchikyan",
+        "clinicianType": "Home Health Agency Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Gentle Touch Home Health Care Inc."
+          }
+        ],
+        "summary": "Artur Chanchikyan, 54, of Los Angeles, California, was charged by indictment with wire fraud, theft of government property, and concealment money laundering offenses in connection with an alleged scheme to defraud the United States of approximately $345,000 in COVID-19 relief monies. Chanchikyan, the owner and operator of Gentle Touch Home Health Care Inc., formerly a home health agency, allegedly filed fraudulent loan applications with both the SBA and a financial institution seeking COVID-19 relief funds, falsely attested to the use of additional funds provided under the CARES Act Provider Relief Fund, and then misused the funds for his own personal use and benefit and the benefit of others. The case is being prosecuted by Trial Attorney Patrick J. Queenan of the Miami Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1343",
+          "18 U.S. Code § 641",
+          "18 U.S. Code § 1956"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/641", "text": "18 U.S. Code § 641 - Public money, property or records"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Theft of Government Property"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Relief Fraud"},
+          {"url": "#", "text": "CARES Act Provider Relief Fund Fraud"}
+        ],
+        "category": "Wire Fraud, Theft of Government Property, and Money Laundering",
+        "fraudAmount": 345000,
+        "affectedLabel": "Amount Defrauded from COVID-19 Relief Funds",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Jaimi Jansen",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Jaimi Jansen",
+        "clinicianType": "Health and Wellness Center Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed integrative health and wellness center in Santa Cruz, California"
+          }
+        ],
+        "summary": "Jaimi Jansen, 40, of Santa Cruz, California, was charged by information with making false statements related to health care matters in connection with an alleged scheme to offer fake cures for COVID-19 and distribute fake COVID-19 vaccination record cards. Jansen, the owner of an integrative health and wellness center in Santa Cruz, California, allegedly functioned as a distributor for Juli Mazi, a naturopathic doctor who offered and sold products known as 'homeoprophylaxis immunizations' claimed to cure COVID-19. Jansen allegedly purchased and repackaged Mazi's homeoprophylaxis immunization pellets and fake CDC COVID-19 vaccination record cards, providing them to approximately 170 recipients. The case is being prosecuted by Trial Attorney Babu Kaza of the National Rapid Response Strike Force and Assistant U.S. Attorney Katherine Lloyd-Lovett of the U.S. Attorney's Office for the Northern District of California.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1035"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
+          {"url": "#", "text": "False Statements"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Fake COVID-19 Cures"},
+          {"url": "#", "text": "Fraudulent Vaccination Records"}
+        ],
+        "category": "False Statements Related to Health Care Matters",
+        "fraudAmount": 0,
+        "affectedLabel": "Recipients of Fraudulent Products",
+        "commentary": [
+          {
+            "comment": "This case highlights the ongoing issue of COVID-19 related fraud, particularly the distribution of fake cures and fraudulent vaccination records. It's concerning that health and wellness professionals are involved in such schemes.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The relatively small number of recipients (170) suggests this may have been a localized operation. It will be interesting to see if investigations reveal wider distribution networks for these fraudulent products.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Ranna Shamiya",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Ranna Shamiya",
+        "clinicianType": "Advanced Practice Pharmacist",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed hospital in the Northern District of California"
+          }
+        ],
+        "summary": "Ranna Shamiya, 41, of Ukiah, California, was charged by information with making false statements related to health care matters in connection with an alleged scheme to offer fake cures for COVID-19 and distribute fake COVID-19 vaccination record cards. Shamiya, a licensed advanced practice pharmacist and Director of Pharmacy at a hospital in Northern California, allegedly assisted Juli Mazi, a naturopathic doctor, in her scheme to sell 'homeoprophylaxis immunizations' claimed to cure COVID-19. Shamiya allegedly used her access to controlled medical information to identify legitimate lot numbers for FDA-authorized COVID-19 vaccines and transmitted that information to Mazi, who used it to create fake CDC COVID-19 vaccination record cards. The case is being prosecuted by Trial Attorney Babu Kaza of the National Rapid Response Strike Force and Assistant U.S. Attorney Katherine Lloyd-Lovett of the U.S. Attorney's Office for the Northern District of California.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1035"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
+          {"url": "#", "text": "False Statements"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Fake COVID-19 Cures"},
+          {"url": "#", "text": "Fraudulent Vaccination Records"},
+          {"url": "#", "text": "Misuse of Medical Information"}
+        ],
+        "category": "False Statements Related to Health Care Matters and Misuse of Medical Information",
+        "fraudAmount": 0,
+        "affectedLabel": "Recipients of Fraudulent Vaccination Records",
+        "commentary": [
+          {
+            "comment": "This case is particularly concerning as it involves a licensed healthcare professional in a position of trust misusing their access to confidential medical information to facilitate fraud.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of a hospital's Director of Pharmacy in this scheme raises questions about the security measures in place to prevent misuse of sensitive medical data.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case demonstrates the complex nature of COVID-19 related fraud, involving collaboration between different types of healthcare providers and misuse of legitimate medical systems.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Jason Nielsen",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Jason Nielsen",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Arrayit Corporation"
+          }
+        ],
+        "summary": "Jason Nielsen, 53, of Scotts Valley, California was charged by information with securities fraud in connection with an alleged scheme to defraud investors and potential investors in Arrayit, a publicly traded medical technology company. Nielsen, a large Arrayit shareholder, allegedly deceived investors by communicating false and misleading information about the demand for Arrayit securities and his personal financial stake in them. This was done to fraudulently induce other investors to purchase Arrayit securities and drive up the stock's price, while Nielsen secretly sold his own shares at artificially inflated prices. The case is being prosecuted by Acting Principal Assistant Chief Justin Weitz, Assistant Chief Jacob Foster, and Trial Attorney Laura Connelly of the Criminal Division's Fraud Section and Assistant U.S. Attorney Lloyd Farnham of the U.S. Attorney's Office for the Northern District of California.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "15 U.S. Code § 78j",
+          "17 CFR § 240.10b-5"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/15/78j", "text": "15 U.S. Code § 78j - Manipulative and deceptive devices"},
+          {"url": "https://www.law.cornell.edu/cfr/text/17/240.10b-5", "text": "17 CFR § 240.10b-5 - Employment of manipulative and deceptive devices"},
+          {"url": "#", "text": "Securities Fraud"},
+          {"url": "#", "text": "Market Manipulation"},
+          {"url": "#", "text": "Pump and Dump Scheme"}
+        ],
+        "category": "Securities Fraud",
+        "fraudAmount": 0,
+        "affectedLabel": "Defrauded Investors",
+        "commentary": [
+          {
+            "comment": "This case illustrates a classic 'pump and dump' scheme in the context of a medical technology company, potentially exploiting increased interest in healthcare stocks during the pandemic.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of a large shareholder in this fraud highlights the need for robust insider trading regulations and enforcement in the healthcare sector.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case demonstrates how securities fraud can indirectly impact healthcare by potentially diverting investment from legitimate medical technology companies.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
       }
 ]
