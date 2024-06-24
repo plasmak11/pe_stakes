@@ -8,6 +8,14 @@ export default {
   // lets you organize them into sections and have unlisted pages.
   pages: [
     {
+      name: "Healthcare Fraud",
+      open: false,
+      pages: [
+        {name: "Criminal Cases", path: "healthcare-fraud"},
+        {name: "Ongoing", path: "healthcare-fraud-ongoing"}
+      ]
+    },
+    {
       name: "Hospital Ownership",
       path: "index",
       pages: [
@@ -19,13 +27,6 @@ export default {
         // {name: "Step 5: Final", path: "step5"},
       ]
     },
-    {
-      name: "Healthcare Fraud",
-      pages: [
-        {name: "Report", path: "healthcare-fraud"},
-        // {name: "Report-V2", path: "healthcare-fraud-v2"}
-      ]
-    }
     // {
     //   name: "🔍 Looking for data",
     //   pages: [
@@ -36,7 +37,7 @@ export default {
   ],
 
   // Some additional configuration options and their defaults:
-  theme: "light", // try "light", "dark", "slate", etc.
+  theme: "default", // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)
   footer: "Built with Observable.", // what to show in the footer (HTML)
   toc: true, // whether to show the table of contents

@@ -1,13 +1,52 @@
 ---
-theme: [coffee]
+theme: ["default"]
 title: Healthcare Fraud
-toc: false
+# toc: true
 style: custom-style.css
 ---
 
-# Healthcare Fraud Database
+<h1> Healthcare Fraud: Criminal Cases</h1>
 
-<!-- ## Telemedicine Case Summaries -->
+------
+
+## Intro
+
+<p style="font-size: 0.8em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Based on my experience in healthcare startup, interactions with investors, executives, much of the fraud is overlooked as "part of business". This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing.</p>
+
+```js
+const search_input = Inputs.search(data, {placeholder: "Search cases"});
+```
+
+```js
+const search_string = Generators.input(search_input);
+```
+
+```js
+const filtered_data = search_string;
+```
+
+### Search
+```js
+search_input
+```
+
+---
+
+### Selected Cases Statistics
+
+<div class="stats-container">
+    <div class="big-number-card">
+        <div class="big-number">$${d3.format(".3s")(filtered_data.reduce((total, item) => {
+    return (total + (Number(item.fraudAmount)) || 0);
+  }, 0)).replace(/G/, "B")}</div>
+        <div class="big-number-caption">Total Fraud Amount</div>
+    </div>
+    <div class="big-number-card">
+        <div class="big-number">${filtered_data.length}</div>
+        <div class="big-number-caption">Cases</div>
+    </div>
+</div>
+
 
 ```js
 const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
@@ -59,10 +98,14 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
 ```
 
 
-## Cases
+<!-- ### ${filtered_data.length} Cases Found -->
+
+------
+
+## Case Detail
 
 ```js
-const cardTemplate = (data) => html`<div class="card">
+const cardTemplate = (data) => html`<div class="fraud-card">
     <div class="card-header">
         <div class="case-title">${data.title}</div>
         <div class="case-number">${data.caseNumber}</div>
@@ -79,7 +122,7 @@ const cardTemplate = (data) => html`<div class="card">
                     </div>
                     <div class="party-card">
                         <span class="party-label">Defendant:</span>
-                        <div><span class="key-entity">${data.defendant}</span></div>
+                        <div><span class="key-entity">${data.defendant ? (Array.isArray(data.defendant) ? data.defendant.join(', ') : data.defendant) : 'No defendant'}</span></div>
                     </div>
                 </div>
             <div class="summary">
@@ -112,136 +155,11 @@ const cardTemplate = (data) => html`<div class="card">
 ```
 
 ```js
-const data = new Array({
-    title: 'United States v. Tara Pendergraft',
-    caseNumber: 'Case Number: 22-cr-00488-BRM',
-    state: 'New Jersey',
-    plaintiff: 'United States Department of Justice',
-    defendant: 'Tara Pendergraft',
-    summary: 'Tara Pendergraft, 45, of Chalfont, Pennsylvania, was charged by information for conspiring with others to defraud Medicare by billing for genetic testing that was medically unnecessary, ineligible for reimbursement, not provided as represented, and/or procured through kickbacks and bribes. Pendergraft, a laboratory owner, caused more than $93 million in fraudulent claims to be submitted to Medicare. Medicare paid approximately $14.3 million based on these claims. The case is being prosecuted by Acting Assistant Chief Rebecca Yuan and Trial Attorney S. Babu Kaza of the National Rapid Response Strike Force.',
-    timeline: {
-        "start_year": 2018,
-        "end_year": 2019
-    },
-    violation: [
-        "42 U.S. Code § 1320a–7b"
-    ],
-    relatedLinks: [
-        {url: 'https://www.law.cornell.edu/uscode/text/42/1320a-7b', text: '42 U.S. Code § 1320a–7b'},
-        {url: '#', text: 'Genetic Testing'},
-        {url: '#', text: 'Kickbacks'},
-        {url: '#', text: 'Bribes'}
-    ],
-    category: 'Genetic Testing',
-    fraudAmount: 93000000,
-    affectedLabel: 'Beneficiaries Affected',
-    // affectedCount: "Unknown",
-    }, 
-    {
-  "title": "United States v. Luis Lacerda",
-  "caseNumber": "Case Number: Unknown",
-  "state": "Florida",
-  "plaintiff": "United States Department of Justice",
-  "defendant": "Luis Lacerda",
-  "summary": "Luis Lacerda, 35, of Fort Lauderdale, Florida, was charged by information for his role in a health care fraud scheme that resulted in Medicare payments of approximately $54.3 million. Lacerda was the owner of pharmacies in several states, including Cure Pharmacy in Jacksonville, Florida. From in or around 2017 through in or around 2021, Lacerda, through his call center and through the payment of kickbacks and bribes to telemarketing companies, targeted Medicare beneficiaries and encouraged them to accept expensive prescription medications they neither wanted nor needed. He also paid kickbacks and bribes to purported telemedicine companies to obtain signed prescriptions from physicians who had no relationship with the patients, rarely spoke to them, and made no determination of the medical necessity of the prescriptions. Through his pharmacy network, Lacerda caused false and fraudulent claims for the medications to be submitted to Medicare Part D plans. The case is being prosecuted by Trial Attorney Gary Winters of the National Rapid Response Strike Force and Assistant United States Attorney David Mesrobian of the Middle District of Florida.",
-  "timeline": {
-    "start_year": 2017,
-    "end_year": 2021
-  },
-  "violation": [
-    "42 U.S. Code § 1320a–7b"
-  ],
-  "relatedLinks": [
-    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
-    {"url": "#", "text": "Health Care Fraud"},
-    {"url": "#", "text": "Kickbacks"},
-    {"url": "#", "text": "Bribes"}
-  ],
-  "category": "Health Care Fraud",
-  "fraudAmount": 54300000,
-  "affectedLabel": "Beneficiaries Affected"
-},
-    {
-  "title": "United States v. Vincent R. Sperti II",
-  "caseNumber": "Case Number: Unknown",
-  "state": "Florida",
-  "plaintiff": "United States Department of Justice",
-  "defendant": "Vincent R. Sperti II",
-  "summary": "Vincent R. Sperti II, 43, of Oviedo, Florida, was charged by information for his involvement in an approximately $400,000 kickback scheme and with possession with intent to distribute a controlled substance. Between in or around September 2018 and in or around September 2019, Sperti worked with a purported marketing company that purchased and resold doctors' orders for braces for Medicare beneficiaries. Sperti and his co-conspirators also purchased Medicare beneficiaries' personally identifiable information and purported personal health information and paid kickbacks and bribes to purported telemedicine companies to obtain signed doctors' orders. Additionally, on or about September 30, 2020, Sperti was found in possession of a large volume of illegal steroids, a Schedule III controlled substance. The case is being prosecuted by Trial Attorney Catherine Wagner of the National Rapid Response Strike Force.",
-  "timeline": {
-    "start_year": 2018,
-    "end_year": 2019
-  },
-  "violation": [
-    "42 U.S. Code § 1320a–7b",
-    "21 U.S. Code § 841"
-  ],
-  "relatedLinks": [
-    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
-    {"url": "https://www.law.cornell.edu/uscode/text/21/841", "text": "21 U.S. Code § 841"},
-    {"url": "#", "text": "Kickbacks"},
-    {"url": "#", "text": "Controlled Substances"}
-  ],
-  "category": "Kickback Scheme and Drug Possession",
-  "fraudAmount": 400000,
-  "affectedLabel": "Beneficiaries Affected"
-},
-{
-  "title": "United States v. Luis Perez and Jestil Tapia",
-  "caseNumber": "Case Number: Unknown",
-  "state": "Florida",
-  "plaintiff": "United States Department of Justice",
-  "defendant": "Luis Perez and Jestil Tapia",
-  "summary": "Luis Perez, 35, of Coral Springs, Florida, and Jestil Tapia, 28, of Parkland, Florida, were charged by indictment with conspiracy to defraud the United States and to pay and receive health care kickbacks and payment of kickbacks in connection with a federal health care program. Perez also was charged with conspiracy to commit health care fraud, health care fraud, and misusing COVID-19 relief funds to pay an approximately $85,000 payment to a luxury car dealership. From in or around January 2019 through in or around August 2020, Perez and Tapia owned and operated a network of DME and marketing companies they used to submit over $18 million in false and fraudulent claims to Medicare for DME, of which over $8 million was paid by Medicare. They submitted false enrollment records, inserted nominee owners of certain DME companies to conceal their interests, paid kickbacks to purported telemedicine and marketing companies, and profited millions from the scheme. The case is being prosecuted by Trial Attorney Patrick Queenan of the Miami Strike Force and Trial Attorney Catherine Wagner of the National Rapid Response Strike Force.",
-  "timeline": {
-    "start_year": 2019,
-    "end_year": 2020
-  },
-  "violation": [
-    "42 U.S. Code § 1320a–7b",
-    "18 U.S. Code § 1347",
-    "18 U.S. Code § 371"
-  ],
-  "relatedLinks": [
-    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
-    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
-    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
-    {"url": "#", "text": "Health Care Fraud"},
-    {"url": "#", "text": "Kickbacks"},
-    {"url": "#", "text": "COVID-19 Relief Fraud"}
-  ],
-  "category": "Health Care Fraud and COVID-19 Relief Fraud",
-  "fraudAmount": 18000000,
-  "affectedLabel": "Beneficiaries Affected"
-},
-{
-  "title": "United States v. Lucia Miranda Oro Taboada",
-  "caseNumber": "Case Number: Unknown",
-  "state": "Florida",
-  "plaintiff": "United States Department of Justice",
-  "defendant": "Lucia Miranda Oro Taboada",
-  "summary": "Lucia Miranda Oro Taboada, 27, of Boca Raton, Florida, was charged by indictment for her role in a health care fraud and wire fraud conspiracy. From in or around April 2020 to in or around November 2020, Oro allegedly conspired with others to operate two DME companies used to fraudulently bill Medicare over $1.7 million. Oro executed and submitted false enrollment records with Medicare concealing from Medicare the ownership interest and managing control of two co-conspirators, one of whom was a convicted felon. Oro also controlled the banking activities and transferred fraud proceeds from the DME companies to accounts owned and controlled by the beneficial owners. The case is being prosecuted by Trial Attorney Patrick Queenan of the Miami Strike Force.",
-  "timeline": {
-    "start_year": 2020,
-    "end_year": 2020
-  },
-  "violation": [
-    "18 U.S. Code § 1347",
-    "18 U.S. Code § 1343",
-    "18 U.S. Code § 371"
-  ],
-  "relatedLinks": [
-    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
-    {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
-    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
-    {"url": "#", "text": "Health Care Fraud"},
-    {"url": "#", "text": "Wire Fraud"}
-  ],
-  "category": "Health Care Fraud and Wire Fraud",
-  "fraudAmount": 170000000,
-  "affectedLabel": "Beneficiaries Affected"
-}
-);
+const data = FileAttachment("data/healthcare_frauds.json").json();
 ```
 
-${data.map(entry => cardTemplate(entry))}
+${filtered_data.map(entry => cardTemplate(entry))}
+
+## References
+
+- https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries
