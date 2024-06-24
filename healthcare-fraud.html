@@ -4,10 +4,10 @@
 <title>Healthcare Fraud | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/custom-style.b1f4c5ee.css">
+<link rel="preload" as="style" href="./_import/custom-style.9a2af13b.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/custom-style.b1f4c5ee.css">
+<link rel="stylesheet" type="text/css" href="./_import/custom-style.9a2af13b.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -77,11 +77,11 @@ search_input
 ))
 }});
 
-define({id: "f19dfcad", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
+define({id: "c1943dab", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
 display(await(
-d3.format(".2s")(filtered_data.reduce((total, item) => {
-    return total + (Number(item.fraudAmount) || 0);
-  }, 0))
+d3.format(".3s")(filtered_data.reduce((total, item) => {
+    return (total + (Number(item.fraudAmount)) || 0);
+  }, 0)).replace(/G/, "B")
 ))
 }});
 
@@ -147,7 +147,7 @@ filtered_data.length
 ))
 }});
 
-define({id: "a9a5471d", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
+define({id: "187b189c", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
 const cardTemplate = (data) => html`<div class="fraud-card">
     <div class="card-header">
         <div class="case-title">${data.title}</div>
@@ -165,7 +165,7 @@ const cardTemplate = (data) => html`<div class="fraud-card">
                     </div>
                     <div class="party-card">
                         <span class="party-label">Defendant:</span>
-                        <div><span class="key-entity">${data.defendant}</span></div>
+                        <div><span class="key-entity">${data.defendant ? (Array.isArray(data.defendant) ? data.defendant.join(', ') : data.defendant) : 'No defendant'}</span></div>
                     </div>
                 </div>
             <div class="summary">
@@ -198,7 +198,7 @@ const cardTemplate = (data) => html`<div class="fraud-card">
 return {cardTemplate};
 }});
 
-define({id: "9995f885", outputs: ["data"], body: () => {
+define({id: "78e59fad", outputs: ["data"], body: () => {
 const data = new Array({
     title: 'United States v. Tara Pendergraft',
     caseNumber: 'Case Number: 22-cr-00488-BRM',
@@ -460,7 +460,10 @@ const data = new Array({
   ],
   "category": "Health Care Fraud and Kickbacks",
   "fraudAmount": 5900000,
-  "affectedLabel": "Beneficiaries Affected"
+  "affectedLabel": "Beneficiaries Affected",
+  "citations":[
+    {"url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"},
+  ]
 },
 {
   "title": "United States v. Jamie McNamara",
@@ -489,9 +492,620 @@ const data = new Array({
   ],
   "category": "Health Care Fraud, Kickbacks, and Money Laundering",
   "fraudAmount": 174000000,
+  "affectedLabel": "Beneficiaries Affected",
+  "citations":[
+    {"url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"},
+  ]
+},
+{
+  "title": "United States v. Christopher Thigpen",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Louisiana",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Christopher Thigpen",
+  "summary": "Christopher Thigpen, 48, of Hammond, Louisiana, was charged in a twelve-count indictment for his role in a multi-year, approximately $54 million scheme to defraud Medicare. From in or around March 2014 through in or around January 2021, Thigpen, through his diagnostic laboratories, Akrivis Laboratories, LLC and Dynamic Diagnostics, LLC, is alleged to have submitted thousands of claims for definitive urine drug testing and genetic testing to Medicare that were not medically necessary, not appropriately reimbursable, and tainted by kickbacks. In executing the scheme, Thigpen paid kickbacks to several purported marketing entities in exchange for the referral of doctors' orders for definitive urine drug testing and genetic testing that Thigpen knew to be medically unnecessary. He took several steps to conceal the fraudulent scheme, including executing sham agreements with purported marketing entities to hide the nature and source of the kickbacks. The case is being prosecuted by Trial Attorney Kelly Walters of the Gulf Coast Strike Force and Assistant United States Attorney Nick Moses of the Eastern District of Louisiana.",
+  "timeline": {
+    "start_year": 2014,
+    "end_year": 2021
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "42 U.S. Code § 1320a–7b",
+    "18 U.S. Code § 1956"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Money Laundering"},
+    {"url": "#", "text": "Genetic Testing Fraud"},
+    {"url": "#", "text": "Urine Drug Testing Fraud"}
+  ],
+  "category": "Health Care Fraud and Kickbacks",
+  "fraudAmount": 54000000,
+  "affectedLabel": "Beneficiaries Affected",
+  "citations":[
+    {"url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"},
+  ]
+},
+{
+  "title": "United States v. Fawn Munro",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Michigan",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Fawn Munro",
+  "summary": "Fawn Munro, 38, of Alpena, Michigan, was charged by indictment for her role in an approximately $3.3 million health care fraud scheme. Beginning in or around July 2018 and continuing through in or around April 2019, Munro, a licensed registered nurse, worked for a purported telemedicine company and signed orders for DME. These referrals were not based on the examination of any patient; rather, they were made on the basis of pre-filled intake forms dictating what DME should go to which beneficiaries and to which DME companies each order would ultimately be sent. The prescribed DME was not medically necessary, was largely unwanted by the beneficiary recipients, and was not eligible for reimbursement by Medicare. In total, Munro's referrals resulted in Medicare paying over $1.8 million on false and fraudulent claims. The case is being prosecuted by Trial Attorney Kathleen Cooperstein of the Detroit Strike Force.",
+  "timeline": {
+    "start_year": 2018,
+    "end_year": 2019
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Telemedicine Fraud"},
+    {"url": "#", "text": "DME Fraud"}
+  ],
+  "category": "Health Care Fraud",
+  "fraudAmount": 3300000,
+  "affectedLabel": "Beneficiaries Affected",
+  "citations":[
+    {"url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"},
+  ]
+},
+{
+  "title": "United States v. Joseph Hagen",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Michigan",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Joseph Hagen",
+  "summary": "Joseph Hagen, 67, of Dearborn, Michigan, was charged by indictment for his role in an approximately $1.9 million health care fraud scheme. Beginning in or around April 2020 and continuing through in or around March 2021, Hagen, an internal medicine specialist physician, worked for a purported telemedicine company signing doctors' orders for DME. Hagen did not examine any of the beneficiaries. The doctors' orders were based on pre-filled intake forms dictating what DME should go to which beneficiaries and to which DME companies each order would ultimately be sent. The prescribed DME was not medically necessary, was largely unwanted by the beneficiary recipients, and was not eligible for reimbursement by Medicare. In total, Hagen's referrals resulted in Medicare paying over $1 million on these false and fraudulent claims. The case is being prosecuted by Trial Attorney Kathleen Cooperstein of the Detroit Strike Force.",
+  "timeline": {
+    "start_year": 2020,
+    "end_year": 2021
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Telemedicine Fraud"},
+    {"url": "#", "text": "DME Fraud"}
+  ],
+  "category": "Health Care Fraud",
+  "fraudAmount": 1900000,
   "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Mark Gulow",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Michigan",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Mark Gulow",
+  "summary": "Mark Gulow, 66, of Garden, Michigan, was charged by information with health care fraud related to a nearly $3 million dollar scheme to defraud Medicare. Gulow, a physician, worked for a purported telemedicine company during the COVID-19 pandemic and approved over 2,000 orders for DME without performing actual patient assessments to determine whether these individuals needed the prescribed equipment. The case is being prosecuted by Trial Attorney Patrick Suter of the Detroit Strike Force.",
+  "timeline": {
+    "start_year": 2020,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Telemedicine Fraud"},
+    {"url": "#", "text": "DME Fraud"},
+    {"url": "#", "text": "COVID-19 Related Fraud"}
+  ],
+  "category": "Health Care Fraud",
+  "fraudAmount": 3000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Marion Shaun Lund",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Mississippi",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Marion Shaun Lund",
+  "summary": "Marion Shaun Lund, 53, of Taylor, Mississippi, was charged by indictment in connection with a health care fraud and kickback scheme. Lund, a podiatrist, owned and operated a podiatry clinic with an in-house pharmacy through which he prescribed medically unnecessary foot bath medications and ordered unnecessary molecular diagnostic testing of toenails. From in or around April 2016 through in or around July 2021, Lund sought to defraud Medicare and TRICARE of more than $3.8 million. In exchange for writing unnecessary prescriptions, Lund solicited and received kickbacks and bribes, often paid in cash, from a purported marketer acting on behalf of various pharmacies and diagnostic laboratories. The case is being prosecuted by Trial Attorney Sara Porter and Assistant Chief Justin Woodard of the Gulf Coast Strike Force and Assistant United States Attorney Clay Dabbs of the Northern District of Mississippi.",
+  "timeline": {
+    "start_year": 2016,
+    "end_year": 2021
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Podiatry Fraud"},
+    {"url": "#", "text": "Diagnostic Testing Fraud"}
+  ],
+  "category": "Health Care Fraud and Kickbacks",
+  "fraudAmount": 3800000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Jean Wilson",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Georgia",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Jean Wilson",
+  "clinicianType": "Nurse Practitioner",
+  "affiliatedEntities": [
+    {
+      "npi": "",
+      "label": "Advantage Choice Care, LLC"
+    },
+    {
+      "npi": "",
+      "label": "Tele Medcare, LLC"
+    }
+  ],
+  "summary": "Jean Wilson, 51, of Richmond Hill, Georgia, was charged by superseding indictment with conspiracy to defraud the United States and pay and receive health care kickbacks, conspiracy to commit health care fraud and wire fraud, soliciting and receiving health care kickbacks, conspiracy to commit money laundering, income tax evasion, and filing a false individual tax return. Wilson, a nurse practitioner and purported telemedicine company owner, is alleged to have committed an over $137 million scheme (including over $81 million in newly alleged loss in the superseding indictment) in which she owned and controlled two telemedicine companies, Advantage Choice Care, LLC and Tele Medcare, LLC, that solicited illegal kickbacks and bribes in exchange for medically unnecessary orders for orthotic braces and prescriptions for pain creams. Wilson conspired to launder the proceeds of the funds through shell companies and by hiding cashiers' checks. She also engaged in income tax evasion by not filing returns and filing of false returns and by hiding and concealing her income earned in part through the scheme. The case is being prosecuted by Trial Attorneys Darren Halverson and Kelly Lyons of the Newark Strike Force.",
+  "timeline": {
+    "start_year": 2024,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 371",
+    "42 U.S. Code § 1320a–7b",
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 1343",
+    "18 U.S. Code § 1956",
+    "26 U.S. Code § 7201",
+    "26 U.S. Code § 7206"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956"},
+    {"url": "https://www.law.cornell.edu/uscode/text/26/7201", "text": "26 U.S. Code § 7201"},
+    {"url": "https://www.law.cornell.edu/uscode/text/26/7206", "text": "26 U.S. Code § 7206"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Wire Fraud"},
+    {"url": "#", "text": "Money Laundering"},
+    {"url": "#", "text": "Tax Evasion"},
+    {"url": "#", "text": "Telemedicine Fraud"}
+  ],
+  "category": "Health Care Fraud, Kickbacks, Money Laundering, and Tax Evasion",
+  "fraudAmount": 137000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Ronnie Spiegel",
+  "caseNumber": "Case Number: Unknown",
+  "state": "New York",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Ronnie Spiegel",
+  "clinicianType": "Laboratory Representative",
+  "affiliatedEntities": [],
+  "summary": "Ronnie Spiegel, 44, of Staten, New York, was charged by indictment with conspiracy to commit health care fraud, health care fraud, and conspiracy to pay and receive health care kickbacks for his role in an approximately $18 million health care fraud scheme. From 2019 through 2022, Spiegel, a laboratory representative, paid kickbacks and bribes in exchange for doctors' orders for medically unnecessary genetic testing. Spiegel also took advantage of the COVID-19 pandemic and national emergency by soliciting genetic samples from Medicare beneficiaries who were seeking only COVID-19 tests in their homes and at COVID-19 testing events at retirement communities, senior centers, and assisted living facilities. Spiegel used these genetic samples to cause Medicare to be billed for genetic tests that were medically unnecessary, ineligible for reimbursement, not provided as represented, and/or procured through kickbacks and bribes. The case is being prosecuted by Acting Assistant Chief Rebecca Yuan of the National Rapid Response Strike Force and Trial Attorney Kelly Lyons of the Newark Strike Force.",
+  "timeline": {
+    "start_year": 2019,
+    "end_year": 2022
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 371",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Genetic Testing Fraud"},
+    {"url": "#", "text": "COVID-19 Related Fraud"}
+  ],
+  "category": "Health Care Fraud and Kickbacks",
+  "fraudAmount": 18000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Henry Rojas",
+  "caseNumber": "Case Number: Unknown",
+  "state": "New York",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Henry Rojas",
+  "clinicianType": "Physician",
+  "affiliatedEntities": [],
+  "summary": "Henry Rojas, 66, of Hopewell Junction, New York, was charged by indictment with conspiracy to commit health care fraud, health care fraud, and conspiracy to pay and receive health care kickbacks. Rojas, a physician, ordered medically unnecessary genetic testing in exchange for kickbacks and bribes from marketers. Rojas caused Medicare to be billed approximately $7.9 million for genetic testing that was medically unnecessary, ineligible for reimbursement, not provided as represented, and/or procured through kickbacks and bribes. The case is being prosecuted by Trial Attorneys Kelly Lyons of the Newark Strike Force and Patrick Queenan of the Miami Strike Force.",
+  "timeline": {
+    "start_year": 2024,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 371",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Genetic Testing Fraud"}
+  ],
+  "category": "Health Care Fraud and Kickbacks",
+  "fraudAmount": 7900000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Ingrid Estephan",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Florida",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Ingrid Estephan",
+  "clinicianType": "Nurse Practitioner",
+  "affiliatedEntities": [],
+  "summary": "Ingrid Estephan, 46, of Miami, Florida, was charged by indictment with health care fraud and false statements related to a health care matter. Estephan, a nurse practitioner, was paid by purported telemedicine companies to sign orders for DME for Medicare beneficiaries after only a brief telephonic conversation, or in many instances, no conversation at all, with the Medicare beneficiaries. Estephan caused DME companies to submit more than $4.6 million in false and fraudulent claims to Medicare for DME that was medically unnecessary, ineligible for reimbursement, and/or not provided as represented. The case is being prosecuted by Trial Attorney Kelly Lyons of the Newark Strike Force.",
+  "timeline": {
+    "start_year": 2024,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 1035"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "False Statements"},
+    {"url": "#", "text": "Telemedicine Fraud"},
+    {"url": "#", "text": "DME Fraud"}
+  ],
+  "category": "Health Care Fraud and False Statements",
+  "fraudAmount": 4600000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Tara Pendergraft",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Pennsylvania",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Tara Pendergraft",
+  "clinicianType": "Laboratory Owner",
+  "affiliatedEntities": [],
+  "summary": "Tara Pendergraft, 45, of Chalfont, Pennsylvania, was charged by information for conspiring with others to defraud Medicare by billing for genetic testing that was medically unnecessary, ineligible for reimbursement, not provided as represented, and/or procured through kickbacks and bribes. Pendergraft, a laboratory owner, caused more than $93 million in fraudulent claims to be submitted to Medicare. Medicare paid approximately $14.3 million based on these claims. The case is being prosecuted by Acting Assistant Chief Rebecca Yuan and Trial Attorney S. Babu Kaza of the National Rapid Response Strike Force.",
+  "timeline": {
+    "start_year": 2024,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 371",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Genetic Testing Fraud"},
+    {"url": "#", "text": "Conspiracy"}
+  ],
+  "category": "Health Care Fraud and Kickbacks",
+  "fraudAmount": 93000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Vinit Patel",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Alabama",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Vinit Patel",
+  "clinicianType": "Physician",
+  "affiliatedEntities": [],
+  "summary": "Vinit Patel, 67, of Hoover, Alabama, was charged by information for conspiring to commit health care fraud. Patel, a physician, accepted kickbacks in exchange for ordering genetic testing that was medically unnecessary, ineligible for reimbursement, and/or not provided as represented. He caused more than $3.4 million in fraudulent claims to be submitted to Medicare. The case is being prosecuted by Acting Assistant Chief Rebecca Yuan and Trial Attorney Gary Winters of the National Rapid Response Strike Force.",
+  "timeline": {
+    "start_year": 2024,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 371",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Genetic Testing Fraud"},
+    {"url": "#", "text": "Conspiracy"}
+  ],
+  "category": "Health Care Fraud and Kickbacks",
+  "fraudAmount": 3400000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Colby Edward Joyner",
+  "caseNumber": "Case Number: Unknown",
+  "state": "North Carolina",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Colby Edward Joyner",
+  "clinicianType": "Physician Assistant",
+  "affiliatedEntities": [],
+  "summary": "Colby Edward Joyner, 34, of Monroe, North Carolina, was charged by indictment for his role in a telemedicine fraud scheme. Joyner, a physician assistant, is alleged to have prescribed medically unnecessary cancer genetic and pharmacogenetic testing for hundreds of North Carolina Medicare beneficiaries. From in or around October 2018 through in or around August 2019, Joyner prescribed genetic testing for Medicare beneficiaries he had never met, seen, or treated, and with whom he may have had only a brief telephone conversation, or no interaction with whatsoever. In connection with these prescriptions, Joyner signed false medical records to conceal that he was not the treating physician, that he did not conduct medical evaluations or examinations, and that the tests were medically unnecessary. As part of the alleged scheme, Joyner caused the submission of false claims to the Medicare program in an amount exceeding $10 million, for which Medicare paid approximately $3.6 million. The case is being prosecuted by Assistant United States Attorneys Katherine Armstrong and Matthew Warren of the Western District of North Carolina.",
+  "timeline": {
+    "start_year": 2018,
+    "end_year": 2019
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 1035"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "False Statements"},
+    {"url": "#", "text": "Telemedicine Fraud"},
+    {"url": "#", "text": "Genetic Testing Fraud"}
+  ],
+  "category": "Health Care Fraud and False Statements",
+  "fraudAmount": 10000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Wendy Cipriani",
+  "caseNumber": "Case Number: Unknown",
+  "state": "North Carolina",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Wendy Cipriani",
+  "clinicianType": "Physician",
+  "affiliatedEntities": [],
+  "summary": "Wendy Cipriani, 54, of Clayton, North Carolina, was charged by indictment for her role in a telemedicine fraud scheme, specifically for prescribing medically unnecessary DME. In or around 2019, Cipriani, a physician, is alleged to have worked for physician staffing and telemedicine companies and prescribed DME for Medicare beneficiaries. She falsely stated in those orders that she performed medical examinations of Medicare beneficiaries and falsely certified that the braces were medically necessary. In truth and in fact, Cipriani had little or no interaction with the beneficiaries and made no medical determination whether the devices were medically necessary or the beneficiaries needed the DME. During the scheme, Cipriani caused the submission of nearly $8 million in false claims to Medicare, for which Medicare paid approximately $4.3 million. The case is being prosecuted by Assistant United States Attorney Graham Billings of the Western District of North Carolina.",
+  "timeline": {
+    "start_year": 2019,
+    "end_year": 2019
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 1035"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "False Statements"},
+    {"url": "#", "text": "Telemedicine Fraud"},
+    {"url": "#", "text": "DME Fraud"}
+  ],
+  "category": "Health Care Fraud and False Statements",
+  "fraudAmount": 8000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. John Manning",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Tennessee",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "John Manning",
+  "clinicianType": "Physician",
+  "affiliatedEntities": [],
+  "summary": "John Manning, 61, of Ashland, Tennessee, was charged by indictment with conspiracy to commit health care fraud and health care fraud. Manning, a physician, allegedly worked for multiple purported telemedicine companies, signing doctors' orders and prescriptions for DME, topical creams, and cancer genetic testing that were used to submit false and fraudulent claims to Medicare. Manning is alleged to have signed the doctors' orders without establishing a doctor-patient relationship, without seeing or physically examining the beneficiaries, after only a brief telephonic conversation, if any, and without regard for medical necessity. In total, Manning and his co-conspirators caused Medicare to be billed in excess of approximately $41 million for DME, creams, and cancer genetic testing that were not legitimately ordered or prescribed, not medically necessary, not used, and/or induced through unlawful kickbacks and bribes. The case is being prosecuted by Trial Attorney Leslie Fisher of the ARPO-South Strike Force and Assistant United States Attorney Robert Levine of the Middle District of Tennessee.",
+  "timeline": {
+    "start_year": 2024,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 371",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Conspiracy"},
+    {"url": "#", "text": "Telemedicine Fraud"},
+    {"url": "#", "text": "DME Fraud"},
+    {"url": "#", "text": "Genetic Testing Fraud"},
+    {"url": "#", "text": "Kickbacks"}
+  ],
+  "category": "Health Care Fraud and Conspiracy",
+  "fraudAmount": 41000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Susan L. Hertzberg, et al.",
+  "caseNumber": "Case Number: Unknown",
+  "state": "Texas",
+  "plaintiff": "United States Department of Justice",
+  "defendant": [
+    "Susan L. Hertzberg",
+    "Matthew John Theiler",
+    "David Weldon Kraus",
+    "Jeffrey Paul Parnell",
+    "Thomas Gray Hardaway",
+    "Laura Spain Howard",
+    "Jeffrey Paul Madison",
+    "Todd Dean Cook",
+    "William Todd Hickman",
+    "Christopher Roland Gonzales",
+    "Ruben Daniel Marioni",
+    "Jordan Joseph Perkins",
+    "Elizabeth Ruth Seymour",
+    "Linh Ba Nguyen",
+    "Thuy Ngoc Nguyen",
+    "Joseph Gil Bolin",
+    "Heriberto Salinas",
+    "Hong Davis",
+    "Peter Bennett",
+    "Stephen Kash",
+    "Robert O'Neal"
+  ],
+  "clinicianType": "Various (including physicians and laboratory personnel)",
+  "affiliatedEntities": [
+    {
+      "npi": "",
+      "label": "Two Texas critical access hospitals (unnamed)"
+    },
+    {
+      "npi": "",
+      "label": "Clinical laboratory specializing in blood testing (unnamed)"
+    }
+  ],
+  "summary": "Twenty-one individuals from various states were indicted for their roles in a wide-ranging kickback scheme involving two Texas critical access hospitals and a clinical laboratory specializing in blood testing. The scheme involved billing blood tests to insurers as purported hospital outpatient services at higher reimbursement rates. A network of marketers operated management services organizations (MSOs) that offered investment opportunities to physicians, which were actually means to facilitate kickback payments for laboratory referrals. Between July 1, 2015, and January 9, 2018, at least $11,256,241.68 in illegal kickback payments were exchanged. Two of the individuals (Peter Bennett and Stephen Kash) were separately indicted for conspiracy to commit money laundering related to the proceeds of the kickback scheme. The case is being prosecuted by Assistant United States Attorneys Nathaniel Kummerfeld and Kevin McClendon of the Eastern District of Texas.",
+  "timeline": {
+    "start_year": 2015,
+    "end_year": 2018
+  },
+  "violation": [
+    "42 U.S. Code § 1320a–7b",
+    "18 U.S. Code § 371",
+    "18 U.S. Code § 1956"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Money Laundering"},
+    {"url": "#", "text": "Laboratory Testing Fraud"}
+  ],
+  "category": "Health Care Fraud, Kickbacks, and Money Laundering",
+  "fraudAmount": 11256241,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Emylee Thai",
+  "caseNumber": "Case Number: Unknown",
+  "state": "California",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Emylee Thai",
+  "clinicianType": "Laboratory Owner",
+  "affiliatedEntities": [
+    {
+      "npi": "",
+      "label": "Unnamed laboratory owned by Emylee Thai"
+    }
+  ],
+  "summary": "Emylee Thai, 37, of Santa Ana, California, was charged by indictment with conspiracy to commit health care fraud, conspiracy to defraud the United States and pay and receive health care kickbacks, and payment of kickbacks in connection with a federal health care program. Beginning in or around 2019, Thai, a laboratory owner, allegedly contracted with marketers to refer signed doctors' orders and beneficiary DNA samples to the laboratory in exchange for a percentage of the reimbursements. The genetic testing, for which Medicare often paid several thousands of dollars per beneficiary, was not medically necessary and often was not used in a beneficiary's medical treatment. During this time period, Thai's laboratory billed Medicare approximately $142 million for genetic testing and was paid approximately $95 million on those claims. The case is being prosecuted by Trial Attorney Andrew Tamayo of the Houston Strike Force.",
+  "timeline": {
+    "start_year": 2019,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 371",
+    "42 U.S. Code § 1320a–7b"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Kickbacks"},
+    {"url": "#", "text": "Genetic Testing Fraud"},
+    {"url": "#", "text": "Conspiracy"}
+  ],
+  "category": "Health Care Fraud, Kickbacks, and Conspiracy",
+  "fraudAmount": 142000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Lourdes Navarro",
+  "caseNumber": "Case Number: Unknown",
+  "state": "California",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Lourdes Navarro",
+  "clinicianType": "Laboratory Operator",
+  "affiliatedEntities": [
+    {
+      "npi": "",
+      "label": "Matias Clinical Laboratory, Inc. (also known as Health Care Providers Laboratory)"
+    }
+  ],
+  "summary": "Lourdes Navarro, 64, of Glendale, California, was charged in a superseding indictment with conspiracy to commit health care fraud and wire fraud, health care fraud, conspiracy to commit money laundering, and making false statements, in connection with the operation of Matias Clinical Laboratory, Inc. (Matias), also known as Health Care Providers Laboratory. Navarro allegedly conspired with her husband Imran Shams to submit false and fraudulent claims to Medicare, the Health Resources and Services Administration (HRSA) COVID-19 Uninsured Program, and an insurance company for respiratory pathogen panel (RPP) testing that was not ordered, medically unnecessary, procured through illegal kickbacks and bribes, and ineligible for reimbursement. During the COVID-19 pandemic, Matias performed COVID-19 screening testing for various facilities, including nursing homes and schools. The laboratory allegedly added fraudulent claims for RPP tests to increase reimbursements and falsely represented to HRSA that patients had been diagnosed with COVID-19. The superseding indictment alleges additional loss to Medicare, HRSA, and the insurer of approximately $241 million in billed claims, with $39.9 million reimbursed to Matias. The case is being prosecuted by Trial Attorneys Gary Winters and Ray Beckering of the National Rapid Response Strike Force.",
+  "timeline": {
+    "start_year": 2020,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 1343",
+    "18 U.S. Code § 371",
+    "18 U.S. Code § 1956",
+    "18 U.S. Code § 1001"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1001", "text": "18 U.S. Code § 1001"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Wire Fraud"},
+    {"url": "#", "text": "Money Laundering"},
+    {"url": "#", "text": "False Statements"},
+    {"url": "#", "text": "COVID-19 Related Fraud"},
+    {"url": "#", "text": "Laboratory Testing Fraud"}
+  ],
+  "category": "Health Care Fraud, Wire Fraud, Money Laundering, and False Statements",
+  "fraudAmount": 241000000,
+  "affectedLabel": "Beneficiaries Affected"
+},
+{
+  "title": "United States v. Anthony Hao Dinh, et al.",
+  "caseNumber": "Case Number: Unknown",
+  "state": "California",
+  "plaintiff": "United States Department of Justice",
+  "defendant": ["Dr. Anthony Hao Dinh", "Hanna T. Dinh (aka Hang T. Dinh)", "Dr. Matthew Ho"],
+  "clinicianType": "Physician",
+  "affiliatedEntities": [],
+  "summary": "Dr. Anthony Hao Dinh, 63, of Orange County, California, was charged by complaint for allegedly orchestrating an approximately $230 million fraud on the HRSA Uninsured Program. Dinh was the second highest biller in the country to the Uninsured Program, and he allegedly submitted fraudulent claims for treatment of patients that were insured, billed for services not rendered, and billed for services not medically necessary. He allegedly used over $100 million in fraud proceeds to engage in high-risk options trading. Dinh is also charged with two other individuals, Hanna T. Dinh, also known as Hang T. Dinh, 64, of Orange County, California, and Dr. Matthew Ho, 65, of Brevard County, Florida, for allegedly submitting over 70 fraudulent loan applications under the Paycheck Protection Program (PPP) and Economic Injury Disaster Loan (EIDL) Program and fraudulently obtaining over $3 million in loan funds. The case is being prosecuted by Assistant Chief Justin M. Woodard of the Gulf Coast Strike Force, Trial Attorney Helen H. Lee of the Los Angeles Strike Force, and Assistant United States Attorney Roger A. Hsieh of the United States Attorney's Office for the Central District of California.",
+  "timeline": {
+    "start_year": 2020,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347",
+    "18 U.S. Code § 1343",
+    "18 U.S. Code § 1344",
+    "18 U.S. Code § 1001"
+  ],
+  "relatedLinks": [
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1344", "text": "18 U.S. Code § 1344"},
+    {"url": "https://www.law.cornell.edu/uscode/text/18/1001", "text": "18 U.S. Code § 1001"},
+    {"url": "#", "text": "Health Care Fraud"},
+    {"url": "#", "text": "Wire Fraud"},
+    {"url": "#", "text": "Bank Fraud"},
+    {"url": "#", "text": "False Statements"},
+    {"url": "#", "text": "COVID-19 Related Fraud"},
+    {"url": "#", "text": "HRSA Uninsured Program Fraud"},
+    {"url": "#", "text": "PPP Fraud"},
+    {"url": "#", "text": "EIDL Fraud"}
+  ],
+  "category": "Health Care Fraud, Wire Fraud, Bank Fraud, and False Statements",
+  "fraudAmount": 233000000,
+  "affectedLabel": "Beneficiaries and Programs Affected"
 }
-
 );
 return {data};
 }});
@@ -522,29 +1136,36 @@ filtered_data.map(entry => cardTemplate(entry))
   <section class="observablehq-section-active">
     <summary>Healthcare Fraud</summary>
     <ol>
-    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud">Report</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud">Criminal Charges</a></li>
+    <li class="observablehq-link"><a href="./healthcare-fraud-ongoing">Ongoing</a></li>
     </ol>
   </section>
 </nav>
 <script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
 <aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
 <nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#intro">Intro</a></li>
+</ol>
 </nav>
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1 id="healthcare-fraud-database" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-fraud-database">Healthcare Fraud Database</a></h1>
+<h1 id="healthcare-fraud%3A-criminal-cases" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-fraud%3A-criminal-cases">Healthcare Fraud: Criminal Cases</a></h1>
+<hr>
 <h2 id="intro" tabindex="-1"><a class="observablehq-header-anchor" href="#intro">Intro</a></h2>
-<p style="font-size: 0.7em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Our database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing.</p>
+<p style="font-size: 0.8em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing.</p>
 <div class="observablehq observablehq--block"><!--:1662f5b4:--></div>
 <div class="observablehq observablehq--block"><!--:9dc7af27:--></div>
 <div class="observablehq observablehq--block"><!--:cf32e016:--></div>
-<h3 id="simple-search" tabindex="-1"><a class="observablehq-header-anchor" href="#simple-search">Simple Search</a></h3>
+<h3 id="search" tabindex="-1"><a class="observablehq-header-anchor" href="#search">Search</a></h3>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:203f9938:--></div>
+<hr>
 <h3 id="selected-cases-statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#selected-cases-statistics">Selected Cases Statistics</a></h3>
 <div class="stats-container">
     <div class="big-number-card">
-        <div class="big-number">$<observablehq-loading></observablehq-loading><!--:f19dfcad:--></div>
+        <div class="big-number">$<observablehq-loading></observablehq-loading><!--:c1943dab:--></div>
         <div class="big-number-caption">Total Fraud Amount</div>
     </div>
     <div class="big-number-card">
@@ -552,15 +1173,14 @@ filtered_data.map(entry => cardTemplate(entry))
         <div class="big-number-caption">Cases</div>
     </div>
 </div>
-<hr>
 <div class="observablehq observablehq--block"><!--:1d43f859:--></div>
 <h3 id="cases-found" tabindex="-1"><a class="observablehq-header-anchor" href="#cases-found"><observablehq-loading></observablehq-loading><!--:aa4f11c4-1:--> Cases Found</a></h3>
-<div class="observablehq observablehq--block"><!--:a9a5471d:--></div>
-<div class="observablehq observablehq--block"><!--:9995f885:--></div>
+<div class="observablehq observablehq--block"><!--:187b189c:--></div>
+<div class="observablehq observablehq--block"><!--:78e59fad:--></div>
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a></nav>
+<nav><a rel="prev" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a><a rel="next" href="./healthcare-fraud-ongoing"><span>Ongoing</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>
