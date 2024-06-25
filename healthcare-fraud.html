@@ -4,10 +4,10 @@
 <title>Healthcare Fraud | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/custom-style.6567e78c.css">
+<link rel="preload" as="style" href="./_import/custom-style.f0932a21.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/custom-style.6567e78c.css">
+<link rel="stylesheet" type="text/css" href="./_import/custom-style.f0932a21.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.16d0da4c.json","lastModified":1719275658779});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.f09b50bb.json","lastModified":1719319069949});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -144,7 +144,7 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
 return {yearHeatmap};
 }});
 
-define({id: "0bf32a78", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
+define({id: "78833eaf", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
 const cardTemplate = (data) => html`<div class="fraud-card">
     <div class="card-header">
         <div class="case-title">${data.title}</div>
@@ -185,17 +185,17 @@ const cardTemplate = (data) => html`<div class="fraud-card">
             </div>
         </div>
     </div>
-    <div class="card-content">
-        <div class="main-content">
-            ${data.commentary ? (Array.isArray(data.commentary) ? data.commentary.map(c => html`
-            <div class="tip" style="padding: 1px 4px 14px 4px; background-color: #f4f4f4" label>
-                <i>${c.comment}</i> <br> - <b>Commented by: ${c.added_by}</b>
-            </div>`): data.comment) : "" }
-        </div>
+    <div class="card-footer">
+        <div class="comment-content">
+        ${data.commentary ? (Array.isArray(data.commentary) ? data.commentary.map(c => html`
+            <div class="comment-admonition">
+                ${c.comment} <b style="text-align: right;">- ${c.added_by}</b>
+            </div>
+        </div>`): data.commentary) : "" }
     </div>
     <div class="card-footer">
         <div class="timeline">
-            <h4>Years:</h4>
+            <h4>Fraud Years:</h4>
             ${yearHeatmap(2014, 2024, data.timeline.start_year, data.timeline.end_year)}
         </div>
     </div>
@@ -245,6 +245,7 @@ filtered_data.map(entry => cardTemplate(entry))
 <div>Contents</div>
 <ol>
 <li class="observablehq-secondary-link"><a href="#intro">Intro</a></li>
+<li class="observablehq-secondary-link"><a href="#statistics">Statistics</a></li>
 <li class="observablehq-secondary-link"><a href="#case-detail">Case Detail</a></li>
 <li class="observablehq-secondary-link"><a href="#references">References</a></li>
 </ol>
@@ -262,7 +263,7 @@ filtered_data.map(entry => cardTemplate(entry))
 <h3 id="search" tabindex="-1"><a class="observablehq-header-anchor" href="#search">Search</a></h3>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:203f9938:--></div>
 <hr>
-<h3 id="selected-cases-statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#selected-cases-statistics">Selected Cases Statistics</a></h3>
+<h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="stats-container">
     <div class="big-number-card">
         <div class="big-number">$<observablehq-loading></observablehq-loading><!--:c1943dab:--></div>
@@ -277,7 +278,7 @@ filtered_data.map(entry => cardTemplate(entry))
 <!-- ### ${filtered_data.length} Cases Found -->
 <hr>
 <h2 id="case-detail" tabindex="-1"><a class="observablehq-header-anchor" href="#case-detail">Case Detail</a></h2>
-<div class="observablehq observablehq--block"><!--:0bf32a78:--></div>
+<div class="observablehq observablehq--block"><!--:78833eaf:--></div>
 <div class="observablehq observablehq--block"><!--:72741959:--></div>
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
 <h2 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h2>
