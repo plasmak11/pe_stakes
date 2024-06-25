@@ -2179,5 +2179,101 @@
             "added_by": "Claude"
           }
         ]
+      },
+      {
+        "title": "United States v. Raymond Earl Vallier",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Tennessee",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Raymond Earl Vallier",
+        "clinicianType": "Former Hospice Care Center Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "North Delta Hospice and Palliative Services LLC"
+          }
+        ],
+        "summary": "Raymond Earl Vallier, 52, of Collierville, Tennessee was indicted for theft of government property and aggravated identity theft related to the misuse of CARES Act Provider Relief Fund monies. Vallier, the former owner of North Delta Hospice, allegedly used the identity of the deceased owner to falsely attest to the terms of a $107,568.03 Provider Relief Fund payment received on April 10, 2020. North Delta Hospice had ceased operations by September 2019 and was ineligible for the funds. Vallier allegedly used the funds for personal expenses and payments to another company he owned. The case is being prosecuted by Trial Attorney Sara E. Porter of the Gulf Coast Strike Force and Assistant U.S. Attorney Tony Arvin of the U.S. Attorney's Office for the Western District of Tennessee.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 641",
+          "18 U.S. Code § 1028A"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/641", "text": "18 U.S. Code § 641 - Public money, property or records"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1028A", "text": "18 U.S. Code § 1028A - Aggravated identity theft"},
+          {"url": "#", "text": "Theft of Government Property"},
+          {"url": "#", "text": "Identity Theft"},
+          {"url": "#", "text": "COVID-19 Relief Fraud"},
+          {"url": "#", "text": "CARES Act Provider Relief Fund Fraud"}
+        ],
+        "category": "Theft of Government Property and Identity Theft",
+        "fraudAmount": 107568.03,
+        "affectedLabel": "Amount of Misappropriated Provider Relief Funds",
+        "commentary": [
+          {
+            "comment": "This case demonstrates how some individuals exploited COVID-19 relief programs by misappropriating funds intended for active healthcare providers, even when their businesses were no longer operational.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of a deceased person's identity to falsely attest to eligibility highlights the need for more robust verification processes in the distribution of emergency relief funds.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of the recipients of Provider Relief Fund payments, particularly those associated with businesses that have recently ceased operations or changed ownership.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Robert Van Camp",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Colorado",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Robert Van Camp",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [],
+        "summary": "Robert Van Camp, 53, of Parker, Colorado, was charged by criminal complaint with conspiracy to defraud the United States and trafficking in counterfeit goods for allegedly producing and selling fake COVID-19 vaccination record cards. Van Camp allegedly forged hundreds of fake cards from a blank template and sold them to buyers and distributors in at least a dozen states, including to Olympians and international travelers. He reportedly used code names to conceal the scheme and sold some cards for $175 each. The case is being prosecuted by Trial Attorneys Babu Kaza and Chris Wenger of the National Rapid Response Strike Force.",
+        "timeline": {
+          "start_year": 2021,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 2320"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/2320", "text": "18 U.S. Code § 2320 - Trafficking in counterfeit goods or services"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Counterfeit Goods Trafficking"},
+          {"url": "#", "text": "COVID-19 Vaccination Card Fraud"}
+        ],
+        "category": "Conspiracy and Counterfeit Goods Trafficking",
+        "fraudAmount": 0,
+        "affectedLabel": "Fake Vaccination Cards Distributed",
+        "commentary": [
+          {
+            "comment": "This case illustrates the international scope of COVID-19 vaccination card fraud, with implications for global travel and major sporting events like the Olympics.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of code names and the defendant's apparent awareness of the illegality of his actions demonstrate the deliberate nature of this fraud scheme.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The high price point of $175 per card suggests a significant demand for fake vaccination records, potentially indicating broader issues with vaccine hesitancy or resistance to vaccination mandates.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
       }
 ]
