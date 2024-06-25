@@ -1,0 +1,84 @@
+[
+    {
+        "title": "United States v. Mark Schena",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Mark Schena",
+        "clinicianType": "Medical Technology Company Executive",
+        "affiliatedEntities": [
+            {
+                "npi": "",
+                "label": "Arrayit Corporation"
+            }
+        ],
+        "summary": "Mark Schena, 60, of Los Altos, California, president of Arrayit Corporation, was sentenced to eight years in prison and ordered to pay $24 million in restitution for defrauding investors and committing health care fraud. Schena falsely claimed to have invented revolutionary blood testing technology, orchestrated illegal kickbacks for unnecessary allergy testing, and attempted to capitalize on the COVID-19 pandemic with false claims about testing capabilities. Arrayit submitted over $77 million in fraudulent claims for COVID-19 and allergy testing. Schena was convicted by a federal jury on September 6, 2022.",
+        "timeline": {
+            "start_year": 2020,
+            "end_year": 2023
+        },
+        "violation": [
+            "15 U.S. Code § 78j",
+            "18 U.S. Code § 1347",
+            "42 U.S. Code § 1320a–7b",
+            "18 U.S. Code § 1343"
+        ],
+        "relatedLinks": [
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/15/78j",
+                "text": "15 U.S. Code § 78j - Manipulative and deceptive devices"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+                "text": "18 U.S. Code § 1347 - Health care fraud"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+                "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+                "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+            },
+            {
+                "url": "#",
+                "text": "Securities Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Health Care Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Kickbacks"
+            },
+            {
+                "url": "#",
+                "text": "COVID-19 Related Fraud"
+            }
+        ],
+        "category": "Securities Fraud, Health Care Fraud, and Kickbacks",
+        "fraudAmount": 77000000,
+        "affectedLabel": "Amount of Fraudulent Claims Submitted",
+        "commentary": [
+            {
+                "comment": "This case represents a significant milestone as the first criminal securities fraud case related to the COVID-19 pandemic charged by the Department of Justice, highlighting the increased scrutiny on pandemic-related financial crimes.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "The combination of securities fraud, healthcare fraud, and exploitation of the COVID-19 pandemic demonstrates the multifaceted nature of some fraud schemes, requiring coordination among multiple investigative agencies.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "The involvement of a Silicon Valley executive in this fraud case may lead to increased scrutiny of medical technology startups and their claims, particularly those related to revolutionary diagnostic technologies.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            }
+        ],
+        "sources": [
+            {"url": "https://www.justice.gov/opa/pr/silicon-valley-executive-sentenced-defrauding-investors-and-participating-covid-19-and"}
+        ]
+    }
+]

@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.eac705ac.json","lastModified":1719329933302});
+registerFile("./data/healthcare_fraud_startups.json", {"name":"./data/healthcare_fraud_startups.json","mimeType":"application/json","path":"./_file/data/healthcare_fraud_startups.12fb06e5.json","lastModified":1719330361814});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -80,11 +80,9 @@ search_input
 ))
 }});
 
-define({id: "c1943dab", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
+define({id: "4419e8d0", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
 display(await(
-d3.format(".3s")(filtered_data.reduce((total, item) => {
-    return (total + (Number(item.fraudAmount)) || 0);
-  }, 0)).replace(/G/, "B")
+d3.format(".3s")(filtered_data.reduce((total, item) => { return (total + (Number(item.fraudAmount)) || 0);}, 0)).replace(/G/, "B")
 ))
 }});
 
@@ -203,8 +201,8 @@ const cardTemplate = (data) => html`<div class="fraud-card">
 return {cardTemplate};
 }});
 
-define({id: "72741959", inputs: ["FileAttachment"], outputs: ["data"], body: (FileAttachment) => {
-const data = FileAttachment("./data/healthcare_frauds.json").json();
+define({id: "621f23c6", inputs: ["FileAttachment"], outputs: ["data"], body: (FileAttachment) => {
+const data = FileAttachment("./data/healthcare_fraud_startups.json").json();
 return {data};
 }});
 
@@ -228,8 +226,8 @@ filtered_data.map(entry => cardTemplate(entry))
   <details open class="observablehq-section-active">
     <summary>Healthcare Fraud</summary>
     <ol>
-    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud">Criminal Cases</a></li>
-    <li class="observablehq-link"><a href="./healthcare-fraud-startups">Startups</a></li>
+    <li class="observablehq-link"><a href="./healthcare-fraud">Criminal Cases</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud-startups">Startups</a></li>
     <li class="observablehq-link"><a href="./healthcare-fraud-ongoing">Ongoing</a></li>
     </ol>
   </details>
@@ -245,19 +243,15 @@ filtered_data.map(entry => cardTemplate(entry))
 <nav>
 <div>Contents</div>
 <ol>
-<li class="observablehq-secondary-link"><a href="#intro">Intro</a></li>
 <li class="observablehq-secondary-link"><a href="#statistics">Statistics</a></li>
 <li class="observablehq-secondary-link"><a href="#case-detail">Case Detail</a></li>
-<li class="observablehq-secondary-link"><a href="#references">References</a></li>
 </ol>
 </nav>
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1> Healthcare Fraud: Criminal Cases</h1>
+<h1> Healthcare Fraud: Startup</h1>
 <hr>
-<h2 id="intro" tabindex="-1"><a class="observablehq-header-anchor" href="#intro">Intro</a></h2>
-<p style="font-size: 0.8em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Based on my experience in healthcare startup, interactions with investors, executives, much of the fraud is overlooked as "part of business". This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing. </p>
 <div class="observablehq observablehq--block"><!--:1662f5b4:--></div>
 <div class="observablehq observablehq--block"><!--:9dc7af27:--></div>
 <div class="observablehq observablehq--block"><!--:cf32e016:--></div>
@@ -267,7 +261,7 @@ filtered_data.map(entry => cardTemplate(entry))
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="stats-container">
     <div class="big-number-card">
-        <div class="big-number">$<observablehq-loading></observablehq-loading><!--:c1943dab:--></div>
+        <div class="big-number">$<observablehq-loading></observablehq-loading><!--:4419e8d0:--></div>
         <div class="big-number-caption">Total Fraud Amount</div>
     </div>
     <div class="big-number-card">
@@ -280,20 +274,11 @@ filtered_data.map(entry => cardTemplate(entry))
 <hr>
 <h2 id="case-detail" tabindex="-1"><a class="observablehq-header-anchor" href="#case-detail">Case Detail</a></h2>
 <div class="observablehq observablehq--block"><!--:970e0c04:--></div>
-<div class="observablehq observablehq--block"><!--:72741959:--></div>
+<div class="observablehq observablehq--block"><!--:621f23c6:--></div>
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
-<h2 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h2>
-<ul>
-<li>[ ] 2023 National Health Care Fraud Enforcement Action</li>
-<li>[ ] 2023 COVID-19 Enforcement Action</li>
-<li>[ ] 2022 Opioid Enforcement Action</li>
-<li>[x] [2022 Telemedicine Enforcement Action]</li>
-<li>[x] <a href="https://www.justice.gov/criminal/criminal-fraud/health-care-fraud-unit/2023-case-summaries" target="_blank" rel="noopener noreferrer">2022 COVID-19 Enforcement Action</a></li>
-<li>[ ] <a href="https://www.justice.gov/criminal-fraud/health-care-fraud-unit/covid-19-health-care-fraud-enforcement-action" target="_blank" rel="noopener noreferrer">2021 National Health Care Fraud Enforcement Action</a></li>
-</ul>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./"><span>Clinicians.fyi</span></a><a rel="next" href="./healthcare-fraud-startups"><span>Startups</span></a></nav>
+<nav><a rel="prev" href="./healthcare-fraud"><span>Criminal Cases</span></a><a rel="next" href="./healthcare-fraud-ongoing"><span>Ongoing</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>
