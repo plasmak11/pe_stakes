@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.06574c64.json","lastModified":1719325787668});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.ee5dad23.json","lastModified":1719326129795});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -144,7 +144,7 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
 return {yearHeatmap};
 }});
 
-define({id: "78833eaf", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
+define({id: "970e0c04", inputs: ["html","d3","yearHeatmap"], outputs: ["cardTemplate"], body: (html,d3,yearHeatmap) => {
 const cardTemplate = (data) => html`<div class="fraud-card">
     <div class="card-header">
         <div class="case-title">${data.title}</div>
@@ -173,7 +173,7 @@ const cardTemplate = (data) => html`<div class="fraud-card">
             <div class="category">${data.category}</div>
             <div class="fraud-amount-container">
                 <div class="number-label">Alleged Fraud</div>
-                <div class="fraud-amount">$${d3.format(".2s")(data.fraudAmount)}</div>
+                <div class="fraud-amount">$${d3.format(".2s")(data.fraudAmount).replace(/G/, "B")}</div>
             </div>
             <!-- <div class="number-label">${data.affectedLabel}</div> !-->
             <div>${data.affectedCount}</div>
@@ -278,7 +278,7 @@ filtered_data.map(entry => cardTemplate(entry))
 <!-- ### ${filtered_data.length} Cases Found -->
 <hr>
 <h2 id="case-detail" tabindex="-1"><a class="observablehq-header-anchor" href="#case-detail">Case Detail</a></h2>
-<div class="observablehq observablehq--block"><!--:78833eaf:--></div>
+<div class="observablehq observablehq--block"><!--:970e0c04:--></div>
 <div class="observablehq observablehq--block"><!--:72741959:--></div>
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
 <h2 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h2>

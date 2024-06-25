@@ -2275,5 +2275,264 @@
             "added_by": "Claude"
           }
         ]
+      },
+      {
+        "title": "United States v. Neda Mehrabani",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Neda Mehrabani",
+        "clinicianType": "Chiropractor and Acupuncturist",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Health Clinic of Southern California"
+          }
+        ],
+        "summary": "Neda Mehrabani, 47, of Tarzana, California, was charged by information with health care fraud for allegedly obtaining over $3.3 million in Medicare funds fraudulently. Mehrabani, a licensed chiropractor and acupuncturist and owner of Health Clinic of Southern California, allegedly caused the submission of false and fraudulent claims to Medicare for chiropractic services that were medically unnecessary, not provided as represented, or not rendered at all. The case is being prosecuted by Trial Attorney Alexandra Michael of the Los Angeles Strike Force.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1347"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Chiropractic Services Fraud"}
+        ],
+        "category": "Health Care Fraud",
+        "fraudAmount": 3300000,
+        "affectedLabel": "Amount Fraudulently Obtained from Medicare",
+        "commentary": [
+          {
+            "comment": "This case highlights the ongoing issue of fraud in alternative medicine practices, particularly in chiropractic services, which have been a focus of Medicare fraud investigations.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The substantial amount involved ($3.3 million) underscores the potential for significant financial impact on the Medicare system from individual provider fraud.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of claims for chiropractic services in Medicare, potentially affecting legitimate providers in the field.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Joelson Viveros",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Joelson Viveros",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "South Bend Specialty Pharmacy (SBSP)"
+          }
+        ],
+        "summary": "Joelson Viveros, 43, of Boca Raton, Florida, was charged by information with conspiracy to defraud the United States and to pay and receive health care kickbacks in connection with an alleged $3 million kickback scheme involving pharmacies in multiple states. Viveros allegedly invested in South Bend Specialty Pharmacy, operated a call center to persuade Medicare beneficiaries to accept unnecessary prescriptions, and paid kickbacks to telemedicine companies for signed prescriptions. He allegedly received kickbacks from pharmacies in exchange for supplying these prescriptions. The case is being prosecuted by Trial Attorney Gary Winters of the National Rapid Response Strike Force and Assistant U.S. Attorney David Mesrobian of the U.S. Attorney's Office for the Middle District of Florida.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Health Care Kickbacks"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Telemedicine Fraud"}
+        ],
+        "category": "Conspiracy and Health Care Kickbacks",
+        "fraudAmount": 3000000,
+        "affectedLabel": "Amount Involved in Kickback Scheme",
+        "commentary": [
+          {
+            "comment": "This case demonstrates the complex nature of some healthcare fraud schemes, involving multiple entities including pharmacies, call centers, and telemedicine companies across state lines.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of telemarketers to target Medicare beneficiaries highlights the vulnerability of elderly populations to aggressive marketing tactics for unnecessary medical treatments.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of relationships between pharmacies, telemedicine providers, and marketing entities, particularly in the context of prescriptions for expensive medications like topical pain creams.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Tommy Louisville",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Tommy Louisville",
+        "clinicianType": "Former Addiction Treatment Center Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "First Help Urgent Care Clinic"
+          }
+        ],
+        "summary": "Tommy Louisville, 70, of Pembroke Pines, Florida was charged by indictment with wire fraud for allegedly obtaining $33,034 from a COVID-19 relief program fraudulently. Louisville, the owner of First Help Urgent Care Clinic, a shuttered opioid addiction treatment center, allegedly misappropriated funds from the Paycheck Protection Program and submitted a false loan application to the Small Business Administration. The funds were meant for COVID-19 patient care and to support small businesses affected by the pandemic, but Louisville allegedly used them for other purposes. The case is being prosecuted by Assistant U.S. Attorney Greg Pizzo of the U.S. Attorney's Office for the Middle District of Florida.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1343"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "COVID-19 Relief Fraud"},
+          {"url": "#", "text": "Paycheck Protection Program Fraud"},
+          {"url": "#", "text": "Small Business Administration Loan Fraud"}
+        ],
+        "category": "Wire Fraud and COVID-19 Relief Fraud",
+        "fraudAmount": 33034,
+        "affectedLabel": "Amount Fraudulently Obtained from COVID-19 Relief Program",
+        "commentary": [
+          {
+            "comment": "This case illustrates how some individuals exploited COVID-19 relief programs intended for struggling businesses, even when their own businesses were no longer operational.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of a former addiction treatment center owner in this fraud highlights the need for scrutiny across various healthcare sectors, including those not directly involved in COVID-19 treatment.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "While the fraudulent amount ($33,034) is smaller compared to some other cases, it demonstrates that authorities are pursuing COVID-19 relief fraud cases regardless of scale.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Steven Parker",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Texas",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Steven Parker",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unique Media Connections (UMC)"
+          },
+          {
+            "npi": "",
+            "label": "Media Lead Kings (MLK)"
+          }
+        ],
+        "summary": "Steven Parker, 69, of Prosper, Texas, was charged by information with conspiracy to solicit and receive kickbacks and bribes in connection with an alleged multi-million dollar kickback scheme involving DME front companies in Pinellas County, Florida. Parker allegedly used his companies, Unique Media Connections (UMC) and Media Lead Kings (MLK), to purchase and resell completed doctors' orders for DME to front companies in exchange for kickbacks. He allegedly received $14,355,000 in kickbacks, and the front companies subsequently billed Medicare for over $37 million using these orders. The case is being prosecuted by Assistant U.S. Attorney Tiffany E. Fields of the U.S. Attorney's Office for the Middle District of Florida.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "#", "text": "Health Care Kickbacks"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Durable Medical Equipment (DME) Fraud"},
+          {"url": "#", "text": "Conspiracy"}
+        ],
+        "category": "Health Care Kickbacks and Conspiracy",
+        "fraudAmount": 14355000,
+        "affectedLabel": "Amount Received in Kickbacks",
+        "commentary": [
+          {
+            "comment": "This case illustrates the complex nature of some healthcare fraud schemes, involving multiple entities and crossing state lines, which can make detection and prosecution challenging.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of front companies and fictitious business names highlights the sophisticated methods used to conceal fraudulent activities in the healthcare sector.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The significant discrepancy between the amount received in kickbacks ($14.3 million) and the amount billed to Medicare ($37 million) demonstrates the potential for substantial financial impact on federal health care programs from such schemes.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Brett Blackman, Gary Cox, and Gregory Schreck",
+        "caseNumber": "Case Number: Unknown",
+        "state": ["Kansas", "Arizona"],
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Brett Blackman", "Gary Cox", "Gregory Schreck"],
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "DMERx"
+          }
+        ],
+        "summary": "Brett Blackman, Gary Cox, and Gregory Schreck were charged by indictment with conspiracy to commit health care fraud and wire fraud, conspiracy to pay and receive kickbacks, and conspiracy to defraud the United States and make false statements. They allegedly submitted $1.9 billion in false claims to Medicare and other insurers for medically unnecessary items. The defendants operated DMERx, an internet platform generating fraudulent doctors' orders for kickbacks. They coordinated illegal transactions between pharmacies, DME suppliers, marketers, and telemedicine companies. The scheme involved falsely representing doctor examinations and removing telemedicine references to obstruct investigations. DME companies and pharmacies billed Medicare over $1.96 billion using these fraudulent orders. The case is being prosecuted by Trial Attorneys Darren C. Halverson and Andrea Savdie of the National Rapid Response and Miami Strike Forces.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1347",
+          "18 U.S. Code § 1343",
+          "42 U.S. Code § 1320a–7b",
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 1001"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1001", "text": "18 U.S. Code § 1001 - Statements or entries generally"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Kickbacks"},
+          {"url": "#", "text": "Telemedicine Fraud"},
+          {"url": "#", "text": "Durable Medical Equipment (DME) Fraud"}
+        ],
+        "category": "Health Care Fraud, Wire Fraud, Kickbacks, and Conspiracy",
+        "fraudAmount": 1963000000,
+        "affectedLabel": "Amount Billed to Medicare in Fraudulent Claims",
+        "commentary": [
+          {
+            "comment": "This case demonstrates the potential for massive scale fraud in healthcare when technology platforms are used to facilitate and automate fraudulent practices across multiple entities.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of high-level executives (CEOs and VPs) in this scheme highlights the need for increased oversight and accountability in healthcare technology companies.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The alleged obstruction of investigations by removing telemedicine references underscores the sophisticated nature of modern healthcare fraud schemes and the challenges faced by investigators.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
       }
 ]
