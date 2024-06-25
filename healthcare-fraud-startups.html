@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_fraud_startups.json", {"name":"./data/healthcare_fraud_startups.json","mimeType":"application/json","path":"./_file/data/healthcare_fraud_startups.12fb06e5.json","lastModified":1719330361814});
+registerFile("./data/healthcare_fraud_startups.json", {"name":"./data/healthcare_fraud_startups.json","mimeType":"application/json","path":"./_file/data/healthcare_fraud_startups.683cd3ec.json","lastModified":1719335930480});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -227,8 +227,7 @@ filtered_data.map(entry => cardTemplate(entry))
     <summary>Healthcare Fraud</summary>
     <ol>
     <li class="observablehq-link"><a href="./healthcare-fraud">Criminal Cases</a></li>
-    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud-startups">Startups</a></li>
-    <li class="observablehq-link"><a href="./healthcare-fraud-ongoing">Ongoing</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud-startups">Startups/Health Tech</a></li>
     </ol>
   </details>
   <section>
@@ -278,7 +277,7 @@ filtered_data.map(entry => cardTemplate(entry))
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./healthcare-fraud"><span>Criminal Cases</span></a><a rel="next" href="./healthcare-fraud-ongoing"><span>Ongoing</span></a></nav>
+<nav><a rel="prev" href="./healthcare-fraud"><span>Criminal Cases</span></a><a rel="next" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>

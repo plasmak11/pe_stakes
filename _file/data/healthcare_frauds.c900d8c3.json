@@ -1360,6 +1360,59 @@
     "commentary": []
   },
   {
+    "title": "United States v. Lily Tran Daniels, Kenneth Reynolds, and Emylee Thai",
+    "caseNumber": "Case Number: Unknown",
+    "state": ["California", "Delaware", "Texas"],
+    "plaintiff": "United States Department of Justice",
+    "defendant": ["Lily Tran Daniels", "Kenneth Reynolds", "Emylee Thai"],
+    "clinicianType": "Laboratory Owner and Marketers",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "ApolloMDx, LLC (later renamed Artemis DNA TX, LLC)"
+      }
+    ],
+    "summary": "Lily Tran Daniels, 49, of Orange County, California, and Kenneth Reynolds, 62, of New Castle County, Delaware, were charged by superseding indictment in connection with an alleged $142 million health care kickback scheme, along with previously charged Emylee Thai, 38. Thai, owner of ApolloMDx, LLC (later Artemis DNA TX, LLC), a clinical laboratory in Houston, Texas, allegedly paid kickbacks to marketers, including Tran and Reynolds, for referring Medicare beneficiary DNA samples and signed doctors' orders for medically unnecessary genetic testing. The scheme involved false dates of service and diagnoses to increase Medicare reimbursement. The case is being prosecuted by Trial Attorneys Andrew Tamayo and Courtney Chester of the Houston Strike Force, with Assistant U.S. Attorney Brandon Fyffe assisting with forfeiture.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Kickbacks"},
+      {"url": "#", "text": "Genetic Testing Fraud"},
+      {"url": "#", "text": "Medicare Fraud"}
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 142000000,
+    "affectedLabel": "Amount Involved in Kickback Scheme",
+    "commentary": [
+      {
+        "comment": "This case highlights the complex networks involved in healthcare fraud schemes, spanning multiple states and involving various actors from laboratory owners to marketers.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The focus on genetic testing fraud reflects a growing trend in healthcare fraud cases, as advances in medical technology create new opportunities for exploitation.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The large scale of the alleged fraud ($142 million) underscores the potential for significant financial impact on the Medicare system from kickback schemes involving unnecessary medical testing.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
     "title": "United States v. Lourdes Navarro",
     "caseNumber": "Case Number: Unknown",
     "state": "California",
@@ -3118,6 +3171,479 @@
       },
       {
         "comment": "The significant difference between the amount billed to Medicare ($10 million) and the amount paid ($2.9 million) suggests that existing fraud detection mechanisms may have limited some of the financial damage, though substantial losses still occurred.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Yosbel Roque Rubier",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Yosbel Roque Rubier",
+    "clinicianType": "DME Clinic Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "FCM Supply LLC"
+      }
+    ],
+    "summary": "Yosbel Roque Rubier, 43, of Miami, Florida, was charged by indictment with health care fraud and aggravated identity theft for allegedly defrauding Medicare of approximately $900,000 for durable medical equipment (DME) never supplied to beneficiaries. Rubier, owner of FCM Supply LLC in Greenacres, Florida, allegedly submitted fraudulent claims to Medicare over a four-month period for DME that was never provided or requested. Rubier allegedly used stolen identities of medical providers to support these claims. Medicare paid approximately $443,000 to FCM. The case is being prosecuted by Assistant U.S. Attorney Shannon Shaw of the U.S. Attorney's Office for the Southern District of Florida.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1028A"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1028A", "text": "18 U.S. Code § 1028A - Aggravated identity theft"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Identity Theft"},
+      {"url": "#", "text": "Durable Medical Equipment (DME) Fraud"},
+      {"url": "#", "text": "Medicare Fraud"}
+    ],
+    "category": "Health Care Fraud and Identity Theft",
+    "fraudAmount": 900000,
+    "affectedLabel": "Amount of Fraudulent Claims Submitted to Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of DME fraud in Medicare, which has been a focus of healthcare fraud enforcement efforts in recent years.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of stolen provider identities adds an additional layer of complexity to the fraud scheme and increases the potential harm to legitimate healthcare providers.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant difference between the amount billed ($900,000) and the amount paid ($443,000) by Medicare suggests that some fraud detection mechanisms may have limited the financial impact, though substantial losses still occurred.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Devon Burt and Hallum Gelzer",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Pennsylvania",
+    "plaintiff": "United States Department of Justice",
+    "defendant": ["Devon Burt", "Hallum Gelzer"],
+    "clinicianType": "Not applicable",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Amtrak"
+      }
+    ],
+    "summary": "Devon Burt, 50, of Blue Bell, Pennsylvania, and Hallum Gelzer, 44, of Enola, Pennsylvania, were charged separately with conspiracy to commit health care fraud and conspiracy to commit extortion. They allegedly paid cash to Amtrak employees in exchange for their insurance information, which was then used by healthcare providers to submit false claims. Burt, a former Amtrak employee, and Gelzer received payments from providers for recruiting participants and allowing the use of their own insurance information. They also allegedly threatened a participating healthcare provider for payment. The cases are being prosecuted by Assistant U.S. Attorney Katherine Romano of the U.S. Attorney's Office for the District of New Jersey.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1951"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1951", "text": "18 U.S. Code § 1951 - Interference with commerce by threats or violence"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Extortion"},
+      {"url": "#", "text": "Insurance Fraud"},
+      {"url": "#", "text": "Employee Benefits Fraud"}
+    ],
+    "category": "Health Care Fraud and Extortion",
+    "fraudAmount": 0,
+    "affectedLabel": "Amtrak Employees and Healthcare Providers Involved",
+    "commentary": [
+      {
+        "comment": "This case highlights a unique form of healthcare fraud involving the exploitation of employee benefits, potentially exposing vulnerabilities in how large employers manage their health insurance programs.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of extortion in this healthcare fraud scheme demonstrates how these crimes can escalate and intersect with other forms of criminal activity.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny of employee health benefit programs, particularly in large organizations like Amtrak, and could result in stricter monitoring and verification processes for insurance claims.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Jian Ai Chen",
+    "caseNumber": "Case Number: Unknown",
+    "state": "New York",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Jian Ai Chen (a/k/a Maggie)",
+    "clinicianType": "Pharmacy Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "AC Pharmacy Corp."
+      },
+      {
+        "npi": "",
+        "label": "A Star Pharmacy Inc."
+      }
+    ],
+    "summary": "Jian Ai Chen, 48, of Syosset, New York, was charged by indictment with conspiracy to commit health care fraud and conspiracy to pay health care kickbacks. Chen allegedly paid over $5 million in kickbacks to Medicare and Medicaid beneficiaries to bring prescriptions to her pharmacies in Brooklyn. The scheme involved submitting false claims for medications that were induced by kickbacks or not actually dispensed. Chen's pharmacies reportedly received approximately $101 million as a result of the scheme. The case is being prosecuted by Trial Attorney Andrew Estes of the Brooklyn Strike Force.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Kickbacks"},
+      {"url": "#", "text": "Pharmacy Fraud"},
+      {"url": "#", "text": "Medicare Fraud"},
+      {"url": "#", "text": "Medicaid Fraud"}
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 101000000,
+    "affectedLabel": "Amount Received by Pharmacies from Fraudulent Claims",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of kickback schemes in the pharmacy sector, which can lead to unnecessary prescriptions and inflated healthcare costs.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant amount involved ($101 million) underscores the potential for large-scale fraud in prescription drug programs and the need for robust oversight.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny of independent pharmacies and their billing practices, potentially affecting legitimate businesses in the sector.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Manling Shen and Ruibing Zhu",
+    "caseNumber": "Case Number: Unknown",
+    "state": "New York",
+    "plaintiff": "United States Department of Justice",
+    "defendant": ["Manling Shen (a/k/a Mary Shen)", "Ruibing Zhu (a/k/a Bing Bing)"],
+    "clinicianType": "Adult Day Care Employees",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Blue Sky Adult Day Care Inc."
+      }
+    ],
+    "summary": "Manling Shen, 64, and Ruibing Zhu, 53, both of Flushing, New York, were charged by superseding indictment in connection with an alleged scheme to defraud Medicaid of over $8.3 million. They allegedly submitted false claims for social adult day care services that were not provided and were induced by kickbacks. Shen was charged with paying kickbacks, health care fraud, and conspiracy, while Zhu was charged with conspiracy to pay kickbacks, paying kickbacks, and tampering with evidence. As employees of Blue Sky Adult Day Care Inc., they allegedly paid cash kickbacks to individuals enrolled but not attending services and submitted false claims. Zhu reportedly fled with kickback cash during a search warrant execution. The case is being prosecuted by Trial Attorney Patrick J. Campbell of the Brooklyn Strike Force.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 1512"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1512", "text": "18 U.S. Code § 1512 - Tampering with a witness, victim, or an informant"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Kickbacks"},
+      {"url": "#", "text": "Adult Day Care Fraud"},
+      {"url": "#", "text": "Medicaid Fraud"},
+      {"url": "#", "text": "Evidence Tampering"}
+    ],
+    "category": "Health Care Fraud, Kickbacks, and Evidence Tampering",
+    "fraudAmount": 8300000,
+    "affectedLabel": "Amount Defrauded from Medicaid",
+    "commentary": [
+      {
+        "comment": "This case highlights vulnerabilities in the adult day care sector, where services can be easily falsified and beneficiaries may be complicit in fraud schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The attempt to tamper with evidence during a search warrant execution underscores the challenges law enforcement faces in investigating and prosecuting healthcare fraud cases.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny and regulation of adult day care services, potentially affecting access to these services for legitimate users.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Carlo Elomina Garcia",
+    "caseNumber": "Case Number: Unknown",
+    "state": "New York",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Carlo Elomina Garcia",
+    "clinicianType": "Occupational Therapist",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Carlo E. Garcia Occupational Therapy, P.C."
+      }
+    ],
+    "summary": "Carlo Elomina Garcia, 51, of Astoria, New York, was charged by criminal complaint with health care fraud for allegedly obtaining over $1.6 million for purported occupational therapy services. Garcia, the owner and operator of Carlo E. Garcia Occupational Therapy, P.C., allegedly billed Medicare and Medicaid for services that were not eligible for reimbursement, were not provided as billed, or were never provided. This included repeatedly billing for over 24 hours of one-on-one occupational therapy services in a single day. The case is being prosecuted by Assistant U.S. Attorney John Vagelatos of the U.S. Attorney's Office for the Eastern District of New York.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Occupational Therapy Fraud"},
+      {"url": "#", "text": "Medicare Fraud"},
+      {"url": "#", "text": "Medicaid Fraud"}
+    ],
+    "category": "Health Care Fraud",
+    "fraudAmount": 1600000,
+    "affectedLabel": "Amount Fraudulently Obtained for Purported Services",
+    "commentary": [
+      {
+        "comment": "This case highlights vulnerabilities in the billing systems for specialized therapy services, where excessive hours or non-provided services may go undetected.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The alleged billing for over 24 hours of services in a single day demonstrates a blatant disregard for plausibility in fraudulent claims, suggesting potential weaknesses in automated fraud detection systems.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny of individual therapy practices and their billing patterns, potentially affecting legitimate providers and patient access to services.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Billy Baker",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Kentucky",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Billy Baker",
+    "clinicianType": "Not specified",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Acadian Diagnostic Laboratories, LLC"
+      },
+      {
+        "npi": "",
+        "label": "Specialty Drug Testing, LLC"
+      }
+    ],
+    "summary": "Billy Baker, 41, of Louisville, Kentucky, was charged by information with conspiracy to pay and receive kickbacks in connection with an alleged scheme involving referrals for diagnostic testing services, including cancer genetic testing. Baker allegedly conspired with owners of Acadian Diagnostic Laboratories, LLC, and Specialty Drug Testing, LLC, to refer specimens for medically unnecessary testing in exchange for a percentage of reimbursements from Medicare and other insurers. The scheme resulted in over $20 million in fraudulent claims to Medicare, with Baker allegedly receiving over $2.4 million in kickbacks. The case is being prosecuted by Trial Attorney Samantha Stagias of the Gulf Coast Strike Force and Assistant U.S. Attorney Kristen Craig of the U.S. Attorney's Office for the Middle District of Louisiana.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Kickbacks"},
+      {"url": "#", "text": "Diagnostic Testing Fraud"},
+      {"url": "#", "text": "Genetic Testing Fraud"},
+      {"url": "#", "text": "Medicare Fraud"}
+    ],
+    "category": "Health Care Kickbacks",
+    "fraudAmount": 20000000,
+    "affectedLabel": "Amount of Fraudulent Claims Submitted to Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of kickback schemes in diagnostic testing, particularly in emerging fields like genetic testing, where the medical necessity may be less clear-cut.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of multiple entities in the scheme underscores the complex networks that can develop around healthcare fraud, making detection and prosecution more challenging.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant disparity between the total fraudulent claims ($20 million) and the kickbacks received by Baker ($2.4 million) demonstrates the potential for large-scale fraud to be driven by individual actors seeking personal gain.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Billy Baker",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Kentucky",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Billy Baker",
+    "clinicianType": "Not specified",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Acadian Diagnostic Laboratories, LLC"
+      },
+      {
+        "npi": "",
+        "label": "Specialty Drug Testing, LLC"
+      }
+    ],
+    "summary": "Billy Baker, 41, of Louisville, Kentucky, was charged by information with conspiracy to pay and receive kickbacks in connection with an alleged scheme involving referrals for diagnostic testing services, including cancer genetic testing. Baker allegedly conspired with owners of Acadian Diagnostic Laboratories, LLC, and Specialty Drug Testing, LLC, to refer specimens for medically unnecessary testing in exchange for a percentage of reimbursements from Medicare and other insurers. The scheme resulted in over $20 million in fraudulent claims to Medicare, with Baker allegedly receiving over $2.4 million in kickbacks. The case is being prosecuted by Trial Attorney Samantha Stagias of the Gulf Coast Strike Force and Assistant U.S. Attorney Kristen Craig of the U.S. Attorney's Office for the Middle District of Louisiana.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Kickbacks"},
+      {"url": "#", "text": "Diagnostic Testing Fraud"},
+      {"url": "#", "text": "Genetic Testing Fraud"},
+      {"url": "#", "text": "Medicare Fraud"}
+    ],
+    "category": "Health Care Kickbacks",
+    "fraudAmount": 20000000,
+    "affectedLabel": "Amount of Fraudulent Claims Submitted to Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of kickback schemes in diagnostic testing, particularly in emerging fields like genetic testing, where the medical necessity may be less clear-cut.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of multiple entities in the scheme underscores the complex networks that can develop around healthcare fraud, making detection and prosecution more challenging.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant disparity between the total fraudulent claims ($20 million) and the kickbacks received by Baker ($2.4 million) demonstrates the potential for large-scale fraud to be driven by individual actors seeking personal gain.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Gulam Mukhdomi and Abida Mukhdomi",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Ohio",
+    "plaintiff": "United States Department of Justice",
+    "defendant": ["Gulam Mukhdomi", "Abida Mukhdomi"],
+    "clinicianType": "Physicians",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Chronic Pain Resources, LLC"
+      }
+    ],
+    "summary": "Gulam Mukhdomi, 69, and Abida Mukhdomi, 71, both of Phoenix, Arizona, were charged by indictment with multiple offenses related to the unlawful distribution of controlled substances and health care fraud. The Mukhdomis, physicians who owned and operated Chronic Pain Resources, LLC in Columbus, Ohio, allegedly ignored red flags of patient drug diversion and abuse, and ordered unnecessary drug screens. Abida Mukhdomi is also charged with unlawful distribution resulting in death. The drug screen fraud allegedly exceeded $150,000. The case is being prosecuted by Assistant U.S. Attorneys Nicole Pakiz and Ken Affeldt Metzler of the U.S. Attorney's Office for the Southern District of Ohio.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "21 U.S. Code § 841",
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1035"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/21/841", "text": "21 U.S. Code § 841 - Prohibited acts A"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
+      {"url": "#", "text": "Controlled Substance Distribution"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Pain Management Fraud"},
+      {"url": "#", "text": "Opioid Crisis"}
+    ],
+    "category": "Controlled Substance Distribution and Health Care Fraud",
+    "fraudAmount": 150000,
+    "affectedLabel": "Amount of Drug Screen Fraud",
+    "commentary": [
+      {
+        "comment": "This case highlights the intersection of the opioid crisis and healthcare fraud, demonstrating how some pain management practices may contribute to both issues simultaneously.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The charge of unlawful distribution resulting in death underscores the severe consequences that can result from irresponsible prescribing practices in pain management.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny of pain management practices, potentially affecting legitimate pain patients' access to necessary medications while attempting to curb abuse and fraud.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Sally Njume-Tatsing",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Ohio",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Sally Njume-Tatsing",
+    "clinicianType": "Home Health Agency Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Labelle Home Health Care, LLC"
+      }
+    ],
+    "summary": "Sally Njume-Tatsing, 45, of Pickerington, Ohio, was charged by indictment with health care fraud and false statements relating to health care matters in connection with a $2 million scheme to defraud Medicaid. Njume-Tatsing, the owner of Labelle Home Health Care, LLC, allegedly inflated the number of nursing services provided to Medicaid beneficiaries and billed for services purportedly provided by registered nurses that were actually provided by licensed practical nurses. The case is being prosecuted by Assistant U.S. Attorney Ken Affeldt and Special Assistant U.S. Attorney Jonathan Metzler of the U.S. Attorney's Office for the Southern District of Ohio.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1035"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Medicaid Fraud"},
+      {"url": "#", "text": "Home Health Care Fraud"},
+      {"url": "#", "text": "Nursing Services Fraud"}
+    ],
+    "category": "Health Care Fraud",
+    "fraudAmount": 2000000,
+    "affectedLabel": "Amount Defrauded from Medicaid",
+    "commentary": [
+      {
+        "comment": "This case highlights vulnerabilities in the home health care sector, where services are provided outside of traditional healthcare settings and may be more difficult to monitor.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The alleged misrepresentation of nursing qualifications (RN vs LPN) underscores the importance of proper credentialing and the potential impact on patient care quality.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny of home health agencies and their billing practices, potentially affecting access to home health services for Medicaid beneficiaries.",
         "source": "AI Analysis",
         "added_by": "Claude"
       }

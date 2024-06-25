@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.eac705ac.json","lastModified":1719332030696});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.c900d8c3.json","lastModified":1719337327211});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -229,8 +229,7 @@ filtered_data.map(entry => cardTemplate(entry))
     <summary>Healthcare Fraud</summary>
     <ol>
     <li class="observablehq-link observablehq-link-active"><a href="./healthcare-fraud">Criminal Cases</a></li>
-    <li class="observablehq-link"><a href="./healthcare-fraud-startups">Startups</a></li>
-    <li class="observablehq-link"><a href="./healthcare-fraud-ongoing">Ongoing</a></li>
+    <li class="observablehq-link"><a href="./healthcare-fraud-startups">Startups/Health Tech</a></li>
     </ol>
   </details>
   <section>
@@ -293,7 +292,7 @@ filtered_data.map(entry => cardTemplate(entry))
 </ul>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./"><span>Clinicians.fyi</span></a><a rel="next" href="./healthcare-fraud-startups"><span>Startups</span></a></nav>
+<nav><a rel="prev" href="./"><span>Clinicians.fyi</span></a><a rel="next" href="./healthcare-fraud-startups"><span>Startups/Health Tech</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>
