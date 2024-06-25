@@ -33,7 +33,8 @@
         ],
         "category": "Genetic Testing",
         "fraudAmount": 93000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Luis Lacerda",
@@ -69,7 +70,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 54300000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Vincent R. Sperti II",
@@ -106,7 +108,8 @@
         ],
         "category": "Kickback Scheme and Drug Possession",
         "fraudAmount": 400000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Luis Perez and Jestil Tapia",
@@ -152,7 +155,8 @@
         ],
         "category": "Health Care Fraud and COVID-19 Relief Fraud",
         "fraudAmount": 18000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Lucia Miranda Oro Taboada",
@@ -195,7 +199,8 @@
         "category": "Health Care Fraud and Wire Fraud",
         "fraudAmount": 1700000,
         "affectedLabel": "Beneficiaries Affected",
-        "source": ""
+        "source": "",
+        "commentary": []
     },
     {
         "title": "United States v. Joseph Dauch",
@@ -236,7 +241,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 21000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Todd Shull",
@@ -277,7 +283,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 3400000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Omar Saleh",
@@ -318,7 +325,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 2600000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Kamran Choudhry",
@@ -359,7 +367,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 1700000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Brian Tisdale",
@@ -410,6 +419,7 @@
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 5900000,
         "affectedLabel": "Beneficiaries Affected",
+        "commentary": [],
         "citations": [
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
@@ -469,7 +479,8 @@
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
             }
-        ]
+        ],
+        "commentary": []
     },
     {
         "title": "United States v. Christopher Thigpen",
@@ -528,7 +539,8 @@
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
             }
-        ]
+        ],
+        "commentary": []
     },
     {
         "title": "United States v. Fawn Munro",
@@ -574,7 +586,8 @@
             {
                 "url": "https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries"
             }
-        ]
+        ],
+        "commentary": []
     },
     {
         "title": "United States v. Joseph Hagen",
@@ -615,7 +628,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 1900000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Mark Gulow",
@@ -655,7 +669,8 @@
         ],
         "category": "Health Care Fraud",
         "fraudAmount": 3000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Marion Shaun Lund",
@@ -700,7 +715,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 3800000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Jean Wilson",
@@ -789,7 +805,8 @@
         ],
         "category": "Health Care Fraud, Kickbacks, Money Laundering, and Tax Evasion",
         "fraudAmount": 137000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Ronnie Spiegel",
@@ -841,7 +858,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 18000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Henry Rojas",
@@ -889,7 +907,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 7900000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Ingrid Estephan",
@@ -936,7 +955,8 @@
         ],
         "category": "Health Care Fraud and False Statements",
         "fraudAmount": 4600000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Tara Pendergraft",
@@ -988,7 +1008,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 93000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Vinit Patel",
@@ -1040,7 +1061,8 @@
         ],
         "category": "Health Care Fraud and Kickbacks",
         "fraudAmount": 3400000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Colby Edward Joyner",
@@ -1087,7 +1109,8 @@
         ],
         "category": "Health Care Fraud and False Statements",
         "fraudAmount": 10000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Wendy Cipriani",
@@ -1134,7 +1157,8 @@
         ],
         "category": "Health Care Fraud and False Statements",
         "fraudAmount": 8000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. John Manning",
@@ -1194,7 +1218,8 @@
         ],
         "category": "Health Care Fraud and Conspiracy",
         "fraudAmount": 41000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Susan L. Hertzberg, et al.",
@@ -1273,7 +1298,8 @@
         ],
         "category": "Health Care Fraud, Kickbacks, and Money Laundering",
         "fraudAmount": 11256241,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Emylee Thai",
@@ -1330,7 +1356,8 @@
         ],
         "category": "Health Care Fraud, Kickbacks, and Conspiracy",
         "fraudAmount": 142000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": []
     },
     {
         "title": "United States v. Lourdes Navarro",
@@ -1341,7 +1368,7 @@
         "clinicianType": "Laboratory Operator",
         "affiliatedEntities": [
             {
-                "npi": "",
+                "npi": "1962546176",
                 "label": "Matias Clinical Laboratory, Inc. (also known as Health Care Providers Laboratory)"
             }
         ],
@@ -1358,26 +1385,6 @@
             "18 U.S. Code § 1001"
         ],
         "relatedLinks": [
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1347",
-                "text": "18 U.S. Code § 1347"
-            },
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1343",
-                "text": "18 U.S. Code § 1343"
-            },
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/371",
-                "text": "18 U.S. Code § 371"
-            },
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1956",
-                "text": "18 U.S. Code § 1956"
-            },
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1001",
-                "text": "18 U.S. Code § 1001"
-            },
             {
                 "url": "#",
                 "text": "Health Care Fraud"
@@ -1405,7 +1412,14 @@
         ],
         "category": "Health Care Fraud, Wire Fraud, Money Laundering, and False Statements",
         "fraudAmount": 241000000,
-        "affectedLabel": "Beneficiaries Affected"
+        "affectedLabel": "Beneficiaries Affected",
+        "commentary": [
+            {
+                "comment": "Shams had been excluded from all participation in Medicare since he and Navarro were convicted in 2000 on felony counts of Medi Cal fraud, grand theft, money laundering and identity theft, according to court documents.",
+                "source": "https://www.labpulse.com/business-insights/trends-and-finance/kickback/article/15663201/lab-fraud-repeat-offender-sentenced-in-234m-medicare-case",
+                "added_by": "Jung Hoon Son"
+            }
+        ]
     },
     {
         "title": "United States v. Anthony Hao Dinh, et al.",
@@ -1431,22 +1445,6 @@
             "18 U.S. Code § 1001"
         ],
         "relatedLinks": [
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1347",
-                "text": "18 U.S. Code § 1347"
-            },
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1343",
-                "text": "18 U.S. Code § 1343"
-            },
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1344",
-                "text": "18 U.S. Code § 1344"
-            },
-            {
-                "url": "https://www.law.cornell.edu/uscode/text/18/1001",
-                "text": "18 U.S. Code § 1001"
-            },
             {
                 "url": "#",
                 "text": "Health Care Fraud"
@@ -1482,6 +1480,1059 @@
         ],
         "category": "Health Care Fraud, Wire Fraud, Bank Fraud, and False Statements",
         "fraudAmount": 233000000,
-        "affectedLabel": "Beneficiaries and Programs Affected"
-    }
+        "affectedLabel": "Beneficiaries and Programs Affected",
+        "commentary": []
+    },
+    {
+        "title": "United States v. Latresia Wilson and Corey Alston",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Dr. Latresia Wilson", "Corey Alston"],
+        "clinicianType": "Physician",
+        "affiliatedEntities": [],
+        "summary": "Dr. Latresia Wilson, 60, of Ocala, Florida, and Corey Alston, 45, were charged by indictment with conspiring to defraud the United States and to illegally purchase and arrange for the purchase of Medicare beneficiary identification numbers in connection with a scheme to bill Medicare for over-the-counter COVID-19 test kits that were ineligible for reimbursement. Wilson and Alston allegedly conspired to unlawfully purchase Medicare beneficiary information, including Medicare Beneficiary Identification Numbers used for billing, and submitted more than $8.4 million in claims to Medicare for over-the-counter COVID-19 test kits for Medicare beneficiaries throughout the United States regardless of whether those beneficiaries requested or wanted the test kits. The case is being prosecuted by Trial Attorney D. Keith Clouser of the National Rapid Response Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 1347",
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Illegal Purchase of Medicare Beneficiary Information"},
+          {"url": "#", "text": "COVID-19 Related Fraud"}
+        ],
+        "category": "Health Care Fraud and Conspiracy",
+        "fraudAmount": 8400000,
+        "affectedLabel": "Beneficiaries Affected"
+      },
+      {
+        "title": "United States v. Melissa J. Watson",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Louisiana",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Melissa J. Watson",
+        "clinicianType": "Primary Care Clinic Operator",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed primary care clinic"
+          },
+          {
+            "npi": "",
+            "label": "Unnamed purported spa"
+          }
+        ],
+        "summary": "Melissa J. Watson, 50, of Slidell, Louisiana, was charged by indictment with theft of public money, wire fraud, and money laundering in connection with an alleged scheme to misappropriate over $1.1 million in funds from the Provider Relief Fund (PRF), administered by HRSA, and the EIDL Program, administered by the Small Business Association (SBA), for the enrichment of herself and others. Watson, who operated a primary care clinic and a purported spa prior to the COVID-19 pandemic, allegedly caused the submission of false and fraudulent loan agreements, attestations, and other documentation on behalf of her clinic to HRSA and the SBA. She then allegedly used the PRF and EIDL Program funds for personal gain, including cash withdrawals, purchasing luxury vehicles, real estate, a boat, a trailer, a time share, and multiple luxury vacations. The government seized over $500,000 in bank accounts held by Watson, and several assets. The case is being prosecuted by Trial Attorney Kelly Z. Walters of the Gulf Coast Strike Force and Assistant U.S. Attorney Nicholas Moses of the U.S. Attorney's Office for the Eastern District of Louisiana.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 641",
+          "18 U.S. Code § 1343",
+          "18 U.S. Code § 1957"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/641", "text": "18 U.S. Code § 641"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1957", "text": "18 U.S. Code § 1957"},
+          {"url": "#", "text": "Theft of Public Money"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Provider Relief Fund Fraud"},
+          {"url": "#", "text": "EIDL Program Fraud"}
+        ],
+        "category": "Theft of Public Money, Wire Fraud, and Money Laundering",
+        "fraudAmount": 1100000,
+        "affectedLabel": "Funds Misappropriated",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Adolphus A. Obioha",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Louisiana",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Adolphus A. Obioha",
+        "clinicianType": "Medical Transport Business Operator",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed medical transport business"
+          }
+        ],
+        "summary": "Adolphus A. Obioha, 64, of Baton Rouge, Louisiana, was charged by indictment with wire fraud and money laundering in connection with an alleged scheme to fraudulently obtain over $425,000 in funds under the EIDL Program. According to the indictment, Obioha, who operated a medical transport business prior to the onset of the COVID-19 pandemic, submitted multiple fraudulent loan documents to the SBA. Obioha allegedly used the EIDL Program funds to purchase a rental property and personal vehicle and to wire nearly $175,000 overseas. The government seized a total of $136,234.09 from multiple bank accounts held by Obioha. The case is being prosecuted by Assistant Chief Justin M. Woodard of the Gulf Coast Strike Force and Assistant U.S. Attorney Caroline B. Gardner of the U.S. Attorney's Office for the Middle District of Louisiana.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1343",
+          "18 U.S. Code § 1957"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1957", "text": "18 U.S. Code § 1957"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "EIDL Program Fraud"}
+        ],
+        "category": "Wire Fraud and Money Laundering",
+        "fraudAmount": 425000,
+        "affectedLabel": "Funds Fraudulently Obtained",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Kelly McDermott, Kathleen Breault, and Sherilyn Pellitteri",
+        "caseNumber": "Case Number: Unknown",
+        "state": "New York",
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Kelly McDermott", "Kathleen Breault", "Sherilyn Pellitteri"],
+        "clinicianType": "Certified Nurse Midwives",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Sage-Femme Midwifery PLLC"
+          }
+        ],
+        "summary": "Kelly McDermott, 61, of Albany, New York, and Kathleen Breault, 65, of Cambridge, New York, were charged by indictment with conspiracy to defraud the United States in connection with a scheme to distribute nearly 2,700 forged COVID-19 vaccination record cards. McDermott, a certified nurse midwife and the owner of Sage-Femme Midwifery PLLC, and Breault, a certified nurse midwife who worked at Sage-Femme, conspired to enroll Sage-Femme as an authorized COVID-19 vaccine administration site and to provide COVID-19 vaccination record cards to individuals who were not vaccinated, including minors who were not at the time eligible to be vaccinated and non-United States citizens who were not present in the United States when they were purportedly vaccinated. Sage-Femme was one of the busiest vaccination sites in New York State, outpacing large, state-run vaccination sites despite being a small midwife practice. Sherilyn Pellitteri, 41, of Somerset, Kentucky, previously pleaded guilty to an information charging the same conspiracy. This case is being prosecuted by Trial Attorney Patrick J. Campbell of the Brooklyn Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Forged Vaccination Records"}
+        ],
+        "category": "Conspiracy to Defraud the United States",
+        "fraudAmount": 0,
+        "affectedLabel": "Forged Vaccination Cards Distributed",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Kate Spencer and Ziv Biton",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Kate Spencer", "Ziv Biton"],
+        "clinicianType": "Not specified",
+        "affiliatedEntities": [],
+        "summary": "Kate Spencer, 39, and Ziv Biton, 34, of North Miami Beach, Florida, were charged by indictment with conspiracy to commit wire fraud and bank fraud, money laundering conspiracy, and money laundering in connection with an alleged scheme to fraudulently obtain over $1.7 million in funds under the PPP and EIDL Program. According to the indictment, Spencer and Biton caused the submission of numerous fraudulent loan applications on behalf of purported health care businesses, among others, that contained false statements and falsified documents regarding the purported businesses and the intended use of the loan funds. The funds were allegedly used for personal expenses, such as purchases of residential properties. The case is being prosecuted by Trial Attorney Andrew Estes of the Brooklyn Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1349",
+          "18 U.S. Code § 1956",
+          "18 U.S. Code § 1957"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1349", "text": "18 U.S. Code § 1349"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1957", "text": "18 U.S. Code § 1957"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Bank Fraud"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "PPP Fraud"},
+          {"url": "#", "text": "EIDL Program Fraud"}
+        ],
+        "category": "Wire Fraud, Bank Fraud, and Money Laundering",
+        "fraudAmount": 1700000,
+        "affectedLabel": "Funds Fraudulently Obtained",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Jose A. Burgos-Millan",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Puerto Rico",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Dr. Jose A. Burgos-Millan",
+        "clinicianType": "Dentist",
+        "affiliatedEntities": [],
+        "summary": "Dr. Jose A. Burgos-Millan, 55, of San Juan, Puerto Rico, was charged by information with health care fraud. According to the information, Burgos-Millan, a dentist, caused the submission of fraudulent claims to Medicaid using billing code D1999, which was meant to reimburse providers for the cost of COVID-19 infection control materials, and was known as a 'COVID Fee.' From in or around August 2020 through November 2022, Burgos-Millan allegedly submitted approximately $108,052 in false and fraudulent claims to Medicaid using the billing code D1999 for encounters that never took place. In particular, Burgos-Millan would see Medicaid beneficiaries on one day, but then for billing purposes would split the services into multiple subsequent dates and bill a COVID Fee for each day he did not see of the beneficiaries. The case is being prosecuted by Special Assistant United States Attorney Wallace A. Bustelo for the District of Puerto Rico.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2022
+        },
+        "violation": [
+          "18 U.S. Code § 1347"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Medicaid Fraud"}
+        ],
+        "category": "Health Care Fraud",
+        "fraudAmount": 108052,
+        "affectedLabel": "Fraudulent Claims Submitted",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Nicholas Frank Sciotto and Kyle Blake Burbage",
+        "caseNumber": "Case Number: Unknown",
+        "state": ["Utah", "South Carolina"],
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Nicholas Frank Sciotto", "Kyle Blake Burbage"],
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [],
+        "summary": "Nicholas Frank Sciotto, 32, of Salt Lake City, Utah, and Kyle Blake Burbage, 32, of Goose Creek, South Carolina, were charged by indictment for conspiring to defraud the United States by obstructing the Centers for Disease Control and Prevention's (CDC) COVID-19 vaccination program. Between March 2021 through September 2021, Sciotto allegedly manufactured and sold online approximately 120,000 counterfeit COVID-19 vaccination record cards across the country, with most buyers living in New York. Burbage, Sciotto's alleged co-conspirator, purchased counterfeit vaccination record cards from Sciotto and then resold some of them and distributed them to others in South Carolina. The indictment alleges that by collectively manufacturing, selling, and distributing these counterfeit cards during the COVID-19 pandemic, the defendants significantly undermined the CDC's COVID-19 vaccination program and other governmental health-and-safety regulations and protocols. This case is being prosecuted by Assistant U.S. Attorney Todd Bouton of the U.S. Attorney's Office for the District of Utah.",
+        "timeline": {
+          "start_year": 2021,
+          "end_year": 2021
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 1017"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1017", "text": "18 U.S. Code § 1017"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Fraudulent Use of Government Seals"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Counterfeit Vaccination Records"}
+        ],
+        "category": "Conspiracy to Defraud the United States and Fraudulent Use of Government Seals",
+        "fraudAmount": 0,
+        "affectedLabel": "Counterfeit Vaccination Cards Distributed",
+        "commentary": []
+      },
+      {
+        "title": "United States v. GoodRx Holdings, Inc.",
+        "caseNumber": "Case No. 23-cv-460",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "GoodRx Holdings, Inc.",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "HeyDoctor, LLC"
+          }
+        ],
+        "summary": "The United States Department of Justice, on behalf of the Federal Trade Commission, filed a complaint against GoodRx Holdings, Inc. for violating Section 5 of the FTC Act and the Health Breach Notification Rule. GoodRx is accused of sharing users' sensitive health information with third-party advertising companies and platforms without users' knowledge or consent, despite promises to keep such information private. The company also allegedly used this information to target users with health-related advertisements on Facebook and Instagram. GoodRx is charged with deceptive privacy practices, unfair data sharing, and failing to report unauthorized disclosures of health information as required by the Health Breach Notification Rule.",
+        "timeline": {
+          "start_year": 2017,
+          "end_year": 2022
+        },
+        "violation": [
+          "15 U.S. Code § 45(a)",
+          "16 CFR § 318"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/15/45", "text": "15 U.S. Code § 45 - Unfair methods of competition unlawful; prevention by Commission"},
+          {"url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-318", "text": "16 CFR Part 318 - Health Breach Notification Rule"},
+          {"url": "#", "text": "Health Information Privacy"},
+          {"url": "#", "text": "Data Sharing"},
+          {"url": "#", "text": "Targeted Advertising"},
+          {"url": "#", "text": "Health Breach Notification"}
+        ],
+        "category": "Health Information Privacy, Deceptive Practices, and Health Breach Notification",
+        "fraudAmount": 0,
+        "affectedLabel": "Users Affected",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Artur Chanchikyan",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Artur Chanchikyan",
+        "clinicianType": "Home Health Agency Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Gentle Touch Home Health Care Inc."
+          }
+        ],
+        "summary": "Artur Chanchikyan, 54, of Los Angeles, California, was charged by indictment with wire fraud, theft of government property, and concealment money laundering offenses in connection with an alleged scheme to defraud the United States of approximately $345,000 in COVID-19 relief monies. Chanchikyan, the owner and operator of Gentle Touch Home Health Care Inc., formerly a home health agency, allegedly filed fraudulent loan applications with both the SBA and a financial institution seeking COVID-19 relief funds, falsely attested to the use of additional funds provided under the CARES Act Provider Relief Fund, and then misused the funds for his own personal use and benefit and the benefit of others. The case is being prosecuted by Trial Attorney Patrick J. Queenan of the Miami Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1343",
+          "18 U.S. Code § 641",
+          "18 U.S. Code § 1956"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/641", "text": "18 U.S. Code § 641 - Public money, property or records"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Theft of Government Property"},
+          {"url": "#", "text": "Money Laundering"},
+          {"url": "#", "text": "COVID-19 Relief Fraud"},
+          {"url": "#", "text": "CARES Act Provider Relief Fund Fraud"}
+        ],
+        "category": "Wire Fraud, Theft of Government Property, and Money Laundering",
+        "fraudAmount": 345000,
+        "affectedLabel": "Amount Defrauded from COVID-19 Relief Funds",
+        "commentary": []
+      },
+      {
+        "title": "United States v. Jaimi Jansen",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Jaimi Jansen",
+        "clinicianType": "Health and Wellness Center Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed integrative health and wellness center in Santa Cruz, California"
+          }
+        ],
+        "summary": "Jaimi Jansen, 40, of Santa Cruz, California, was charged by information with making false statements related to health care matters in connection with an alleged scheme to offer fake cures for COVID-19 and distribute fake COVID-19 vaccination record cards. Jansen, the owner of an integrative health and wellness center in Santa Cruz, California, allegedly functioned as a distributor for Juli Mazi, a naturopathic doctor who offered and sold products known as 'homeoprophylaxis immunizations' claimed to cure COVID-19. Jansen allegedly purchased and repackaged Mazi's homeoprophylaxis immunization pellets and fake CDC COVID-19 vaccination record cards, providing them to approximately 170 recipients. The case is being prosecuted by Trial Attorney Babu Kaza of the National Rapid Response Strike Force and Assistant U.S. Attorney Katherine Lloyd-Lovett of the U.S. Attorney's Office for the Northern District of California.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1035"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
+          {"url": "#", "text": "False Statements"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Fake COVID-19 Cures"},
+          {"url": "#", "text": "Fraudulent Vaccination Records"}
+        ],
+        "category": "False Statements Related to Health Care Matters",
+        "fraudAmount": 0,
+        "affectedLabel": "Recipients of Fraudulent Products",
+        "commentary": [
+          {
+            "comment": "This case highlights the ongoing issue of COVID-19 related fraud, particularly the distribution of fake cures and fraudulent vaccination records. It's concerning that health and wellness professionals are involved in such schemes.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The relatively small number of recipients (170) suggests this may have been a localized operation. It will be interesting to see if investigations reveal wider distribution networks for these fraudulent products.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Ranna Shamiya",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Ranna Shamiya",
+        "clinicianType": "Advanced Practice Pharmacist",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unnamed hospital in the Northern District of California"
+          }
+        ],
+        "summary": "Ranna Shamiya, 41, of Ukiah, California, was charged by information with making false statements related to health care matters in connection with an alleged scheme to offer fake cures for COVID-19 and distribute fake COVID-19 vaccination record cards. Shamiya, a licensed advanced practice pharmacist and Director of Pharmacy at a hospital in Northern California, allegedly assisted Juli Mazi, a naturopathic doctor, in her scheme to sell 'homeoprophylaxis immunizations' claimed to cure COVID-19. Shamiya allegedly used her access to controlled medical information to identify legitimate lot numbers for FDA-authorized COVID-19 vaccines and transmitted that information to Mazi, who used it to create fake CDC COVID-19 vaccination record cards. The case is being prosecuted by Trial Attorney Babu Kaza of the National Rapid Response Strike Force and Assistant U.S. Attorney Katherine Lloyd-Lovett of the U.S. Attorney's Office for the Northern District of California.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1035"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
+          {"url": "#", "text": "False Statements"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Fake COVID-19 Cures"},
+          {"url": "#", "text": "Fraudulent Vaccination Records"},
+          {"url": "#", "text": "Misuse of Medical Information"}
+        ],
+        "category": "False Statements Related to Health Care Matters and Misuse of Medical Information",
+        "fraudAmount": 0,
+        "affectedLabel": "Recipients of Fraudulent Vaccination Records",
+        "commentary": [
+          {
+            "comment": "This case is particularly concerning as it involves a licensed healthcare professional in a position of trust misusing their access to confidential medical information to facilitate fraud.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of a hospital's Director of Pharmacy in this scheme raises questions about the security measures in place to prevent misuse of sensitive medical data.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case demonstrates the complex nature of COVID-19 related fraud, involving collaboration between different types of healthcare providers and misuse of legitimate medical systems.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Jason Nielsen",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Jason Nielsen",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Arrayit Corporation"
+          }
+        ],
+        "summary": "Jason Nielsen, 53, of Scotts Valley, California was charged by information with securities fraud in connection with an alleged scheme to defraud investors and potential investors in Arrayit, a publicly traded medical technology company. Nielsen, a large Arrayit shareholder, allegedly deceived investors by communicating false and misleading information about the demand for Arrayit securities and his personal financial stake in them. This was done to fraudulently induce other investors to purchase Arrayit securities and drive up the stock's price, while Nielsen secretly sold his own shares at artificially inflated prices. The case is being prosecuted by Acting Principal Assistant Chief Justin Weitz, Assistant Chief Jacob Foster, and Trial Attorney Laura Connelly of the Criminal Division's Fraud Section and Assistant U.S. Attorney Lloyd Farnham of the U.S. Attorney's Office for the Northern District of California.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "15 U.S. Code § 78j",
+          "17 CFR § 240.10b-5"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/15/78j", "text": "15 U.S. Code § 78j - Manipulative and deceptive devices"},
+          {"url": "https://www.law.cornell.edu/cfr/text/17/240.10b-5", "text": "17 CFR § 240.10b-5 - Employment of manipulative and deceptive devices"},
+          {"url": "#", "text": "Securities Fraud"},
+          {"url": "#", "text": "Market Manipulation"},
+          {"url": "#", "text": "Pump and Dump Scheme"}
+        ],
+        "category": "Securities Fraud",
+        "fraudAmount": 0,
+        "affectedLabel": "Defrauded Investors",
+        "commentary": [
+          {
+            "comment": "This case illustrates a classic 'pump and dump' scheme in the context of a medical technology company, potentially exploiting increased interest in healthcare stocks during the pandemic.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of a large shareholder in this fraud highlights the need for robust insider trading regulations and enforcement in the healthcare sector.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case demonstrates how securities fraud can indirectly impact healthcare by potentially diverting investment from legitimate medical technology companies.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Elizabeth Mercedes Hernandez",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Elizabeth Mercedes Hernandez",
+        "clinicianType": "Advanced Registered Nurse Practitioner",
+        "affiliatedEntities": [],
+        "summary": "Elizabeth Mercedes Hernandez, 43, of Miami, Florida, an advanced registered nurse practitioner, was charged by indictment in connection with an alleged health care fraud and wire fraud conspiracy that resulted in the submission of over $134 million dollars of false and fraudulent claims to Medicare. Hernandez and her co-conspirators allegedly took advantage of Medicare's relaxed telemedicine rules during the COVID-19 pandemic, signing an enormous volume of doctor's orders for medically unnecessary genetic testing and durable medical equipment in exchange for kickbacks. These kickbacks were disguised as telehealth consultation fees, and Hernandez allegedly billed Medicare for telemedicine consultations that were not performed as represented. The case is being prosecuted by Trial Attorney Andrea Savdie of the Miami Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1347",
+          "18 U.S. Code § 1343",
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Telemedicine Fraud"},
+          {"url": "#", "text": "Kickbacks"}
+        ],
+        "category": "Health Care Fraud, Wire Fraud, and Kickbacks",
+        "fraudAmount": 134000000,
+        "affectedLabel": "Amount of False Claims Submitted to Medicare",
+        "commentary": [
+          {
+            "comment": "This case illustrates how the relaxation of telemedicine rules during the COVID-19 pandemic, while intended to increase access to care, also created opportunities for large-scale fraud.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of an advanced practice nurse in this scheme highlights the need for oversight and accountability across all levels of healthcare providers, not just physicians.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The scale of the alleged fraud ($134 million) demonstrates the potential for significant financial impact when telemedicine regulations are exploited, potentially leading to stricter oversight in the future.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Jason Edward Lopez",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Jason Edward Lopez",
+        "clinicianType": "Not specified",
+        "affiliatedEntities": [],
+        "summary": "Jason Edward Lopez, 38, of Port Saint Lucie, Florida, was indicted for conspiracy to commit health care fraud and wire fraud, health care fraud, conspiracy to defraud the United States and pay health care kickbacks, paying health care kickbacks, and wire fraud. Lopez allegedly billed Medicare for $2,598,318 worth of medically unnecessary doctors' orders for durable medical equipment, paying kickbacks to marketing companies in exchange for these orders. He also allegedly submitted a false application for $105,800 of COVID-19 relief funding, claiming non-existent employees and listing gross revenues derived from the kickback scheme. This case is being prosecuted by Trial Attorney Reginald Cuyler Jr. of the Miami Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1347",
+          "18 U.S. Code § 1343",
+          "18 U.S. Code § 371",
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Kickbacks"},
+          {"url": "#", "text": "COVID-19 Relief Fraud"},
+          {"url": "#", "text": "Durable Medical Equipment Fraud"}
+        ],
+        "category": "Health Care Fraud, Wire Fraud, Kickbacks, and COVID-19 Relief Fraud",
+        "fraudAmount": 2704118,
+        "affectedLabel": "Amount Defrauded from Medicare and COVID-19 Relief Funds",
+        "commentary": [
+          {
+            "comment": "This case demonstrates how some individuals exploited both the healthcare system and COVID-19 relief programs, combining multiple fraudulent schemes.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of kickbacks to obtain unnecessary doctors' orders highlights vulnerabilities in the prescription and distribution process for durable medical equipment.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of applications for COVID-19 relief funding, particularly when submitted by individuals or companies already involved in other potentially fraudulent activities.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Lisa Hammell",
+        "caseNumber": "Case Number: Unknown",
+        "state": "New Jersey",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Lisa Hammell",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "U.S. Postal Service"
+          }
+        ],
+        "summary": "Lisa Hammell, 39, of Turnersville, New Jersey, a U.S. Postal Service employee, was charged by indictment with conspiracy to defraud the United States and fraud in connection with identification documents for her role in creating and distributing fraudulent COVID-19 vaccination record cards. Beginning around March 2021, Hammell allegedly designed and printed dozens of fraudulent cards while working at a post office, selling at least 400 to unvaccinated individuals. The alleged goal was to undermine the CDC's COVID-19 vaccination program and the distribution of genuine vaccination cards. The case is being prosecuted by Trial Attorneys Kelly M. Lyons and Darren C. Halverson of the Newark Strike Force.",
+        "timeline": {
+          "start_year": 2021,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 1028"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1028", "text": "18 U.S. Code § 1028 - Fraud and related activity in connection with identification documents"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Identification Document Fraud"},
+          {"url": "#", "text": "COVID-19 Vaccination Card Fraud"}
+        ],
+        "category": "Conspiracy and Identification Document Fraud",
+        "fraudAmount": 0,
+        "affectedLabel": "Fraudulent Vaccination Cards Distributed",
+        "commentary": [
+          {
+            "comment": "This case highlights how individuals in non-healthcare positions exploited their access to resources for creating fraudulent COVID-19 vaccination cards, undermining public health efforts.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of a U.S. Postal Service employee in this scheme may lead to increased scrutiny and security measures within government agencies to prevent misuse of resources.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The scale of the operation (at least 400 fraudulent cards) suggests a significant demand for such documents, potentially indicating broader issues with vaccine hesitancy or resistance to vaccination mandates.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Abid Syed, et al.",
+        "caseNumber": "Case Number: Unknown",
+        "state": "New Jersey",
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Abid Syed", "Tariq Din", "Tamer Mohamed", "Abdul Rauf", "Tauqir Khan", "Nisim Davydov"],
+        "clinicianType": "Laboratory Owners and Marketers",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Metpath (clinical laboratory in Parsippany, New Jersey)"
+          }
+        ],
+        "summary": "Six individuals from New Jersey were charged by criminal complaint with conspiracy to violate the Federal Anti-Kickback Statute for their alleged roles in a scheme to defraud Medicare. The scheme involved paying over $250,000 in illegal kickbacks and bribes for laboratory tests for COVID-19 pathogen tests. Abid Syed and Tariq Din owned Metpath, a clinical laboratory that performed and billed Medicare for COVID-19 diagnostic testing. Tauqir Khan, Tamer Mohamed, and Nisim Davydov were marketers who supplied thousands of COVID-19 diagnostic tests to Metpath and received kickbacks. Abdul Rauf allegedly helped conceal the kickback payments through shell companies. The case is being prosecuted by Assistant U.S. Attorney DeNae Thomas of the Health Care Fraud Unit of the U.S. Attorney's Office for the District of New Jersey.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "#", "text": "Anti-Kickback Statute Violation"},
+          {"url": "#", "text": "COVID-19 Testing Fraud"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Healthcare Kickbacks"}
+        ],
+        "category": "Healthcare Kickbacks and Medicare Fraud",
+        "fraudAmount": 250000,
+        "affectedLabel": "Amount of Illegal Kickbacks and Bribes",
+        "commentary": [
+          {
+            "comment": "This case demonstrates how the urgent need for COVID-19 testing created opportunities for fraud through kickback schemes involving multiple parties across the healthcare supply chain.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of shell companies to conceal kickback payments highlights the sophisticated nature of some healthcare fraud schemes and the challenges in detecting them.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of relationships between clinical laboratories and marketing entities in the context of COVID-19 testing and other diagnostic services.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Dr. Perry Frankel",
+        "caseNumber": "Case Number: Unknown",
+        "state": "New York",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Dr. Perry Frankel",
+        "clinicianType": "Cardiologist",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Advanced Cardiovascular Diagnostics PLLC"
+          }
+        ],
+        "summary": "Dr. Perry Frankel, 64, of Roslyn, New York, was charged by indictment with health care fraud for allegedly defrauding Medicare and Medicaid of over $1.3 million during the COVID-19 health emergency. Frankel, a cardiologist and owner of Advanced Cardiovascular Diagnostics PLLC, allegedly submitted claims for office visits that were not performed for patients who received COVID-19 tests at his company's mobile testing sites across Long Island. Some claims were reportedly submitted for dates when Frankel was not even in New York. The case is being prosecuted by Trial Attorney Kelly M. Lyons of the Newark Strike Force and Patrick J. Campbell of the Brooklyn Strike Force.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1347"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "COVID-19 Related Fraud"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Medicaid Fraud"}
+        ],
+        "category": "Health Care Fraud",
+        "fraudAmount": 1300000,
+        "affectedLabel": "Amount Defrauded from Medicare and Medicaid",
+        "commentary": [
+          {
+            "comment": "This case illustrates how some healthcare providers exploited the COVID-19 emergency to commit fraud, taking advantage of increased demand for testing and potentially relaxed oversight.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of mobile testing sites in this scheme highlights the need for robust verification processes in non-traditional healthcare settings, especially during public health emergencies.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The fact that claims were submitted for dates when the doctor was not even in the state underscores the importance of cross-referencing claims data with other records to detect potential fraud.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Raymond Earl Vallier",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Tennessee",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Raymond Earl Vallier",
+        "clinicianType": "Former Hospice Care Center Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "North Delta Hospice and Palliative Services LLC"
+          }
+        ],
+        "summary": "Raymond Earl Vallier, 52, of Collierville, Tennessee was indicted for theft of government property and aggravated identity theft related to the misuse of CARES Act Provider Relief Fund monies. Vallier, the former owner of North Delta Hospice, allegedly used the identity of the deceased owner to falsely attest to the terms of a $107,568.03 Provider Relief Fund payment received on April 10, 2020. North Delta Hospice had ceased operations by September 2019 and was ineligible for the funds. Vallier allegedly used the funds for personal expenses and payments to another company he owned. The case is being prosecuted by Trial Attorney Sara E. Porter of the Gulf Coast Strike Force and Assistant U.S. Attorney Tony Arvin of the U.S. Attorney's Office for the Western District of Tennessee.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 641",
+          "18 U.S. Code § 1028A"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/641", "text": "18 U.S. Code § 641 - Public money, property or records"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1028A", "text": "18 U.S. Code § 1028A - Aggravated identity theft"},
+          {"url": "#", "text": "Theft of Government Property"},
+          {"url": "#", "text": "Identity Theft"},
+          {"url": "#", "text": "COVID-19 Relief Fraud"},
+          {"url": "#", "text": "CARES Act Provider Relief Fund Fraud"}
+        ],
+        "category": "Theft of Government Property and Identity Theft",
+        "fraudAmount": 107568.03,
+        "affectedLabel": "Amount of Misappropriated Provider Relief Funds",
+        "commentary": [
+          {
+            "comment": "This case demonstrates how some individuals exploited COVID-19 relief programs by misappropriating funds intended for active healthcare providers, even when their businesses were no longer operational.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of a deceased person's identity to falsely attest to eligibility highlights the need for more robust verification processes in the distribution of emergency relief funds.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of the recipients of Provider Relief Fund payments, particularly those associated with businesses that have recently ceased operations or changed ownership.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Robert Van Camp",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Colorado",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Robert Van Camp",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [],
+        "summary": "Robert Van Camp, 53, of Parker, Colorado, was charged by criminal complaint with conspiracy to defraud the United States and trafficking in counterfeit goods for allegedly producing and selling fake COVID-19 vaccination record cards. Van Camp allegedly forged hundreds of fake cards from a blank template and sold them to buyers and distributors in at least a dozen states, including to Olympians and international travelers. He reportedly used code names to conceal the scheme and sold some cards for $175 each. The case is being prosecuted by Trial Attorneys Babu Kaza and Chris Wenger of the National Rapid Response Strike Force.",
+        "timeline": {
+          "start_year": 2021,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 2320"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/2320", "text": "18 U.S. Code § 2320 - Trafficking in counterfeit goods or services"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Counterfeit Goods Trafficking"},
+          {"url": "#", "text": "COVID-19 Vaccination Card Fraud"}
+        ],
+        "category": "Conspiracy and Counterfeit Goods Trafficking",
+        "fraudAmount": 0,
+        "affectedLabel": "Fake Vaccination Cards Distributed",
+        "commentary": [
+          {
+            "comment": "This case illustrates the international scope of COVID-19 vaccination card fraud, with implications for global travel and major sporting events like the Olympics.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of code names and the defendant's apparent awareness of the illegality of his actions demonstrate the deliberate nature of this fraud scheme.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The high price point of $175 per card suggests a significant demand for fake vaccination records, potentially indicating broader issues with vaccine hesitancy or resistance to vaccination mandates.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Neda Mehrabani",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Neda Mehrabani",
+        "clinicianType": "Chiropractor and Acupuncturist",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Health Clinic of Southern California"
+          }
+        ],
+        "summary": "Neda Mehrabani, 47, of Tarzana, California, was charged by information with health care fraud for allegedly obtaining over $3.3 million in Medicare funds fraudulently. Mehrabani, a licensed chiropractor and acupuncturist and owner of Health Clinic of Southern California, allegedly caused the submission of false and fraudulent claims to Medicare for chiropractic services that were medically unnecessary, not provided as represented, or not rendered at all. The case is being prosecuted by Trial Attorney Alexandra Michael of the Los Angeles Strike Force.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1347"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Chiropractic Services Fraud"}
+        ],
+        "category": "Health Care Fraud",
+        "fraudAmount": 3300000,
+        "affectedLabel": "Amount Fraudulently Obtained from Medicare",
+        "commentary": [
+          {
+            "comment": "This case highlights the ongoing issue of fraud in alternative medicine practices, particularly in chiropractic services, which have been a focus of Medicare fraud investigations.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The substantial amount involved ($3.3 million) underscores the potential for significant financial impact on the Medicare system from individual provider fraud.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of claims for chiropractic services in Medicare, potentially affecting legitimate providers in the field.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Joelson Viveros",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Joelson Viveros",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "South Bend Specialty Pharmacy (SBSP)"
+          }
+        ],
+        "summary": "Joelson Viveros, 43, of Boca Raton, Florida, was charged by information with conspiracy to defraud the United States and to pay and receive health care kickbacks in connection with an alleged $3 million kickback scheme involving pharmacies in multiple states. Viveros allegedly invested in South Bend Specialty Pharmacy, operated a call center to persuade Medicare beneficiaries to accept unnecessary prescriptions, and paid kickbacks to telemedicine companies for signed prescriptions. He allegedly received kickbacks from pharmacies in exchange for supplying these prescriptions. The case is being prosecuted by Trial Attorney Gary Winters of the National Rapid Response Strike Force and Assistant U.S. Attorney David Mesrobian of the U.S. Attorney's Office for the Middle District of Florida.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 371",
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "#", "text": "Conspiracy to Defraud the United States"},
+          {"url": "#", "text": "Health Care Kickbacks"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Telemedicine Fraud"}
+        ],
+        "category": "Conspiracy and Health Care Kickbacks",
+        "fraudAmount": 3000000,
+        "affectedLabel": "Amount Involved in Kickback Scheme",
+        "commentary": [
+          {
+            "comment": "This case demonstrates the complex nature of some healthcare fraud schemes, involving multiple entities including pharmacies, call centers, and telemedicine companies across state lines.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of telemarketers to target Medicare beneficiaries highlights the vulnerability of elderly populations to aggressive marketing tactics for unnecessary medical treatments.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "This case may lead to increased scrutiny of relationships between pharmacies, telemedicine providers, and marketing entities, particularly in the context of prescriptions for expensive medications like topical pain creams.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Tommy Louisville",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Florida",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Tommy Louisville",
+        "clinicianType": "Former Addiction Treatment Center Owner",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "First Help Urgent Care Clinic"
+          }
+        ],
+        "summary": "Tommy Louisville, 70, of Pembroke Pines, Florida was charged by indictment with wire fraud for allegedly obtaining $33,034 from a COVID-19 relief program fraudulently. Louisville, the owner of First Help Urgent Care Clinic, a shuttered opioid addiction treatment center, allegedly misappropriated funds from the Paycheck Protection Program and submitted a false loan application to the Small Business Administration. The funds were meant for COVID-19 patient care and to support small businesses affected by the pandemic, but Louisville allegedly used them for other purposes. The case is being prosecuted by Assistant U.S. Attorney Greg Pizzo of the U.S. Attorney's Office for the Middle District of Florida.",
+        "timeline": {
+          "start_year": 2020,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1343"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "COVID-19 Relief Fraud"},
+          {"url": "#", "text": "Paycheck Protection Program Fraud"},
+          {"url": "#", "text": "Small Business Administration Loan Fraud"}
+        ],
+        "category": "Wire Fraud and COVID-19 Relief Fraud",
+        "fraudAmount": 33034,
+        "affectedLabel": "Amount Fraudulently Obtained from COVID-19 Relief Program",
+        "commentary": [
+          {
+            "comment": "This case illustrates how some individuals exploited COVID-19 relief programs intended for struggling businesses, even when their own businesses were no longer operational.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of a former addiction treatment center owner in this fraud highlights the need for scrutiny across various healthcare sectors, including those not directly involved in COVID-19 treatment.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "While the fraudulent amount ($33,034) is smaller compared to some other cases, it demonstrates that authorities are pursuing COVID-19 relief fraud cases regardless of scale.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Steven Parker",
+        "caseNumber": "Case Number: Unknown",
+        "state": "Texas",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Steven Parker",
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "Unique Media Connections (UMC)"
+          },
+          {
+            "npi": "",
+            "label": "Media Lead Kings (MLK)"
+          }
+        ],
+        "summary": "Steven Parker, 69, of Prosper, Texas, was charged by information with conspiracy to solicit and receive kickbacks and bribes in connection with an alleged multi-million dollar kickback scheme involving DME front companies in Pinellas County, Florida. Parker allegedly used his companies, Unique Media Connections (UMC) and Media Lead Kings (MLK), to purchase and resell completed doctors' orders for DME to front companies in exchange for kickbacks. He allegedly received $14,355,000 in kickbacks, and the front companies subsequently billed Medicare for over $37 million using these orders. The case is being prosecuted by Assistant U.S. Attorney Tiffany E. Fields of the U.S. Attorney's Office for the Middle District of Florida.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "42 U.S. Code § 1320a–7b"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "#", "text": "Health Care Kickbacks"},
+          {"url": "#", "text": "Medicare Fraud"},
+          {"url": "#", "text": "Durable Medical Equipment (DME) Fraud"},
+          {"url": "#", "text": "Conspiracy"}
+        ],
+        "category": "Health Care Kickbacks and Conspiracy",
+        "fraudAmount": 14355000,
+        "affectedLabel": "Amount Received in Kickbacks",
+        "commentary": [
+          {
+            "comment": "This case illustrates the complex nature of some healthcare fraud schemes, involving multiple entities and crossing state lines, which can make detection and prosecution challenging.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The use of front companies and fictitious business names highlights the sophisticated methods used to conceal fraudulent activities in the healthcare sector.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The significant discrepancy between the amount received in kickbacks ($14.3 million) and the amount billed to Medicare ($37 million) demonstrates the potential for substantial financial impact on federal health care programs from such schemes.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      },
+      {
+        "title": "United States v. Brett Blackman, Gary Cox, and Gregory Schreck",
+        "caseNumber": "Case Number: Unknown",
+        "state": ["Kansas", "Arizona"],
+        "plaintiff": "United States Department of Justice",
+        "defendant": ["Brett Blackman", "Gary Cox", "Gregory Schreck"],
+        "clinicianType": "Not applicable",
+        "affiliatedEntities": [
+          {
+            "npi": "",
+            "label": "DMERx"
+          }
+        ],
+        "summary": "Brett Blackman, Gary Cox, and Gregory Schreck were charged by indictment with conspiracy to commit health care fraud and wire fraud, conspiracy to pay and receive kickbacks, and conspiracy to defraud the United States and make false statements. They allegedly submitted $1.9 billion in false claims to Medicare and other insurers for medically unnecessary items. The defendants operated DMERx, an internet platform generating fraudulent doctors' orders for kickbacks. They coordinated illegal transactions between pharmacies, DME suppliers, marketers, and telemedicine companies. The scheme involved falsely representing doctor examinations and removing telemedicine references to obstruct investigations. DME companies and pharmacies billed Medicare over $1.96 billion using these fraudulent orders. The case is being prosecuted by Trial Attorneys Darren C. Halverson and Andrea Savdie of the National Rapid Response and Miami Strike Forces.",
+        "timeline": {
+          "start_year": 2024,
+          "end_year": 2024
+        },
+        "violation": [
+          "18 U.S. Code § 1347",
+          "18 U.S. Code § 1343",
+          "42 U.S. Code § 1320a–7b",
+          "18 U.S. Code § 371",
+          "18 U.S. Code § 1001"
+        ],
+        "relatedLinks": [
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
+          {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+          {"url": "https://www.law.cornell.edu/uscode/text/18/1001", "text": "18 U.S. Code § 1001 - Statements or entries generally"},
+          {"url": "#", "text": "Health Care Fraud"},
+          {"url": "#", "text": "Wire Fraud"},
+          {"url": "#", "text": "Kickbacks"},
+          {"url": "#", "text": "Telemedicine Fraud"},
+          {"url": "#", "text": "Durable Medical Equipment (DME) Fraud"}
+        ],
+        "category": "Health Care Fraud, Wire Fraud, Kickbacks, and Conspiracy",
+        "fraudAmount": 1963000000,
+        "affectedLabel": "Amount Billed to Medicare in Fraudulent Claims",
+        "commentary": [
+          {
+            "comment": "This case demonstrates the potential for massive scale fraud in healthcare when technology platforms are used to facilitate and automate fraudulent practices across multiple entities.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The involvement of high-level executives (CEOs and VPs) in this scheme highlights the need for increased oversight and accountability in healthcare technology companies.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          },
+          {
+            "comment": "The alleged obstruction of investigations by removing telemedicine references underscores the sophisticated nature of modern healthcare fraud schemes and the challenges faced by investigators.",
+            "source": "AI Analysis",
+            "added_by": "Claude"
+          }
+        ]
+      }
 ]

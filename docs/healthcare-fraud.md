@@ -11,7 +11,7 @@ style: custom-style.css
 
 ## Intro
 
-<p style="font-size: 0.8em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Based on my experience in healthcare startup, interactions with investors, executives, much of the fraud is overlooked as "part of business". This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing.</p>
+<p style="font-size: 0.8em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Based on my experience in healthcare startup, interactions with investors, executives, much of the fraud is overlooked as "part of business". This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing. </p>
 
 ```js
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -32,7 +32,9 @@ search_input
 
 ---
 
-### Selected Cases Statistics
+## Statistics
+
+
 
 <div class="stats-container">
     <div class="big-number-card">
@@ -98,6 +100,7 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
 ```
 
 
+
 <!-- ### ${filtered_data.length} Cases Found -->
 
 ------
@@ -133,7 +136,7 @@ const cardTemplate = (data) => html`<div class="fraud-card">
             <div class="category">${data.category}</div>
             <div class="fraud-amount-container">
                 <div class="number-label">Alleged Fraud</div>
-                <div class="fraud-amount">$${d3.format(".2s")(data.fraudAmount)}</div>
+                <div class="fraud-amount">$${d3.format(".2s")(data.fraudAmount).replace(/G/, "B")}</div>
             </div>
             <!-- <div class="number-label">${data.affectedLabel}</div> !-->
             <div>${data.affectedCount}</div>
@@ -146,8 +149,16 @@ const cardTemplate = (data) => html`<div class="fraud-card">
         </div>
     </div>
     <div class="card-footer">
+        <div class="comment-content">
+        ${data.commentary ? (Array.isArray(data.commentary) ? data.commentary.map(c => html`
+            <div class="comment-admonition">
+                ${c.comment} <b style="text-align: right;">- ${c.added_by}</b>
+            </div>
+        </div>`): data.commentary) : "" }
+    </div>
+    <div class="card-footer">
         <div class="timeline">
-            <h4>Years:</h4>
+            <h4>Fraud Years:</h4>
             ${yearHeatmap(2014, 2024, data.timeline.start_year, data.timeline.end_year)}
         </div>
     </div>
@@ -162,4 +173,10 @@ ${filtered_data.map(entry => cardTemplate(entry))}
 
 ## References
 
-- https://www.justice.gov/criminal/criminal-fraud/telemedicine-case-summaries
+- [ ] 2023 National Health Care Fraud Enforcement Action
+- [ ] 2023 COVID-19 Enforcement Action
+- [ ] 2022 Opioid Enforcement Action
+- [x] [2022 Telemedicine Enforcement Action]
+- [x] [2022 COVID-19 Enforcement Action](https://www.justice.gov/criminal/criminal-fraud/health-care-fraud-unit/2023-case-summaries)
+- [ ] [2021 National Health Care Fraud Enforcement Action](https://www.justice.gov/criminal-fraud/health-care-fraud-unit/covid-19-health-care-fraud-enforcement-action)
+
