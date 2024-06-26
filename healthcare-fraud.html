@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.cba9b100.json","lastModified":1719365898004});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.6e49c900.json","lastModified":1719366360379});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -69,11 +69,11 @@ const search_result = Generators.input(search_input);
 return {search_result};
 }});
 
-define({id: "28136158", inputs: ["Inputs","data","Generators"], outputs: ["clinician_type_select","clinician_type"], body: (Inputs,data,Generators) => {
+define({id: "889f39dc", inputs: ["Inputs","data","Generators"], outputs: ["clinician_type_select","clinician_type"], body: (Inputs,data,Generators) => {
 const clinician_type_select = Inputs.select(
     data.map((d) => d.clinicianType),
     {
-        label: "Type", 
+        label: "Clinician/Practice", 
         sort: true,
         value: data.map((d) => d.clinicianType), 
         multiple: 6,
@@ -88,15 +88,15 @@ const filtered_data = search_result.filter(d => [...clinician_type].includes(d.c
 return {filtered_data};
 }});
 
-define({id: "203f9938", inputs: ["search_input","display"], body: async (search_input,display) => {
+define({id: "e66b1014", mode: "inline", inputs: ["clinician_type_select","display"], body: async (clinician_type_select,display) => {
 display(await(
-search_input
+clinician_type_select
 ))
 }});
 
-define({id: "ee955296", inputs: ["clinician_type_select","display"], body: async (clinician_type_select,display) => {
+define({id: "52c1d7cf", mode: "inline", inputs: ["search_input","display"], body: async (search_input,display) => {
 display(await(
-clinician_type_select
+search_input
 ))
 }});
 
@@ -279,11 +279,17 @@ filtered_data.map(entry => cardTemplate(entry))
 <p style="font-size: 0.8em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Based on my experience in healthcare startup, interactions with investors, executives, much of the fraud is overlooked as "part of business". This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing. </p>
 <div class="observablehq observablehq--block"><!--:1662f5b4:--></div>
 <div class="observablehq observablehq--block"><!--:37480bfb:--></div>
-<div class="observablehq observablehq--block"><!--:28136158:--></div>
+<div class="observablehq observablehq--block"><!--:889f39dc:--></div>
 <div class="observablehq observablehq--block"><!--:fd259028:--></div>
 <h3 id="search" tabindex="-1"><a class="observablehq-header-anchor" href="#search">Search</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:203f9938:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:ee955296:--></div>
+<div class="container grid grid-cols-2">
+    <div class="grid-colspan-1">
+        <observablehq-loading></observablehq-loading><!--:e66b1014:-->
+    </div>
+    <div class="grid-colspan-1">
+        <observablehq-loading></observablehq-loading><!--:52c1d7cf:-->
+    </div>
+</div>
 <hr>
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="stats-container">
