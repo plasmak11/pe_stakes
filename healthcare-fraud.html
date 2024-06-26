@@ -88,15 +88,15 @@ const filtered_data = search_result.filter(d => [...clinician_type].includes(d.c
 return {filtered_data};
 }});
 
-define({id: "e66b1014", mode: "inline", inputs: ["clinician_type_select","display"], body: async (clinician_type_select,display) => {
-display(await(
-clinician_type_select
-))
-}});
-
 define({id: "52c1d7cf", mode: "inline", inputs: ["search_input","display"], body: async (search_input,display) => {
 display(await(
 search_input
+))
+}});
+
+define({id: "e66b1014", mode: "inline", inputs: ["clinician_type_select","display"], body: async (clinician_type_select,display) => {
+display(await(
+clinician_type_select
 ))
 }});
 
@@ -265,6 +265,7 @@ filtered_data.map(entry => cardTemplate(entry))
 <div>Contents</div>
 <ol>
 <li class="observablehq-secondary-link"><a href="#intro">Intro</a></li>
+<li class="observablehq-secondary-link"><a href="#search">Search</a></li>
 <li class="observablehq-secondary-link"><a href="#statistics">Statistics</a></li>
 <li class="observablehq-secondary-link"><a href="#case-detail">Case Detail</a></li>
 <li class="observablehq-secondary-link"><a href="#references">References</a></li>
@@ -281,13 +282,14 @@ filtered_data.map(entry => cardTemplate(entry))
 <div class="observablehq observablehq--block"><!--:37480bfb:--></div>
 <div class="observablehq observablehq--block"><!--:889f39dc:--></div>
 <div class="observablehq observablehq--block"><!--:fd259028:--></div>
-<h3 id="search" tabindex="-1"><a class="observablehq-header-anchor" href="#search">Search</a></h3>
-<div class="container grid grid-cols-2">
-    <div class="grid-colspan-1">
-        <observablehq-loading></observablehq-loading><!--:e66b1014:-->
-    </div>
+<hr>
+<h2 id="search" tabindex="-1"><a class="observablehq-header-anchor" href="#search">Search</a></h2>
+<div class="grid grid-cols-4">
     <div class="grid-colspan-1">
         <observablehq-loading></observablehq-loading><!--:52c1d7cf:-->
+    </div>
+    <div>
+        <observablehq-loading></observablehq-loading><!--:e66b1014:-->
     </div>
 </div>
 <hr>
