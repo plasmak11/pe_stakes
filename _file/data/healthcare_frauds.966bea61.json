@@ -3654,5 +3654,73 @@
         "added_by": "Claude"
       }
     ]
+  },
+  {
+    "title": "United States v. Alexandra Gehrke and Jeffrey King",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Arizona",
+    "plaintiff": "United States Department of Justice",
+    "defendant": ["Alexandra Gehrke", "Jeffrey King"],
+    "clinicianType": "Medical Company Owners",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Apex Mobile Medical LLC"
+      },
+      {
+        "npi": "",
+        "label": "Apex Medical LLC"
+      },
+      {
+        "npi": "",
+        "label": "Viking Medical Consultants LLC"
+      },
+      {
+        "npi": "",
+        "label": "APX Mobile Medical LLC"
+      }
+    ],
+    "summary": "Alexandra Gehrke, 38, and Jeffrey King, 49, of Scottsdale, Arizona, were charged with conspiracy, health care fraud, receiving kickbacks, and money laundering for allegedly billing Medicare $900 million fraudulently for amniotic allografts. They targeted elderly and terminally ill patients, applying unnecessary and expensive grafts without proper medical considerations. Medicare paid over $600 million, averaging more than a million dollars per patient. The defendants received over $330 million in illegal kickbacks from the graft distributor. Assets worth over $70 million were seized upon their arrest. The case is being prosecuted by Trial Attorney Shane Butland and Assistant U.S. Attorney Matthew Williams.",
+    "timeline": {
+      "start_year": 2023,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 371",
+      "18 U.S. Code § 1347",
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 1956"
+    ],
+    "relatedLinks": [
+      {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
+      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
+      {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"},
+      {"url": "#", "text": "Health Care Fraud"},
+      {"url": "#", "text": "Kickbacks"},
+      {"url": "#", "text": "Money Laundering"},
+      {"url": "#", "text": "Medicare Fraud"},
+      {"url": "#", "text": "Elder Abuse"}
+    ],
+    "category": "Health Care Fraud, Kickbacks, and Money Laundering",
+    "fraudAmount": 900000000,
+    "affectedLabel": "Amount Fraudulently Billed to Medicare",
+    "commentary": [
+      {
+        "comment": "This case represents an egregious example of fraud targeting vulnerable populations, particularly elderly and terminally ill patients, highlighting the need for enhanced protections in Medicare.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The scale of the fraud ($900 million billed, $600 million paid) demonstrates the potential for massive financial impact on the Medicare system from a single scheme.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of kickbacks from medical product distributors underscores the complex relationships in healthcare that can be exploited for fraudulent purposes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
   }
 ]
