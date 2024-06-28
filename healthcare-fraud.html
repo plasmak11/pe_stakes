@@ -134,7 +134,7 @@ const countStates = (statesArray) => {
 return {countStates};
 }});
 
-define({id: "b5c844be", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
+define({id: "24398d4e", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
 const state_bar_plot = function(data) {
   const aggregated_data = aggregateData(data)
   return Plot.plot({
@@ -160,7 +160,7 @@ const state_bar_plot = function(data) {
         x: "fraudAmount",
         y: "state", 
         fill: "fraudAmount",
-        sort: { y: "x", reverse: true, limit: 8 }
+        sort: { y: "x", reverse: true, limit: 7 }
       }),
       Plot.text(aggregated_data, {
         text: d => `$${d3.format(".3s")(d.fraudAmount).replace(/G/, "B")}`,
@@ -175,7 +175,7 @@ const state_bar_plot = function(data) {
 return {state_bar_plot};
 }});
 
-define({id: "c7ea4524", inputs: ["countStates","Plot"], outputs: ["state_count_plot"], body: (countStates,Plot) => {
+define({id: "7d501990", inputs: ["countStates","Plot"], outputs: ["state_count_plot"], body: (countStates,Plot) => {
 const state_count_plot = function(data) {
   const counts_data = countStates(data)
   return Plot.plot({
@@ -202,7 +202,7 @@ const state_count_plot = function(data) {
         y: "state", 
         fill: "count",
         sort: { y: "x", reverse: true, 
-        limit: 8 
+        limit: 7
         }
       }),
       Plot.text(counts_data, {
@@ -417,8 +417,8 @@ filtered_data.map(entry => cardTemplate(entry))
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="observablehq observablehq--block"><!--:2fd66c27:--></div>
 <div class="observablehq observablehq--block"><!--:3db4440c:--></div>
-<div class="observablehq observablehq--block"><!--:b5c844be:--></div>
-<div class="observablehq observablehq--block"><!--:c7ea4524:--></div>
+<div class="observablehq observablehq--block"><!--:24398d4e:--></div>
+<div class="observablehq observablehq--block"><!--:7d501990:--></div>
 <div>
   <div class="stats-container">
       <div class="big-number-card">
