@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.d0e712fd.json","lastModified":1719596899148});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.3f003238.json","lastModified":1719607705670});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -90,15 +90,9 @@ const filtered_data = search_result.filter(d => [...clinician_type].includes(d.c
 return {filtered_data};
 }});
 
-define({id: "52c1d7cf", mode: "inline", inputs: ["search_input","display"], body: async (search_input,display) => {
+define({id: "203f9938", inputs: ["search_input","display"], body: async (search_input,display) => {
 display(await(
 search_input
-))
-}});
-
-define({id: "e66b1014", mode: "inline", inputs: ["clinician_type_select","display"], body: async (clinician_type_select,display) => {
-display(await(
-clinician_type_select
 ))
 }});
 
@@ -122,42 +116,38 @@ const aggregateData = function(data) {
 return {aggregateData};
 }});
 
-define({id: "4a6395cc", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
+define({id: "f1d6ae8f", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
 const state_bar_plot = function(data) {
   const aggregated_data = aggregateData(data)
   return Plot.plot({
-  marginTop: 0,
-  paddingTop: 0,
-  marginLeft: 100, 
-  // marginRight: 120, 
-  marginBottom: 0,
-  // height: 300,
-  x: { axis: null },
-  y: { label: null },
-  color: {
-    scheme: "OrRd",
-    legend: true,
-  },
-  marks: [
-    Plot.barX(aggregated_data, {
-      x: "fraudAmount",
-      y: "state", 
-      fill: "fraudAmount",
-      sort: { y: "x", reverse: true, limit: 10 }
-    }),
-    Plot.text(aggregated_data, {
-      text: d => `$${d3.format(".3s")(d.fraudAmount).replace(/G/, "B")}`,
-      y: "state",
-      x: "fraudAmount",
-      textAnchor: "start",
-      dx: 3,
-      fill: "black"
-    })
-  ]
-})
-
-
-  }
+    marginTop: 0,
+    paddingTop: 0,
+    marginLeft: 100, 
+    marginBottom: 0,
+    height: 200,
+    x: { axis: null },
+    y: { label: null },
+    color: {
+      scheme: "OrRd",
+      legend: false,
+    },
+    marks: [
+      Plot.barX(aggregated_data, {
+        x: "fraudAmount",
+        y: "state", 
+        fill: "fraudAmount",
+        sort: { y: "x", reverse: true, limit: 10 }
+      }),
+      Plot.text(aggregated_data, {
+        text: d => `$${d3.format(".3s")(d.fraudAmount).replace(/G/, "B")}`,
+        y: "state",
+        x: "fraudAmount",
+        textAnchor: "start",
+        dx: 3,
+        fill: "black"
+      })
+    ]
+  })}
 return {state_bar_plot};
 }});
 
@@ -181,7 +171,7 @@ state_bar_plot(filtered_data)
 ))
 }});
 
-define({id: "1d43f859", inputs: ["d3","Plot"], outputs: ["yearHeatmap"], body: (d3,Plot) => {
+define({id: "3b222a77", inputs: ["d3","Plot"], outputs: ["yearHeatmap"], body: (d3,Plot) => {
 const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
   const years = d3.range(startYear, endYear + 1);
   const data = years.map(year => ({
@@ -189,7 +179,7 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
     highlight: year >= highlightStart && year <= highlightEnd
   }));
   return Plot.plot({
-    height: 45,
+    height: 25,
     // width: Math.min(800, window.innerWidth - 20),
     x: {
       type: "band", 
@@ -202,7 +192,7 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
     },
     y: {
       domain: [0, 1], 
-      padding: 0.1,
+      padding: 2,
       axis: null
     },
     color: {
@@ -225,7 +215,8 @@ const yearHeatmap = function(startYear, endYear, highlightStart, highlightEnd) {
     },
     marginLeft: 0,
     marginRight: 0,
-    marginBottom: 30  // Add some bottom margin for year labels
+    marginTop: 0,
+    marginBottom: 10  // Add some bottom margin for year labels
   });
 }
 return {yearHeatmap};
@@ -329,9 +320,9 @@ filtered_data.map(entry => cardTemplate(entry))
 <div>Contents</div>
 <ol>
 <li class="observablehq-secondary-link"><a href="#intro">Intro</a></li>
-<li class="observablehq-secondary-link"><a href="#search">Search</a></li>
+<li class="observablehq-secondary-link"><a href="#search-cases">Search Cases</a></li>
 <li class="observablehq-secondary-link"><a href="#statistics">Statistics</a></li>
-<li class="observablehq-secondary-link"><a href="#case-detail">Case Detail</a></li>
+<li class="observablehq-secondary-link"><a href="#case-details">Case Details</a></li>
 <li class="observablehq-secondary-link"><a href="#references">References</a></li>
 </ol>
 </nav>
@@ -346,33 +337,13 @@ filtered_data.map(entry => cardTemplate(entry))
 <div class="observablehq observablehq--block"><!--:37480bfb:--></div>
 <div class="observablehq observablehq--block"><!--:297209c4:--></div>
 <div class="observablehq observablehq--block"><!--:fd259028:--></div>
-<!-- ```js
-Plot.plot({
-  projection: "albers-usa",
-  color: {
-    type: "quantile",
-    n: 9,
-    scheme: "blues",
-    label: "Unemployment (%)",
-    legend: true
-  },
-  marks: [
-    Plot.geo(counties, {
-      fill: "unemployment",
-      title: (d) => `${d.properties.name} ${d.properties.unemployment}%`,
-      tip: true
-    })
-  ]
-}) -->
-<!-- ``` -->
 <hr>
-<h2 id="search" tabindex="-1"><a class="observablehq-header-anchor" href="#search">Search</a></h2>
-<p><observablehq-loading></observablehq-loading><!--:52c1d7cf:--></p>
-<p><observablehq-loading></observablehq-loading><!--:e66b1014:--></p>
+<h2 id="search-cases" tabindex="-1"><a class="observablehq-header-anchor" href="#search-cases">Search Cases</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:203f9938:--></div>
 <hr>
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="observablehq observablehq--block"><!--:2fd66c27:--></div>
-<div class="observablehq observablehq--block"><!--:4a6395cc:--></div>
+<div class="observablehq observablehq--block"><!--:f1d6ae8f:--></div>
 <div class="grid grid-columns-2">
     <div class="card">
   <div class="stats-container">
@@ -386,14 +357,14 @@ Plot.plot({
       </div>
   </div>
   <hr>
-  <h2>Total Fraud Amount by State</h2>
+  <h3>Fraud Amount by State</h3>
     <observablehq-loading></observablehq-loading><!--:32f860f1:-->
     </div>
 </div>
-<div class="observablehq observablehq--block"><!--:1d43f859:--></div>
+<div class="observablehq observablehq--block"><!--:3b222a77:--></div>
 <!-- ### ${filtered_data.length} Cases Found -->
 <hr>
-<h2 id="case-detail" tabindex="-1"><a class="observablehq-header-anchor" href="#case-detail">Case Detail</a></h2>
+<h2 id="case-details" tabindex="-1"><a class="observablehq-header-anchor" href="#case-details">Case Details</a></h2>
 <div class="observablehq observablehq--block"><!--:970e0c04:--></div>
 <div class="observablehq observablehq--block"><!--:72741959:--></div>
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>

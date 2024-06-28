@@ -1904,8 +1904,7 @@
     "title": "United States v. Nicholas Frank Sciotto and Kyle Blake Burbage",
     "caseNumber": "Case Number: Unknown",
     "state": [
-      "Utah",
-      "South Carolina"
+      "Utah"
     ],
     "plaintiff": "United States Department of Justice",
     "defendant": [
@@ -4217,8 +4216,8 @@
         "added_by": "Claude"
       }
     ]
-   },
-   {
+  },
+  {
     "title": "United States v. Adam Mutwol and Daud Koleosho",
     "caseNumber": "Case Number: Unknown",
     "state": "Arizona",
@@ -4294,8 +4293,8 @@
         "added_by": "Claude"
       }
     ]
-   },
-   {
+  },
+  {
     "title": "United States v. Kyrollos Mekail",
     "caseNumber": "Case Number: Unknown",
     "state": "California",
@@ -4363,129 +4362,60 @@
         "added_by": "Claude"
       }
     ]
-   },
-   {
- "title": "United States v. Kyrollos Mekail",
- "caseNumber": "Case Number: Unknown",
- "state": "California",
- "plaintiff": "United States Department of Justice",
- "defendant": "Kyrollos Mekail",
- "clinicianType": "Pharmacist",
- "affiliatedEntities": [
-   {
-     "npi": "",
-     "label": "MONTE VP LLC d/b/a Monte Vista Pharmacy"
-   }
- ],
- "summary": "Kyrollos Mekail, 36, of Moreno Valley, California, was charged with two counts of health care fraud for allegedly billing Medi-Cal $307 million for medically unnecessary medications, often not provided, obtained through illegal kickbacks. As owner of Monte Vista Pharmacy, Mekail paid kickbacks for prescriptions of non-contracted, generic drugs, which were written by co-schemer medical providers using information from Medi-Cal patients provided by other co-schemers. Mekail submitted false claims to Medi-Cal, knowing the medications were unnecessary and often not provided. Of the $306,521,392 in false claims submitted, Medi-Cal paid approximately $204,032,151. The government seized about $108,683,368 in assets related to the scheme.",
- "timeline": {
-   "start_year": 2022,
-   "end_year": 2023
- },
- "violation": [
-   "18 U.S. Code § 1347",
-   "42 U.S. Code § 1320a–7b"
- ],
- "relatedLinks": [
-   {
-     "url": "https://www.law.cornell.edu/uscode/text/18/1347",
-     "text": "18 U.S. Code § 1347 - Health care fraud"
-   },
-   {
-     "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
-     "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
-   },
-   {
-     "url": "#",
-     "text": "Health Care Fraud"
-   },
-   {
-     "url": "#",
-     "text": "Kickbacks"
-   },
-   {
-     "url": "#",
-     "text": "Medicaid Fraud"
-   },
-   {
-     "url": "#",
-     "text": "Pharmacy Fraud"
-   }
- ],
- "category": "Health Care Fraud and Kickbacks",
- "fraudAmount": 306521392,
- "affectedLabel": "Amount of False and Fraudulent Claims Submitted",
- "commentary": [
-   {
-     "comment": "This case highlights vulnerabilities in Medicaid's prior authorization suspension, which was likely implemented to increase access to medications but was exploited for fraudulent purposes.",
-     "source": "AI Analysis",
-     "added_by": "Claude"
-   },
-   {
-     "comment": "The involvement of multiple co-schemers, including medical providers, demonstrates the complex networks that can develop in large-scale healthcare fraud operations.",
-     "source": "AI Analysis",
-     "added_by": "Claude"
-   },
-   {
-     "comment": "The significant discrepancy between the amount billed ($306 million) and the amount paid ($204 million) suggests that some fraud detection mechanisms may have limited the financial impact, though substantial losses still occurred.",
-     "source": "AI Analysis",
-     "added_by": "Claude"
-   }
- ]
-},
-{
-  "title": "United States v. Monica Boniadi",
-  "caseNumber": "Case Number: Unknown",
-  "state": "California",
-  "plaintiff": "United States Department of Justice",
-  "defendant": "Monica Boniadi",
-  "clinicianType": "Dentist",
-  "affiliatedEntities": [],
-  "summary": "Monica Boniadi, 53, of Laguna Niguel, California, was charged by information with health care fraud for billing private insurers for dental fillings when she actually provided less expensive resin restorations. This scheme resulted in a total actual loss of $142,677 to insurers.",
-  "timeline": {
-    "start_year": 2024,
-    "end_year": 2024
   },
-  "violation": [
-    "18 U.S. Code § 1347"
-  ],
-  "relatedLinks": [
-    {
-      "url": "https://www.law.cornell.edu/uscode/text/18/1347",
-      "text": "18 U.S. Code § 1347 - Health care fraud"
+  {
+    "title": "United States v. Monica Boniadi",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Monica Boniadi",
+    "clinicianType": "Dentist",
+    "affiliatedEntities": [],
+    "summary": "Monica Boniadi, 53, of Laguna Niguel, California, was charged by information with health care fraud for billing private insurers for dental fillings when she actually provided less expensive resin restorations. This scheme resulted in a total actual loss of $142,677 to insurers.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
     },
-    {
-      "url": "#",
-      "text": "Health Care Fraud"
-    },
-    {
-      "url": "#",
-      "text": "Dental Fraud"
-    },
-    {
-      "url": "#",
-      "text": "Private Insurance Fraud"
-    }
-  ],
-  "category": "Health Care Fraud",
-  "fraudAmount": 142677,
-  "affectedLabel": "Total Actual Loss to Insurers",
-  "commentary": [
-    {
-      "comment": "This case highlights how even relatively small-scale fraud in routine dental procedures can accumulate to significant losses for insurers.",
-      "source": "AI Analysis",
-      "added_by": "Claude"
-    },
-    {
-      "comment": "The fraudulent billing of more expensive procedures for less costly ones demonstrates a common tactic in healthcare fraud that can be difficult for insurers to detect without detailed audits.",
-      "source": "AI Analysis",
-      "added_by": "Claude"
-    },
-    {
-      "comment": "This case involving private insurers, rather than government programs like Medicare or Medicaid, shows that healthcare fraud affects a wide range of payers in the healthcare system.",
-      "source": "AI Analysis",
-      "added_by": "Claude"
-    }
-  ]
- }
+    "violation": [
+      "18 U.S. Code § 1347"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Dental Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Private Insurance Fraud"
+      }
+    ],
+    "category": "Health Care Fraud",
+    "fraudAmount": 142677,
+    "affectedLabel": "Total Actual Loss to Insurers",
+    "commentary": [
+      {
+        "comment": "This case highlights how even relatively small-scale fraud in routine dental procedures can accumulate to significant losses for insurers.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The fraudulent billing of more expensive procedures for less costly ones demonstrates a common tactic in healthcare fraud that can be difficult for insurers to detect without detailed audits.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case involving private insurers, rather than government programs like Medicare or Medicaid, shows that healthcare fraud affects a wide range of payers in the healthcare system.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  }
 ]
