@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.3f003238.json","lastModified":1719607705670});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.7b0d9f33.json","lastModified":1719610999398});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -116,17 +116,41 @@ const aggregateData = function(data) {
 return {aggregateData};
 }});
 
-define({id: "f1d6ae8f", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
+define({id: "3db4440c", outputs: ["countStates"], body: () => {
+const countStates = (statesArray) => {
+  const stateCounts = {};
+  
+  statesArray.forEach(item => {
+    const state = item.state;
+    if (stateCounts[state]) {
+      stateCounts[state]++;
+    } else {
+      stateCounts[state] = 1;
+    }
+  });
+  
+  return Object.entries(stateCounts).map(([state, count]) => ({ state, count }));
+};
+return {countStates};
+}});
+
+define({id: "b5c844be", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
 const state_bar_plot = function(data) {
   const aggregated_data = aggregateData(data)
   return Plot.plot({
     marginTop: 0,
     paddingTop: 0,
-    marginLeft: 100, 
+    paddingLeft: 20,
+    marginLeft: 120, 
+    marginRight: 60, 
     marginBottom: 0,
-    height: 200,
+    height: 350,
+    // width: 300,
     x: { axis: null },
     y: { label: null },
+    style: {
+      fontSize: "1.0em",
+    },
     color: {
       scheme: "OrRd",
       legend: false,
@@ -136,7 +160,7 @@ const state_bar_plot = function(data) {
         x: "fraudAmount",
         y: "state", 
         fill: "fraudAmount",
-        sort: { y: "x", reverse: true, limit: 10 }
+        sort: { y: "x", reverse: true, limit: 8 }
       }),
       Plot.text(aggregated_data, {
         text: d => `$${d3.format(".3s")(d.fraudAmount).replace(/G/, "B")}`,
@@ -149,6 +173,49 @@ const state_bar_plot = function(data) {
     ]
   })}
 return {state_bar_plot};
+}});
+
+define({id: "c7ea4524", inputs: ["countStates","Plot"], outputs: ["state_count_plot"], body: (countStates,Plot) => {
+const state_count_plot = function(data) {
+  const counts_data = countStates(data)
+  return Plot.plot({
+    marginTop: 0,
+    paddingTop: 0,
+    paddingLeft: 20,
+    marginLeft: 120, 
+    marginRight: 60, 
+    marginBottom: 0,
+    height: 350,
+    // width: 300,
+    x: { axis: null },
+    y: { label: null},
+    style: {
+      fontSize: "1.0em",
+    },
+    color: {
+      scheme: "OrRd",
+      legend: false,
+    },
+    marks: [
+      Plot.barX(counts_data, {
+        x: "count",
+        y: "state", 
+        fill: "count",
+        sort: { y: "x", reverse: true, 
+        limit: 8 
+        }
+      }),
+      Plot.text(counts_data, {
+        text: 'count',
+        y: "state",
+        x: "count",
+        textAnchor: "start",
+        dx: 3,
+        fill: "black"
+      })
+    ]
+  })}
+return {state_count_plot};
 }});
 
 define({id: "2f22d880", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
@@ -168,6 +235,12 @@ filtered_data.length
 define({id: "32f860f1", mode: "inline", inputs: ["state_bar_plot","filtered_data","display"], body: async (state_bar_plot,filtered_data,display) => {
 display(await(
 state_bar_plot(filtered_data)
+))
+}});
+
+define({id: "3472a8eb", mode: "inline", inputs: ["state_count_plot","filtered_data","display"], body: async (state_count_plot,filtered_data,display) => {
+display(await(
+state_count_plot(filtered_data)
 ))
 }});
 
@@ -343,9 +416,10 @@ filtered_data.map(entry => cardTemplate(entry))
 <hr>
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="observablehq observablehq--block"><!--:2fd66c27:--></div>
-<div class="observablehq observablehq--block"><!--:f1d6ae8f:--></div>
-<div class="grid grid-columns-2">
-    <div class="card">
+<div class="observablehq observablehq--block"><!--:3db4440c:--></div>
+<div class="observablehq observablehq--block"><!--:b5c844be:--></div>
+<div class="observablehq observablehq--block"><!--:c7ea4524:--></div>
+<div>
   <div class="stats-container">
       <div class="big-number-card">
           <div class="big-number">$<observablehq-loading></observablehq-loading><!--:2f22d880:--></div>
@@ -356,10 +430,14 @@ filtered_data.map(entry => cardTemplate(entry))
           <div class="big-number-caption">Cases</div>
       </div>
   </div>
-  <hr>
-  <h3>Fraud Amount by State</h3>
-    <observablehq-loading></observablehq-loading><!--:32f860f1:-->
-    </div>
+</div>
+<div class="grid grid-cols-4">
+  <div>
+    <h3>Fraud Amount by State</h3><observablehq-loading></observablehq-loading><!--:32f860f1:-->
+  </div>
+  <div>
+    <h3>Cases by State</h3><observablehq-loading></observablehq-loading><!--:3472a8eb:-->
+  </div>
 </div>
 <div class="observablehq observablehq--block"><!--:3b222a77:--></div>
 <!-- ### ${filtered_data.length} Cases Found -->
