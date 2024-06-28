@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.966bea61.json","lastModified":1719532288134});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.d0e712fd.json","lastModified":1719596899148});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -102,17 +102,82 @@ clinician_type_select
 ))
 }});
 
-define({id: "c1943dab", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
+define({id: "2fd66c27", outputs: ["aggregateData"], body: () => {
+const aggregateData = function(data) {
+  const aggregatedData = {};
+  data.forEach(item => {
+    if (aggregatedData[item.state]) {
+      aggregatedData[item.state] += item.fraudAmount;
+    } else {
+      aggregatedData[item.state] = item.fraudAmount;
+    }
+  });
+
+  // Convert the aggregated data to the desired array format
+  return Object.entries(aggregatedData).map(([state, fraudAmount]) => ({
+    state,
+    fraudAmount
+  }));
+}
+return {aggregateData};
+}});
+
+define({id: "4a6395cc", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
+const state_bar_plot = function(data) {
+  const aggregated_data = aggregateData(data)
+  return Plot.plot({
+  marginTop: 0,
+  paddingTop: 0,
+  marginLeft: 100, 
+  // marginRight: 120, 
+  marginBottom: 0,
+  // height: 300,
+  x: { axis: null },
+  y: { label: null },
+  color: {
+    scheme: "OrRd",
+    legend: true,
+  },
+  marks: [
+    Plot.barX(aggregated_data, {
+      x: "fraudAmount",
+      y: "state", 
+      fill: "fraudAmount",
+      sort: { y: "x", reverse: true, limit: 10 }
+    }),
+    Plot.text(aggregated_data, {
+      text: d => `$${d3.format(".3s")(d.fraudAmount).replace(/G/, "B")}`,
+      y: "state",
+      x: "fraudAmount",
+      textAnchor: "start",
+      dx: 3,
+      fill: "black"
+    })
+  ]
+})
+
+
+  }
+return {state_bar_plot};
+}});
+
+define({id: "2f22d880", mode: "inline", inputs: ["d3","filtered_data","display"], body: async (d3,filtered_data,display) => {
 display(await(
 d3.format(".3s")(filtered_data.reduce((total, item) => {
-    return (total + (Number(item.fraudAmount)) || 0);
-  }, 0)).replace(/G/, "B")
+      return (total + (Number(item.fraudAmount)) || 0);
+    }, 0)).replace(/G/, "B")
 ))
 }});
 
 define({id: "aa4f11c4", mode: "inline", inputs: ["filtered_data","display"], body: async (filtered_data,display) => {
 display(await(
 filtered_data.length
+))
+}});
+
+define({id: "32f860f1", mode: "inline", inputs: ["state_bar_plot","filtered_data","display"], body: async (state_bar_plot,filtered_data,display) => {
+display(await(
+state_bar_plot(filtered_data)
 ))
 }});
 
@@ -260,6 +325,12 @@ filtered_data.map(entry => cardTemplate(entry))
     <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
     </ol>
   </details>
+  <section>
+    <summary>🔍 Looking for data</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./pbm"> ➟ PBM (WIP)</a></li>
+    </ol>
+  </section>
 </nav>
 <script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
 <aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
@@ -309,14 +380,23 @@ Plot.plot({
 <p><observablehq-loading></observablehq-loading><!--:e66b1014:--></p>
 <hr>
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
-<div class="stats-container">
-    <div class="big-number-card">
-        <div class="big-number">$<observablehq-loading></observablehq-loading><!--:c1943dab:--></div>
-        <div class="big-number-caption">Total Fraud Amount</div>
-    </div>
-    <div class="big-number-card">
-        <div class="big-number"><observablehq-loading></observablehq-loading><!--:aa4f11c4:--></div>
-        <div class="big-number-caption">Cases</div>
+<div class="observablehq observablehq--block"><!--:2fd66c27:--></div>
+<div class="observablehq observablehq--block"><!--:4a6395cc:--></div>
+<div class="grid grid-columns-2">
+    <div class="card">
+  <div class="stats-container">
+      <div class="big-number-card">
+          <div class="big-number">$<observablehq-loading></observablehq-loading><!--:2f22d880:--></div>
+          <div class="big-number-caption">Total Fraud Amount</div>
+      </div>
+      <div class="big-number-card">
+          <div class="big-number"><observablehq-loading></observablehq-loading><!--:aa4f11c4:--></div>
+          <div class="big-number-caption">Cases</div>
+      </div>
+  </div>
+  <hr>
+  <h2>Total Fraud Amount by State</h2>
+    <observablehq-loading></observablehq-loading><!--:32f860f1:-->
     </div>
 </div>
 <div class="observablehq observablehq--block"><!--:1d43f859:--></div>

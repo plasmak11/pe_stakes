@@ -168,6 +168,7 @@
     "state": "Florida",
     "plaintiff": "United States Department of Justice",
     "defendant": "Lucia Miranda Oro Taboada",
+    "clinicianType": "DME",
     "summary": "Lucia Miranda Oro Taboada, 27, of Boca Raton, Florida, was charged by indictment for her role in a health care fraud and wire fraud conspiracy. From in or around April 2020 to in or around November 2020, Oro allegedly conspired with others to operate two DME companies used to fraudulently bill Medicare over $1.7 million. Oro executed and submitted false enrollment records with Medicare concealing from Medicare the ownership interest and managing control of two co-conspirators, one of whom was a convicted felon. Oro also controlled the banking activities and transferred fraud proceeds from the DME companies to accounts owned and controlled by the beneficial owners. The case is being prosecuted by Trial Attorney Patrick Queenan of the Miami Strike Force.",
     "timeline": {
       "start_year": 2020,
@@ -212,6 +213,7 @@
     "state": "Florida",
     "plaintiff": "United States Department of Justice",
     "defendant": "Joseph Dauch",
+    "clinicianType": "Laboratory",
     "summary": "Joseph Dauch, 47, of Parkland, Florida, was charged by information in connection with an approximately $21 million health care fraud scheme. Beginning in or around October 2018, Dauch owned and operated THE CSC LLC, The Medical Screening Center LLC, and Marketing Marauders LLC, three marketing companies through which Dauch and his co-conspirators targeted Medicare beneficiaries for genetic testing. Dauch paid bribes and kickbacks to purported telemedicine companies to obtain signed doctors' orders prescribing these tests and then sold the patient referrals to laboratories in exchange for kickbacks. The laboratories fraudulently billed Medicare for genetic testing that patients did not need and that was not used to treat the patients. The case is being prosecuted by Trial Attorneys Jamie DeBoer and Patrick Queenan of the Miami Strike Force.",
     "timeline": {
       "start_year": 2018,
@@ -1368,9 +1370,15 @@
   {
     "title": "United States v. Lily Tran Daniels, Kenneth Reynolds, and Emylee Thai",
     "caseNumber": "Case Number: Unknown",
-    "state": ["California", "Delaware", "Texas"],
+    "state": [
+      "Texas"
+    ],
     "plaintiff": "United States Department of Justice",
-    "defendant": ["Lily Tran Daniels", "Kenneth Reynolds", "Emylee Thai"],
+    "defendant": [
+      "Lily Tran Daniels",
+      "Kenneth Reynolds",
+      "Emylee Thai"
+    ],
     "clinicianType": "Laboratory",
     "affiliatedEntities": [
       {
@@ -1389,13 +1397,34 @@
       "42 U.S. Code § 1320a–7b"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
-      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Kickbacks"},
-      {"url": "#", "text": "Genetic Testing Fraud"},
-      {"url": "#", "text": "Medicare Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      }
     ],
     "category": "Health Care Fraud and Kickbacks",
     "fraudAmount": 142000000,
@@ -2977,8 +3006,7 @@
     "title": "United States v. Brett Blackman, Gary Cox, and Gregory Schreck",
     "caseNumber": "Case Number: Unknown",
     "state": [
-      "Kansas",
-      "Arizona"
+      "Kansas"
     ],
     "plaintiff": "United States Department of Justice",
     "defendant": [
@@ -3152,14 +3180,38 @@
       "42 U.S. Code § 1320a–7b"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1343", "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
-      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Wire Fraud"},
-      {"url": "#", "text": "Kickbacks"},
-      {"url": "#", "text": "Genetic Testing Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+        "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Wire Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      }
     ],
     "category": "Health Care Fraud, Wire Fraud, and Kickbacks",
     "fraudAmount": 10000000,
@@ -3205,12 +3257,30 @@
       "18 U.S. Code § 1028A"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1028A", "text": "18 U.S. Code § 1028A - Aggravated identity theft"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Identity Theft"},
-      {"url": "#", "text": "Durable Medical Equipment (DME) Fraud"},
-      {"url": "#", "text": "Medicare Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1028A",
+        "text": "18 U.S. Code § 1028A - Aggravated identity theft"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Identity Theft"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      }
     ],
     "category": "Health Care Fraud and Identity Theft",
     "fraudAmount": 900000,
@@ -3238,7 +3308,10 @@
     "caseNumber": "Case Number: Unknown",
     "state": "Pennsylvania",
     "plaintiff": "United States Department of Justice",
-    "defendant": ["Devon Burt", "Hallum Gelzer"],
+    "defendant": [
+      "Devon Burt",
+      "Hallum Gelzer"
+    ],
     "clinicianType": "Other",
     "affiliatedEntities": [
       {
@@ -3256,12 +3329,30 @@
       "18 U.S. Code § 1951"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1951", "text": "18 U.S. Code § 1951 - Interference with commerce by threats or violence"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Extortion"},
-      {"url": "#", "text": "Insurance Fraud"},
-      {"url": "#", "text": "Employee Benefits Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1951",
+        "text": "18 U.S. Code § 1951 - Interference with commerce by threats or violence"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Extortion"
+      },
+      {
+        "url": "#",
+        "text": "Insurance Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Employee Benefits Fraud"
+      }
     ],
     "category": "Health Care Fraud and Extortion",
     "fraudAmount": 0,
@@ -3311,13 +3402,34 @@
       "42 U.S. Code § 1320a–7b"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Kickbacks"},
-      {"url": "#", "text": "Pharmacy Fraud"},
-      {"url": "#", "text": "Medicare Fraud"},
-      {"url": "#", "text": "Medicaid Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Pharmacy Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      }
     ],
     "category": "Health Care Fraud and Kickbacks",
     "fraudAmount": 101000000,
@@ -3345,7 +3457,10 @@
     "caseNumber": "Case Number: Unknown",
     "state": "New York",
     "plaintiff": "United States Department of Justice",
-    "defendant": ["Manling Shen (a/k/a Mary Shen)", "Ruibing Zhu (a/k/a Bing Bing)"],
+    "defendant": [
+      "Manling Shen (a/k/a Mary Shen)",
+      "Ruibing Zhu (a/k/a Bing Bing)"
+    ],
     "clinicianType": "Adult Day Care Employees",
     "affiliatedEntities": [
       {
@@ -3364,14 +3479,38 @@
       "18 U.S. Code § 1512"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1512", "text": "18 U.S. Code § 1512 - Tampering with a witness, victim, or an informant"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Kickbacks"},
-      {"url": "#", "text": "Adult Day Care Fraud"},
-      {"url": "#", "text": "Medicaid Fraud"},
-      {"url": "#", "text": "Evidence Tampering"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1512",
+        "text": "18 U.S. Code § 1512 - Tampering with a witness, victim, or an informant"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Adult Day Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Evidence Tampering"
+      }
     ],
     "category": "Health Care Fraud, Kickbacks, and Evidence Tampering",
     "fraudAmount": 8300000,
@@ -3416,11 +3555,26 @@
       "18 U.S. Code § 1347"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Occupational Therapy Fraud"},
-      {"url": "#", "text": "Medicare Fraud"},
-      {"url": "#", "text": "Medicaid Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Occupational Therapy Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      }
     ],
     "category": "Health Care Fraud",
     "fraudAmount": 1600000,
@@ -3469,12 +3623,30 @@
       "42 U.S. Code § 1320a–7b"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Kickbacks"},
-      {"url": "#", "text": "Diagnostic Testing Fraud"},
-      {"url": "#", "text": "Genetic Testing Fraud"},
-      {"url": "#", "text": "Medicare Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Diagnostic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      }
     ],
     "category": "Health Care Kickbacks",
     "fraudAmount": 20000000,
@@ -3523,12 +3695,30 @@
       "42 U.S. Code § 1320a–7b"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Kickbacks"},
-      {"url": "#", "text": "Diagnostic Testing Fraud"},
-      {"url": "#", "text": "Genetic Testing Fraud"},
-      {"url": "#", "text": "Medicare Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Diagnostic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      }
     ],
     "category": "Health Care Kickbacks",
     "fraudAmount": 20000000,
@@ -3556,7 +3746,10 @@
     "caseNumber": "Case Number: Unknown",
     "state": "Ohio",
     "plaintiff": "United States Department of Justice",
-    "defendant": ["Gulam Mukhdomi", "Abida Mukhdomi"],
+    "defendant": [
+      "Gulam Mukhdomi",
+      "Abida Mukhdomi"
+    ],
     "clinicianType": "Physician",
     "affiliatedEntities": [
       {
@@ -3575,13 +3768,34 @@
       "18 U.S. Code § 1035"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/21/841", "text": "21 U.S. Code § 841 - Prohibited acts A"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
-      {"url": "#", "text": "Controlled Substance Distribution"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Pain Management Fraud"},
-      {"url": "#", "text": "Opioid Crisis"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/21/841",
+        "text": "21 U.S. Code § 841 - Prohibited acts A"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1035",
+        "text": "18 U.S. Code § 1035 - False statements relating to health care matters"
+      },
+      {
+        "url": "#",
+        "text": "Controlled Substance Distribution"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Pain Management Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Opioid Crisis"
+      }
     ],
     "category": "Controlled Substance Distribution and Health Care Fraud",
     "fraudAmount": 150000,
@@ -3627,12 +3841,30 @@
       "18 U.S. Code § 1035"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1035", "text": "18 U.S. Code § 1035 - False statements relating to health care matters"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Medicaid Fraud"},
-      {"url": "#", "text": "Home Health Care Fraud"},
-      {"url": "#", "text": "Nursing Services Fraud"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1035",
+        "text": "18 U.S. Code § 1035 - False statements relating to health care matters"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Home Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Nursing Services Fraud"
+      }
     ],
     "category": "Health Care Fraud",
     "fraudAmount": 2000000,
@@ -3660,7 +3892,10 @@
     "caseNumber": "Case Number: Unknown",
     "state": "Arizona",
     "plaintiff": "United States Department of Justice",
-    "defendant": ["Alexandra Gehrke", "Jeffrey King"],
+    "defendant": [
+      "Alexandra Gehrke",
+      "Jeffrey King"
+    ],
     "clinicianType": "Medical Company Owners",
     "affiliatedEntities": [
       {
@@ -3692,15 +3927,42 @@
       "18 U.S. Code § 1956"
     ],
     "relatedLinks": [
-      {"url": "https://www.law.cornell.edu/uscode/text/18/371", "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1347", "text": "18 U.S. Code § 1347 - Health care fraud"},
-      {"url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b", "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"},
-      {"url": "https://www.law.cornell.edu/uscode/text/18/1956", "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"},
-      {"url": "#", "text": "Health Care Fraud"},
-      {"url": "#", "text": "Kickbacks"},
-      {"url": "#", "text": "Money Laundering"},
-      {"url": "#", "text": "Medicare Fraud"},
-      {"url": "#", "text": "Elder Abuse"}
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1956",
+        "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Money Laundering"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Elder Abuse"
+      }
     ],
     "category": "Health Care Fraud, Kickbacks, and Money Laundering",
     "fraudAmount": 900000000,
@@ -3722,5 +3984,508 @@
         "added_by": "Claude"
       }
     ]
-  }
+  },
+  {
+    "title": "United States v. Carlos Ching",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Arizona",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Carlos Ching",
+    "clinicianType": "Medical Professional (Specific role not stated)",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "APX Mobile Medical LLC"
+      },
+      {
+        "npi": "",
+        "label": "H3 Medical Clinic LLC"
+      }
+    ],
+    "summary": "Carlos Ching, 55, of Phoenix, Arizona, is charged with conspiracy to commit health care fraud related to the APX scheme. Ching allegedly applied medically unnecessary allografts to Medicare patients, procured through kickbacks. From June 2023 to January 2024, APX billed Medicare over $87 million for Ching's allograft applications, with Medicare paying over $65 million. From January to March 2024, Ching's company, H3 Medical Clinic LLC, billed Medicare over $5 million for unnecessary allografts, with Medicare paying over $4 million. The case is being prosecuted by Trial Attorney Shane Butland and Assistant U.S. Attorney Matthew Williams.",
+    "timeline": {
+      "start_year": 2023,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 371"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Allograft Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Conspiracy",
+    "fraudAmount": 92000000,
+    "affectedLabel": "Amount Fraudulently Billed to Medicare",
+    "commentary": [
+      {
+        "comment": "This case appears to be connected to the larger APX scheme, demonstrating how individual medical professionals can be involved in and perpetuate larger fraud operations.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The rapid escalation of fraudulent billing (from working with APX to operating his own clinic) suggests how individuals might leverage knowledge gained from larger schemes to conduct their own fraud.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The high reimbursement rate for these fraudulent claims (about 75-80% of billed amounts paid) highlights potential weaknesses in Medicare's claim review and approval processes for certain medical procedures.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Bethany Jameson",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Arizona",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Bethany Jameson",
+    "clinicianType": "Medical Professional (Specific role not stated)",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Apex Mobile Medical"
+      },
+      {
+        "npi": "",
+        "label": "APX Mobile Medical LLC"
+      }
+    ],
+    "summary": "Bethany Jameson, 53, of Gilbert, Arizona, is charged with conspiracy to commit wire fraud related to the APX scheme. Jameson allegedly applied medically unnecessary allografts to Medicare beneficiaries, procured through kickbacks and bribes, while working for Apex Mobile Medical and APX. From November 2022 to August 2023, these companies billed Medicare over $71 million for Jameson's allograft applications, with Medicare paying over $49 million on these fraudulent claims. The case is being prosecuted by Trial Attorney Shane Butland and Assistant U.S. Attorney Matthew Williams.",
+    "timeline": {
+      "start_year": 2022,
+      "end_year": 2023
+    },
+    "violation": [
+      "18 U.S. Code § 1349",
+      "18 U.S. Code § 1343"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1349",
+        "text": "18 U.S. Code § 1349 - Attempt and conspiracy"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+        "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+      },
+      {
+        "url": "#",
+        "text": "Wire Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Conspiracy"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Allograft Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      }
+    ],
+    "category": "Wire Fraud and Conspiracy",
+    "fraudAmount": 71000000,
+    "affectedLabel": "Amount Fraudulently Billed to Medicare",
+    "commentary": [
+      {
+        "comment": "This case appears to be part of the larger APX scheme, demonstrating how individual medical professionals can be integral to the execution of large-scale healthcare fraud operations.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The focus on wire fraud charges, rather than healthcare fraud, may indicate a strategic approach by prosecutors to address the specific methods used in this scheme.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The high reimbursement rate for these fraudulent claims (about 69% of billed amounts paid) continues to highlight potential vulnerabilities in Medicare's claim review processes for certain medical procedures.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Rita Anagho",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Arizona",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Rita Anagho",
+    "clinicianType": "Substance Abuse Treatment Clinic Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Tusa Integrated Clinic LLC"
+      }
+    ],
+    "summary": "Rita Anagho, 52, of San Tan Valley, Arizona, was charged by indictment with conspiracy to commit health care fraud, health care fraud, money laundering, and obstruction of justice in connection with an alleged $69 million scheme involving a substance abuse treatment clinic in Arizona. Anagho owned Tusa Integrated Clinic LLC, which submitted false and fraudulent claims to Arizona's Medicaid agency for services that were not provided, were substandard, or medically unnecessary. Anagho also instructed former employees to create false therapy notes after being served with a subpoena for Tusa's records during the government's investigation.",
+    "timeline": {
+      "start_year": 2023,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1349",
+      "18 U.S. Code § 1956",
+      "18 U.S. Code § 1512"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1349",
+        "text": "18 U.S. Code § 1349 - Attempt and conspiracy"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1956",
+        "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1512",
+        "text": "18 U.S. Code § 1512 - Tampering with a witness, victim, or an informant"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Money Laundering"
+      },
+      {
+        "url": "#",
+        "text": "Obstruction of Justice"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Substance Abuse Treatment Fraud"
+      }
+    ],
+    "category": "Health Care Fraud, Money Laundering, and Obstruction of Justice",
+    "fraudAmount": 69000000,
+    "affectedLabel": "Amount of Alleged Fraudulent Scheme",
+    "commentary": [
+      {
+        "comment": "This case highlights vulnerabilities in substance abuse treatment programs and their billing practices, potentially affecting legitimate providers and patient access to necessary addiction treatment services.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The obstruction of justice charge related to creating false therapy notes demonstrates how healthcare fraud investigations can be complicated by attempts to cover up wrongdoing.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant amount involved ($69 million) underscores the potential for large-scale fraud in specialized healthcare services like addiction treatment, where oversight may be challenging.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+   },
+   {
+    "title": "United States v. Adam Mutwol and Daud Koleosho",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Arizona",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Adam Mutwol",
+      "Daud Koleosho"
+    ],
+    "clinicianType": "Substance Abuse Treatment Clinic Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Community Hope Wellness Center LLC"
+      }
+    ],
+    "summary": "Adam Mutwol, 45, of Tempe, Arizona, and Daud Koleosho, 44, of Gilbert, Arizona, were charged by separate informations with conspiracy to commit health care fraud in connection with an alleged $57 million substance abuse treatment fraud scheme. They owned Community Hope Wellness Center LLC (CHWC), which submitted false and fraudulent claims to Arizona Medicaid for services that were not provided, substandard, or medically unnecessary. Mutwol and Koleosho also paid kickbacks to residence owners for patient referrals to CHWC.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1349",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1349",
+        "text": "18 U.S. Code § 1349 - Attempt and conspiracy"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Substance Abuse Treatment Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 57000000,
+    "affectedLabel": "Amount of Alleged Fraudulent Claims",
+    "commentary": [
+      {
+        "comment": "This case highlights the vulnerability of substance abuse treatment programs to fraud, potentially compromising the quality of care for patients struggling with addiction.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of kickbacks for patient referrals demonstrates how financial incentives can distort the healthcare system, prioritizing profit over patient needs.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant amount involved ($57 million) underscores the potential for large-scale fraud in specialized healthcare services like addiction treatment, where oversight may be challenging and demand for services is high.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+   },
+   {
+    "title": "United States v. Kyrollos Mekail",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Kyrollos Mekail",
+    "clinicianType": "Pharmacist",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "MONTE VP LLC d/b/a Monte Vista Pharmacy"
+      }
+    ],
+    "summary": "Kyrollos Mekail, 36, of Moreno Valley, California, was charged with two counts of health care fraud for allegedly billing Medi-Cal $307 million for medically unnecessary medications, often not provided, obtained through illegal kickbacks. As owner of Monte Vista Pharmacy, Mekail paid kickbacks for prescriptions of non-contracted, generic drugs, which were written by co-schemer medical providers using information from Medi-Cal patients provided by other co-schemers. Mekail submitted false claims to Medi-Cal, knowing the medications were unnecessary and often not provided. Of the $306,521,392 in false claims submitted, Medi-Cal paid approximately $204,032,151. The government seized about $108,683,368 in assets related to the scheme.",
+    "timeline": {
+      "start_year": 2022,
+      "end_year": 2023
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Pharmacy Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 306521392,
+    "affectedLabel": "Amount of False and Fraudulent Claims Submitted",
+    "commentary": [
+      {
+        "comment": "This case highlights vulnerabilities in Medicaid's prior authorization suspension, which was likely implemented to increase access to medications but was exploited for fraudulent purposes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of multiple co-schemers, including medical providers, demonstrates the complex networks that can develop in large-scale healthcare fraud operations.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant discrepancy between the amount billed ($306 million) and the amount paid ($204 million) suggests that some fraud detection mechanisms may have limited the financial impact, though substantial losses still occurred.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+   },
+   {
+ "title": "United States v. Kyrollos Mekail",
+ "caseNumber": "Case Number: Unknown",
+ "state": "California",
+ "plaintiff": "United States Department of Justice",
+ "defendant": "Kyrollos Mekail",
+ "clinicianType": "Pharmacist",
+ "affiliatedEntities": [
+   {
+     "npi": "",
+     "label": "MONTE VP LLC d/b/a Monte Vista Pharmacy"
+   }
+ ],
+ "summary": "Kyrollos Mekail, 36, of Moreno Valley, California, was charged with two counts of health care fraud for allegedly billing Medi-Cal $307 million for medically unnecessary medications, often not provided, obtained through illegal kickbacks. As owner of Monte Vista Pharmacy, Mekail paid kickbacks for prescriptions of non-contracted, generic drugs, which were written by co-schemer medical providers using information from Medi-Cal patients provided by other co-schemers. Mekail submitted false claims to Medi-Cal, knowing the medications were unnecessary and often not provided. Of the $306,521,392 in false claims submitted, Medi-Cal paid approximately $204,032,151. The government seized about $108,683,368 in assets related to the scheme.",
+ "timeline": {
+   "start_year": 2022,
+   "end_year": 2023
+ },
+ "violation": [
+   "18 U.S. Code § 1347",
+   "42 U.S. Code § 1320a–7b"
+ ],
+ "relatedLinks": [
+   {
+     "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+     "text": "18 U.S. Code § 1347 - Health care fraud"
+   },
+   {
+     "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+     "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+   },
+   {
+     "url": "#",
+     "text": "Health Care Fraud"
+   },
+   {
+     "url": "#",
+     "text": "Kickbacks"
+   },
+   {
+     "url": "#",
+     "text": "Medicaid Fraud"
+   },
+   {
+     "url": "#",
+     "text": "Pharmacy Fraud"
+   }
+ ],
+ "category": "Health Care Fraud and Kickbacks",
+ "fraudAmount": 306521392,
+ "affectedLabel": "Amount of False and Fraudulent Claims Submitted",
+ "commentary": [
+   {
+     "comment": "This case highlights vulnerabilities in Medicaid's prior authorization suspension, which was likely implemented to increase access to medications but was exploited for fraudulent purposes.",
+     "source": "AI Analysis",
+     "added_by": "Claude"
+   },
+   {
+     "comment": "The involvement of multiple co-schemers, including medical providers, demonstrates the complex networks that can develop in large-scale healthcare fraud operations.",
+     "source": "AI Analysis",
+     "added_by": "Claude"
+   },
+   {
+     "comment": "The significant discrepancy between the amount billed ($306 million) and the amount paid ($204 million) suggests that some fraud detection mechanisms may have limited the financial impact, though substantial losses still occurred.",
+     "source": "AI Analysis",
+     "added_by": "Claude"
+   }
+ ]
+},
+{
+  "title": "United States v. Monica Boniadi",
+  "caseNumber": "Case Number: Unknown",
+  "state": "California",
+  "plaintiff": "United States Department of Justice",
+  "defendant": "Monica Boniadi",
+  "clinicianType": "Dentist",
+  "affiliatedEntities": [],
+  "summary": "Monica Boniadi, 53, of Laguna Niguel, California, was charged by information with health care fraud for billing private insurers for dental fillings when she actually provided less expensive resin restorations. This scheme resulted in a total actual loss of $142,677 to insurers.",
+  "timeline": {
+    "start_year": 2024,
+    "end_year": 2024
+  },
+  "violation": [
+    "18 U.S. Code § 1347"
+  ],
+  "relatedLinks": [
+    {
+      "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+      "text": "18 U.S. Code § 1347 - Health care fraud"
+    },
+    {
+      "url": "#",
+      "text": "Health Care Fraud"
+    },
+    {
+      "url": "#",
+      "text": "Dental Fraud"
+    },
+    {
+      "url": "#",
+      "text": "Private Insurance Fraud"
+    }
+  ],
+  "category": "Health Care Fraud",
+  "fraudAmount": 142677,
+  "affectedLabel": "Total Actual Loss to Insurers",
+  "commentary": [
+    {
+      "comment": "This case highlights how even relatively small-scale fraud in routine dental procedures can accumulate to significant losses for insurers.",
+      "source": "AI Analysis",
+      "added_by": "Claude"
+    },
+    {
+      "comment": "The fraudulent billing of more expensive procedures for less costly ones demonstrates a common tactic in healthcare fraud that can be difficult for insurers to detect without detailed audits.",
+      "source": "AI Analysis",
+      "added_by": "Claude"
+    },
+    {
+      "comment": "This case involving private insurers, rather than government programs like Medicare or Medicaid, shows that healthcare fraud affects a wide range of payers in the healthcare system.",
+      "source": "AI Analysis",
+      "added_by": "Claude"
+    }
+  ]
+ }
 ]
