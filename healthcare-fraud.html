@@ -134,14 +134,14 @@ const countStates = (statesArray) => {
 return {countStates};
 }});
 
-define({id: "24398d4e", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
+define({id: "e2d73f68", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
 const state_bar_plot = function(data) {
   const aggregated_data = aggregateData(data)
   return Plot.plot({
     marginTop: 0,
     paddingTop: 0,
     paddingLeft: 20,
-    marginLeft: 120, 
+    marginLeft: 80, 
     marginRight: 60, 
     marginBottom: 0,
     height: 350,
@@ -175,14 +175,14 @@ const state_bar_plot = function(data) {
 return {state_bar_plot};
 }});
 
-define({id: "7d501990", inputs: ["countStates","Plot"], outputs: ["state_count_plot"], body: (countStates,Plot) => {
+define({id: "8fce9a3d", inputs: ["countStates","Plot"], outputs: ["state_count_plot"], body: (countStates,Plot) => {
 const state_count_plot = function(data) {
   const counts_data = countStates(data)
   return Plot.plot({
     marginTop: 0,
     paddingTop: 0,
     paddingLeft: 20,
-    marginLeft: 120, 
+    marginLeft: 80, 
     marginRight: 60, 
     marginBottom: 0,
     height: 350,
@@ -229,6 +229,12 @@ d3.format(".3s")(filtered_data.reduce((total, item) => {
 define({id: "aa4f11c4", mode: "inline", inputs: ["filtered_data","display"], body: async (filtered_data,display) => {
 display(await(
 filtered_data.length
+))
+}});
+
+define({id: "d234b236", mode: "inline", inputs: ["filtered_data","display"], body: async (filtered_data,display) => {
+display(await(
+[...new Set(filtered_data.map(item => item.state))].length
 ))
 }});
 
@@ -417,8 +423,8 @@ filtered_data.map(entry => cardTemplate(entry))
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="observablehq observablehq--block"><!--:2fd66c27:--></div>
 <div class="observablehq observablehq--block"><!--:3db4440c:--></div>
-<div class="observablehq observablehq--block"><!--:24398d4e:--></div>
-<div class="observablehq observablehq--block"><!--:7d501990:--></div>
+<div class="observablehq observablehq--block"><!--:e2d73f68:--></div>
+<div class="observablehq observablehq--block"><!--:8fce9a3d:--></div>
 <div>
   <div class="stats-container">
       <div class="big-number-card">
@@ -428,6 +434,10 @@ filtered_data.map(entry => cardTemplate(entry))
       <div class="big-number-card">
           <div class="big-number"><observablehq-loading></observablehq-loading><!--:aa4f11c4:--></div>
           <div class="big-number-caption">Cases</div>
+      </div>
+      <div class="big-number-card">
+          <div class="big-number"><observablehq-loading></observablehq-loading><!--:d234b236:--></div>
+          <div class="big-number-caption">Unique States</div>
       </div>
   </div>
 </div>
