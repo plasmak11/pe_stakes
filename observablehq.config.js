@@ -2,22 +2,22 @@
 export default {
   // The project’s title; used in the sidebar and webpage titles.
   title: "Clinicians.fyi",
-
   // The pages and sections in the sidebar. If you don’t specify this option,
   // all pages will be listed in alphabetical order. Listing pages explicitly
   // lets you organize them into sections and have unlisted pages.
   pages: [
     {
       name: "Healthcare Fraud",
-      open: false,
+      open: true,
       pages: [
         {name: "Criminal Cases", path: "healthcare-fraud"},
-        {name: "Ongoing", path: "healthcare-fraud-ongoing"}
+        {name: "Startups/Health Tech", path: "healthcare-fraud-startups"},
+        // {name: "Ongoing", path: "healthcare-fraud-ongoing"}
       ]
     },
     {
       name: "Hospital Ownership",
-      path: "index",
+      open: false,
       pages: [
         {name: "PE Hospitals Tracker", path: "pe_hospitals"},
         // {name: " ➟ Tutorial", path: "pe_hospitals_tutorial"},
@@ -30,7 +30,7 @@ export default {
     // {
     //   name: "🔍 Looking for data",
     //   pages: [
-    //     {name: " ➟ 340B (WIP)", path: "340b"},
+    // //     {name: " ➟ 340B (WIP)", path: "340b"},
     //     {name: " ➟ PBM (WIP)", path: "pbm"},
     //   ]
     // },
@@ -44,7 +44,7 @@ export default {
   pager: true, // whether to show previous & next links in the footer
   root: "docs", // path to the source root for preview
   // output: "dist", // path to the output root for build
-  search: true, // activate search
+  // search: true, // activate search
   interpreters: {
     ".py": ["/Users/jung/Library/Caches/pypoetry/virtualenvs/hospital-map-_kHyWl-y-py3.11/bin/python3"],
   }
