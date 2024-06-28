@@ -134,15 +134,15 @@ const countStates = (statesArray) => {
 return {countStates};
 }});
 
-define({id: "e2d73f68", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
+define({id: "1fbd8765", inputs: ["aggregateData","Plot","d3"], outputs: ["state_bar_plot"], body: (aggregateData,Plot,d3) => {
 const state_bar_plot = function(data) {
   const aggregated_data = aggregateData(data)
   return Plot.plot({
     marginTop: 0,
     paddingTop: 0,
-    paddingLeft: 20,
+    paddingLeft: 10,
     marginLeft: 80, 
-    marginRight: 60, 
+    marginRight: 50, 
     marginBottom: 0,
     height: 350,
     // width: 300,
@@ -160,7 +160,7 @@ const state_bar_plot = function(data) {
         x: "fraudAmount",
         y: "state", 
         fill: "fraudAmount",
-        sort: { y: "x", reverse: true, limit: 7 }
+        sort: { y: "x", reverse: true, limit: 6 }
       }),
       Plot.text(aggregated_data, {
         text: d => `$${d3.format(".3s")(d.fraudAmount).replace(/G/, "B")}`,
@@ -175,15 +175,15 @@ const state_bar_plot = function(data) {
 return {state_bar_plot};
 }});
 
-define({id: "8fce9a3d", inputs: ["countStates","Plot"], outputs: ["state_count_plot"], body: (countStates,Plot) => {
+define({id: "86d40b29", inputs: ["countStates","Plot"], outputs: ["state_count_plot"], body: (countStates,Plot) => {
 const state_count_plot = function(data) {
   const counts_data = countStates(data)
   return Plot.plot({
     marginTop: 0,
     paddingTop: 0,
-    paddingLeft: 20,
+    paddingLeft: 10,
     marginLeft: 80, 
-    marginRight: 60, 
+    marginRight: 50, 
     marginBottom: 0,
     height: 350,
     // width: 300,
@@ -202,7 +202,7 @@ const state_count_plot = function(data) {
         y: "state", 
         fill: "count",
         sort: { y: "x", reverse: true, 
-        limit: 7
+        limit: 6
         }
       }),
       Plot.text(counts_data, {
@@ -411,7 +411,8 @@ filtered_data.map(entry => cardTemplate(entry))
 <h1> Healthcare Fraud: Criminal Cases</h1>
 <hr>
 <h2 id="intro" tabindex="-1"><a class="observablehq-header-anchor" href="#intro">Intro</a></h2>
-<p style="font-size: 0.8em;">Welcome to the Healthcare Fraud Database, a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Based on my experience in healthcare startup, interactions with investors, executives, much of the fraud is overlooked as "part of business". This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing. </p>
+<p style="font-size: 0.8em;">Healthcare Fraud Database is a comprehensive resource compiling information on fraudulent activities within the healthcare industry. Based on my experience in healthcare startup, interactions with investors, executives, much of the fraud is overlooked as "part of business". This database serves as a centralized repository of reported cases and schemes, sourced primarily from news articles, press releases, Department of Justice reports, and Federal Trade Commission announcements. This website is currently work-in-progress, as the data validation is ongoing.
+<span style="font-size: 1em;"><a href="https://www.linkedin.com/in/jung-hoon-son/" target="_blank" rel="noopener noreferrer">Jung Hoon Son, M.D.</a></span></p>
 <div class="observablehq observablehq--block"><!--:1662f5b4:--></div>
 <div class="observablehq observablehq--block"><!--:37480bfb:--></div>
 <div class="observablehq observablehq--block"><!--:297209c4:--></div>
@@ -423,8 +424,8 @@ filtered_data.map(entry => cardTemplate(entry))
 <h2 id="statistics" tabindex="-1"><a class="observablehq-header-anchor" href="#statistics">Statistics</a></h2>
 <div class="observablehq observablehq--block"><!--:2fd66c27:--></div>
 <div class="observablehq observablehq--block"><!--:3db4440c:--></div>
-<div class="observablehq observablehq--block"><!--:e2d73f68:--></div>
-<div class="observablehq observablehq--block"><!--:8fce9a3d:--></div>
+<div class="observablehq observablehq--block"><!--:1fbd8765:--></div>
+<div class="observablehq observablehq--block"><!--:86d40b29:--></div>
 <div>
   <div class="stats-container">
       <div class="big-number-card">
@@ -458,12 +459,12 @@ filtered_data.map(entry => cardTemplate(entry))
 <p><observablehq-loading></observablehq-loading><!--:4c253b46:--></p>
 <h2 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h2>
 <ul>
-<li>[ ] 2023 National Health Care Fraud Enforcement Action</li>
-<li>[ ] 2023 COVID-19 Enforcement Action</li>
-<li>[ ] 2022 Opioid Enforcement Action</li>
-<li>[x] [2022 Telemedicine Enforcement Action]</li>
-<li>[x] <a href="https://www.justice.gov/criminal/criminal-fraud/health-care-fraud-unit/2023-case-summaries" target="_blank" rel="noopener noreferrer">2022 COVID-19 Enforcement Action</a></li>
-<li>[ ] <a href="https://www.justice.gov/criminal-fraud/health-care-fraud-unit/covid-19-health-care-fraud-enforcement-action" target="_blank" rel="noopener noreferrer">2021 National Health Care Fraud Enforcement Action</a></li>
+<li>2023 National Health Care Fraud Enforcement Action</li>
+<li>2023 COVID-19 Enforcement Action</li>
+<li>2022 Opioid Enforcement Action</li>
+<li>2022 Telemedicine Enforcement Action</li>
+<li><a href="https://www.justice.gov/criminal/criminal-fraud/health-care-fraud-unit/2023-case-summaries" target="_blank" rel="noopener noreferrer">2022 COVID-19 Enforcement Action</a></li>
+<li><a href="https://www.justice.gov/criminal-fraud/health-care-fraud-unit/covid-19-health-care-fraud-enforcement-action" target="_blank" rel="noopener noreferrer">2021 National Health Care Fraud Enforcement Action</a></li>
 </ul>
 </main>
 <footer id="observablehq-footer">
