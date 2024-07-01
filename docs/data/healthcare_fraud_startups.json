@@ -1,0 +1,249 @@
+[
+    {
+        "title": "United States v. Mark Schena",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": "Mark Schena",
+        "clinicianType": "Medical Technology Company Executive",
+        "affiliatedEntities": [
+            {
+                "npi": "",
+                "label": "Arrayit Corporation"
+            }
+        ],
+        "summary": "Mark Schena, 60, of Los Altos, California, president of Arrayit Corporation, was sentenced to eight years in prison and ordered to pay $24 million in restitution for defrauding investors and committing health care fraud. Schena falsely claimed to have invented revolutionary blood testing technology, orchestrated illegal kickbacks for unnecessary allergy testing, and attempted to capitalize on the COVID-19 pandemic with false claims about testing capabilities. Arrayit submitted over $77 million in fraudulent claims for COVID-19 and allergy testing. Schena was convicted by a federal jury on September 6, 2022.",
+        "timeline": {
+            "start_year": 2020,
+            "end_year": 2023
+        },
+        "violation": [
+            "15 U.S. Code § 78j",
+            "18 U.S. Code § 1347",
+            "42 U.S. Code § 1320a–7b",
+            "18 U.S. Code § 1343"
+        ],
+        "relatedLinks": [
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/15/78j",
+                "text": "15 U.S. Code § 78j - Manipulative and deceptive devices"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+                "text": "18 U.S. Code § 1347 - Health care fraud"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+                "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+                "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+            },
+            {
+                "url": "#",
+                "text": "Securities Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Health Care Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Kickbacks"
+            },
+            {
+                "url": "#",
+                "text": "COVID-19 Related Fraud"
+            }
+        ],
+        "category": "Securities Fraud, Health Care Fraud, and Kickbacks",
+        "fraudAmount": 77000000,
+        "affectedLabel": "Amount of Fraudulent Claims Submitted",
+        "commentary": [
+            {
+                "comment": "This case represents a significant milestone as the first criminal securities fraud case related to the COVID-19 pandemic charged by the Department of Justice, highlighting the increased scrutiny on pandemic-related financial crimes.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "The combination of securities fraud, healthcare fraud, and exploitation of the COVID-19 pandemic demonstrates the multifaceted nature of some fraud schemes, requiring coordination among multiple investigative agencies.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "The involvement of a Silicon Valley executive in this fraud case may lead to increased scrutiny of medical technology startups and their claims, particularly those related to revolutionary diagnostic technologies.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            }
+        ],
+        "sources": [
+            {
+                "url": "https://www.justice.gov/opa/pr/silicon-valley-executive-sentenced-defrauding-investors-and-participating-covid-19-and"
+            }
+        ]
+    },
+    {
+        "title": "United States v. Ruthia He and David Brody",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": [
+            "Ruthia He",
+            "David Brody"
+        ],
+        "clinicianType": [
+            "CEO",
+            "Clinical President"
+        ],
+        "affiliatedEntities": [
+            {
+                "npi": "",
+                "label": "Done Global Inc."
+            },
+            {
+                "npi": "",
+                "label": "Done Health P.C."
+            }
+        ],
+        "summary": "Ruthia He, founder and CEO of Done Global Inc., and David Brody, clinical president of Done Health P.C., were arrested for allegedly participating in a scheme to distribute Adderall over the internet, commit health care fraud, and obstruct justice. They allegedly exploited telemedicine rules during the COVID-19 pandemic to provide easy access to Adderall and other stimulants without legitimate medical purpose, generating over $100 million in revenue by arranging for the prescription of over 40 million pills. They also allegedly defrauded Medicare, Medicaid, and commercial insurers of approximately $14 million. The defendants are accused of using deceptive advertising, structuring their platform to facilitate drug access, and obstructing justice by deleting documents and failing to respond to subpoenas.",
+        "timeline": {
+            "start_year": 2020,
+            "end_year": 2024
+        },
+        "violation": [
+            "21 U.S. Code § 841",
+            "18 U.S. Code § 1347",
+            "18 U.S. Code § 1512"
+        ],
+        "relatedLinks": [
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/21/841",
+                "text": "21 U.S. Code § 841 - Prohibited acts A"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+                "text": "18 U.S. Code § 1347 - Health care fraud"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1512",
+                "text": "18 U.S. Code § 1512 - Tampering with a witness, victim, or an informant"
+            },
+            {
+                "url": "#",
+                "text": "Controlled Substance Distribution"
+            },
+            {
+                "url": "#",
+                "text": "Health Care Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Obstruction of Justice"
+            },
+            {
+                "url": "#",
+                "text": "Telemedicine Fraud"
+            },
+            {
+                "url": "#",
+                "text": "COVID-19 Related Fraud"
+            }
+        ],
+        "category": "Controlled Substance Distribution, Health Care Fraud, and Obstruction of Justice",
+        "fraudAmount": 114000000,
+        "affectedLabel": "Revenue Generated and Amount Defrauded from Insurers",
+        "commentary": [
+            {
+                "comment": "This case represents a significant milestone as the Justice Department's first criminal drug distribution prosecutions related to a digital health company using telemedicine, highlighting increased scrutiny on the intersection of technology and healthcare.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "The exploitation of relaxed telemedicine rules during the COVID-19 pandemic demonstrates how public health emergencies can create vulnerabilities in healthcare systems that may be exploited by bad actors.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "This case may lead to increased regulation and oversight of digital health companies, particularly those involved in prescribing controlled substances, potentially impacting the broader telemedicine industry.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            }
+        ]
+    },
+    {
+        "title": "United States v. Elizabeth Holmes and Ramesh 'Sunny' Balwani",
+        "caseNumber": "Case Number: Unknown",
+        "state": "California",
+        "plaintiff": "United States Department of Justice",
+        "defendant": [
+            "Elizabeth Holmes",
+            "Ramesh 'Sunny' Balwani"
+        ],
+        "clinicianType": [
+            "CEO",
+            "COO"
+        ],
+        "affiliatedEntities": [
+            {
+                "npi": "",
+                "label": "Theranos, Inc."
+            }
+        ],
+        "summary": "Elizabeth Holmes and Ramesh 'Sunny' Balwani were charged with multiple counts of conspiracy to commit wire fraud and wire fraud for their roles in schemes to defraud investors and patients through their company Theranos. They allegedly made false claims about Theranos's blood-testing technology, its financial condition, and future prospects. Holmes was convicted on four counts and sentenced to 135 months in prison. Balwani was convicted on all counts and sentenced to 155 months in prison. Both were ordered to serve three years of supervision after release.",
+        "timeline": {
+            "start_year": 2018,
+            "end_year": 2022
+        },
+        "violation": [
+            "18 U.S. Code § 1349",
+            "18 U.S. Code § 1343"
+        ],
+        "relatedLinks": [
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1349",
+                "text": "18 U.S. Code § 1349 - Attempt and conspiracy"
+            },
+            {
+                "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+                "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+            },
+            {
+                "url": "#",
+                "text": "Wire Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Investor Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Health Care Fraud"
+            },
+            {
+                "url": "#",
+                "text": "Medical Technology Fraud"
+            }
+        ],
+        "category": "Wire Fraud and Investor Fraud",
+        "fraudAmount": 140000000,
+        "affectedLabel": "Amount Defrauded from Investors",
+        "commentary": [
+            {
+                "comment": "This case highlights the potential dangers of 'fake it till you make it' culture in Silicon Valley startups, especially when applied to healthcare technology.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "The significant prison sentences handed down may serve as a deterrent for other tech executives considering misleading investors or the public about their products' capabilities.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            },
+            {
+                "comment": "This case underscores the importance of rigorous scientific validation and transparency in medical technology development, and may lead to increased scrutiny of health tech startups.",
+                "source": "AI Analysis",
+                "added_by": "Claude"
+            }
+        ]
+    }
+]
