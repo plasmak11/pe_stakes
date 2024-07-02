@@ -1,0 +1,223 @@
+@import url("observablehq:default.css");
+/* @import url("observablehq:wide.css"); */
+
+/* :root {
+  --theme-foreground-focus: green;
+} */
+
+/* @import url('https://fonts.googleapis.com/css?family=Source Serif Pro');
+/* @import url('https://fonts.googleapis.com/css?family=Source Sans Pro');
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+@import url('https://fonts.googleapis.com/css?family=Inter');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=PT Serif'); */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto Slab'); */
+/* @import url('https://fonts.googleapis.com/css?family=Rubik'); */
+/* @import url('https://fonts.googleapis.com/css?family=Crimson Text'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+.card-header {
+    background-color: #e9ecef;
+    border-bottom: 1px solid #dee2e6;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.header-left,
+.header-center {
+    padding: 12px 15px;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.case-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3px;
+}
+
+.case-number {
+    color: #7f8c8d;
+    font-size: 0.8em;
+}
+
+.fraud-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.fraud-category {
+    background-color: #34495e;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+.fraud-column {
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+}
+
+.fraud-label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+}
+
+.fraud-amount {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.toggle-icon {
+    align-self: center;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+    margin: 0 15px;
+}
+
+.card-content {
+    display: none;
+    padding: 15px;
+}
+
+.card.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.card.expanded .card-content {
+    display: block;
+}
+
+.state-badge {
+    background-color: #3498db;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.battle-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    gap: 15px;
+}
+
+.party-card {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.party-card.winner {
+    border-color: #28a745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.3);
+}
+
+.party-label {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    color: #34495e;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.winner-label {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.summary {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.key-entity {
+    color: #3498db;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.related-links {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+}
+
+.related-links h4 {
+    font-family: 'Roboto Slab', serif;
+    margin: 0 0 8px 0;
+    font-size: 1em;
+    color: #34495e;
+}
+
+.related-link {
+    display: inline-blo background-color: #e9ecef;
+    color: #34495e;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    margin-right: 5px;
+    text-decoration: none;
+    border: 1px solid #ced4da;
+    transition: background-color 0.2s ease;
+}
+
+.related-link:hover {}
