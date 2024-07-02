@@ -31,6 +31,7 @@ search_input
 
 ## Statistics
 
+
 <div class="stats-container">
     <div class="big-number-card">
         <div class="big-number">$${d3.format(".3s")(filtered_data.reduce((total, item) => { return (total + (Number(item.fraudAmount)) || 0);}, 0)).replace(/G/, "B")}</div>

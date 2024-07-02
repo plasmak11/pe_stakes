@@ -17,7 +17,7 @@ export default {
     },
     {
       name: "Hospital Ownership",
-      open: false,
+      open: true,
       pages: [
         {name: "PE Hospitals Tracker", path: "pe_hospitals"},
         // {name: " ➟ Tutorial", path: "pe_hospitals_tutorial"},
@@ -25,6 +25,13 @@ export default {
         // {name: "Step 3: Layout", path: "step4"},
         // {name: "Step 4: Map", path: "step3"},
         // {name: "Step 5: Final", path: "step5"},
+      ]
+    },
+    {
+      name: "Pharmaceutical",
+      open: true,
+      pages: [
+        {name: "OpenFDA", path: "openfda"},
       ]
     },
     // {

@@ -1904,8 +1904,7 @@
     "title": "United States v. Nicholas Frank Sciotto and Kyle Blake Burbage",
     "caseNumber": "Case Number: Unknown",
     "state": [
-      "Utah",
-      "South Carolina"
+      "Utah"
     ],
     "plaintiff": "United States Department of Justice",
     "defendant": [
@@ -4217,8 +4216,8 @@
         "added_by": "Claude"
       }
     ]
-   },
-   {
+  },
+  {
     "title": "United States v. Adam Mutwol and Daud Koleosho",
     "caseNumber": "Case Number: Unknown",
     "state": "Arizona",
@@ -4294,8 +4293,8 @@
         "added_by": "Claude"
       }
     ]
-   },
-   {
+  },
+  {
     "title": "United States v. Kyrollos Mekail",
     "caseNumber": "Case Number: Unknown",
     "state": "California",
@@ -4363,129 +4362,1881 @@
         "added_by": "Claude"
       }
     ]
-   },
-   {
- "title": "United States v. Kyrollos Mekail",
- "caseNumber": "Case Number: Unknown",
- "state": "California",
- "plaintiff": "United States Department of Justice",
- "defendant": "Kyrollos Mekail",
- "clinicianType": "Pharmacist",
- "affiliatedEntities": [
-   {
-     "npi": "",
-     "label": "MONTE VP LLC d/b/a Monte Vista Pharmacy"
-   }
- ],
- "summary": "Kyrollos Mekail, 36, of Moreno Valley, California, was charged with two counts of health care fraud for allegedly billing Medi-Cal $307 million for medically unnecessary medications, often not provided, obtained through illegal kickbacks. As owner of Monte Vista Pharmacy, Mekail paid kickbacks for prescriptions of non-contracted, generic drugs, which were written by co-schemer medical providers using information from Medi-Cal patients provided by other co-schemers. Mekail submitted false claims to Medi-Cal, knowing the medications were unnecessary and often not provided. Of the $306,521,392 in false claims submitted, Medi-Cal paid approximately $204,032,151. The government seized about $108,683,368 in assets related to the scheme.",
- "timeline": {
-   "start_year": 2022,
-   "end_year": 2023
- },
- "violation": [
-   "18 U.S. Code § 1347",
-   "42 U.S. Code § 1320a–7b"
- ],
- "relatedLinks": [
-   {
-     "url": "https://www.law.cornell.edu/uscode/text/18/1347",
-     "text": "18 U.S. Code § 1347 - Health care fraud"
-   },
-   {
-     "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
-     "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
-   },
-   {
-     "url": "#",
-     "text": "Health Care Fraud"
-   },
-   {
-     "url": "#",
-     "text": "Kickbacks"
-   },
-   {
-     "url": "#",
-     "text": "Medicaid Fraud"
-   },
-   {
-     "url": "#",
-     "text": "Pharmacy Fraud"
-   }
- ],
- "category": "Health Care Fraud and Kickbacks",
- "fraudAmount": 306521392,
- "affectedLabel": "Amount of False and Fraudulent Claims Submitted",
- "commentary": [
-   {
-     "comment": "This case highlights vulnerabilities in Medicaid's prior authorization suspension, which was likely implemented to increase access to medications but was exploited for fraudulent purposes.",
-     "source": "AI Analysis",
-     "added_by": "Claude"
-   },
-   {
-     "comment": "The involvement of multiple co-schemers, including medical providers, demonstrates the complex networks that can develop in large-scale healthcare fraud operations.",
-     "source": "AI Analysis",
-     "added_by": "Claude"
-   },
-   {
-     "comment": "The significant discrepancy between the amount billed ($306 million) and the amount paid ($204 million) suggests that some fraud detection mechanisms may have limited the financial impact, though substantial losses still occurred.",
-     "source": "AI Analysis",
-     "added_by": "Claude"
-   }
- ]
-},
-{
-  "title": "United States v. Monica Boniadi",
-  "caseNumber": "Case Number: Unknown",
-  "state": "California",
-  "plaintiff": "United States Department of Justice",
-  "defendant": "Monica Boniadi",
-  "clinicianType": "Dentist",
-  "affiliatedEntities": [],
-  "summary": "Monica Boniadi, 53, of Laguna Niguel, California, was charged by information with health care fraud for billing private insurers for dental fillings when she actually provided less expensive resin restorations. This scheme resulted in a total actual loss of $142,677 to insurers.",
-  "timeline": {
-    "start_year": 2024,
-    "end_year": 2024
   },
-  "violation": [
-    "18 U.S. Code § 1347"
-  ],
-  "relatedLinks": [
-    {
-      "url": "https://www.law.cornell.edu/uscode/text/18/1347",
-      "text": "18 U.S. Code § 1347 - Health care fraud"
+  {
+    "title": "United States v. Monica Boniadi",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Monica Boniadi",
+    "clinicianType": "Dentist",
+    "affiliatedEntities": [],
+    "summary": "Monica Boniadi, 53, of Laguna Niguel, California, was charged by information with health care fraud for billing private insurers for dental fillings when she actually provided less expensive resin restorations. This scheme resulted in a total actual loss of $142,677 to insurers.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
     },
-    {
-      "url": "#",
-      "text": "Health Care Fraud"
+    "violation": [
+      "18 U.S. Code § 1347"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Dental Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Private Insurance Fraud"
+      }
+    ],
+    "category": "Health Care Fraud",
+    "fraudAmount": 142677,
+    "affectedLabel": "Total Actual Loss to Insurers",
+    "commentary": [
+      {
+        "comment": "This case highlights how even relatively small-scale fraud in routine dental procedures can accumulate to significant losses for insurers.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The fraudulent billing of more expensive procedures for less costly ones demonstrates a common tactic in healthcare fraud that can be difficult for insurers to detect without detailed audits.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case involving private insurers, rather than government programs like Medicare or Medicaid, shows that healthcare fraud affects a wide range of payers in the healthcare system.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Cindy Justice and Ashleigh Davis",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Cindy Justice",
+      "Ashleigh Davis"
+    ],
+    "clinicianType": [
+      "Pharmacy Owner",
+      "Pharmacy Technician"
+    ],
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "PureScience Rx"
+      }
+    ],
+    "summary": "Cindy Justice, 69, and Ashleigh Davis, 40, both of Melbourne, Florida, were charged with conspiracy to commit health care fraud and pay unlawful remuneration. Justice, the owner and president of PureScience Rx in Poway, California, and Davis, the Operations Manager and licensed pharmacy technician, allegedly conspired to defraud Medicare by billing for medically unnecessary and overpriced compound prescriptions for a 'foot bath' treatment. Medicare paid the defendants a total of $4.6 million for these claims.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
     },
-    {
-      "url": "#",
-      "text": "Dental Fraud"
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Compound Pharmacy Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 4600000,
+    "affectedLabel": "Amount Paid by Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of fraud in compound pharmacies, which have been a focus of healthcare fraud investigations in recent years.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of a seemingly benign 'foot bath' treatment as a vehicle for fraud demonstrates how even seemingly simple treatments can be exploited for financial gain.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of both the pharmacy owner and a licensed technician suggests a systemic problem within the pharmacy, raising questions about oversight and compliance in compounding pharmacies.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Casimiro Bojorquez",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Casimiro Bojorquez",
+    "clinicianType": "Patient Recruiter",
+    "affiliatedEntities": [],
+    "summary": "Casimiro Bojorquez, 42, of North Hills, California, was charged with conspiracy to solicit and receive illegal remunerations for referrals to clinical treatment facilities. Bojorquez allegedly brought patients to substance abuse treatment facilities in exchange for payments. Between October 24, 2018, and January 22, 2024, he received approximately $176,000 in kickbacks from a facility in Fallbrook, California for patient referrals. Text messages between Bojorquez and the facility owner document the arrangement, including a $5,000 payment for bringing a patient to the facility.",
+    "timeline": {
+      "start_year": 2018,
+      "end_year": 2024
     },
-    {
-      "url": "#",
-      "text": "Private Insurance Fraud"
-    }
-  ],
-  "category": "Health Care Fraud",
-  "fraudAmount": 142677,
-  "affectedLabel": "Total Actual Loss to Insurers",
-  "commentary": [
-    {
-      "comment": "This case highlights how even relatively small-scale fraud in routine dental procedures can accumulate to significant losses for insurers.",
-      "source": "AI Analysis",
-      "added_by": "Claude"
+    "violation": [
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 371"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Patient Brokering"
+      },
+      {
+        "url": "#",
+        "text": "Substance Abuse Treatment Fraud"
+      }
+    ],
+    "category": "Illegal Remunerations and Kickbacks",
+    "fraudAmount": 176000,
+    "affectedLabel": "Amount Received in Kickbacks",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of patient brokering in the substance abuse treatment industry, which can compromise patient care and inflate healthcare costs.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The detailed text message evidence demonstrates how modern communication technologies can provide crucial evidence in healthcare fraud investigations.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The long-term nature of this scheme (2018-2024) suggests potential weaknesses in oversight and detection mechanisms for patient referral practices in substance abuse treatment.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Jose Angel Portilla and Kathie Silva",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Jose Angel Portilla",
+      "Kathie Silva"
+    ],
+    "clinicianType": "Other",
+    "affiliatedEntities": [],
+    "summary": "Jose Angel Portilla, 52, of Tijuana, Mexico, and Kathie Silva, 45, of Chula Vista, California, were charged with conspiracy to commit health care fraud and pay unlawful remunerations, and health care fraud. They allegedly operated call centers in Mexico to contact Medicare beneficiaries in the U.S., persuading them to accept durable medical equipment (DME) products. Silva contracted with telemedicine companies to obtain doctors' signatures for DME orders. The scheme, running from 2016 to 2022, involved fraudulent claims to Medicare for orthotic braces and other medical equipment.",
+    "timeline": {
+      "start_year": 2016,
+      "end_year": 2022
     },
-    {
-      "comment": "The fraudulent billing of more expensive procedures for less costly ones demonstrates a common tactic in healthcare fraud that can be difficult for insurers to detect without detailed audits.",
-      "source": "AI Analysis",
-      "added_by": "Claude"
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Telemedicine Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 0,
+    "affectedLabel": "Amount of Fraudulent Claims to Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights the international nature of some healthcare fraud schemes, with call centers operating from Mexico to target U.S. Medicare beneficiaries.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of telemedicine companies to obtain doctors' signatures demonstrates how legitimate medical practices can be exploited in fraudulent schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The long-running nature of the scheme (2016-2022) suggests potential weaknesses in Medicare's fraud detection systems, especially for DME claims.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Shawn Tyson",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Connecticut",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Shawn Tyson",
+    "clinicianType": "Licensed Alcohol and Drug Abuse Counselor",
+    "affiliatedEntities": [],
+    "summary": "Shawn Tyson, 54, of Bloomfield, Connecticut, was charged with one count of health care fraud for allegedly defrauding the Connecticut Medicaid program of $670,963. Tyson and another individual reportedly submitted fraudulent claims for psychotherapy services that were either not provided or misrepresented the identity of the service provider.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
     },
-    {
-      "comment": "This case involving private insurers, rather than government programs like Medicare or Medicaid, shows that healthcare fraud affects a wide range of payers in the healthcare system.",
-      "source": "AI Analysis",
-      "added_by": "Claude"
-    }
-  ]
- }
+    "violation": [
+      "18 U.S. Code § 1347"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Psychotherapy Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Substance Abuse Treatment Fraud"
+      }
+    ],
+    "category": "Health Care Fraud",
+    "fraudAmount": 670963,
+    "affectedLabel": "Amount Defrauded from Connecticut Medicaid",
+    "commentary": [
+      {
+        "comment": "This case highlights vulnerabilities in Medicaid billing for mental health and substance abuse treatment services, where verification of service provision can be challenging.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The misrepresentation of provider identities in claims suggests potential issues with credential verification and oversight in Medicaid's mental health service provision.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This fraud, committed by a licensed professional, may lead to increased scrutiny of substance abuse counselors and their billing practices, potentially affecting access to care for legitimate patients.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Eva LeBeau and Lori Lebrecht",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Eva LeBeau",
+      "Lori Lebrecht"
+    ],
+    "clinicianType": [
+      "Home Health Agency Owner",
+      "Director of Nursing"
+    ],
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Prestigious Senior Home Health Care, Inc."
+      }
+    ],
+    "summary": "Eva LeBeau, 65, of Clearwater, Florida, and Lori Lebrecht, 60, of Largo, Florida, were charged with conspiracy to defraud the United States and to pay and receive illegal health care kickbacks. LeBeau, owner of Prestigious Senior Home Health Care, Inc., and Lebrecht, its Director of Nursing, allegedly paid patient recruiters for referrals and submitted false claims totaling over $2 million to Medicare for home health services. Medicare paid approximately $1.3 million based on these fraudulent claims.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Home Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Patient Recruitment Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 2000000,
+    "affectedLabel": "Amount of False Claims Submitted to Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights vulnerabilities in the home health care sector, where patient recruitment and service verification can be challenging to oversee.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of both the agency owner and the Director of Nursing suggests a systemic problem within the organization, raising questions about compliance and oversight in home health agencies.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of patient recruiters paid per referral demonstrates how financial incentives can distort patient care decisions and lead to unnecessary services being billed to Medicare.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Robert Desselle",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Robert Desselle",
+    "clinicianType": "Other",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Desselle's Sky High Enterprise, LLC"
+      }
+    ],
+    "summary": "Robert Desselle, 46, of Sarasota, Florida was charged with conspiracy to defraud the United States and to pay and receive health care kickbacks, as well as paying illegal health care kickbacks. Desselle allegedly paid marketers through his company, Desselle's Sky High Enterprise, LLC, to recruit Medicare beneficiaries for medically unnecessary cancer genetic testing (CGx). As a result of this scheme, Medicare paid approximately $4.5 million on CGx claims for these beneficiaries.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Patient Recruitment Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 4500000,
+    "affectedLabel": "Amount Paid by Medicare on Fraudulent Claims",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of fraudulent genetic testing schemes targeting Medicare beneficiaries, which has been a focus of recent healthcare fraud enforcement efforts.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of marketers paid on a per-patient basis demonstrates how financial incentives can lead to unnecessary medical testing, potentially putting patients at risk and wasting Medicare resources.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant amount paid by Medicare ($4.5 million) for these unnecessary tests underscores the potential for substantial financial impact on the healthcare system from genetic testing fraud schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Marques Elijah Green",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Marques Elijah Green",
+    "clinicianType": "DME Company Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Onyx Medical Supply LLC"
+      },
+      {
+        "npi": "",
+        "label": "AquaMed Supply LLC"
+      }
+    ],
+    "summary": "Marques Elijah Green, 29, of Windermere, Florida, was charged with conspiracy to commit health care fraud for allegedly obtaining over $3.4 million in Medicare funds fraudulently. Green, owner of DME companies Onyx Medical Supply LLC and AquaMed Supply LLC, allegedly submitted false claims to Medicare for medically unnecessary DME and paid kickbacks to telemedicine companies for signed doctors' orders for orthotic braces that were billed to Medicare.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Telemedicine Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 3400000,
+    "affectedLabel": "Amount Fraudulently Obtained from Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of DME fraud in Medicare, which has been a focus of healthcare fraud enforcement efforts in recent years.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of telemedicine companies in providing fraudulent doctors' orders demonstrates how emerging healthcare technologies can be exploited for fraudulent purposes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The relatively young age of the defendant (29) suggests that healthcare fraud schemes are not limited to more experienced healthcare professionals or business owners.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Lawrence Waldman",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Lawrence Waldman",
+    "clinicianType": "Sales Representative",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "ASAP Lab, LLC"
+      }
+    ],
+    "summary": "Lawrence Waldman, 57, of Miami, Florida, was charged with conspiracy to defraud the United States and to solicit and receive illegal kickbacks and bribes, as well as illegal monetary transactions. As a sales representative for ASAP Lab, LLC, Waldman allegedly obtained genetic test and respiratory viral panel test swabs from Medicare beneficiaries across Florida and elsewhere. He and his co-conspirators used these swabs, along with forged requisition forms, to receive approximately $380,000 in illegal kickbacks for causing the submission of false claims to Medicare.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 1957"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1957",
+        "text": "18 U.S. Code § 1957 - Engaging in monetary transactions in property derived from specified unlawful activity"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Forgery"
+      }
+    ],
+    "category": "Health Care Fraud, Kickbacks, and Illegal Monetary Transactions",
+    "fraudAmount": 380000,
+    "affectedLabel": "Amount Received in Illegal Kickbacks",
+    "commentary": [
+      {
+        "comment": "This case highlights how individuals in non-clinical roles, such as sales representatives, can be involved in complex healthcare fraud schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of forged requisition forms demonstrates the lengths to which fraudsters will go to circumvent proper medical authorization processes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The wide geographical scope of the alleged fraud (throughout Florida and elsewhere) suggests potential weaknesses in oversight and coordination across different jurisdictions in detecting and preventing such schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Erin Kim",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Erin Kim",
+    "clinicianType": "Nurse Practitioner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Done"
+      }
+    ],
+    "summary": "Erin Kim, 54, of Orlando, Florida, was charged with conspiracy to distribute controlled substances and distribution of controlled substances. As a nurse practitioner employed by Done, a California-based digital health company, Kim allegedly prescribed Adderall and other stimulants not for legitimate medical purposes. She and others reportedly fabricated patient files and signed prescriptions for patients who did not meet ADHD diagnostic criteria, posing risks of diversion and over-prescription. Kim allegedly prescribed over 1.5 million pills of stimulants and was paid over $800,000 by Done.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "21 U.S. Code § 846",
+      "21 U.S. Code § 841"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/21/846",
+        "text": "21 U.S. Code § 846 - Attempt and conspiracy"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/21/841",
+        "text": "21 U.S. Code § 841 - Prohibited acts A"
+      },
+      {
+        "url": "#",
+        "text": "Controlled Substance Distribution"
+      },
+      {
+        "url": "#",
+        "text": "Prescription Drug Abuse"
+      },
+      {
+        "url": "#",
+        "text": "Telemedicine Fraud"
+      },
+      {
+        "url": "#",
+        "text": "ADHD Medication Fraud"
+      }
+    ],
+    "category": "Controlled Substance Distribution",
+    "fraudAmount": 0,
+    "affectedLabel": "Number of Stimulant Pills Prescribed",
+    "commentary": [
+      {
+        "comment": "This case highlights the potential for abuse in digital health platforms, particularly in the prescription of controlled substances like stimulants.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The large number of pills prescribed (1.5 million) and the significant payment to the practitioner ($800,000) suggest a systemic issue within the company's practices rather than isolated incidents.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny of telemedicine practices, especially those involving controlled substance prescriptions and ADHD diagnoses.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Eric Brewer",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Eric Brewer",
+    "clinicianType": "Registered Nurse",
+    "affiliatedEntities": [],
+    "summary": "Eric Brewer, 28, of Lakeland, Florida, was charged with tampering with a consumer product and obtaining a controlled substance by fraud. As a registered nurse in intensive care units, Brewer allegedly stole fentanyl from five Tampa-area hospitals on seven different occasions. He used two methods: stealing 100 mL bags of fentanyl from controlled substance cabinets and siphoning fentanyl from patients' IV bags. Brewer sometimes replaced the stolen fentanyl with saline. He was caught after colleagues observed him acting impaired and evidence of drug use was found in a bathroom.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1365",
+      "21 U.S. Code § 843"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1365",
+        "text": "18 U.S. Code § 1365 - Tampering with consumer products"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/21/843",
+        "text": "21 U.S. Code § 843 - Prohibited acts C"
+      },
+      {
+        "url": "#",
+        "text": "Drug Diversion"
+      },
+      {
+        "url": "#",
+        "text": "Controlled Substance Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Patient Safety"
+      },
+      {
+        "url": "#",
+        "text": "Healthcare Worker Substance Abuse"
+      }
+    ],
+    "category": "Drug Diversion and Tampering",
+    "fraudAmount": 0,
+    "affectedLabel": "Number of Hospitals Affected",
+    "commentary": [
+      {
+        "comment": "This case highlights the serious issue of drug diversion by healthcare professionals, which poses significant risks to patient safety and compromises the integrity of healthcare systems.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The multiple methods used by Brewer to obtain fentanyl demonstrate the need for comprehensive drug security measures in healthcare settings, including both physical safeguards and monitoring of electronic records.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case underscores the importance of vigilance among healthcare staff in identifying and reporting suspicious behavior, as Brewer was ultimately caught due to observations by his colleagues.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Marco Antonio Ramos Izquierdo et al.",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Marco Antonio Ramos Izquierdo",
+      "Marelys Ruiz Ulloa",
+      "Jakeline Acnet Canova Cebrian",
+      "Roberto Cisneros Cebrian",
+      "Jose Antonio Rio Roche",
+      "Reiniel Claro Estrada",
+      "Maria De Los Angeles Abreu Perez",
+      "Nelson Enrique Gonzalez Diaz",
+      "Jonathan Jose Martinez Lambrano",
+      "Ana Maria Gomez Contreras",
+      "Levy Alberto Colina Garcia",
+      "Gloria Guillibeth Diaz Salas"
+    ],
+    "clinicianType": "Other",
+    "affiliatedEntities": [],
+    "summary": "Twelve individuals were charged with conspiracy to commit money laundering and money laundering for their role in distributing proceeds from 14 durable medical equipment (DME) companies. Medicare and Medicaid paid these companies approximately $17,600,000 based on false claims. The defendants allegedly transferred about $3,906,649 of the fraud proceeds to shell companies and then made cash withdrawals and wrote checks to individual check cashers totaling approximately $2,513,381.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1956",
+      "18 U.S. Code § 1957"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1956",
+        "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1957",
+        "text": "18 U.S. Code § 1957 - Engaging in monetary transactions in property derived from specified unlawful activity"
+      },
+      {
+        "url": "#",
+        "text": "Money Laundering"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      }
+    ],
+    "category": "Money Laundering and Health Care Fraud",
+    "fraudAmount": 17600000,
+    "affectedLabel": "Amount Paid by Medicare and Medicaid Based on False Claims",
+    "commentary": [
+      {
+        "comment": "This case demonstrates the complex networks often involved in large-scale healthcare fraud, with multiple individuals playing different roles in the money laundering process.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of shell companies and structured cash withdrawals highlights sophisticated attempts to conceal the source and movement of fraudulently obtained funds.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant discrepancy between the total fraud amount ($17.6 million) and the traced laundered funds suggests potential challenges in fully recovering proceeds from such schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Santiago Garcia Jorge",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Santiago Garcia Jorge",
+    "clinicianType": "Durable Medical Equipment Company Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Gold Medical Supply Inc."
+      }
+    ],
+    "summary": "Santiago Garcia Jorge, 49, of Land O' Lakes, Florida, was charged with conspiracy to commit money laundering and money laundering related to distributing proceeds from a fraudulent durable medical equipment company. As president of Gold Medical Supply Inc., Garcia Jorge allegedly submitted false claims totaling $7,498,260 to Medicare and Medicaid, receiving $1,402,478 in payments. He then transferred approximately $1,384,875 of these funds to shell companies in Southern Florida, using direct checks and transfers through multiple company bank accounts.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1956",
+      "18 U.S. Code § 1957"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1956",
+        "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1957",
+        "text": "18 U.S. Code § 1957 - Engaging in monetary transactions in property derived from specified unlawful activity"
+      },
+      {
+        "url": "#",
+        "text": "Money Laundering"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      }
+    ],
+    "category": "Money Laundering and Health Care Fraud",
+    "fraudAmount": 7498260,
+    "affectedLabel": "Amount of False Claims Submitted to Medicare and Medicaid",
+    "commentary": [
+      {
+        "comment": "This case highlights how healthcare fraud often involves complex financial transactions designed to conceal the source and movement of illegally obtained funds.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of multiple bank accounts and shell companies demonstrates sophisticated attempts to obfuscate the money trail, complicating detection and recovery efforts.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant difference between the amount of false claims submitted ($7.5 million) and the amount paid out ($1.4 million) suggests some level of fraud detection by Medicare and Medicaid, though substantial losses still occurred.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Jorge Acosta",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Jorge Acosta",
+    "clinicianType": "Physical Therapist",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Phoenix Rehab Center Corp."
+      }
+    ],
+    "summary": "Jorge Acosta, 55, of Land O' Lakes, Florida, was charged with conspiracy to commit health care fraud for allegedly defrauding private insurance plans. As a licensed physical therapist at Phoenix Rehab Center Corp. in Miami, Acosta allegedly participated in a scheme where kickbacks were paid to patient recruiters for referrals from JetBlue Airways and AT&T Inc. employee insurance plans administered by Blue Cross Blue Shield (BCBS). Acosta reportedly falsified and backdated claims forms for unnecessary or non-provided physical therapy treatments, submitting them to BCBS for reimbursement.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 371"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Private Insurance Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Physical Therapy Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 0,
+    "affectedLabel": "Amount Defrauded from Private Insurance Plans",
+    "commentary": [
+      {
+        "comment": "This case highlights that healthcare fraud is not limited to government programs like Medicare and Medicaid, but also affects private insurance plans and self-insured employers.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of a licensed physical therapist in falsifying claims underscores the importance of professional ethics and oversight in preventing healthcare fraud.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of patient recruiters and kickbacks demonstrates how financial incentives can distort the healthcare system, leading to unnecessary treatments and inflated costs for insurers and employers.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Omar Cabrera Hernandez",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Omar Cabrera Hernandez",
+    "clinicianType": "Clinic Administrator",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Advanced Community Wellness Center, Inc."
+      }
+    ],
+    "summary": "Omar Cabrera Hernandez, 55, of Miami, Florida, was charged with conspiracy to offer and pay health care kickbacks to patients. As the administrator of Advanced Community Wellness Center, Inc. in Hialeah, Florida, Hernandez allegedly participated in a scheme to pay illegal kickbacks to patients for attending psychosocial rehabilitation services, which were then billed to Medicaid. This resulted in an improper benefit of at least $400,597 and claims to Medicaid totaling over $3.5 million.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 371"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Mental Health Services Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 3500000,
+    "affectedLabel": "Amount of Claims Submitted to Medicaid",
+    "commentary": [
+      {
+        "comment": "This case highlights how kickback schemes can be used to generate unnecessary medical services, leading to inflated costs for government healthcare programs like Medicaid.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant discrepancy between the improper benefit ($400,597) and the total claims submitted ($3.5 million) suggests potential challenges in quantifying the full extent of fraud in such schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case demonstrates how fraud in mental health services can exploit vulnerable populations and undermine the integrity of programs designed to provide necessary care.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Yordany Rivera Bermudez",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Yordany Rivera Bermudez",
+    "clinicianType": "DME Company Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Acqualina Health Medical Solutions Inc."
+      }
+    ],
+    "summary": "Yordany Rivera Bermudez, 35, of Fort Myers, Florida, was charged with health care fraud for allegedly defrauding Medicare and Medicaid of nearly $3 million. As president and operator of Acqualina Health Medical Solutions Inc. in North Miami, Rivera Bermudez allegedly submitted approximately $2.9 million in fraudulent claims for durable medical equipment (DME) that was never provided to recipients. Medicare and Medicaid paid approximately $1.2 million to Acqualina over a ten-month period.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      }
+    ],
+    "category": "Health Care Fraud",
+    "fraudAmount": 2900000,
+    "affectedLabel": "Amount of Fraudulent Claims Submitted",
+    "commentary": [
+      {
+        "comment": "This case highlights the ongoing issue of DME fraud targeting Medicare and Medicaid, which has been a focus of healthcare fraud enforcement efforts in recent years.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The rapid accumulation of fraudulent claims ($2.9 million in ten months) demonstrates how quickly such schemes can escalate and impact government healthcare programs.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant difference between the amount billed ($2.9 million) and the amount paid ($1.2 million) suggests that some fraud detection mechanisms may have limited the financial impact, though substantial losses still occurred.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Jorge Luis Pajon Rodriguez",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Jorge Luis Pajon Rodriguez",
+    "clinicianType": "Clinic Owner",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Gables Community Wellness Center, Inc."
+      }
+    ],
+    "summary": "Jorge Luis Pajon Rodriguez, 58, of Miami, Florida, was charged with conspiracy to offer and pay health care kickbacks to patients in a scheme to defraud Medicaid. As the owner of Gables Community Wellness Center, Inc., Pajon allegedly paid illegal kickbacks to patients to attend psychosocial rehabilitation services, which were then billed to Medicaid. This resulted in an improper benefit of at least $1,338,184 and claims to Medicaid totaling over $6 million.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 371"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Medicaid Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Mental Health Services Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Kickbacks",
+    "fraudAmount": 6000000,
+    "affectedLabel": "Amount of Claims Submitted to Medicaid",
+    "commentary": [
+      {
+        "comment": "This case highlights how kickback schemes in mental health services can exploit vulnerable populations and lead to significant fraudulent billing to government healthcare programs.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The large discrepancy between the improper benefit ($1.3 million) and total claims submitted ($6 million) suggests potential challenges in quantifying the full extent of fraud in such schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case, along with others involving psychosocial rehabilitation services, may lead to increased scrutiny of mental health clinics and their billing practices, potentially affecting access to care for legitimate patients.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Yoan Manuel Sanchez Cardet and Alain Cabrera Marquez",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Yoan Manuel Sanchez Cardet",
+      "Alain Cabrera Marquez"
+    ],
+    "clinicianType": "DME Company Operators",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "PRNX Medical Supply Corp."
+      }
+    ],
+    "summary": "Yoan Manuel Sanchez Cardet, 34, of Homestead, Florida, and Alain Cabrera Marquez, 48, of Austin, Texas, were charged with conspiracy to commit health care fraud and wire fraud. They allegedly schemed to fraudulently obtain over $3.2 million in Medicare funds. Sanchez Cardet arranged the purchase of PRNX Medical Supply Corp. solely to submit fraudulent Medicare claims. Cabrera Marquez was installed as the sole listed officer to conceal the identities of the beneficial owners.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1343",
+      "18 U.S. Code § 371"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+        "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Wire Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      }
+    ],
+    "category": "Health Care Fraud and Wire Fraud",
+    "fraudAmount": 3200000,
+    "affectedLabel": "Amount Fraudulently Obtained from Medicare",
+    "commentary": [
+      {
+        "comment": "This case highlights how fraudsters may use complex corporate structures and nominee owners to conceal their involvement in healthcare fraud schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The deliberate acquisition of a DME company solely for fraudulent purposes demonstrates the premeditated nature of some healthcare fraud operations.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased scrutiny of ownership changes and corporate structures in DME companies, potentially affecting legitimate business transactions in the sector.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Daniel David Espinoza",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Daniel David Espinoza",
+    "clinicianType": "Other",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Danoza Enterprises"
+      }
+    ],
+    "summary": "Daniel David Espinoza, 55, of Parkland, Florida, was charged with conspiracy to commit money laundering for allegedly laundering proceeds from a health care fraud scheme. Five durable medical equipment (DME) companies received approximately $5 million from Medicare for false claims. Espinoza allegedly laundered about $3.4 million of these fraud proceeds, primarily through his company Danoza Enterprises, distributing the money to himself, family members, and others involved in the fraud.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1956",
+      "18 U.S. Code § 371"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1956",
+        "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "#",
+        "text": "Money Laundering"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Durable Medical Equipment (DME) Fraud"
+      }
+    ],
+    "category": "Money Laundering and Health Care Fraud",
+    "fraudAmount": 5000000,
+    "affectedLabel": "Amount Fraudulently Obtained from Medicare",
+    "commentary": [
+      {
+        "comment": "This case demonstrates how money laundering is often a critical component of healthcare fraud schemes, used to conceal the source of illegally obtained funds and distribute them to conspirators.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of a separate company (Danoza Enterprises) for laundering highlights the sophisticated financial structures that can be employed in large-scale fraud operations.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of family members in receiving fraudulent proceeds underscores the personal nature of some fraud schemes and the potential for broader impact on families when uncovered.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Justin Blair and Trevor Blair",
+    "caseNumber": "Case Number: Unknown",
+    "state": "Florida",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Justin Blair",
+      "Trevor Blair"
+    ],
+    "clinicianType": "Call Center Operators",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "P.I.C. Group 21, LLC"
+      }
+    ],
+    "summary": "Justin Blair, 34, and Trevor Blair, 30, both of Boca Raton, Florida, were charged with conspiracy to defraud the United States, receiving health care kickbacks, conspiracy to commit money laundering, and money laundering. As partners in P.I.C. Group 21, LLC, they allegedly conducted deceptive telemarketing to persuade Medicare beneficiaries and doctors to order genetic tests. They sold signed orders to a Texas laboratory, which billed Medicare over $3.5 million based on these orders. The Blairs allegedly received more than $2.5 million in kickbacks and laundered the proceeds through entities they controlled.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 1956",
+      "18 U.S. Code § 1957"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1956",
+        "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1957",
+        "text": "18 U.S. Code § 1957 - Engaging in monetary transactions in property derived from specified unlawful activity"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Money Laundering"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Telemarketing Fraud"
+      }
+    ],
+    "category": "Health Care Fraud, Kickbacks, and Money Laundering",
+    "fraudAmount": 3500000,
+    "affectedLabel": "Amount Billed to Medicare Based on Fraudulent Orders",
+    "commentary": [
+      {
+        "comment": "This case highlights the complex networks involved in healthcare fraud, connecting telemarketing operations to laboratories and exploiting Medicare's genetic testing coverage.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The use of deceptive telemarketing to target Medicare beneficiaries demonstrates how fraudsters can exploit vulnerable populations for financial gain.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The combination of healthcare fraud and money laundering charges underscores the financial sophistication of some fraud schemes and the need for comprehensive law enforcement approaches.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Enrique Perez-Paris et al.",
+    "caseNumber": "Case Number: Unknown",
+    "state": [
+      "Texas"
+    ],
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Enrique Perez-Paris",
+      "Diego Sanudo Sanchez Chocron",
+      "Gregory Charles \"Milo\" Caskey",
+      "Omar Palacios",
+      "Nadir Perez"
+    ],
+    "clinicianType": [
+      "Laboratory Owners",
+      "Patient Recruiters"
+    ],
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Innovative Genomics"
+      }
+    ],
+    "summary": "Five individuals were charged in a $65 million scheme to fraudulently bill healthcare programs, including Medicare and the COVID-19 Uninsured Program, for unnecessary COVID-19 and genetic testing. Perez-Paris, Sanchez, and Caskey, owners of Innovative Genomics laboratory, allegedly paid kickbacks to physicians and recruiters, including Palacios and Perez, for test orders. They billed for unapproved COVID-19 tests and unnecessary genetic tests, some of which were not processed.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 371",
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 1956"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1956",
+        "text": "18 U.S. Code § 1956 - Laundering of monetary instruments"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "Money Laundering"
+      },
+      {
+        "url": "#",
+        "text": "Medicare Fraud"
+      },
+      {
+        "url": "#",
+        "text": "COVID-19 Relief Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Genetic Testing Fraud"
+      }
+    ],
+    "category": "Health Care Fraud, Kickbacks, and Money Laundering",
+    "fraudAmount": 65000000,
+    "affectedLabel": "Amount Fraudulently Billed to Health Care Programs",
+    "commentary": [
+      {
+        "comment": "This case demonstrates how fraudsters exploited the COVID-19 pandemic and emergency health measures for financial gain, potentially compromising public health efforts.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of multiple states and various roles (lab owners, recruiters) highlights the complex networks often involved in large-scale healthcare fraud schemes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The combination of COVID-19 testing fraud with genetic testing fraud shows how criminals may adapt existing schemes to take advantage of new opportunities in healthcare.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Adam Brosius, Patrick Boyd, and Charles Boyd",
+    "caseNumber": "Case Number: Unknown",
+    "state": [
+      "Florida",
+      "Maryland"
+    ],
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Adam Brosius",
+      "Patrick Boyd",
+      "Charles Boyd"
+    ],
+    "clinicianType": "Pharmaceutical Distributors",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Safe Chain Solutions LLC"
+      },
+      {
+        "npi": "",
+        "label": "Worldwide Pharma Sales Group, Inc."
+      }
+    ],
+    "summary": "Adam Brosius, Patrick Boyd, and Charles Boyd were charged with multiple offenses related to a scheme involving the distribution of adulterated and misbranded drugs, primarily HIV medication. They allegedly purchased over $90 million of discounted and diverted prescription drugs from black-market suppliers, often acquired through illegal 'buyback' schemes. These drugs were then resold to pharmacies nationwide with falsified documentation. In some cases, patients received incorrectly labeled medications, leading to serious health risks.",
+    "timeline": {
+      "start_year": 2024,
+      "end_year": 2024
+    },
+    "violation": [
+      "21 U.S. Code § 331",
+      "18 U.S. Code § 371",
+      "18 U.S. Code § 670",
+      "18 U.S. Code § 1349",
+      "18 U.S. Code § 1343"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/21/331",
+        "text": "21 U.S. Code § 331 - Prohibited acts"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/371",
+        "text": "18 U.S. Code § 371 - Conspiracy to commit offense or to defraud United States"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/670",
+        "text": "18 U.S. Code § 670 - Theft of medical products"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1349",
+        "text": "18 U.S. Code § 1349 - Attempt and conspiracy"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+        "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+      },
+      {
+        "url": "#",
+        "text": "Drug Diversion"
+      },
+      {
+        "url": "#",
+        "text": "Misbranded Drugs"
+      },
+      {
+        "url": "#",
+        "text": "Wire Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Pharmaceutical Fraud"
+      }
+    ],
+    "category": "Drug Diversion and Fraud",
+    "fraudAmount": 90000000,
+    "affectedLabel": "Value of Diverted Prescription Drugs Purchased",
+    "commentary": [
+      {
+        "comment": "This case highlights the serious public health risks associated with drug diversion schemes, particularly for vulnerable populations like HIV patients.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The scale of the operation ($90 million) demonstrates how lucrative and widespread pharmaceutical fraud can become when left unchecked.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case underscores the need for stricter oversight and verification processes in the pharmaceutical supply chain to prevent the introduction of diverted or adulterated drugs.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Mark Schena",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": "Mark Schena",
+    "clinicianType": "Medical Technology Company Executive",
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Arrayit Corporation"
+      }
+    ],
+    "summary": "Mark Schena, 60, of Los Altos, California, president of Arrayit Corporation, was sentenced to eight years in prison and ordered to pay $24 million in restitution for defrauding investors and committing health care fraud. Schena falsely claimed to have invented revolutionary blood testing technology, orchestrated illegal kickbacks for unnecessary allergy testing, and attempted to capitalize on the COVID-19 pandemic with false claims about testing capabilities. Arrayit submitted over $77 million in fraudulent claims for COVID-19 and allergy testing. Schena was convicted by a federal jury on September 6, 2022.",
+    "timeline": {
+      "start_year": 2020,
+      "end_year": 2023
+    },
+    "violation": [
+      "15 U.S. Code § 78j",
+      "18 U.S. Code § 1347",
+      "42 U.S. Code § 1320a–7b",
+      "18 U.S. Code § 1343"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/15/78j",
+        "text": "15 U.S. Code § 78j - Manipulative and deceptive devices"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7b",
+        "text": "42 U.S. Code § 1320a–7b - Criminal penalties for acts involving Federal health care programs"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+        "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+      },
+      {
+        "url": "#",
+        "text": "Securities Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Kickbacks"
+      },
+      {
+        "url": "#",
+        "text": "COVID-19 Related Fraud"
+      }
+    ],
+    "category": "Securities Fraud, Health Care Fraud, and Kickbacks",
+    "fraudAmount": 77000000,
+    "affectedLabel": "Amount of Fraudulent Claims Submitted",
+    "commentary": [
+      {
+        "comment": "This case represents a significant milestone as the first criminal securities fraud case related to the COVID-19 pandemic charged by the Department of Justice, highlighting the increased scrutiny on pandemic-related financial crimes.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The combination of securities fraud, healthcare fraud, and exploitation of the COVID-19 pandemic demonstrates the multifaceted nature of some fraud schemes, requiring coordination among multiple investigative agencies.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The involvement of a Silicon Valley executive in this fraud case may lead to increased scrutiny of medical technology startups and their claims, particularly those related to revolutionary diagnostic technologies.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.justice.gov/opa/pr/silicon-valley-executive-sentenced-defrauding-investors-and-participating-covid-19-and"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Ruthia He and David Brody",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Ruthia He",
+      "David Brody"
+    ],
+    "clinicianType": [
+      "CEO",
+      "Clinical President"
+    ],
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Done Global Inc."
+      },
+      {
+        "npi": "",
+        "label": "Done Health P.C."
+      }
+    ],
+    "summary": "Ruthia He, founder and CEO of Done Global Inc., and David Brody, clinical president of Done Health P.C., were arrested for allegedly participating in a scheme to distribute Adderall over the internet, commit health care fraud, and obstruct justice. They allegedly exploited telemedicine rules during the COVID-19 pandemic to provide easy access to Adderall and other stimulants without legitimate medical purpose, generating over $100 million in revenue by arranging for the prescription of over 40 million pills. They also allegedly defrauded Medicare, Medicaid, and commercial insurers of approximately $14 million. The defendants are accused of using deceptive advertising, structuring their platform to facilitate drug access, and obstructing justice by deleting documents and failing to respond to subpoenas.",
+    "timeline": {
+      "start_year": 2020,
+      "end_year": 2024
+    },
+    "violation": [
+      "21 U.S. Code § 841",
+      "18 U.S. Code § 1347",
+      "18 U.S. Code § 1512"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/21/841",
+        "text": "21 U.S. Code § 841 - Prohibited acts A"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1347",
+        "text": "18 U.S. Code § 1347 - Health care fraud"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1512",
+        "text": "18 U.S. Code § 1512 - Tampering with a witness, victim, or an informant"
+      },
+      {
+        "url": "#",
+        "text": "Controlled Substance Distribution"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Obstruction of Justice"
+      },
+      {
+        "url": "#",
+        "text": "Telemedicine Fraud"
+      },
+      {
+        "url": "#",
+        "text": "COVID-19 Related Fraud"
+      }
+    ],
+    "category": "Controlled Substance Distribution, Health Care Fraud, and Obstruction of Justice",
+    "fraudAmount": 114000000,
+    "affectedLabel": "Revenue Generated and Amount Defrauded from Insurers",
+    "commentary": [
+      {
+        "comment": "This case represents a significant milestone as the Justice Department's first criminal drug distribution prosecutions related to a digital health company using telemedicine, highlighting increased scrutiny on the intersection of technology and healthcare.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The exploitation of relaxed telemedicine rules during the COVID-19 pandemic demonstrates how public health emergencies can create vulnerabilities in healthcare systems that may be exploited by bad actors.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case may lead to increased regulation and oversight of digital health companies, particularly those involved in prescribing controlled substances, potentially impacting the broader telemedicine industry.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  },
+  {
+    "title": "United States v. Elizabeth Holmes and Ramesh 'Sunny' Balwani",
+    "caseNumber": "Case Number: Unknown",
+    "state": "California",
+    "plaintiff": "United States Department of Justice",
+    "defendant": [
+      "Elizabeth Holmes",
+      "Ramesh 'Sunny' Balwani"
+    ],
+    "clinicianType": [
+      "CEO",
+      "COO"
+    ],
+    "affiliatedEntities": [
+      {
+        "npi": "",
+        "label": "Theranos, Inc."
+      }
+    ],
+    "summary": "Elizabeth Holmes and Ramesh 'Sunny' Balwani were charged with multiple counts of conspiracy to commit wire fraud and wire fraud for their roles in schemes to defraud investors and patients through their company Theranos. They allegedly made false claims about Theranos's blood-testing technology, its financial condition, and future prospects. Holmes was convicted on four counts and sentenced to 135 months in prison. Balwani was convicted on all counts and sentenced to 155 months in prison. Both were ordered to serve three years of supervision after release.",
+    "timeline": {
+      "start_year": 2018,
+      "end_year": 2022
+    },
+    "violation": [
+      "18 U.S. Code § 1349",
+      "18 U.S. Code § 1343"
+    ],
+    "relatedLinks": [
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1349",
+        "text": "18 U.S. Code § 1349 - Attempt and conspiracy"
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/18/1343",
+        "text": "18 U.S. Code § 1343 - Fraud by wire, radio, or television"
+      },
+      {
+        "url": "#",
+        "text": "Wire Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Investor Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Health Care Fraud"
+      },
+      {
+        "url": "#",
+        "text": "Medical Technology Fraud"
+      }
+    ],
+    "category": "Wire Fraud and Investor Fraud",
+    "fraudAmount": 140000000,
+    "affectedLabel": "Amount Defrauded from Investors",
+    "commentary": [
+      {
+        "comment": "This case highlights the potential dangers of 'fake it till you make it' culture in Silicon Valley startups, especially when applied to healthcare technology.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "The significant prison sentences handed down may serve as a deterrent for other tech executives considering misleading investors or the public about their products' capabilities.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      },
+      {
+        "comment": "This case underscores the importance of rigorous scientific validation and transparency in medical technology development, and may lead to increased scrutiny of health tech startups.",
+        "source": "AI Analysis",
+        "added_by": "Claude"
+      }
+    ]
+  }
 ]
