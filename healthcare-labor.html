@@ -146,33 +146,168 @@ const physicians = [
 return {physicians};
 }});
 
-define({id: "ee4cea1e", outputs: ["physicians_v2"], body: () => {
-const physicians_v2 = [
-    "29-1060",  // Deprecated, Physicians and Surgeons
-    // "29-1069",  // Deprecated, Physicians and surgeons, all other
-    "29-1210",  // Current, Physicians, entire group,
-    // "29-1211",
-    // "29-1212",
-    // "29-1213",
-    // "29-1214",
-    // "29-1215",
-    // "29-1216",
-    // "29-1217",
-    // "29-1218",
-    // "29-1221",
-    // "29-1222",
-    // "29-1223",
-    // "29-1224",
-    // "29-1228",
-    // "29-1229", // Physicians, all other
-    // "29-1240", // Surgon group
-    // "29-1241",
-    // "29-1242",
-    // "29-1243",
-    // "29-1248",
-    // "29-1249",
+define({id: "412d3569", mode: "inline", inputs: ["counts_plot","get_naics_counts","physicians","grouping_limit","display"], body: async (counts_plot,get_naics_counts,physicians,grouping_limit,display) => {
+display(await(
+counts_plot(await get_naics_counts(physicians, grouping_limit))
+))
+}});
+
+define({id: "0d30414e", mode: "inline", inputs: ["physicians","html","lookup_occ_title","display"], body: async (physicians,html,lookup_occ_title,display) => {
+display(await(
+physicians.map(d => html`<li style="font-size: 0.8em"><a href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></li>`)
+))
+}});
+
+define({id: "57a7a245", outputs: ["nurses"], body: () => {
+const nurses = [
+    "29-1111",
+    "29-1141",  // RN
 ]
-return {physicians_v2};
+return {nurses};
+}});
+
+define({id: "7de05ca3", mode: "inline", inputs: ["counts_plot","get_naics_counts","nurses","grouping_limit","display"], body: async (counts_plot,get_naics_counts,nurses,grouping_limit,display) => {
+display(await(
+counts_plot(await get_naics_counts(nurses, grouping_limit))
+))
+}});
+
+define({id: "f7069a88", mode: "inline", inputs: ["nurses","html","lookup_occ_title","display"], body: async (nurses,html,lookup_occ_title,display) => {
+display(await(
+nurses.map(d => html`<li style="font-size: 0.8em"><a href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></li>`)
+))
+}});
+
+define({id: "7df8dd7d", outputs: ["nurse_practioners"], body: () => {
+const nurse_practioners = [
+    "29-1171",  // NP
+]
+return {nurse_practioners};
+}});
+
+define({id: "cf431e10", mode: "inline", inputs: ["counts_plot","get_naics_counts","nurse_practioners","grouping_limit","display"], body: async (counts_plot,get_naics_counts,nurse_practioners,grouping_limit,display) => {
+display(await(
+counts_plot(await get_naics_counts(nurse_practioners, grouping_limit))
+))
+}});
+
+define({id: "7a81115f", mode: "inline", inputs: ["nurse_practioners","html","lookup_occ_title","display"], body: async (nurse_practioners,html,lookup_occ_title,display) => {
+display(await(
+nurse_practioners.map(d => html`<li style="font-size: 0.8em"><a href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></li>`)
+))
+}});
+
+define({id: "059e1e71", outputs: ["nursing_assistants"], body: () => {
+const nursing_assistants = [
+    // "29-2061",  // LVN
+    // "29-1151",  // Nurse Anesthetist
+    // "31-1010",  // Nursing, Psychiatric, and Home Health Aides
+    "31-1014",  // Nursing Assistants
+    "31-1131",  // Nursing Assistants
+]
+return {nursing_assistants};
+}});
+
+define({id: "28413580", mode: "inline", inputs: ["counts_plot","get_naics_counts","nursing_assistants","grouping_limit","display"], body: async (counts_plot,get_naics_counts,nursing_assistants,grouping_limit,display) => {
+display(await(
+counts_plot(await get_naics_counts(nursing_assistants, grouping_limit))
+))
+}});
+
+define({id: "5d0381da", mode: "inline", inputs: ["nursing_assistants","html","lookup_occ_title","display"], body: async (nursing_assistants,html,lookup_occ_title,display) => {
+display(await(
+nursing_assistants.map(d => html`<li style="font-size: 0.8em"><a href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></li>`)
+))
+}});
+
+define({id: "fdf68831", outputs: ["physian_assistant"], body: () => {
+const physian_assistant = [
+    "29-1071",  // 
+]
+return {physian_assistant};
+}});
+
+define({id: "5f58d673", mode: "inline", inputs: ["counts_plot","get_naics_counts","physian_assistant","grouping_limit","display"], body: async (counts_plot,get_naics_counts,physian_assistant,grouping_limit,display) => {
+display(await(
+counts_plot(await get_naics_counts(physian_assistant, grouping_limit))
+))
+}});
+
+define({id: "7f1133b1", mode: "inline", inputs: ["physian_assistant","html","lookup_occ_title","display"], body: async (physian_assistant,html,lookup_occ_title,display) => {
+display(await(
+physian_assistant.map(d => html`<li style="font-size: 0.8em"><a href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></li>`)
+))
+}});
+
+define({id: "d728c679", outputs: ["crna"], body: () => {
+const crna = [
+    // "29-2061",  // LVN
+    "29-1151",  // Nurse Anesthetist
+    // "31-1010",  // Nursing, Psychiatric, and Home Health Aides
+    // "31-1014",  // Nursing Assistants
+    // "31-1131",  // Nursing Assistants
+]
+return {crna};
+}});
+
+define({id: "d28b79e2", mode: "inline", inputs: ["counts_plot","get_naics_counts","crna","grouping_limit","display"], body: async (counts_plot,get_naics_counts,crna,grouping_limit,display) => {
+display(await(
+counts_plot(await get_naics_counts(crna, grouping_limit))
+))
+}});
+
+define({id: "f9d766ed", mode: "inline", inputs: ["crna","html","lookup_occ_title","display"], body: async (crna,html,lookup_occ_title,display) => {
+display(await(
+crna.map(d => html`<li style="font-size: 0.8em"><a href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></li>`)
+))
+}});
+
+define({id: "94dd6233", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
+const counts_plot = function(data) {
+    return Plot.plot({
+        // marginTop: 0,
+        // paddingTop: 0,
+        paddingLeft: 10,
+        marginLeft: 70, 
+        marginRight: 50, 
+        marginBottom: 30,
+        // height: 350,
+        fontSize: 10,
+        width: 1000,
+        color: {
+            legend: true,
+            scheme: "Tableau10"
+        },
+        legend: {
+            tickFormat: lookup_occ_title
+        },
+        // facet: {data, x: "NAICS", marginRight: 90},
+        marks: [
+            Plot.barY(data, {
+                x: (d) => new Date(d.REPORT_DATE),
+                y: "total_employment", 
+                fill: (d) => lookup_naics_title(d.NAICS),
+                tip: true,
+                title: (d) => `${d.NAICS_TITLE}: (${d.NAICS})\n\nEmployment: ${d.total_employment}`
+            }),
+            Plot.ruleY([0])
+        ]
+    })}
+return {counts_plot};
+}});
+
+define({id: "736097ba", inputs: ["selected_codes"], outputs: ["selected_codes_str"], body: (selected_codes) => {
+// Join selected codes, turn it into SQL-compatible string. Inefficient but works
+const selected_codes_str = "\'" + selected_codes.join("','") + "\'"
+return {selected_codes_str};
+}});
+
+define({id: "f0fa738e", outputs: ["sql_array_str"], body: () => {
+const sql_array_str = function (code_array) {
+    const selected_codes_str = "\'" + code_array.join("','") + "\'"
+    return selected_codes_str
+}
+return {sql_array_str};
 }});
 
 define({id: "56b0038b", inputs: ["occ_codes"], outputs: ["lookup_occ_title"], body: (occ_codes) => {
@@ -236,139 +371,6 @@ const get_naics_counts = async function (selected_codes, grouping_limit=5) {
 return {get_naics_counts};
 }});
 
-define({id: "412d3569", mode: "inline", inputs: ["counts_plot","get_naics_counts","physicians","grouping_limit","display"], body: async (counts_plot,get_naics_counts,physicians,grouping_limit,display) => {
-display(await(
-counts_plot(await get_naics_counts(physicians, grouping_limit))
-))
-}});
-
-define({id: "57a7a245", outputs: ["nurses"], body: () => {
-const nurses = [
-    "29-1111",
-    "29-1141",  // RN
-]
-return {nurses};
-}});
-
-define({id: "a4bcd0f9", mode: "inline", inputs: ["nurses","html","lookup_occ_title","display"], body: async (nurses,html,lookup_occ_title,display) => {
-display(await(
-nurses.map(d => html`<li style="font-size: 0.8em">${d}: ${lookup_occ_title(d)}</li>`)
-))
-}});
-
-define({id: "7de05ca3", mode: "inline", inputs: ["counts_plot","get_naics_counts","nurses","grouping_limit","display"], body: async (counts_plot,get_naics_counts,nurses,grouping_limit,display) => {
-display(await(
-counts_plot(await get_naics_counts(nurses, grouping_limit))
-))
-}});
-
-define({id: "7df8dd7d", outputs: ["nurse_practioners"], body: () => {
-const nurse_practioners = [
-    "29-1171",  // NP
-]
-return {nurse_practioners};
-}});
-
-define({id: "cf431e10", mode: "inline", inputs: ["counts_plot","get_naics_counts","nurse_practioners","grouping_limit","display"], body: async (counts_plot,get_naics_counts,nurse_practioners,grouping_limit,display) => {
-display(await(
-counts_plot(await get_naics_counts(nurse_practioners, grouping_limit))
-))
-}});
-
-define({id: "059e1e71", outputs: ["nursing_assistants"], body: () => {
-const nursing_assistants = [
-    // "29-2061",  // LVN
-    // "29-1151",  // Nurse Anesthetist
-    // "31-1010",  // Nursing, Psychiatric, and Home Health Aides
-    "31-1014",  // Nursing Assistants
-    "31-1131",  // Nursing Assistants
-]
-return {nursing_assistants};
-}});
-
-define({id: "28413580", mode: "inline", inputs: ["counts_plot","get_naics_counts","nursing_assistants","grouping_limit","display"], body: async (counts_plot,get_naics_counts,nursing_assistants,grouping_limit,display) => {
-display(await(
-counts_plot(await get_naics_counts(nursing_assistants, grouping_limit))
-))
-}});
-
-define({id: "fdf68831", outputs: ["physian_assistant"], body: () => {
-const physian_assistant = [
-    "29-1071",  // 
-]
-return {physian_assistant};
-}});
-
-define({id: "5f58d673", mode: "inline", inputs: ["counts_plot","get_naics_counts","physian_assistant","grouping_limit","display"], body: async (counts_plot,get_naics_counts,physian_assistant,grouping_limit,display) => {
-display(await(
-counts_plot(await get_naics_counts(physian_assistant, grouping_limit))
-))
-}});
-
-define({id: "d728c679", outputs: ["crna"], body: () => {
-const crna = [
-    // "29-2061",  // LVN
-    "29-1151",  // Nurse Anesthetist
-    // "31-1010",  // Nursing, Psychiatric, and Home Health Aides
-    // "31-1014",  // Nursing Assistants
-    // "31-1131",  // Nursing Assistants
-]
-return {crna};
-}});
-
-define({id: "d28b79e2", mode: "inline", inputs: ["counts_plot","get_naics_counts","crna","grouping_limit","display"], body: async (counts_plot,get_naics_counts,crna,grouping_limit,display) => {
-display(await(
-counts_plot(await get_naics_counts(crna, grouping_limit))
-))
-}});
-
-define({id: "f458c49a", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
-const counts_plot = function(data) {
-    return Plot.plot({
-        // marginTop: 0,
-        // paddingTop: 0,
-        paddingLeft: 10,
-        marginLeft: 120, 
-        marginRight: 50, 
-        marginBottom: 30,
-        // height: 350,
-        width: 1000,
-        color: {
-            legend: true,
-            scheme: "Tableau10"
-        },
-        legend: {
-            tickFormat: lookup_occ_title
-        },
-        // facet: {data, x: "NAICS", marginRight: 90},
-        marks: [
-            Plot.barY(data, {
-                x: (d) => new Date(d.REPORT_DATE),
-                y: "total_employment", 
-                fill: (d) => lookup_naics_title(d.NAICS),
-                tip: true,
-                title: (d) => `${d.NAICS_TITLE}: (${d.NAICS})\n\nEmployment: ${d.total_employment}`
-            }),
-            Plot.ruleY([0])
-        ]
-    })}
-return {counts_plot};
-}});
-
-define({id: "736097ba", inputs: ["selected_codes"], outputs: ["selected_codes_str"], body: (selected_codes) => {
-// Join selected codes, turn it into SQL-compatible string. Inefficient but works
-const selected_codes_str = "\'" + selected_codes.join("','") + "\'"
-return {selected_codes_str};
-}});
-
-define({id: "f0fa738e", outputs: ["sql_array_str"], body: () => {
-const sql_array_str = function (code_array) {
-    const selected_codes_str = "\'" + code_array.join("','") + "\'"
-    return selected_codes_str
-}
-return {sql_array_str};
-}});
-
 </script>
 <input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
 <label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
@@ -388,7 +390,7 @@ return {sql_array_str};
     <summary>Labor</summary>
     <ol>
     <li class="observablehq-link observablehq-link-active"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
-    <li class="observablehq-link"><a href="./occupation-search">General Labor Exploration</a></li>
+    <li class="observablehq-link"><a href="./occupation-search">Occupation Explorer</a></li>
     </ol>
   </details>
   <details open>
@@ -410,6 +412,7 @@ return {sql_array_str};
 <li class="observablehq-secondary-link"><a href="#5.-nurse-assistants">5. Nurse Assistants</a></li>
 <li class="observablehq-secondary-link"><a href="#6.-physician-assistants">6. Physician Assistants</a></li>
 <li class="observablehq-secondary-link"><a href="#7.-crna">7. CRNA</a></li>
+<li class="observablehq-secondary-link"><a href="#references">References</a></li>
 </ol>
 </nav>
 </aside>
@@ -427,60 +430,134 @@ return {sql_array_str};
 <p>Understanding the trends of healthcare emloyment patterns in a high-level view provides a "birds-eye view" of the direction of healthcare.</p>
 <p>As clinicians, we often end up in the bubble of our own clinical professions. I personally would like to make this page accessible because we all need to understand the bigger picture of rapidly growing (or declining) categories of healthcare staff in order to work together with each other.</p>
 <hr>
-<h3 id="global-option-for-the-graphics" tabindex="-1"><a class="observablehq-header-anchor" href="#global-option-for-the-graphics">Global Option for the graphics</a></h3>
+<h3 id="option-for-the-charts" tabindex="-1"><a class="observablehq-header-anchor" href="#option-for-the-charts">Option for the Charts</a></h3>
+<p><span style="font-size: 0.8em;">Note this categories limit <strong>aggregated each month</strong>, and cumulative number of categories may be higher.</span></p>
 <div class="observablehq observablehq--block"><!--:0b40500c:--></div>
 <div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
 <hr>
 <h2 id="2.-physicians" tabindex="-1"><a class="observablehq-header-anchor" href="#2.-physicians">2. Physicians</a></h2>
+<div class="card" style="padding: 0">
+<ul>
+<li><strong>Year 2004</strong> counts ~160k physicians, suggesting data capture issues in the past.</li>
+<li>Notable dip during <strong>COVID-19</strong> years, 2019 and 2020.</li>
+<li><strong>Office of Physicians (NAICS 621100)</strong> has a noticeable increase since 2021.</li>
+</ul>
+</div>
+<hr style="padding: 0">
 <div class="observablehq observablehq--block"><!--:f58f139c:--></div>
-<div class="observablehq observablehq--block"><!--:ee4cea1e:--></div>
-<div class="observablehq observablehq--block"><!--:56b0038b:--></div>
-<div class="observablehq observablehq--block"><!--:1d499008:--></div>
-<div class="observablehq observablehq--block"><!--:e4791613:--></div>
 <h3 id="total-employment-(2004-2023)" tabindex="-1"><a class="observablehq-header-anchor" href="#total-employment-(2004-2023)">Total Employment (2004-2023)</a></h3>
-<p>Bureau of Labor Statistics</p>
 <div>
 <observablehq-loading></observablehq-loading><!--:412d3569:-->
 </div>
-<h2 id="3.-registered-nurses" tabindex="-1"><a class="observablehq-header-anchor" href="#3.-registered-nurses">3. Registered Nurses</a></h2>
-<h3 id="total-employment-(2004-2023)-1" tabindex="-1"><a class="observablehq-header-anchor" href="#total-employment-(2004-2023)-1">Total Employment (2004-2023)</a></h3>
-<p><i>Source</i>: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:57a7a245:--></div>
 <div>
-<b>OCC Codes</b>
-<observablehq-loading></observablehq-loading><!--:a4bcd0f9:-->
+<b>Bureau of Labor Stats: Detailed Link</b>
+<observablehq-loading></observablehq-loading><!--:0d30414e:-->
 </div>
+<hr style="padding: 0">
+<h2 id="3.-registered-nurses" tabindex="-1"><a class="observablehq-header-anchor" href="#3.-registered-nurses">3. Registered Nurses</a></h2>
+<div class="card" style="padding: 0">
+<ul>
+<li><strong>Steady uptrend</strong> from 2002 to 2023</li>
+<li>"Change"(?) of NAICS coding from <strong>Nursing Care Facilities</strong> to <strong>Outpatient Care Centers</strong></li>
+</ul>
+</div>
+<hr style="padding: 0">
+<h3 id="total-employment-(2004-2023)-1" tabindex="-1"><a class="observablehq-header-anchor" href="#total-employment-(2004-2023)-1">Total Employment (2004-2023)</a></h3>
+<div class="observablehq observablehq--block"><!--:57a7a245:--></div>
 <div>
 <observablehq-loading></observablehq-loading><!--:7de05ca3:-->
 </div>
+<div>
+<b>Bureau of Labor Stats: Detailed Link</b>
+<observablehq-loading></observablehq-loading><!--:f7069a88:-->
+</div>
+<hr style="padding: 0">
 <h2 id="4.-nurse-practioners" tabindex="-1"><a class="observablehq-header-anchor" href="#4.-nurse-practioners">4. Nurse Practioners</a></h2>
+<div class="card" style="padding: 0">
+<ul>
+<li><strong>2.5x</strong> number of increase in Nurse Practioners from 2012-2023.</li>
+<li>Increase across all NAICS industry classifications.</li>
+<li><strong>Office of Physicians</strong> is largest group.</li>
+</ul>
+</div>
 <div class="observablehq observablehq--block"><!--:7df8dd7d:--></div>
 <div>
 <observablehq-loading></observablehq-loading><!--:cf431e10:-->
 </div>
+<div>
+<b>Bureau of Labor Stats: Detailed Link</b>
+<observablehq-loading></observablehq-loading><!--:7a81115f:-->
+</div>
+<hr style="padding: 0">
 <h2 id="5.-nurse-assistants" tabindex="-1"><a class="observablehq-header-anchor" href="#5.-nurse-assistants">5. Nurse Assistants</a></h2>
+<div class="card" style="padding: 0">
+<ul>
+<li>Steady-to-recent decline in <strong>Nursing Assistant (31-1014, 31-1131)</strong> occupation</li>
+</ul>
+</div>
 <div class="observablehq observablehq--block"><!--:059e1e71:--></div>
 <div>
 <observablehq-loading></observablehq-loading><!--:28413580:-->
 </div>
+<div>
+<b>Bureau of Labor Stats: Detailed Link</b>
+<observablehq-loading></observablehq-loading><!--:5d0381da:-->
+</div>
+<hr style="padding: 0">
 <h2 id="6.-physician-assistants" tabindex="-1"><a class="observablehq-header-anchor" href="#6.-physician-assistants">6. Physician Assistants</a></h2>
+<div class="card" style="padding: 0">
+<ul>
+<li><strong>More than 2x</strong> growth of number of Physician Assistants from 2002 to 2023</li>
+<li>Mostly in <strong>Office of Physicians</strong> but growing in Hospitals and <strong>Outpatient Care Centers</strong></li>
+</ul>
+</div>
 <div class="observablehq observablehq--block"><!--:fdf68831:--></div>
 <div>
 <observablehq-loading></observablehq-loading><!--:5f58d673:-->
 </div>
+<div>
+<b>Bureau of Labor Stats: Detailed Link</b>
+<observablehq-loading></observablehq-loading><!--:7f1133b1:-->
+</div>
+<hr style="padding: 0">
 <h2 id="7.-crna" tabindex="-1"><a class="observablehq-header-anchor" href="#7.-crna">7. CRNA</a></h2>
+<div class="card" style="padding: 0">
+<ul>
+<li>CRNA (certified registered nurse anesthetist) numbers steadyly increased since 2012</li>
+</ul>
+</div>
 <div class="observablehq observablehq--block"><!--:d728c679:--></div>
 <div>
 <observablehq-loading></observablehq-loading><!--:d28b79e2:-->
 </div>
-<div class="observablehq observablehq--block"><!--:f458c49a:--></div>
+<div>
+<b>Bureau of Labor Stats: Detailed Link</b>
+<observablehq-loading></observablehq-loading><!--:f9d766ed:-->
+</div>
+<div class="observablehq observablehq--block"><!--:94dd6233:--></div>
+<hr style="padding: 0">
+<h1 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h1>
+<ul>
+<li>NAICS: <a href="https://www.census.gov/naics/?48967" target="_blank" rel="noopener noreferrer">https://www.census.gov/naics/?48967</a></li>
+<li>Bureau of Labor Statistics (Occupational Employment and Wage Statistics): <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">https://www.bls.gov/oes/tables.htm</a></li>
+<li>Bureau of Labor Statistics (Occupational Profiles) <a href="https://www.bls.gov/oes/current/oes_stru.htm" target="_blank" rel="noopener noreferrer">https://www.bls.gov/oes/current/oes_stru.htm</a></li>
+</ul>
+<hr style="padding: 0">
+<p>Feel free to explore <a href="./occupation-search">Occupation Explorer</a> (also can click on the menu) which allows your to pick and choose and generation your own <strong>OCC and NAICS group trends</strong>.</p>
+<p>Hit me up on LinkedIn if you have comments/question: <a href="https://www.linkedin.com/in/jung-hoon-son/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/jung-hoon-son/</a></p>
+<blockquote>
+<p>Jung</p>
+</blockquote>
 <hr>
 <div class="observablehq observablehq--block"><!--:736097ba:--></div>
 <div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
+<div class="observablehq observablehq--block"><!--:56b0038b:--></div>
+<div class="observablehq observablehq--block"><!--:1d499008:--></div>
+<div class="observablehq observablehq--block"><!--:e4791613:--></div>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./healthcare-fraud-startups"><span>Startups/Health Tech</span></a><a rel="next" href="./occupation-search"><span>General Labor Exploration</span></a></nav>
+<nav><a rel="prev" href="./healthcare-fraud-startups"><span>Startups/Health Tech</span></a><a rel="next" href="./occupation-search"><span>Occupation Explorer</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>
