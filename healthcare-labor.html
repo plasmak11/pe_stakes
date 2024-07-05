@@ -14,10 +14,10 @@
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/duckdb.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
 <link rel="modulepreload" href="./_npm/@duckdb/duckdb-wasm@1.28.0/_esm.js">
-<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
@@ -101,6 +101,22 @@ const selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
 return {selected_codes};
 }});
 
+define({id: "0b40500c", inputs: ["Inputs"], outputs: ["grouping_limit_input"], body: (Inputs) => {
+const grouping_limit_input = Inputs.range([0, 20], {step: 1, label: "Number of Top Categories", value: 4})
+return {grouping_limit_input};
+}});
+
+define({id: "6941ebb8", inputs: ["Generators","grouping_limit_input"], outputs: ["grouping_limit"], body: (Generators,grouping_limit_input) => {
+const grouping_limit = Generators.input(grouping_limit_input)
+return {grouping_limit};
+}});
+
+define({id: "43344edb", inputs: ["grouping_limit_input","display"], body: async (grouping_limit_input,display) => {
+display(await(
+grouping_limit_input
+))
+}});
+
 define({id: "f58f139c", outputs: ["physicians"], body: () => {
 const physicians = [
     // "29-1060",  // Deprecated, Physicians and Surgeons
@@ -159,16 +175,6 @@ const physicians_v2 = [
 return {physicians_v2};
 }});
 
-define({id: "f068154c", inputs: ["Inputs"], outputs: ["grouping_limit_input"], body: (Inputs) => {
-const grouping_limit_input = Inputs.range([0, 20], {step: 1, label: "Categories", value: 5})
-return {grouping_limit_input};
-}});
-
-define({id: "6941ebb8", inputs: ["Generators","grouping_limit_input"], outputs: ["grouping_limit"], body: (Generators,grouping_limit_input) => {
-const grouping_limit = Generators.input(grouping_limit_input)
-return {grouping_limit};
-}});
-
 define({id: "56b0038b", inputs: ["occ_codes"], outputs: ["lookup_occ_title"], body: (occ_codes) => {
 const lookup_occ_title = occ_code => 
   occ_codes.find(({ OCC_CODE }) => OCC_CODE === occ_code)?.OCC_TITLE;
@@ -181,7 +187,7 @@ const lookup_naics_title = naics_code =>
 return {lookup_naics_title};
 }});
 
-define({id: "f19ebbc8", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
+define({id: "e4791613", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
 const get_naics_counts = async function (selected_codes, grouping_limit=5) {
   const naics_occ_count = await sql([
     `WITH ranked_data AS (
@@ -193,6 +199,7 @@ const get_naics_counts = async function (selected_codes, grouping_limit=5) {
         RANK() OVER (PARTITION BY REPORT_DATE ORDER BY SUM(TOT_EMP) DESC) AS rank
       FROM oes_db
       WHERE OCC_CODE IN (${sql_array_str(selected_codes)})
+        AND RIGHT(OCC_CODE, 1) != '0'
       GROUP BY REPORT_DATE, NAICS
     ),
     top_x_and_others AS (
@@ -229,12 +236,6 @@ const get_naics_counts = async function (selected_codes, grouping_limit=5) {
 return {get_naics_counts};
 }});
 
-define({id: "43344edb", inputs: ["grouping_limit_input","display"], body: async (grouping_limit_input,display) => {
-display(await(
-grouping_limit_input
-))
-}});
-
 define({id: "412d3569", mode: "inline", inputs: ["counts_plot","get_naics_counts","physicians","grouping_limit","display"], body: async (counts_plot,get_naics_counts,physicians,grouping_limit,display) => {
 display(await(
 counts_plot(await get_naics_counts(physicians, grouping_limit))
@@ -247,6 +248,12 @@ const nurses = [
     "29-1141",  // RN
 ]
 return {nurses};
+}});
+
+define({id: "a4bcd0f9", mode: "inline", inputs: ["nurses","html","lookup_occ_title","display"], body: async (nurses,html,lookup_occ_title,display) => {
+display(await(
+nurses.map(d => html`<li style="font-size: 0.8em">${d}: ${lookup_occ_title(d)}</li>`)
+))
 }});
 
 define({id: "7de05ca3", mode: "inline", inputs: ["counts_plot","get_naics_counts","nurses","grouping_limit","display"], body: async (counts_plot,get_naics_counts,nurses,grouping_limit,display) => {
@@ -315,24 +322,7 @@ counts_plot(await get_naics_counts(crna, grouping_limit))
 ))
 }});
 
-define({id: "bac16954", inputs: ["selected_codes","display"], body: async (selected_codes,display) => {
-display(await(
-selected_codes
-))
-}});
-
-define({id: "c91519a9", inputs: ["get_naics_counts","selected_codes"], outputs: ["test"], body: async (get_naics_counts,selected_codes) => {
-const test = await get_naics_counts(selected_codes)
-return {test};
-}});
-
-define({id: "be18be49", inputs: ["Inputs","test","display"], body: async (Inputs,test,display) => {
-display(await(
-await Inputs.table(test)
-))
-}});
-
-define({id: "2c801351", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "f458c49a", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
     return Plot.plot({
         // marginTop: 0,
@@ -350,6 +340,7 @@ const counts_plot = function(data) {
         legend: {
             tickFormat: lookup_occ_title
         },
+        // facet: {data, x: "NAICS", marginRight: 90},
         marks: [
             Plot.barY(data, {
                 x: (d) => new Date(d.REPORT_DATE),
@@ -364,22 +355,6 @@ const counts_plot = function(data) {
 return {counts_plot};
 }});
 
-define({id: "83f31d06", body: () => {
-// get_naics_counts(selected_codes)
-}});
-
-define({id: "29c2b7bf", mode: "inline", inputs: ["occ_code_search_input","display"], body: async (occ_code_search_input,display) => {
-display(await(
-occ_code_search_input
-))
-}});
-
-define({id: "ba37dca5", mode: "inline", inputs: ["occ_code_table_input","display"], body: async (occ_code_table_input,display) => {
-display(await(
-occ_code_table_input
-))
-}});
-
 define({id: "736097ba", inputs: ["selected_codes"], outputs: ["selected_codes_str"], body: (selected_codes) => {
 // Join selected codes, turn it into SQL-compatible string. Inefficient but works
 const selected_codes_str = "\'" + selected_codes.join("','") + "\'"
@@ -392,12 +367,6 @@ const sql_array_str = function (code_array) {
     return selected_codes_str
 }
 return {sql_array_str};
-}});
-
-define({id: "1db0b415", mode: "inline", inputs: ["counts_plot","get_naics_counts","selected_codes","grouping_limit","display"], body: async (counts_plot,get_naics_counts,selected_codes,grouping_limit,display) => {
-display(await(
-counts_plot(await get_naics_counts(selected_codes, grouping_limit))
-))
 }});
 
 </script>
@@ -419,6 +388,7 @@ counts_plot(await get_naics_counts(selected_codes, grouping_limit))
     <summary>Labor</summary>
     <ol>
     <li class="observablehq-link observablehq-link-active"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
+    <li class="observablehq-link"><a href="./occupation-search">General Labor Exploration</a></li>
     </ol>
   </details>
   <details open>
@@ -435,13 +405,11 @@ counts_plot(await get_naics_counts(selected_codes, grouping_limit))
 <ol>
 <li class="observablehq-secondary-link"><a href="#1.-healthcare-labor-statistics">1. Healthcare Labor Statistics</a></li>
 <li class="observablehq-secondary-link"><a href="#2.-physicians">2. Physicians</a></li>
-<li class="observablehq-secondary-link"><a href="#3.-nurses">3. Nurses</a></li>
+<li class="observablehq-secondary-link"><a href="#3.-registered-nurses">3. Registered Nurses</a></li>
 <li class="observablehq-secondary-link"><a href="#4.-nurse-practioners">4. Nurse Practioners</a></li>
 <li class="observablehq-secondary-link"><a href="#5.-nurse-assistants">5. Nurse Assistants</a></li>
 <li class="observablehq-secondary-link"><a href="#6.-physician-assistants">6. Physician Assistants</a></li>
 <li class="observablehq-secondary-link"><a href="#7.-crna">7. CRNA</a></li>
-<li class="observablehq-secondary-link"><a href="#selected-codes">Selected codes</a></li>
-<li class="observablehq-secondary-link"><a href="#general-occupation-search">General Occupation Search</a></li>
 </ol>
 </nav>
 </aside>
@@ -459,22 +427,30 @@ counts_plot(await get_naics_counts(selected_codes, grouping_limit))
 <p>Understanding the trends of healthcare emloyment patterns in a high-level view provides a "birds-eye view" of the direction of healthcare.</p>
 <p>As clinicians, we often end up in the bubble of our own clinical professions. I personally would like to make this page accessible because we all need to understand the bigger picture of rapidly growing (or declining) categories of healthcare staff in order to work together with each other.</p>
 <hr>
+<h3 id="global-option-for-the-graphics" tabindex="-1"><a class="observablehq-header-anchor" href="#global-option-for-the-graphics">Global Option for the graphics</a></h3>
+<div class="observablehq observablehq--block"><!--:0b40500c:--></div>
+<div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
+<hr>
 <h2 id="2.-physicians" tabindex="-1"><a class="observablehq-header-anchor" href="#2.-physicians">2. Physicians</a></h2>
 <div class="observablehq observablehq--block"><!--:f58f139c:--></div>
 <div class="observablehq observablehq--block"><!--:ee4cea1e:--></div>
-<div class="observablehq observablehq--block"><!--:f068154c:--></div>
-<div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
 <div class="observablehq observablehq--block"><!--:56b0038b:--></div>
 <div class="observablehq observablehq--block"><!--:1d499008:--></div>
-<div class="observablehq observablehq--block"><!--:f19ebbc8:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
+<div class="observablehq observablehq--block"><!--:e4791613:--></div>
 <h3 id="total-employment-(2004-2023)" tabindex="-1"><a class="observablehq-header-anchor" href="#total-employment-(2004-2023)">Total Employment (2004-2023)</a></h3>
 <p>Bureau of Labor Statistics</p>
 <div>
 <observablehq-loading></observablehq-loading><!--:412d3569:-->
 </div>
-<h2 id="3.-nurses" tabindex="-1"><a class="observablehq-header-anchor" href="#3.-nurses">3. Nurses</a></h2>
+<h2 id="3.-registered-nurses" tabindex="-1"><a class="observablehq-header-anchor" href="#3.-registered-nurses">3. Registered Nurses</a></h2>
+<h3 id="total-employment-(2004-2023)-1" tabindex="-1"><a class="observablehq-header-anchor" href="#total-employment-(2004-2023)-1">Total Employment (2004-2023)</a></h3>
+<p><i>Source</i>: Bureau of Labor Statistics</p>
 <div class="observablehq observablehq--block"><!--:57a7a245:--></div>
+<div>
+<b>OCC Codes</b>
+<observablehq-loading></observablehq-loading><!--:a4bcd0f9:-->
+</div>
 <div>
 <observablehq-loading></observablehq-loading><!--:7de05ca3:-->
 </div>
@@ -498,26 +474,13 @@ counts_plot(await get_naics_counts(selected_codes, grouping_limit))
 <div>
 <observablehq-loading></observablehq-loading><!--:d28b79e2:-->
 </div>
-<h2 id="selected-codes" tabindex="-1"><a class="observablehq-header-anchor" href="#selected-codes">Selected codes</a></h2>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bac16954:--></div>
-<div class="observablehq observablehq--block"><!--:c91519a9:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:be18be49:--></div>
-<div class="observablehq observablehq--block"><!--:2c801351:--></div>
-<div class="observablehq observablehq--block"><!--:83f31d06:--></div>
-<hr>
-<h2 id="general-occupation-search" tabindex="-1"><a class="observablehq-header-anchor" href="#general-occupation-search">General Occupation Search</a></h2>
-<p>Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: <a href="https://www.bls.gov/oes/current/oes_stru.htm" target="_blank" rel="noopener noreferrer">https://www.bls.gov/oes/current/oes_stru.htm</a></p>
-<div style="padding: 0; overflow:hidden;">
-    <div><observablehq-loading></observablehq-loading><!--:29c2b7bf:--></div>
-    <div><observablehq-loading></observablehq-loading><!--:ba37dca5:--></div>
-</div>
+<div class="observablehq observablehq--block"><!--:f458c49a:--></div>
 <hr>
 <div class="observablehq observablehq--block"><!--:736097ba:--></div>
 <div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
-<p><observablehq-loading></observablehq-loading><!--:1db0b415:--></p>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./healthcare-fraud-startups"><span>Startups/Health Tech</span></a><a rel="next" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a></nav>
+<nav><a rel="prev" href="./healthcare-fraud-startups"><span>Startups/Health Tech</span></a><a rel="next" href="./occupation-search"><span>General Labor Exploration</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>
