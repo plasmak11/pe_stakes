@@ -4,15 +4,141 @@
 <title>OpenFDA Exploration | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/custom-style.fbdd8d24.css">
+<link rel="preload" as="style" href="./_import/openfda_ndc.a37b8876.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/custom-style.fbdd8d24.css">
+<link rel="stylesheet" type="text/css" href="./_import/openfda_ndc.a37b8876.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <script type="module">
 
-import "./_observablehq/client.js";
+import {define} from "./_observablehq/client.js";
+import {registerFile} from "./_observablehq/stdlib.js";
+
+registerFile("./dataloaders/openfda_ndc.json", {"name":"./dataloaders/openfda_ndc.json","mimeType":"application/json","path":"./_file/dataloaders/openfda_ndc.fe5ff54f.json","lastModified":1719756960182});
+
+define({id: "d9b7c07d", inputs: ["FileAttachment"], outputs: ["ndc_json"], body: async (FileAttachment) => {
+const ndc_json = await FileAttachment("./dataloaders/openfda_ndc.json").json()
+return {ndc_json};
+}});
+
+define({id: "b11189c6", inputs: ["ndc_json","display"], body: async (ndc_json,display) => {
+display(await(
+ndc_json.results
+))
+}});
+
+define({id: "074f9a10", inputs: ["html"], outputs: ["cardTemplate"], body: (html) => {
+const cardTemplate = (data) => html`
+    <div class="card">
+        <div class="main-content">
+            <div class="left-panel">
+                <h2>Product Information</h2>
+                <div class="section-content">
+                    <div class="info-group">
+                        <span class="info-label">Product NDC:</span>
+                        <span class="info-value">${data.product_ndc}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Generic Name:</span>
+                        <span class="info-value">${data.product_ndc}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Brand Name Base:</span>
+                        <span class="info-value">${data.generic_name}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">DEA Schedule:</span>
+                        <span class="info-value">${data.dea_schedule}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Dosage Form:</span>
+                        <span class="info-value">${data.dosage_form}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Route:</span>
+                        <span class="info-value"><span class="badge">${data.route}</span></span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Active Ingredient:</span>
+                        <span class="info-value">
+                            ${data.active_ingredients.map(p => html`
+                                <span><a href="#">${p.name}</a></span> |
+                            `)}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Product Type:</span>
+                        <span class="info-value">${data.product_type}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Marketing Category:</span>
+                        <span class="info-value">${data.marketing_category}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Application Number:</span>
+                        <span class="info-value">${data.product_ndc}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Marketing Start Date:</span>
+                        <span class="info-value">${data.marketing_start_date}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Listing Expiration Date:</span>
+                        <span class="info-value">${data.listing_expiration_date}</span>
+                    </div>
+                </div>
+
+                <h2>Additional Information</h2>
+                <div class="section-content">
+                    <div class="info-group">
+                        <span class="info-label">SPL ID:</span>
+                        <span class="info-value">${data.spl_id}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Product ID:</span>
+                        <span class="info-value">${data.product_id}</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Finished:</span>
+                        <span class="info-value"><span class="badge">${data.finished}</span></span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Packaging:</span>
+                        <ul class="compact-list packaging-list">
+                            ${data.packaging.map(p => html`
+                                <li><a href="#">${p.description}</a></li>
+                            `)}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <h2>Class</h2>
+                <div class="tag-container">
+                    ${data.pharm_class.map(p => html`
+                        <span class="tag">${p}</span>
+                    `)}
+                </div>
+            </div>
+        </div>
+    </div>`;
+return {cardTemplate};
+}});
+
+define({id: "d0f97e84", inputs: ["ndc_json","cardTemplate"], body: (ndc_json,cardTemplate) => {
+if (Array.isArray(ndc_json)) {
+  ndc_json.map(d => cardTemplate(d));
+} else {
+  console.error('ndc_json is not an array:', typeof ndc_json);
+}
+}});
+
+define({id: "ddd3d64c", inputs: ["ndc_json","display"], body: async (ndc_json,display) => {
+display(await(
+typeof(ndc_json)
+))
+}});
 
 </script>
 <input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
@@ -29,7 +155,13 @@ import "./_observablehq/client.js";
     <li class="observablehq-link"><a href="./healthcare-fraud-startups">Startups/Health Tech</a></li>
     </ol>
   </details>
-  <details>
+  <details open>
+    <summary>Labor</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
+    </ol>
+  </details>
+  <details open>
     <summary>Hospital Ownership</summary>
     <ol>
     <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
@@ -43,8 +175,15 @@ import "./_observablehq/client.js";
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1> OpenFDA API Exploration </h1>
+<h1> OpenFDA API Exploration: NDC </h1>
 <hr>
+<div class="observablehq observablehq--block"><!--:d9b7c07d:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b11189c6:--></div>
+<div class="observablehq observablehq--block"><!--:074f9a10:--></div>
+<!-- ${ndc_json.map(entry => cardTemplate(entry))}
+ -->
+<div class="observablehq observablehq--block"><!--:d0f97e84:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:ddd3d64c:--></div>
 </main>
 <footer id="observablehq-footer">
 <div>Built with Observable.</div>

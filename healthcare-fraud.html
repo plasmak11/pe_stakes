@@ -57,7 +57,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.daef1554.json","lastModified":1719612657792});
+registerFile("./data/healthcare_frauds.json", {"name":"./data/healthcare_frauds.json","mimeType":"application/json","path":"./_file/data/healthcare_frauds.d0e712fd.json","lastModified":1719964677606});
 
 define({id: "1662f5b4", inputs: ["Inputs","data"], outputs: ["search_input"], body: (Inputs,data) => {
 const search_input = Inputs.search(data, {placeholder: "Search cases"});
@@ -386,7 +386,13 @@ filtered_data.map(entry => cardTemplate(entry))
     <li class="observablehq-link"><a href="./healthcare-fraud-startups">Startups/Health Tech</a></li>
     </ol>
   </details>
-  <details>
+  <details open>
+    <summary>Labor</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
+    </ol>
+  </details>
+  <details open>
     <summary>Hospital Ownership</summary>
     <ol>
     <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Healthcare Labor Playground | Clinicians.fyi</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/duckdb.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/@duckdb/duckdb-wasm@1.28.0/_esm.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/apache-arrow@16.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
+<link rel="modulepreload" href="./_npm/tslib@2.6.2/_esm.js">
+<link rel="modulepreload" href="./_npm/flatbuffers@24.3.25/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile, FileAttachment} from "./_observablehq/stdlib.js";
+import {registerTable} from "./_observablehq/stdlib/duckdb.js";
+
+registerFile("./data/oes/processed/occ_code.csv", {"name":"./data/oes/processed/occ_code.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/occ_code.6848eccf.csv","lastModified":1720171472882});
+registerFile("data/oes/processed/occ_code.csv", {"name":"data/oes/processed/occ_code.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/occ_code.6848eccf.csv","lastModified":1720171472882});
+registerFile("data/oes/processed/oes_longitudinal_slim.parquet", {"name":"data/oes/processed/oes_longitudinal_slim.parquet","path":"./_file/data/oes/processed/oes_longitudinal_slim.876a428d.parquet","lastModified":1720171472815});
+registerTable("oes_db", FileAttachment("./data/oes/processed/oes_longitudinal_slim.parquet"));
+registerTable("occ_codes_db", FileAttachment("./data/oes/processed/occ_code.csv"));
+
+define({id: "6f6cfe8d", inputs: ["FileAttachment"], outputs: ["occ_codes"], body: (FileAttachment) => {
+const occ_codes = FileAttachment("./data/oes/processed/occ_code.csv").csv()
+return {occ_codes};
+}});
+
+define({id: "0deddbdb", inputs: ["Inputs","occ_codes"], outputs: ["occ_code_search_input"], body: (Inputs,occ_codes) => {
+const occ_code_search_input = Inputs.search(occ_codes, {width: 100})
+return {occ_code_search_input};
+}});
+
+define({id: "90b4ba8e", inputs: ["Generators","occ_code_search_input"], outputs: ["occ_code_search"], body: (Generators,occ_code_search_input) => {
+const occ_code_search = Generators.input(occ_code_search_input)
+return {occ_code_search};
+}});
+
+define({id: "5853914b", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
+const occ_code_table_input = Inputs.table(
+    occ_code_search,
+)
+return {occ_code_table_input};
+}});
+
+define({id: "2229528f", inputs: ["Generators","occ_code_table_input"], outputs: ["occ_code_table_input_results"], body: (Generators,occ_code_table_input) => {
+const occ_code_table_input_results = Generators.input(occ_code_table_input)
+return {occ_code_table_input_results};
+}});
+
+define({id: "7c4200c9", inputs: ["occ_code_table_input_results"], outputs: ["selected_codes"], body: (occ_code_table_input_results) => {
+const selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
+return {selected_codes};
+}});
+
+define({id: "29c2b7bf", mode: "inline", inputs: ["occ_code_search_input","display"], body: async (occ_code_search_input,display) => {
+display(await(
+occ_code_search_input
+))
+}});
+
+define({id: "ba37dca5", mode: "inline", inputs: ["occ_code_table_input","display"], body: async (occ_code_table_input,display) => {
+display(await(
+occ_code_table_input
+))
+}});
+
+define({id: "736097ba", inputs: ["selected_codes"], outputs: ["selected_codes_str"], body: (selected_codes) => {
+// Join selected codes, turn it into SQL-compatible string. Inefficient but works
+const selected_codes_str = "\'" + selected_codes.join("','") + "\'"
+return {selected_codes_str};
+}});
+
+define({id: "f0fa738e", outputs: ["sql_array_str"], body: () => {
+const sql_array_str = function (code_array) {
+    const selected_codes_str = "\'" + code_array.join("','") + "\'"
+    return selected_codes_str
+}
+return {sql_array_str};
+}});
+
+define({id: "09b40acf", inputs: ["selected_codes","display"], body: async (selected_codes,display) => {
+display(await(
+// sql_array_str(selected_codes)
+selected_codes
+))
+}});
+
+define({id: "7573ce7c", outputs: ["physicians"], body: () => {
+const physicians = [
+    "29-1060",  // Deprecated, Physicians and Surgeons
+    "29-1069",  // Deprecated, Physicians and surgeons, all other
+    // "29-1210",  // Current, Physicians, entire group,
+    "29-1211",
+    "29-1212",
+    "29-1213",
+    "29-1214",
+    "29-1215",
+    "29-1216",
+    "29-1217",
+]
+return {physicians};
+}});
+
+define({id: "1f65e6de", outputs: ["nurses"], body: () => {
+const nurses = [
+    "29-1141",  // RN
+]
+return {nurses};
+}});
+
+define({id: "a6f149a1", outputs: ["others"], body: () => {
+const others = [
+    "29-1171",  // NP
+    "29-2061",  // LVN
+    "29-1151",  // Nurse Anesthetist
+    "31-1010",  // Nursing, Psychiatric, and Home Health Aides
+    "31-1014",  // Nursing Assistants
+    "31-1131",  // Nursing Assistants
+]
+return {others};
+}});
+
+define({id: "fdf68831", outputs: ["physian_assistant"], body: () => {
+const physian_assistant = [
+    "29-1071",  // 
+]
+return {physian_assistant};
+}});
+
+define({id: "6a0ae40b", inputs: ["sql","sql_array_str","physicians"], outputs: ["naics_table"], body: async (sql,sql_array_str,physicians) => {
+const naics_table = await sql([`SELECT * FROM oes_db WHERE OCC_CODE IN (${sql_array_str(physicians)})`])
+// const naics_table = await sql([`SELECT * FROM oes_db WHERE OCC_CODE IN (${sql_array_str(nurses)})`])
+return {naics_table};
+}});
+
+define({id: "38634cf7", outputs: ["grouping_limit"], body: () => {
+const grouping_limit = 10;
+return {grouping_limit};
+}});
+
+define({id: "49889346", inputs: ["sql","sql_array_str","selected_codes","grouping_limit"], outputs: ["naics_occ_count"], body: async (sql,sql_array_str,selected_codes,grouping_limit) => {
+const naics_occ_count = await sql([
+    `WITH ranked_data AS (
+  SELECT 
+    REPORT_DATE,
+    NAICS,
+    NAICS_TITLE,
+    OCC_CODE,
+    SUM(TOT_EMP) AS total_employment,
+    RANK() OVER (PARTITION BY REPORT_DATE ORDER BY SUM(TOT_EMP) DESC) AS rank
+  FROM oes_db
+  WHERE OCC_CODE IN (${sql_array_str(selected_codes)})
+  GROUP BY REPORT_DATE, NAICS, OCC_CODE, NAICS_TITLE
+),
+top_x_and_others AS (
+  SELECT
+    REPORT_DATE,
+    CASE 
+      WHEN rank <= ${grouping_limit} THEN NAICS 
+      ELSE 'Other'
+    END AS NAICS,
+    CASE 
+      WHEN rank <= ${grouping_limit} THEN OCC_CODE 
+      ELSE 'Other'
+    END AS OCC_CODE,
+    CASE 
+      WHEN rank <= ${grouping_limit} THEN NAICS_TITLE 
+      ELSE 'Other'
+    END AS NAICS_TITLE,
+    SUM(total_employment) AS total_employment
+  FROM ranked_data
+  GROUP BY 
+    REPORT_DATE,
+    CASE 
+      WHEN rank <= ${grouping_limit} THEN NAICS 
+      ELSE 'Other'
+    END,
+    CASE 
+      WHEN rank <= ${grouping_limit} THEN OCC_CODE 
+      ELSE 'Other'
+    END,
+    CASE 
+      WHEN rank <= ${grouping_limit} THEN NAICS_TITLE 
+      ELSE 'Other'
+    END
+)
+SELECT 
+  REPORT_DATE,
+  NAICS,
+  NAICS_TITLE,
+  OCC_CODE,
+  total_employment
+FROM top_x_and_others
+ORDER BY 
+  REPORT_DATE,
+  CASE WHEN NAICS = 'Other' AND OCC_CODE = 'Other' THEN 2 ELSE 1 END,
+  total_employment DESC`
+])
+return {naics_occ_count};
+}});
+
+define({id: "4fa7fde9", inputs: ["Inputs","naics_occ_count","display"], body: async (Inputs,naics_occ_count,display) => {
+display(await(
+Inputs.table(naics_occ_count, 
+    {
+        format: {
+            NAICS: (x) => x,
+            REPORT_DATE: (x) => new Date(x).toISOString()
+        }
+    }
+)
+))
+}});
+
+define({id: "3d1d8eef", inputs: ["Inputs","naics_table","display"], body: async (Inputs,naics_table,display) => {
+display(await(
+Inputs.table(
+    naics_table, 
+    {
+        format: {
+            NAICS: (x) => x,
+            REPORT_DATE: (x) => new Date(x).toISOString()
+        }
+    }
+)
+))
+}});
+
+define({id: "5aaa053f", inputs: ["sql","sql_array_str","nurses"], outputs: ["naics_counts"], body: async (sql,sql_array_str,nurses) => {
+
+const naics_counts = await sql(
+    [`
+    SELECT 
+        NAICS, 
+        NAICS_TITLE, 
+        REPORT_DATE, 
+        sum(TOT_EMP) as TOT_EMP FROM oes_db
+    WHERE (OCC_CODE IN (${sql_array_str(nurses)})) AND (TOT_EMP > 0)
+    GROUP BY NAICS, NAICS_TITLE, OCC_CODE, REPORT_DATE
+    ORDER BY REPORT_DATE DESC, TOT_EMP DESC`]);
+return {naics_counts};
+}});
+
+define({id: "bac16954", inputs: ["selected_codes","display"], body: async (selected_codes,display) => {
+display(await(
+selected_codes
+))
+}});
+
+define({id: "db413cfe", inputs: ["Plot"], outputs: ["counts_plot"], body: (Plot) => {
+const counts_plot = function(data) {
+    return Plot.plot({
+        // marginTop: 0,
+        // paddingTop: 0,
+        paddingLeft: 10,
+        marginLeft: 120, 
+        marginRight: 50, 
+        marginBottom: 30,
+        // height: 350,
+        // width: 100%,
+        tooltip: {
+            fill: "red",
+            stroke: "blue",
+            r: 8
+        },
+        color: {
+            legend: true
+        },
+        marks: [
+            Plot.barY(data, {
+                x: (d) => new Date(d.REPORT_DATE),
+                y: "total_employment", 
+                fill: "NAICS_TITLE",
+                title: (d) =>`${d.NAICS_TITLE}`
+            }),
+            Plot.ruleY([0])
+        ]
+    })}
+return {counts_plot};
+}});
+
+define({id: "abedfd6d", mode: "inline", inputs: ["counts_plot","naics_occ_count","display"], body: async (counts_plot,naics_occ_count,display) => {
+display(await(
+counts_plot(naics_occ_count)
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Clinicians.fyi</a></li>
+  </ol>
+  <details open>
+    <summary>Healthcare Fraud</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-fraud">Criminal Cases</a></li>
+    <li class="observablehq-link"><a href="./healthcare-fraud-startups">Startups/Health Tech</a></li>
+    </ol>
+  </details>
+  <details open>
+    <summary>Labor</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
+    </ol>
+  </details>
+  <details open>
+    <summary>Hospital Ownership</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
+    </ol>
+  </details>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#occupation-search">Occupation Search</a></li>
+<li class="observablehq-secondary-link"><a href="#physicians">Physicians</a></li>
+<li class="observablehq-secondary-link"><a href="#selected-codes">Selected codes</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="healthcare-employment" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-employment">Healthcare Employment</a></h1>
+<hr>
+<div class="observablehq observablehq--block"><!--:6f6cfe8d:--></div>
+<div class="observablehq observablehq--block"><!--:0deddbdb:--></div>
+<div class="observablehq observablehq--block"><!--:90b4ba8e:--></div>
+<div class="observablehq observablehq--block"><!--:5853914b:--></div>
+<div class="observablehq observablehq--block"><!--:2229528f:--></div>
+<div class="observablehq observablehq--block"><!--:7c4200c9:--></div>
+<h2 id="occupation-search" tabindex="-1"><a class="observablehq-header-anchor" href="#occupation-search">Occupation Search</a></h2>
+<p>Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: <a href="https://www.bls.gov/oes/current/oes_stru.htm" target="_blank" rel="noopener noreferrer">https://www.bls.gov/oes/current/oes_stru.htm</a></p>
+<div style="padding: 0; overflow:hidden;">
+    <div><observablehq-loading></observablehq-loading><!--:29c2b7bf:--></div>
+    <div><observablehq-loading></observablehq-loading><!--:ba37dca5:--></div>
+</div>
+<hr>
+<div class="observablehq observablehq--block"><!--:736097ba:--></div>
+<div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:09b40acf:--></div>
+<h2 id="physicians" tabindex="-1"><a class="observablehq-header-anchor" href="#physicians">Physicians</a></h2>
+<div class="observablehq observablehq--block"><!--:7573ce7c:--></div>
+<div class="observablehq observablehq--block"><!--:1f65e6de:--></div>
+<div class="observablehq observablehq--block"><!--:a6f149a1:--></div>
+<div class="observablehq observablehq--block"><!--:fdf68831:--></div>
+<div class="observablehq observablehq--block"><!--:6a0ae40b:--></div>
+<div class="observablehq observablehq--block"><!--:38634cf7:--></div>
+<div class="observablehq observablehq--block"><!--:49889346:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:4fa7fde9:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3d1d8eef:--></div>
+<div class="observablehq observablehq--block"><!--:5aaa053f:--></div>
+<h2 id="selected-codes" tabindex="-1"><a class="observablehq-header-anchor" href="#selected-codes">Selected codes</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bac16954:--></div>
+<div class="observablehq observablehq--block"><!--:db413cfe:--></div>
+<div class="card">
+<observablehq-loading></observablehq-loading><!--:abedfd6d:-->
+</div></main>
+<footer id="observablehq-footer">
+<div>Built with Observable.</div>
+</footer>
+</div>
