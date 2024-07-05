@@ -4,8 +4,7 @@ title: Healthcare Labor Info
 # toc: true
 # style: custom-style.css
 sql:
-    oes_db: data/oes/processed/oes_longitudinal_slim.parquet
-    occ_codes_db: data/oes/processed/occ_code.csv
+    oes_db: ./data/oes/processed/oes_longitudinal_slim.parquet
 ---
 
 # Healthcare Employment
