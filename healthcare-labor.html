@@ -262,7 +262,7 @@ crna.map(d => html`<li style="font-size: 0.8em"><a href="https://www.bls.gov/oes
 ))
 }});
 
-define({id: "94dd6233", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "8bbd7fd6", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
     return Plot.plot({
         // marginTop: 0,
@@ -280,6 +280,9 @@ const counts_plot = function(data) {
         },
         legend: {
             tickFormat: lookup_occ_title
+        },
+        x: {
+          type: "band"
         },
         // facet: {data, x: "NAICS", marginRight: 90},
         marks: [
@@ -533,7 +536,7 @@ return {get_naics_counts};
 <b>Bureau of Labor Stats: Detailed Link</b>
 <observablehq-loading></observablehq-loading><!--:f9d766ed:-->
 </div>
-<div class="observablehq observablehq--block"><!--:94dd6233:--></div>
+<div class="observablehq observablehq--block"><!--:8bbd7fd6:--></div>
 <hr style="padding: 0">
 <h1 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h1>
 <ul>
