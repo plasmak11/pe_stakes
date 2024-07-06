@@ -4,10 +4,10 @@
 <title>Occupation Explorer - Industry Trends | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-air.css">
+<link rel="preload" as="style" href="./_observablehq/theme-air,wide.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,wide.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -207,7 +207,7 @@ counts_plot(await get_naics_counts(selected_codes, grouping_limit))
 ))
 }});
 
-define({id: "f458c49a", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "dd26fb29", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
     return Plot.plot({
         // marginTop: 0,
@@ -224,6 +224,9 @@ const counts_plot = function(data) {
         },
         legend: {
             tickFormat: lookup_occ_title
+        },
+        x: {
+          type: "band"
         },
         // facet: {data, x: "NAICS", marginRight: 90},
         marks: [
@@ -314,8 +317,7 @@ return {sql_array_str};
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <h1 id="occupation-explorer" tabindex="-1"><a class="observablehq-header-anchor" href="#occupation-explorer">Occupation Explorer</a></h1>
-<p>While working on the Healthcare Labor Statistics website, I realized this is a cool tool to explore <strong>OCC Codes to NAICS</strong> relationship, all using data from <strong>Bureau of Labor Statistics</strong>.</p>
-<hr>
+<hr style="padding: 0">
 <div class="observablehq observablehq--block"><!--:b6ed26fa:--></div>
 <div class="observablehq observablehq--block"><!--:56b0038b:--></div>
 <div class="observablehq observablehq--block"><!--:1d499008:--></div>
@@ -340,7 +342,7 @@ return {sql_array_str};
 <observablehq-loading></observablehq-loading><!--:1db0b415:-->
 </div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:f458c49a:--></div>
+<div class="observablehq observablehq--block"><!--:dd26fb29:--></div>
 <hr>
 <h3 id="table-of-naics-industries" tabindex="-1"><a class="observablehq-header-anchor" href="#table-of-naics-industries">Table of NAICS Industries</a></h3>
 <div class="tip" label="">
