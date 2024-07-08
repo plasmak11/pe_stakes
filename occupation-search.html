@@ -147,7 +147,7 @@ const occ_code_search = Generators.input(occ_code_search_input)
 return {occ_code_search};
 }});
 
-define({id: "00a9948a", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
+define({id: "93c22dec", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
 const occ_code_table_input = Inputs.table(
   occ_code_search,
   {
@@ -156,7 +156,14 @@ const occ_code_table_input = Inputs.table(
       OCC_TITLE: "left",
     },
     width: {
-      OCC_CODE: 80,
+      OCC_CODE: 55,
+    },
+    header: {
+      OCC_CODE: "Code",
+      OCC_TITLE: "Title"
+    },
+    format: {
+      // OCC_CODE:
     }
   }
 )
@@ -319,7 +326,7 @@ const counts_plot = function(data) {
 return {counts_plot};
 }});
 
-define({id: "5d02e7ec", inputs: ["Inputs","naics_total_employment","d3","display"], body: async (Inputs,naics_total_employment,d3,display) => {
+define({id: "120722fd", inputs: ["Inputs","naics_total_employment","d3","display"], body: async (Inputs,naics_total_employment,d3,display) => {
 display(await(
 await Inputs.table(naics_total_employment,
   {
@@ -331,7 +338,7 @@ await Inputs.table(naics_total_employment,
     format: {
       REPORT_DATE: (d) => new Date(d).toISOString().split('T')[0],
       total_employment: (d) => d3.format(",.0f")(d)
-    },
+    }
   }
 )
 ))
@@ -395,7 +402,7 @@ return {sql_array_str};
 <!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
 <div class="observablehq observablehq--block"><!--:f0ff9dd2:--></div>
 <div class="observablehq observablehq--block"><!--:818edaf4:--></div>
-<div class="observablehq observablehq--block"><!--:00a9948a:--></div>
+<div class="observablehq observablehq--block"><!--:93c22dec:--></div>
 <div class="observablehq observablehq--block"><!--:2229528f:--></div>
 <div class="observablehq observablehq--block"><!--:7c4200c9:--></div>
 <div class="observablehq observablehq--block"><!--:c6243544:--></div>
@@ -442,7 +449,7 @@ return {sql_array_str};
 <h3 id="table-of-naics-industries" tabindex="-1"><a class="observablehq-header-anchor" href="#table-of-naics-industries">Table of NAICS Industries</a></h3>
 <div class="tip" label="">
 <p>"The North American Industry Classification System (NAICS) is the standard used by Federal statistical agencies in classifying business establishments for the purpose of collecting, analyzing, and publishing statistical data related to the U.S. business economy." - <a href="https://www.census.gov/naics/" target="_blank" rel="noopener noreferrer">https://www.census.gov/naics/</a></p></div><p></p>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5d02e7ec:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:120722fd:--></div>
 <hr>
 <div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
 </main>
