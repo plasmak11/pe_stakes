@@ -147,8 +147,19 @@ const occ_code_search = Generators.input(occ_code_search_input)
 return {occ_code_search};
 }});
 
-define({id: "59cf40d2", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
-const occ_code_table_input = Inputs.table(occ_code_search)
+define({id: "00a9948a", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
+const occ_code_table_input = Inputs.table(
+  occ_code_search,
+  {
+    align: {
+      OCC_CODE: "left",
+      OCC_TITLE: "left",
+    },
+    width: {
+      OCC_CODE: 80,
+    }
+  }
+)
 return {occ_code_table_input};
 }});
 
@@ -384,7 +395,7 @@ return {sql_array_str};
 <!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
 <div class="observablehq observablehq--block"><!--:f0ff9dd2:--></div>
 <div class="observablehq observablehq--block"><!--:818edaf4:--></div>
-<div class="observablehq observablehq--block"><!--:59cf40d2:--></div>
+<div class="observablehq observablehq--block"><!--:00a9948a:--></div>
 <div class="observablehq observablehq--block"><!--:2229528f:--></div>
 <div class="observablehq observablehq--block"><!--:7c4200c9:--></div>
 <div class="observablehq observablehq--block"><!--:c6243544:--></div>
@@ -416,9 +427,9 @@ return {sql_array_str};
   </div> -->
 <!-- </div> -->
 <div class="grid grid-cols-3">
-  <div class="card grid-colspan-1" style="gap:1px; padding: 10px 20px 10px 10px; background: white;">
-  <observablehq-loading></observablehq-loading><!--:29c2b7bf:-->
-  <observablehq-loading></observablehq-loading><!--:ba37dca5:-->
+  <div class="card grid-colspan-1" style="gap:1px; padding: 10px 0px 10px 0px; background: white;">
+    <div style="padding: 10px; margin-left: 8px;"><observablehq-loading></observablehq-loading><!--:29c2b7bf:--></div>
+    <div style="padding: 0px; margin-left: 0px;"><observablehq-loading></observablehq-loading><!--:ba37dca5:--></div>
   </div>
   <div class="card grid-colspan-2"><observablehq-loading></observablehq-loading><!--:933fdb9a:-->
   </div>
