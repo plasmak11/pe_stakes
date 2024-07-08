@@ -86,7 +86,7 @@ const lookup_naics_title = naics_code =>
 return {lookup_naics_title};
 }});
 
-define({id: "b6d55ba0", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
+define({id: "57298cb0", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
 const get_naics_counts = async function (selected_codes, grouping_limit=5) {
   // const naics_occ_count = await sql([
   //   `WITH ranked_data AS (
@@ -181,13 +181,32 @@ final_data AS (
       WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
       ELSE 'Other Industries'
     END
+),
+final_data_with_changes AS (
+  SELECT 
+    fd.*,
+    fd.total_employment - LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) AS change_since_previous,
+    fd.total_employment - LAG(fd.total_employment, 60) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) AS change_since_5_years,
+    CASE 
+      WHEN LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) = 0 THEN NULL
+      ELSE (fd.total_employment - LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE)) / LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) * 100
+    END AS percent_change_since_previous,
+    CASE 
+      WHEN LAG(fd.total_employment, 60) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) = 0 THEN NULL
+      ELSE (fd.total_employment - LAG(fd.total_employment, 60) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE)) / LAG(fd.total_employment, 60) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) * 100
+    END AS percent_change_since_5_years
+  FROM final_data fd
 )
 SELECT 
   REPORT_DATE,
   NAICS,
   NAICS_TITLE,
-  total_employment
-FROM final_data
+  total_employment,
+  change_since_previous,
+  change_since_5_years,
+  ROUND(percent_change_since_previous, 2) AS percent_change_since_previous,
+  ROUND(percent_change_since_5_years, 2) AS percent_change_since_5_years
+FROM final_data_with_changes
 ORDER BY 
   REPORT_DATE,
   CASE WHEN NAICS = 'Other' THEN 2 ELSE 1 END,
@@ -308,7 +327,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "a29e6652", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "31955036", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -348,7 +367,7 @@ const counts_plot = function(data) {
                 tip: true,
                 fy: "NAICS",
                 sort: {y: "x", order: "descending"},
-                title: (d) => `${d.NAICS_TITLE}: (${d.NAICS})\n\nEmployment: ${d3.format(",")(d.total_employment)}`
+                title: (d) => `${d.NAICS_TITLE}: (${d.NAICS})\nEmployment: ${d3.format(",")(d.total_employment)}\nNet Change (YoY): ${d3.format(",.0f")(d.change_since_previous)}\nChange (YoY %): ${d3.format(",.2f")(d.percent_change_since_previous)}%`
             }),
             Plot.rectY(data, Plot.pointer({
                 x: (d) => new Date(d.REPORT_DATE),
@@ -461,7 +480,7 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:b6ed26fa:--></div>
 <div class="observablehq observablehq--block"><!--:56b0038b:--></div>
 <div class="observablehq observablehq--block"><!--:1d499008:--></div>
-<div class="observablehq observablehq--block"><!--:b6d55ba0:--></div>
+<div class="observablehq observablehq--block"><!--:57298cb0:--></div>
 <!-- ## Search Occupation -->
 <!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
 <div class="observablehq observablehq--block"><!--:f0ff9dd2:--></div>
@@ -508,7 +527,7 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:a29e6652:--></div>
+<div class="observablehq observablehq--block"><!--:31955036:--></div>
 <hr>
 <h3 id="tabular-output-for-naics-industries-(selected)" tabindex="-1"><a class="observablehq-header-anchor" href="#tabular-output-for-naics-industries-(selected)">Tabular Output for NAICS Industries (Selected)</a></h3>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:120722fd:--></div>
