@@ -101,8 +101,8 @@ const selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
 return {selected_codes};
 }});
 
-define({id: "0b40500c", inputs: ["Inputs"], outputs: ["grouping_limit_input"], body: (Inputs) => {
-const grouping_limit_input = Inputs.range([0, 20], {step: 1, label: "Number of Top Categories", value: 4})
+define({id: "97065f6d", inputs: ["Inputs"], outputs: ["grouping_limit_input"], body: (Inputs) => {
+const grouping_limit_input = Inputs.range([0, 20], {step: 1, label: "Number of Categories", value: 4})
 return {grouping_limit_input};
 }});
 
@@ -457,8 +457,7 @@ return {get_naics_counts};
 <p>By understanding which categories of healthcare professionals are growing or declining, we can better collaborate across disciplines and adapt to changing needs.</p>
 <hr>
 <h3 id="options-for-the-charts" tabindex="-1"><a class="observablehq-header-anchor" href="#options-for-the-charts">Options for the Charts</a></h3>
-<p><span style="font-size: 0.8em;">Note this categories limit <strong>aggregated each month</strong>, and cumulative number of categories may be higher.</span></p>
-<div class="observablehq observablehq--block"><!--:0b40500c:--></div>
+<div class="observablehq observablehq--block"><!--:97065f6d:--></div>
 <div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
 <hr>
