@@ -64,8 +64,8 @@ import {registerFile, FileAttachment} from "./_observablehq/stdlib.js";
 import {registerTable} from "./_observablehq/stdlib/duckdb.js";
 
 registerFile("./data/oes/processed/naics_lookup_from_data.csv", {"name":"./data/oes/processed/naics_lookup_from_data.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/naics_lookup_from_data.6ae07ffb.csv","lastModified":1720171474814});
-registerFile("./data/oes/processed/occ_code.csv", {"name":"./data/oes/processed/occ_code.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/occ_code.6848eccf.csv","lastModified":1720171472882});
-registerFile("./data/oes/processed/oes_longitudinal_slim.parquet", {"name":"./data/oes/processed/oes_longitudinal_slim.parquet","path":"./_file/data/oes/processed/oes_longitudinal_slim.876a428d.parquet","lastModified":1720171472815});
+registerFile("./data/oes/processed/occ_code.csv", {"name":"./data/oes/processed/occ_code.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/occ_code.6848eccf.csv","lastModified":1720323702095});
+registerFile("./data/oes/processed/oes_longitudinal_slim.parquet", {"name":"./data/oes/processed/oes_longitudinal_slim.parquet","path":"./_file/data/oes/processed/oes_longitudinal_slim.30d9d5bc.parquet","lastModified":1720323702068});
 registerTable("oes_db", FileAttachment("./data/oes/processed/oes_longitudinal_slim.parquet"));
 
 define({id: "b6ed26fa", inputs: ["FileAttachment"], outputs: ["occ_codes","naics_lookup"], body: (FileAttachment) => {
@@ -135,20 +135,20 @@ const get_naics_counts = async function (selected_codes, grouping_limit=5) {
 return {get_naics_counts};
 }});
 
-define({id: "0deddbdb", inputs: ["Inputs","occ_codes"], outputs: ["occ_code_search_input"], body: (Inputs,occ_codes) => {
+define({id: "f0ff9dd2", inputs: ["Inputs","occ_codes"], outputs: ["occ_code_search_input"], body: (Inputs,occ_codes) => {
+// OCC Code search box
 const occ_code_search_input = Inputs.search(occ_codes, {width: 100})
 return {occ_code_search_input};
 }});
 
-define({id: "90b4ba8e", inputs: ["Generators","occ_code_search_input"], outputs: ["occ_code_search"], body: (Generators,occ_code_search_input) => {
+define({id: "818edaf4", inputs: ["Generators","occ_code_search_input"], outputs: ["occ_code_search"], body: (Generators,occ_code_search_input) => {
+// OCC Code search box as string
 const occ_code_search = Generators.input(occ_code_search_input)
 return {occ_code_search};
 }});
 
-define({id: "32d4a771", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
-const occ_code_table_input = Inputs.table(
-    occ_code_search
-)
+define({id: "59cf40d2", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
+const occ_code_table_input = Inputs.table(occ_code_search)
 return {occ_code_table_input};
 }});
 
@@ -162,18 +162,14 @@ const selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
 return {selected_codes};
 }});
 
-define({id: "23844e66", inputs: ["occ_code_search_input","display"], body: async (occ_code_search_input,display) => {
-display(await(
+define({id: "c6243544", body: () => {
 // OCC code search input box
-occ_code_search_input
-))
+// occ_code_search_input
 }});
 
-define({id: "f87bf487", inputs: ["occ_code_table_input","display"], body: async (occ_code_table_input,display) => {
-display(await(
+define({id: "18927053", body: () => {
 // OCC code table
-occ_code_table_input
-))
+// occ_code_table_input
 }});
 
 define({id: "9e14cb6c", inputs: ["get_naics_counts","selected_codes"], outputs: ["naics_total_employment"], body: async (get_naics_counts,selected_codes) => {
@@ -201,41 +197,110 @@ grouping_limit_input
 ))
 }});
 
-define({id: "1db0b415", mode: "inline", inputs: ["counts_plot","get_naics_counts","selected_codes","grouping_limit","display"], body: async (counts_plot,get_naics_counts,selected_codes,grouping_limit,display) => {
+define({id: "29c2b7bf", mode: "inline", inputs: ["occ_code_search_input","display"], body: async (occ_code_search_input,display) => {
 display(await(
-counts_plot(await get_naics_counts(selected_codes, grouping_limit))
+occ_code_search_input
 ))
 }});
 
-define({id: "dd26fb29", inputs: ["Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "ba37dca5", mode: "inline", inputs: ["occ_code_table_input","display"], body: async (occ_code_table_input,display) => {
+display(await(
+occ_code_table_input
+))
+}});
+
+define({id: "933fdb9a", mode: "inline", inputs: ["plot_object","display"], body: async (plot_object,display) => {
+display(await(
+plot_object
+))
+}});
+
+define({id: "686c2ab9", inputs: ["counts_plot","get_naics_counts","selected_codes","grouping_limit"], outputs: ["plot_object"], body: async (counts_plot,get_naics_counts,selected_codes,grouping_limit) => {
+const plot_object = counts_plot(await get_naics_counts(selected_codes, grouping_limit))
+return {plot_object};
+}});
+
+define({id: "1e565f07", inputs: ["plot_object"], outputs: ["legendScale"], body: (plot_object) => {
+// Legend examples: https://observablehq.com/d/a23f6e59f1380df0
+const legendScale = plot_object.scale("color")
+return {legendScale};
+}});
+
+define({id: "a29e6652", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
+  const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
+  const y_max_padding = y_max + 0.4 * y_max
     return Plot.plot({
         // marginTop: 0,
-        // paddingTop: 0,
-        paddingLeft: 10,
-        marginLeft: 120, 
-        marginRight: 50, 
-        marginBottom: 30,
-        // height: 350,
-        width: 1000,
+        // paddingLeft: 1000,
+        marginLeft: 60, 
+        // marginRight: 50, 
+        // marginBottom: 30,
+        // height: 40 * (${grouping_limit_input}),
+        // width: 500,
         color: {
             legend: true,
-            scheme: "Tableau10"
+            // scheme: "tableau10"
         },
         legend: {
             tickFormat: lookup_occ_title
         },
+        // sort: {x: "-y"},
+        // axis: null,
         x: {
           type: "band"
         },
-        // facet: {data, x: "NAICS", marginRight: 90},
+        y: {domain: [0, y_max_padding]},
+        fx: {margin: 20},
+        // facet: {
+        //   paddingTop: 20,
+        // },
+        // style: "background: #777;",
         marks: [
+            Plot.frame(),
             Plot.barY(data, {
                 x: (d) => new Date(d.REPORT_DATE),
                 y: "total_employment", 
+                padding: 10,
                 fill: (d) => lookup_naics_title(d.NAICS),
                 tip: true,
-                title: (d) => `${d.NAICS_TITLE}: (${d.NAICS})\n\nEmployment: ${d.total_employment}`
+                fy: "NAICS",
+                sort: {y: "x", order: "descending"},
+                title: (d) => `${d.NAICS_TITLE}: (${d.NAICS})\n\nEmployment: ${d3.format(",")(d.total_employment)}`
+            }),
+            Plot.rectY(data, Plot.pointer({
+                x: (d) => new Date(d.REPORT_DATE),
+                y: "total_employment", 
+                fy: "NAICS", 
+                stroke: "green",
+                fill: "white",
+                width: 10})
+            ),
+            Plot.axisX({textAnchor: "end", rotate: -90}),
+            Plot.text(data, 
+              Plot.selectFirst(
+                {
+                  text: "NAICS_TITLE", 
+                  fy: "NAICS", 
+                  frameAnchor: "top-left", 
+                  // fontSize: "2em",
+                  dx: 5, 
+                  dy: 4,
+                }
+              )
+            ),
+            Plot.text(data, {
+              text: d => `${d3.format("(.3s")(d.total_employment)}`,
+              x: (d) => new Date(d.REPORT_DATE),
+              y: "total_employment",
+              textAnchor: "start",
+              padding: 10,
+              dx: 0,
+              dy: -3,
+              rotate: -90,
+              fy: "NAICS",
+              fill: "black",
+              sort: {y: "x", order: "descending"},
             }),
             Plot.ruleY([0])
         ]
@@ -259,12 +324,6 @@ await Inputs.table(naics_total_employment,
   }
 )
 ))
-}});
-
-define({id: "736097ba", inputs: ["selected_codes"], outputs: ["selected_codes_str"], body: (selected_codes) => {
-// Join selected codes, turn it into SQL-compatible string. Inefficient but works
-const selected_codes_str = "\'" + selected_codes.join("','") + "\'"
-return {selected_codes_str};
 }});
 
 define({id: "f0fa738e", outputs: ["sql_array_str"], body: () => {
@@ -309,8 +368,7 @@ return {sql_array_str};
 <nav>
 <div>Contents</div>
 <ol>
-<li class="observablehq-secondary-link"><a href="#search-occupation">Search Occupation</a></li>
-<li class="observablehq-secondary-link"><a href="#industries-(for-selected-occupation)">Industries (for Selected Occupation)</a></li>
+<li class="observablehq-secondary-link"><a href="#industries">Industries</a></li>
 </ol>
 </nav>
 </aside>
@@ -322,34 +380,59 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:56b0038b:--></div>
 <div class="observablehq observablehq--block"><!--:1d499008:--></div>
 <div class="observablehq observablehq--block"><!--:da1c1422:--></div>
-<h2 id="search-occupation" tabindex="-1"><a class="observablehq-header-anchor" href="#search-occupation">Search Occupation</a></h2>
-<p>Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: <a href="https://www.bls.gov/oes/current/oes_stru.htm" target="_blank" rel="noopener noreferrer">https://www.bls.gov/oes/current/oes_stru.htm</a></p>
-<div class="observablehq observablehq--block"><!--:0deddbdb:--></div>
-<div class="observablehq observablehq--block"><!--:90b4ba8e:--></div>
-<div class="observablehq observablehq--block"><!--:32d4a771:--></div>
+<!-- ## Search Occupation -->
+<!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
+<div class="observablehq observablehq--block"><!--:f0ff9dd2:--></div>
+<div class="observablehq observablehq--block"><!--:818edaf4:--></div>
+<div class="observablehq observablehq--block"><!--:59cf40d2:--></div>
 <div class="observablehq observablehq--block"><!--:2229528f:--></div>
 <div class="observablehq observablehq--block"><!--:7c4200c9:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:23844e66:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f87bf487:--></div>
-<h2 id="industries-(for-selected-occupation)" tabindex="-1"><a class="observablehq-header-anchor" href="#industries-(for-selected-occupation)">Industries (for Selected Occupation)</a></h2>
+<div class="observablehq observablehq--block"><!--:c6243544:--></div>
+<div class="observablehq observablehq--block"><!--:18927053:--></div>
+<h2 id="industries" tabindex="-1"><a class="observablehq-header-anchor" href="#industries">Industries</a></h2>
 <div class="observablehq observablehq--block"><!--:9e14cb6c:--></div>
-<h3 id="total-employment-(2004-2023)" tabindex="-1"><a class="observablehq-header-anchor" href="#total-employment-(2004-2023)">Total Employment (2004-2023)</a></h3>
 <div class="observablehq observablehq--block"><!--:a140ef08:--></div>
 <div class="observablehq observablehq--block"><!--:0b40500c:--></div>
 <div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
-<div>
-<observablehq-loading></observablehq-loading><!--:1db0b415:-->
+<!-- <div class="grid grid-cols-4">
+  <div class="grid-colspan-2">
+  ${plot_object}
+  </div> -->
+  <!-- <div class="grid-col-1" style="gap:1px; padding: 10px 20px 10px 0px; background: white;"><h3>Legend</h3>${legendScale.domain.map((d) => htl.html`<div style="
+    /* background: ${legendScale.apply(d)};
+    color: white; */
+    background: white;
+    color: ${legendScale.apply(d)};
+    border: 1px solid ${legendScale.apply(d)};
+    border-left: 10px solid ${legendScale.apply(d)};
+    padding: 4px;
+    /* margin: 0px; */
+    margin-right: 0.5em;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+  ">${d}</div>`)}
+  </div> -->
+<!-- </div> -->
+<div class="grid grid-cols-3">
+  <div class="card grid-colspan-1" style="gap:1px; padding: 10px 20px 10px 10px; background: white;">
+  <observablehq-loading></observablehq-loading><!--:29c2b7bf:-->
+  <observablehq-loading></observablehq-loading><!--:ba37dca5:-->
+  </div>
+  <div class="card grid-colspan-2"><observablehq-loading></observablehq-loading><!--:933fdb9a:-->
+  </div>
 </div>
+<div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
+<div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:dd26fb29:--></div>
+<div class="observablehq observablehq--block"><!--:a29e6652:--></div>
 <hr>
 <h3 id="table-of-naics-industries" tabindex="-1"><a class="observablehq-header-anchor" href="#table-of-naics-industries">Table of NAICS Industries</a></h3>
 <div class="tip" label="">
 <p>"The North American Industry Classification System (NAICS) is the standard used by Federal statistical agencies in classifying business establishments for the purpose of collecting, analyzing, and publishing statistical data related to the U.S. business economy." - <a href="https://www.census.gov/naics/" target="_blank" rel="noopener noreferrer">https://www.census.gov/naics/</a></p></div><p></p>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5d02e7ec:--></div>
 <hr>
-<div class="observablehq observablehq--block"><!--:736097ba:--></div>
 <div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
 </main>
 <footer id="observablehq-footer">
