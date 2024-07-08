@@ -86,49 +86,113 @@ const lookup_naics_title = naics_code =>
 return {lookup_naics_title};
 }});
 
-define({id: "da1c1422", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
+define({id: "b6d55ba0", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
 const get_naics_counts = async function (selected_codes, grouping_limit=5) {
+  // const naics_occ_count = await sql([
+  //   `WITH ranked_data AS (
+  //     SELECT 
+  //       REPORT_DATE,
+  //       NAICS,
+  //       ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
+  //       SUM(TOT_EMP) AS total_employment,
+  //       RANK() OVER (PARTITION BY REPORT_DATE ORDER BY SUM(TOT_EMP) DESC) AS rank
+  //     FROM oes_db
+  //     WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+  //       AND RIGHT(OCC_CODE, 1) != '0'
+  //     GROUP BY REPORT_DATE, NAICS
+  //   ),
+  //   top_x_and_others AS (
+  //     SELECT
+  //       REPORT_DATE,
+  //       CASE 
+  //         WHEN rank <= ${grouping_limit} THEN NAICS 
+  //         ELSE 'Other'
+  //       END AS NAICS,
+  //       SUM(total_employment) AS total_employment,
+  //       ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE
+  //     FROM ranked_data
+  //     GROUP BY 
+  //       REPORT_DATE,
+  //       CASE 
+  //         WHEN rank <= ${grouping_limit} THEN NAICS 
+  //         ELSE 'Other'
+  //       END
+  //   )
+  //   SELECT 
+  //     REPORT_DATE,
+  //     NAICS,
+  //     NAICS_TITLE,
+  //     total_employment,
+  //   FROM top_x_and_others
+  //   ORDER BY 
+  //     REPORT_DATE,
+  //     CASE WHEN NAICS = 'Other' THEN 2 ELSE 1 END,
+  //     total_employment DESC`
+  //   ]);
   const naics_occ_count = await sql([
-    `WITH ranked_data AS (
-      SELECT 
-        REPORT_DATE,
-        NAICS,
-        ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
-        SUM(TOT_EMP) AS total_employment,
-        RANK() OVER (PARTITION BY REPORT_DATE ORDER BY SUM(TOT_EMP) DESC) AS rank
-      FROM oes_db
-      WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
-        AND RIGHT(OCC_CODE, 1) != '0'
-      GROUP BY REPORT_DATE, NAICS
-    ),
-    top_x_and_others AS (
-      SELECT
-        REPORT_DATE,
-        CASE 
-          WHEN rank <= ${grouping_limit} THEN NAICS 
-          ELSE 'Other'
-        END AS NAICS,
-        SUM(total_employment) AS total_employment,
-        ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE
-      FROM ranked_data
-      GROUP BY 
-        REPORT_DATE,
-        CASE 
-          WHEN rank <= ${grouping_limit} THEN NAICS 
-          ELSE 'Other'
-        END
-    )
-    SELECT 
-      REPORT_DATE,
-      NAICS,
-      NAICS_TITLE,
-      total_employment,
-    FROM top_x_and_others
-    ORDER BY 
-      REPORT_DATE,
-      CASE WHEN NAICS = 'Other' THEN 2 ELSE 1 END,
-      total_employment DESC`
-    ]);
+    `WITH all_time_ranked_data AS (
+  SELECT 
+    NAICS,
+    ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
+    SUM(TOT_EMP) AS all_time_total_employment,
+    RANK() OVER (ORDER BY SUM(TOT_EMP) DESC) AS all_time_rank
+  FROM oes_db
+  WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+    AND RIGHT(OCC_CODE, 1) != '0'
+  GROUP BY NAICS
+),
+top_x_naics AS (
+  SELECT NAICS
+  FROM all_time_ranked_data
+  WHERE all_time_rank <= ${grouping_limit}
+),
+monthly_data AS (
+  SELECT 
+    REPORT_DATE,
+    NAICS,
+    ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
+    SUM(TOT_EMP) AS total_employment
+  FROM oes_db
+  WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+    AND RIGHT(OCC_CODE, 1) != '0'
+  GROUP BY REPORT_DATE, NAICS
+),
+final_data AS (
+  SELECT
+    md.REPORT_DATE,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
+      ELSE 'Other'
+    END AS NAICS,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
+      ELSE 'Other Industries'
+    END AS NAICS_TITLE,
+    SUM(md.total_employment) AS total_employment
+  FROM monthly_data md
+  LEFT JOIN top_x_naics txn ON md.NAICS = txn.NAICS
+  GROUP BY 
+    md.REPORT_DATE,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
+      ELSE 'Other'
+    END,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
+      ELSE 'Other Industries'
+    END
+)
+SELECT 
+  REPORT_DATE,
+  NAICS,
+  NAICS_TITLE,
+  total_employment
+FROM final_data
+ORDER BY 
+  REPORT_DATE,
+  CASE WHEN NAICS = 'Other' THEN 2 ELSE 1 END,
+  total_employment DESC`
+  ])
   
   return await naics_occ_count
 }
@@ -397,7 +461,7 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:b6ed26fa:--></div>
 <div class="observablehq observablehq--block"><!--:56b0038b:--></div>
 <div class="observablehq observablehq--block"><!--:1d499008:--></div>
-<div class="observablehq observablehq--block"><!--:da1c1422:--></div>
+<div class="observablehq observablehq--block"><!--:b6d55ba0:--></div>
 <!-- ## Search Occupation -->
 <!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
 <div class="observablehq observablehq--block"><!--:f0ff9dd2:--></div>
