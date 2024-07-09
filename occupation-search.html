@@ -320,18 +320,19 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "d6c157e8", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "de691768", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
     return Plot.plot({
         // marginTop: 0,
         // paddingLeft: 1000,
-        marginLeft: 70, 
-        // marginRight: 50, 
+        marginLeft: 80, 
+        paddingLeft: 0,
+        // marginRight: -20, 
         // marginBottom: 30,
         // height: 40 * (${grouping_limit_input}),
-        // width: 500,
+        // width: 100%,
         backgroundColor: "white",
         color: {
             // legend: true,
@@ -343,17 +344,17 @@ const counts_plot = function(data) {
             tickFormat: lookup_occ_title
         },
         // sort: {x: "-y"},
-        // axis: {
-        //   // y: "null"
-        // },
         x: {
-          type: "band"
+          type: "band",
+          nice: d3.utcMonth
         },
         y: {
-          domain: [0, y_max_padding]
+          domain: [0, y_max_padding],
+          axis: "left"
         },
         fy: {
           margin: 20,
+          axis: null,
         },
         // style: "background: #777;",
         marks: [
@@ -427,9 +428,9 @@ const counts_plot = function(data) {
 return {counts_plot};
 }});
 
-define({id: "6bea02fe", inputs: ["Inputs","naics_total_employment","d3","display"], body: async (Inputs,naics_total_employment,d3,display) => {
+define({id: "0f5d26df", inputs: ["Inputs","get_naics_counts","selected_codes","d3","display"], body: async (Inputs,get_naics_counts,selected_codes,d3,display) => {
 display(await(
-Inputs.table(naics_total_employment,
+Inputs.table(await get_naics_counts(selected_codes),
   {
     align: {
       REPORT_DATE: "center",
@@ -529,16 +530,17 @@ return {sql_array_str};
     <div style="padding: 10px; margin-left: 8px;"><observablehq-loading></observablehq-loading><!--:29c2b7bf:--></div>
     <div style="padding: 0px; margin-left: 0px;"><observablehq-loading></observablehq-loading><!--:ba37dca5:--></div>
   </div>
-  <div class="card grid-colspan-2"><observablehq-loading></observablehq-loading><!--:933fdb9a:-->
+  <div class="card grid-colspan-2">
+    <observablehq-loading></observablehq-loading><!--:933fdb9a:-->
   </div>
 </div>
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:d6c157e8:--></div>
+<div class="observablehq observablehq--block"><!--:de691768:--></div>
 <hr>
 <h3 id="tabular-output-for-naics-industries-(selected)" tabindex="-1"><a class="observablehq-header-anchor" href="#tabular-output-for-naics-industries-(selected)">Tabular Output for NAICS Industries (Selected)</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6bea02fe:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0f5d26df:--></div>
 <hr>
 <div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
 </main>
