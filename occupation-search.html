@@ -4,10 +4,10 @@
 <title>Occupation Explorer - Industry Trends | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/occupation-search.ad99fbe3.css">
+<link rel="preload" as="style" href="./_observablehq/theme-air,wide.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/occupation-search.ad99fbe3.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,wide.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -320,7 +320,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "4dd0d827", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "65d431c0", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -352,7 +352,7 @@ const counts_plot = function(data) {
         y: {
           domain: [0, y_max_padding]
         },
-        fx: {
+        fy: {
           margin: 20,
         },
         // style: "background: #777;",
@@ -365,8 +365,7 @@ const counts_plot = function(data) {
                 fill: (d) => lookup_naics_title(d.NAICS),
                 tip: true,
                 fy: "NAICS",
-                sort: {y: "x", order: "descending"},
-                lineWidth: 50,
+                sort: {y: "x", fy: "-y", order: "descending"},
                 title: (d) => `${d3.timeFormat("%Y-%b")(new Date(d.REPORT_DATE))}\n\n${d.NAICS_TITLE}: (${d.NAICS})\nEmployment: ${d3.format(",")(d.total_employment)}\nNet Change (YoY): ${d3.format(",.0f")(d.change_since_previous)}\nChange (YoY %): ${d3.format(",.2f")(d.percent_change_since_previous)}%`
             }),
             Plot.rectY(data, Plot.pointer({
@@ -388,10 +387,10 @@ const counts_plot = function(data) {
                   frameAnchor: "top-left",
                   fontSize: "1.4em",
                   fill: (d) => lookup_naics_title(d.NAICS),
-                  // fill: "darkgray",
+                  // fill: "black",
                   stroke: "white",
                   backgroundColor: "black",
-                  strokeWidth: 2,
+                  strokeWidth: 5,
                   dx: 6, 
                   dy: 6,
                 }
@@ -524,7 +523,7 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:4dd0d827:--></div>
+<div class="observablehq observablehq--block"><!--:65d431c0:--></div>
 <hr>
 <h3 id="tabular-output-for-naics-industries-(selected)" tabindex="-1"><a class="observablehq-header-anchor" href="#tabular-output-for-naics-industries-(selected)">Tabular Output for NAICS Industries (Selected)</a></h3>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6bea02fe:--></div>
