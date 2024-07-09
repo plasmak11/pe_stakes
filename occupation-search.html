@@ -320,7 +320,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "5694baaf", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "d6c157e8", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -418,7 +418,7 @@ const counts_plot = function(data) {
               dy: -3,
               rotate: -60,
               fy: "NAICS",
-              fill: (d) => (d.percent_change_since_previous) < 0 ? "red" : "darkgreen",
+              fill: (d) => (d.percent_change_since_previous) < 0 ? "red" : "black",
               sort: {y: "x", order: "descending"},
             }),
             Plot.ruleY([0])
@@ -535,7 +535,7 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:5694baaf:--></div>
+<div class="observablehq observablehq--block"><!--:d6c157e8:--></div>
 <hr>
 <h3 id="tabular-output-for-naics-industries-(selected)" tabindex="-1"><a class="observablehq-header-anchor" href="#tabular-output-for-naics-industries-(selected)">Tabular Output for NAICS Industries (Selected)</a></h3>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6bea02fe:--></div>
