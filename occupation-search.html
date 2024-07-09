@@ -320,7 +320,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "65d431c0", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "d6c157e8", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -366,7 +366,7 @@ const counts_plot = function(data) {
                 tip: true,
                 fy: "NAICS",
                 sort: {y: "x", fy: "-y", order: "descending"},
-                title: (d) => `${d3.timeFormat("%Y-%b")(new Date(d.REPORT_DATE))}\n\n${d.NAICS_TITLE}: (${d.NAICS})\nEmployment: ${d3.format(",")(d.total_employment)}\nNet Change (YoY): ${d3.format(",.0f")(d.change_since_previous)}\nChange (YoY %): ${d3.format(",.2f")(d.percent_change_since_previous)}%`
+                title: (d) => `${d3.timeFormat("%Y-%b")(new Date(d.REPORT_DATE))}\n\n${d.NAICS_TITLE}\n\nEmployment: ${d3.format(",")(d.total_employment)}\nNet Change (YoY): ${d3.format(",.0f")(d.change_since_previous)}\nChange (YoY %): ${d3.format(",.2f")(d.percent_change_since_previous)}%`
             }),
             Plot.rectY(data, Plot.pointer({
                 x: (d) => new Date(d.REPORT_DATE),
@@ -385,28 +385,40 @@ const counts_plot = function(data) {
                   text: "NAICS_TITLE", 
                   fy: "NAICS", 
                   frameAnchor: "top-left",
-                  fontSize: "1.4em",
+                  fontSize: "1.3em",
                   fill: (d) => lookup_naics_title(d.NAICS),
                   // fill: "black",
                   stroke: "white",
                   backgroundColor: "black",
                   strokeWidth: 5,
-                  dx: 6, 
+                  dx: 5, 
                   dy: 6,
                 }
               ),
             ),
+            // Plot.text(data, {
+            //   text: d => `${d3.format(".2s")(d.total_employment)}`,
+            //   x: (d) => new Date(d.REPORT_DATE),
+            //   y: "total_employment",
+            //   textAnchor: "start",
+            //   padding: 10,
+            //   dx: 0,
+            //   dy: -3,
+            //   rotate: -90,
+            //   fy: "NAICS",
+            //   fill: "black",
+            //   sort: {y: "x", order: "descending"},
+            // }),
             Plot.text(data, {
-              text: d => `${d3.format("(.3s")(d.total_employment)}`,
+              text: d => `${d3.format(".1f")(d.percent_change_since_previous)}%`,
               x: (d) => new Date(d.REPORT_DATE),
               y: "total_employment",
               textAnchor: "start",
-              padding: 10,
               dx: 0,
               dy: -3,
-              rotate: -90,
+              rotate: -60,
               fy: "NAICS",
-              fill: "black",
+              fill: (d) => (d.percent_change_since_previous) < 0 ? "red" : "black",
               sort: {y: "x", order: "descending"},
             }),
             Plot.ruleY([0])
@@ -523,7 +535,7 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:65d431c0:--></div>
+<div class="observablehq observablehq--block"><!--:d6c157e8:--></div>
 <hr>
 <h3 id="tabular-output-for-naics-industries-(selected)" tabindex="-1"><a class="observablehq-header-anchor" href="#tabular-output-for-naics-industries-(selected)">Tabular Output for NAICS Industries (Selected)</a></h3>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6bea02fe:--></div>
