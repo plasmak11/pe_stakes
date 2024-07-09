@@ -4,10 +4,10 @@
 <title>Occupation Explorer - Industry Trends | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-air,wide.css">
+<link rel="preload" as="style" href="./_import/occupation-search.ad99fbe3.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,wide.css">
+<link rel="stylesheet" type="text/css" href="./_import/occupation-search.ad99fbe3.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -74,13 +74,15 @@ const naics_lookup = FileAttachment("./data/oes/processed/naics_lookup_from_data
 return {occ_codes,naics_lookup};
 }});
 
-define({id: "56b0038b", inputs: ["occ_codes"], outputs: ["lookup_occ_title"], body: (occ_codes) => {
+define({id: "520c85fa", inputs: ["occ_codes"], outputs: ["lookup_occ_title"], body: (occ_codes) => {
+// Lookup function OCC Codes (code to title)
 const lookup_occ_title = occ_code => 
   occ_codes.find(({ OCC_CODE }) => OCC_CODE === occ_code)?.OCC_TITLE;
 return {lookup_occ_title};
 }});
 
-define({id: "1d499008", inputs: ["naics_lookup"], outputs: ["lookup_naics_title"], body: (naics_lookup) => {
+define({id: "42afef24", inputs: ["naics_lookup"], outputs: ["lookup_naics_title"], body: (naics_lookup) => {
+// Lookup function for NAICS codes
 const lookup_naics_title = naics_code => 
   naics_lookup.find(({ NAICS }) => NAICS === naics_code)?.NAICS_TITLE ?? naics_code;
 return {lookup_naics_title};
@@ -218,19 +220,14 @@ ORDER BY
 return {get_naics_counts};
 }});
 
-define({id: "f0ff9dd2", inputs: ["Inputs","occ_codes"], outputs: ["occ_code_search_input"], body: (Inputs,occ_codes) => {
+define({id: "fe704d0c", inputs: ["Inputs","occ_codes","view"], outputs: ["occ_code_search_input","occ_code_search"], body: (Inputs,occ_codes,view) => {
 // OCC Code search box
-const occ_code_search_input = Inputs.search(occ_codes, {width: 100})
-return {occ_code_search_input};
+const occ_code_search_input = Inputs.search(occ_codes, {width: 100});
+const occ_code_search = view(occ_code_search_input);
+return {occ_code_search_input,occ_code_search};
 }});
 
-define({id: "818edaf4", inputs: ["Generators","occ_code_search_input"], outputs: ["occ_code_search"], body: (Generators,occ_code_search_input) => {
-// OCC Code search box as string
-const occ_code_search = Generators.input(occ_code_search_input)
-return {occ_code_search};
-}});
-
-define({id: "93c22dec", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
+define({id: "9a60a28d", inputs: ["Inputs","occ_code_search","view"], outputs: ["occ_code_table_input","occ_code_table_input_results"], body: (Inputs,occ_code_search,view) => {
 const occ_code_table_input = Inputs.table(
   occ_code_search,
   {
@@ -249,13 +246,9 @@ const occ_code_table_input = Inputs.table(
       // OCC_CODE:
     }
   }
-)
-return {occ_code_table_input};
-}});
-
-define({id: "2229528f", inputs: ["Generators","occ_code_table_input"], outputs: ["occ_code_table_input_results"], body: (Generators,occ_code_table_input) => {
-const occ_code_table_input_results = Generators.input(occ_code_table_input)
-return {occ_code_table_input_results};
+);
+const occ_code_table_input_results = view(occ_code_table_input);
+return {occ_code_table_input,occ_code_table_input_results};
 }});
 
 define({id: "7c4200c9", inputs: ["occ_code_table_input_results"], outputs: ["selected_codes"], body: (occ_code_table_input_results) => {
@@ -327,35 +320,41 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "31955036", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "4dd0d827", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
     return Plot.plot({
         // marginTop: 0,
         // paddingLeft: 1000,
-        marginLeft: 60, 
+        marginLeft: 70, 
         // marginRight: 50, 
         // marginBottom: 30,
         // height: 40 * (${grouping_limit_input}),
         // width: 500,
+        backgroundColor: "white",
         color: {
-            legend: true,
+            // legend: true,
+            // type: "diverging",
+            legend: true
             // scheme: "tableau10"
         },
         legend: {
             tickFormat: lookup_occ_title
         },
         // sort: {x: "-y"},
-        // axis: null,
+        // axis: {
+        //   // y: "null"
+        // },
         x: {
           type: "band"
         },
-        y: {domain: [0, y_max_padding]},
-        fx: {margin: 20},
-        // facet: {
-        //   paddingTop: 20,
-        // },
+        y: {
+          domain: [0, y_max_padding]
+        },
+        fx: {
+          margin: 20,
+        },
         // style: "background: #777;",
         marks: [
             Plot.frame(),
@@ -367,7 +366,8 @@ const counts_plot = function(data) {
                 tip: true,
                 fy: "NAICS",
                 sort: {y: "x", order: "descending"},
-                title: (d) => `${d.NAICS_TITLE}: (${d.NAICS})\nEmployment: ${d3.format(",")(d.total_employment)}\nNet Change (YoY): ${d3.format(",.0f")(d.change_since_previous)}\nChange (YoY %): ${d3.format(",.2f")(d.percent_change_since_previous)}%`
+                lineWidth: 50,
+                title: (d) => `${d3.timeFormat("%Y-%b")(new Date(d.REPORT_DATE))}\n\n${d.NAICS_TITLE}: (${d.NAICS})\nEmployment: ${d3.format(",")(d.total_employment)}\nNet Change (YoY): ${d3.format(",.0f")(d.change_since_previous)}\nChange (YoY %): ${d3.format(",.2f")(d.percent_change_since_previous)}%`
             }),
             Plot.rectY(data, Plot.pointer({
                 x: (d) => new Date(d.REPORT_DATE),
@@ -377,18 +377,25 @@ const counts_plot = function(data) {
                 fill: "white",
                 width: 10})
             ),
+            // Plot.linearRegressionY(data, {x: (d) => new Date(d.REPORT_DATE), y: "total_employment", 
+            //     fy: "NAICS", stroke: "red", width: 1}),
             Plot.axisX({textAnchor: "end", rotate: -90}),
             Plot.text(data, 
               Plot.selectFirst(
                 {
                   text: "NAICS_TITLE", 
                   fy: "NAICS", 
-                  frameAnchor: "top-left", 
-                  // fontSize: "2em",
-                  dx: 5, 
-                  dy: 4,
+                  frameAnchor: "top-left",
+                  fontSize: "1.4em",
+                  fill: (d) => lookup_naics_title(d.NAICS),
+                  // fill: "darkgray",
+                  stroke: "white",
+                  backgroundColor: "black",
+                  strokeWidth: 2,
+                  dx: 6, 
+                  dy: 6,
                 }
-              )
+              ),
             ),
             Plot.text(data, {
               text: d => `${d3.format("(.3s")(d.total_employment)}`,
@@ -409,9 +416,9 @@ const counts_plot = function(data) {
 return {counts_plot};
 }});
 
-define({id: "120722fd", inputs: ["Inputs","naics_total_employment","d3","display"], body: async (Inputs,naics_total_employment,d3,display) => {
+define({id: "6bea02fe", inputs: ["Inputs","naics_total_employment","d3","display"], body: async (Inputs,naics_total_employment,d3,display) => {
 display(await(
-await Inputs.table(naics_total_employment,
+Inputs.table(naics_total_employment,
   {
     align: {
       REPORT_DATE: "center",
@@ -465,28 +472,18 @@ return {sql_array_str};
   </details>
 </nav>
 <script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
-<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
-<nav>
-<div>Contents</div>
-<ol>
-<li class="observablehq-secondary-link"><a href="#occupation-(occ)-to-industry-(naics)-search">Occupation (OCC)-to-Industry (NAICS) Search</a></li>
-</ol>
-</nav>
-</aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <h1 id="occupation-explorer" tabindex="-1"><a class="observablehq-header-anchor" href="#occupation-explorer">Occupation Explorer</a></h1>
 <hr style="padding: 0">
 <div class="observablehq observablehq--block"><!--:b6ed26fa:--></div>
-<div class="observablehq observablehq--block"><!--:56b0038b:--></div>
-<div class="observablehq observablehq--block"><!--:1d499008:--></div>
+<div class="observablehq observablehq--block"><!--:520c85fa:--></div>
+<div class="observablehq observablehq--block"><!--:42afef24:--></div>
 <div class="observablehq observablehq--block"><!--:57298cb0:--></div>
 <!-- ## Search Occupation -->
 <!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
-<div class="observablehq observablehq--block"><!--:f0ff9dd2:--></div>
-<div class="observablehq observablehq--block"><!--:818edaf4:--></div>
-<div class="observablehq observablehq--block"><!--:93c22dec:--></div>
-<div class="observablehq observablehq--block"><!--:2229528f:--></div>
+<div class="observablehq observablehq--block"><!--:fe704d0c:--></div>
+<div class="observablehq observablehq--block"><!--:9a60a28d:--></div>
 <div class="observablehq observablehq--block"><!--:7c4200c9:--></div>
 <div class="observablehq observablehq--block"><!--:c6243544:--></div>
 <div class="observablehq observablehq--block"><!--:18927053:--></div>
@@ -527,10 +524,10 @@ return {sql_array_str};
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p>Source: Bureau of Labor Statistics</p>
-<div class="observablehq observablehq--block"><!--:31955036:--></div>
+<div class="observablehq observablehq--block"><!--:4dd0d827:--></div>
 <hr>
 <h3 id="tabular-output-for-naics-industries-(selected)" tabindex="-1"><a class="observablehq-header-anchor" href="#tabular-output-for-naics-industries-(selected)">Tabular Output for NAICS Industries (Selected)</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:120722fd:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6bea02fe:--></div>
 <hr>
 <div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
 </main>
