@@ -87,10 +87,10 @@ const lookup_occ_title = occ_code =>
 return {lookup_occ_title};
 }});
 
-define({id: "bbc20766", inputs: ["naics_lookup"], outputs: ["lookup_naics_title"], body: (naics_lookup) => {
+define({id: "42afef24", inputs: ["naics_lookup"], outputs: ["lookup_naics_title"], body: (naics_lookup) => {
 // Lookup function for NAICS codes
 const lookup_naics_title = naics_code => 
-  naics_lookup.find(({ NAICS }) => NAICS === naics_code)?.NAICS_TITLE + naics_code ?? naics_code;
+  naics_lookup.find(({ NAICS }) => NAICS === naics_code)?.NAICS_TITLE ?? naics_code;
 return {lookup_naics_title};
 }});
 
@@ -279,7 +279,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "a902203c", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "6dc7f6f4", inputs: ["d3","Plot","width","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,width,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -293,7 +293,7 @@ const counts_plot = function(data) {
         // marginRight: 100, 
         // marginBottom: 30,
         height: 175 * parseInt(grouping_limit_input) + 25,
-        // width: width,
+        width: width,
         backgroundColor: "white",
         color: {
             // legend: true,
@@ -732,6 +732,11 @@ const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr
 return {state_table};
 }});
 
+define({id: "4f1f9152", inputs: ["counts_plot","occ_state_counts","unique_states_selector_str"], outputs: ["state_trends_plot"], body: async (counts_plot,occ_state_counts,unique_states_selector_str) => {
+const state_trends_plot = counts_plot(await [...occ_state_counts].filter((d) => (d.AREA == unique_states_selector_str)))
+return {state_trends_plot};
+}});
+
 define({id: "dbc3637a", mode: "inline", inputs: ["unique_states_selector","display"], body: async (unique_states_selector,display) => {
 display(await(
 unique_states_selector
@@ -744,9 +749,9 @@ lookup_state_name(unique_states_selector_str)
 ))
 }});
 
-define({id: "c346eeb9", mode: "inline", inputs: ["counts_plot","occ_state_counts","unique_states_selector_str","display"], body: async (counts_plot,occ_state_counts,unique_states_selector_str,display) => {
+define({id: "89480773", mode: "inline", inputs: ["state_trends_plot","display"], body: async (state_trends_plot,display) => {
 display(await(
-counts_plot(await [...occ_state_counts].filter((d) => (d.AREA == unique_states_selector_str)))
+state_trends_plot
 ))
 }});
 
@@ -1048,7 +1053,7 @@ delta_change_map()
 <hr style="padding: 0">
 <div class="observablehq observablehq--block"><!--:ba6a16f1:--></div>
 <div class="observablehq observablehq--block"><!--:520c85fa:--></div>
-<div class="observablehq observablehq--block"><!--:bbc20766:--></div>
+<div class="observablehq observablehq--block"><!--:42afef24:--></div>
 <div class="observablehq observablehq--block"><!--:c0d0c1a5:--></div>
 <div class="observablehq observablehq--block"><!--:1c217677:--></div>
 <!-- ## Search Occupation -->
@@ -1091,7 +1096,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p><span class="justify: left">Source: Bureau of Labor Statistics</span></p>
-<div class="observablehq observablehq--block"><!--:a902203c:--></div>
+<div class="observablehq observablehq--block"><!--:6dc7f6f4:--></div>
 <hr>
 <h2 id="national-level%3A-table" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-table">National-level: Table</a></h2>
 <p>Tabulated data by OCC groups selected above.</p>
@@ -1121,13 +1126,14 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:b6d100f0:--></div>
 <div class="observablehq observablehq--block"><!--:ef209ce5:--></div>
 <div class="observablehq observablehq--block"><!--:06ce5c6c:--></div>
+<div class="observablehq observablehq--block"><!--:4f1f9152:--></div>
 <div style="padding: 0px; padding-bottom"><observablehq-loading></observablehq-loading><!--:dbc3637a:--></div>
 <div class="grid grid-cols-4">
   <div class="card grid-colspan-2">
     <h1><span style="font-weight: normal;">Trends:</span> <observablehq-loading></observablehq-loading><!--:6c9b9d48:--></h1>
     Employment over time (Label in % change year-over-year)
     <hr style="padding: 0px; margin-top: 10px">
-    <observablehq-loading></observablehq-loading><!--:c346eeb9:-->
+    <observablehq-loading></observablehq-loading><!--:89480773:-->
   </div>
   <div class="card grid-colspan-2">
     <h1><span style="font-weight: normal;">Table:</span> <observablehq-loading></observablehq-loading><!--:6c9b9d48-1:--></h1>
