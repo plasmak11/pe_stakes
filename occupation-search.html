@@ -696,7 +696,7 @@ const state_naics_select_arr = view(state_naics_select)
 return {state_naics_select,state_naics_select_arr};
 }});
 
-define({id: "93fe3412", inputs: ["Inputs","state_counts","state_naics_select_arr","sparkbar","d3","total_employment_numbers_state","sparkbarZeroCentered","percent_change_since_previous_numbers_state"], outputs: ["state_table"], body: (Inputs,state_counts,state_naics_select_arr,sparkbar,d3,total_employment_numbers_state,sparkbarZeroCentered,percent_change_since_previous_numbers_state) => {
+define({id: "78d7ad3e", inputs: ["Inputs","state_counts","state_naics_select_arr","sparkbar","d3","total_employment_numbers_state","sparkbarZeroCentered","percent_change_since_previous_numbers_state"], outputs: ["state_table"], body: (Inputs,state_counts,state_naics_select_arr,sparkbar,d3,total_employment_numbers_state,sparkbarZeroCentered,percent_change_since_previous_numbers_state) => {
 const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr.includes(d.NAICS)), {
     format: {
       REPORT_DATE: (d) => new Date(d).toISOString().split('T')[0].split("-")[0],
@@ -712,10 +712,10 @@ const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr
     // layout: "auto",
     width: {
       // AREA_TITLE: 40,
-      // REPORT_DATE: 25,
+      REPORT_DATE: 40,
       // NAICS_TITLE: 200,
-      // total_employment: 70,
-      // percent_change_since_previous: 70
+      total_employment: 100,
+      percent_change_since_previous: 70
     },
     align: {
       total_employment: "right",
@@ -1122,7 +1122,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:0c469820:--></div>
 <div class="observablehq observablehq--block"><!--:b6d100f0:--></div>
 <div class="observablehq observablehq--block"><!--:ef209ce5:--></div>
-<div class="observablehq observablehq--block"><!--:93fe3412:--></div>
+<div class="observablehq observablehq--block"><!--:78d7ad3e:--></div>
 <div class="observablehq observablehq--block"><!--:4f1f9152:--></div>
 <div style="padding: 0px; padding-bottom"><observablehq-loading></observablehq-loading><!--:dbc3637a:--></div>
 <div class="grid grid-cols-4">
