@@ -279,7 +279,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "1807ff90", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "086286cc", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -290,7 +290,7 @@ const counts_plot = function(data) {
         },
         // marginTop: 0,
         // paddingLeft: 1000,
-        marginLeft: 50, 
+        marginLeft: 75, 
         paddingLeft: 0,
         paddingRight: 0,
         // marginRight: 100, 
@@ -1101,7 +1101,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p><span class="justify: left">Source: Bureau of Labor Statistics</span></p>
-<div class="observablehq observablehq--block"><!--:1807ff90:--></div>
+<div class="observablehq observablehq--block"><!--:086286cc:--></div>
 <hr>
 <h2 id="national-level%3A-table" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-table">National-level: Table</a></h2>
 <p>Tabulated data by OCC groups selected above.</p>
