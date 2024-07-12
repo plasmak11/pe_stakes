@@ -4,10 +4,10 @@
 <title>Occupation Explorer - Industry Trends | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-air,alt.css">
+<link rel="preload" as="style" href="./_import/occupation-search.b828debd.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,alt.css">
+<link rel="stylesheet" type="text/css" href="./_import/occupation-search.b828debd.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -279,12 +279,15 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "a902203c", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "1807ff90", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
   const grouping_limit_input = (new Set([...data].map((d) => d.NAICS))).size
     return Plot.plot({
+        style: {
+          fontSize: 13,
+        },
         // marginTop: 0,
         // paddingLeft: 1000,
         marginLeft: 50, 
@@ -292,7 +295,7 @@ const counts_plot = function(data) {
         paddingRight: 0,
         // marginRight: 100, 
         // marginBottom: 30,
-        height: 175 * parseInt(grouping_limit_input) + 25,
+        height: 165 * parseInt(grouping_limit_input) + 15,
         // width: width,
         backgroundColor: "white",
         color: {
@@ -302,7 +305,7 @@ const counts_plot = function(data) {
             // scheme: "tableau10"
         },
         legend: {
-            tickFormat: lookup_occ_title
+            tickFormat: lookup_occ_title,
         },
         // sort: {x: "-y"},
         x: {
@@ -351,7 +354,7 @@ const counts_plot = function(data) {
                   text: "NAICS_TITLE", 
                   fy: "NAICS", 
                   frameAnchor: "top-left",
-                  fontSize: "1.4em",
+                  fontSize: 16,
                   fill: (d) => lookup_naics_title(d.NAICS),
                   // fill: "black",
                   stroke: "white",
@@ -380,8 +383,8 @@ const counts_plot = function(data) {
               x: (d) => new Date(d.REPORT_DATE),
               y: "total_employment",
               textAnchor: "start",
-              fontSize: 12,
-              dx: 0,
+              fontSize: 13,
+              dx: -3,
               dy: -3,
               rotate: -60,
               fy: "NAICS",
@@ -693,7 +696,7 @@ const state_naics_select_arr = view(state_naics_select)
 return {state_naics_select,state_naics_select_arr};
 }});
 
-define({id: "fccdb086", inputs: ["Inputs","state_counts","state_naics_select_arr","sparkbar","d3","total_employment_numbers_state","sparkbarZeroCentered","percent_change_since_previous_numbers_state"], outputs: ["state_table"], body: (Inputs,state_counts,state_naics_select_arr,sparkbar,d3,total_employment_numbers_state,sparkbarZeroCentered,percent_change_since_previous_numbers_state) => {
+define({id: "93fe3412", inputs: ["Inputs","state_counts","state_naics_select_arr","sparkbar","d3","total_employment_numbers_state","sparkbarZeroCentered","percent_change_since_previous_numbers_state"], outputs: ["state_table"], body: (Inputs,state_counts,state_naics_select_arr,sparkbar,d3,total_employment_numbers_state,sparkbarZeroCentered,percent_change_since_previous_numbers_state) => {
 const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr.includes(d.NAICS)), {
     format: {
       REPORT_DATE: (d) => new Date(d).toISOString().split('T')[0].split("-")[0],
@@ -709,13 +712,14 @@ const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr
     // layout: "auto",
     width: {
       // AREA_TITLE: 40,
-      REPORT_DATE: 25,
-      NAICS_TITLE: 140,
-      total_employment: 70,
-      percent_change_since_previous: 70
+      // REPORT_DATE: 25,
+      // NAICS_TITLE: 200,
+      // total_employment: 70,
+      // percent_change_since_previous: 70
     },
     align: {
-      total_employment: "right"
+      total_employment: "right",
+      REPORT_DATE: "left"
     },
     columns: ["REPORT_DATE", 
       // "NAICS", 
@@ -845,7 +849,7 @@ const top_naics = [...new Set([...occ_state_counts].filter((d)=>![78,66].include
 return {top_naics};
 }});
 
-define({id: "df4d2220", inputs: ["Inputs","top_naics","lookup_naics_title","htl"], outputs: ["selected_naics"], body: (Inputs,top_naics,lookup_naics_title,htl) => {
+define({id: "bef7d7aa", inputs: ["Inputs","top_naics","lookup_naics_title","htl"], outputs: ["selected_naics"], body: (Inputs,top_naics,lookup_naics_title,htl) => {
 const selected_naics = Inputs.select(
   top_naics, 
   {
@@ -854,7 +858,7 @@ const selected_naics = Inputs.select(
     sort: "ascending", 
     format: lookup_naics_title,
     label: htl.html`<div style="border-bottom: 1px solid lightgray"><span class="muted">Industry</span></div>`,
-    width: 400
+    // width: 400
   }
 );
 return {selected_naics};
@@ -922,7 +926,7 @@ const employment_map = function () {
 return {employment_map};
 }});
 
-define({id: "c1432062", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,statemesh) => {
+define({id: "dbbfd232", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,statemesh) => {
 const delta_change_map = function (){
   return Plot.plot({
     margin: 0,
@@ -944,6 +948,7 @@ const delta_change_map = function (){
         tip: true,
         stroke: "white",
         channels: {
+          State: d => d.name,
           Change: d => delta_change_n_mapping.get(d.id),
           Industry: d => naics_mapping.get(d.id),
         }
@@ -1096,7 +1101,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p><span class="justify: left">Source: Bureau of Labor Statistics</span></p>
-<div class="observablehq observablehq--block"><!--:a902203c:--></div>
+<div class="observablehq observablehq--block"><!--:1807ff90:--></div>
 <hr>
 <h2 id="national-level%3A-table" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-table">National-level: Table</a></h2>
 <p>Tabulated data by OCC groups selected above.</p>
@@ -1125,23 +1130,20 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:0c469820:--></div>
 <div class="observablehq observablehq--block"><!--:b6d100f0:--></div>
 <div class="observablehq observablehq--block"><!--:ef209ce5:--></div>
-<div class="observablehq observablehq--block"><!--:fccdb086:--></div>
+<div class="observablehq observablehq--block"><!--:93fe3412:--></div>
 <div class="observablehq observablehq--block"><!--:4f1f9152:--></div>
 <div style="padding: 0px; padding-bottom"><observablehq-loading></observablehq-loading><!--:dbc3637a:--></div>
 <div class="grid grid-cols-4">
   <div class="card grid-colspan-2">
     <h1><span style="font-weight: normal;">Trends:</span> <observablehq-loading></observablehq-loading><!--:6c9b9d48:--></h1>
     Employment over time (Label in % change year-over-year)
-    <hr style="padding: 0px; margin-top: 10px">
-    <observablehq-loading></observablehq-loading><!--:89480773:-->
+    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:89480773:-->
   </div>
   <div class="card grid-colspan-2">
     <h1><span style="font-weight: normal;">Table:</span> <observablehq-loading></observablehq-loading><!--:6c9b9d48-1:--></h1>
     Employment over time (Label in % change year-over-year)
-    <hr style="padding: 0px; margin-top: 10px">
-    <observablehq-loading></observablehq-loading><!--:2e23893d:-->
-    <hr style="padding: 0px; margin-top: 10px">
-    <observablehq-loading></observablehq-loading><!--:59264921:-->
+    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:2e23893d:-->
+    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:59264921:-->
   </div>
 </div>
 <hr>
@@ -1153,7 +1155,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:427d8d4b:--></div>
 <div class="observablehq observablehq--block"><!--:797a3dff:--></div>
 <div class="observablehq observablehq--block"><!--:648a2eaf:--></div>
-<div class="observablehq observablehq--block"><!--:df4d2220:--></div>
+<div class="observablehq observablehq--block"><!--:bef7d7aa:--></div>
 <div class="observablehq observablehq--block"><!--:a7c6f45f:--></div>
 <div class="observablehq observablehq--block"><!--:f194d9b5:--></div>
 <div class="observablehq observablehq--block"><!--:89338939:--></div>
@@ -1161,7 +1163,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:eebc51ed:--></div>
 <div class="observablehq observablehq--block"><!--:f17f348c:--></div>
 <div class="observablehq observablehq--block"><!--:14dcc211:--></div>
-<div class="observablehq observablehq--block"><!--:c1432062:--></div>
+<div class="observablehq observablehq--block"><!--:dbbfd232:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:579b63cf:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:03f1d4b0:--></div>
 <div class="grid grid-cols-4">
