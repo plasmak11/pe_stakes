@@ -279,7 +279,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "6dc7f6f4", inputs: ["d3","Plot","width","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,width,lookup_occ_title,lookup_naics_title) => {
+define({id: "a902203c", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -293,7 +293,7 @@ const counts_plot = function(data) {
         // marginRight: 100, 
         // marginBottom: 30,
         height: 175 * parseInt(grouping_limit_input) + 25,
-        width: width,
+        // width: width,
         backgroundColor: "white",
         color: {
             // legend: true,
@@ -693,7 +693,7 @@ const state_naics_select_arr = view(state_naics_select)
 return {state_naics_select,state_naics_select_arr};
 }});
 
-define({id: "06ce5c6c", inputs: ["Inputs","state_counts","state_naics_select_arr","sparkbar","d3","total_employment_numbers_state","sparkbarZeroCentered","percent_change_since_previous_numbers_state"], outputs: ["state_table"], body: (Inputs,state_counts,state_naics_select_arr,sparkbar,d3,total_employment_numbers_state,sparkbarZeroCentered,percent_change_since_previous_numbers_state) => {
+define({id: "fccdb086", inputs: ["Inputs","state_counts","state_naics_select_arr","sparkbar","d3","total_employment_numbers_state","sparkbarZeroCentered","percent_change_since_previous_numbers_state"], outputs: ["state_table"], body: (Inputs,state_counts,state_naics_select_arr,sparkbar,d3,total_employment_numbers_state,sparkbarZeroCentered,percent_change_since_previous_numbers_state) => {
 const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr.includes(d.NAICS)), {
     format: {
       REPORT_DATE: (d) => new Date(d).toISOString().split('T')[0].split("-")[0],
@@ -712,7 +712,7 @@ const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr
       REPORT_DATE: 25,
       NAICS_TITLE: 140,
       total_employment: 70,
-      percent_change_since_previous:70
+      percent_change_since_previous: 70
     },
     align: {
       total_employment: "right"
@@ -1096,7 +1096,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p><span class="justify: left">Source: Bureau of Labor Statistics</span></p>
-<div class="observablehq observablehq--block"><!--:6dc7f6f4:--></div>
+<div class="observablehq observablehq--block"><!--:a902203c:--></div>
 <hr>
 <h2 id="national-level%3A-table" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-table">National-level: Table</a></h2>
 <p>Tabulated data by OCC groups selected above.</p>
@@ -1125,7 +1125,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:0c469820:--></div>
 <div class="observablehq observablehq--block"><!--:b6d100f0:--></div>
 <div class="observablehq observablehq--block"><!--:ef209ce5:--></div>
-<div class="observablehq observablehq--block"><!--:06ce5c6c:--></div>
+<div class="observablehq observablehq--block"><!--:fccdb086:--></div>
 <div class="observablehq observablehq--block"><!--:4f1f9152:--></div>
 <div style="padding: 0px; padding-bottom"><observablehq-loading></observablehq-loading><!--:dbc3637a:--></div>
 <div class="grid grid-cols-4">
