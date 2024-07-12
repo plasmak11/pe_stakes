@@ -87,10 +87,10 @@ const lookup_occ_title = occ_code =>
 return {lookup_occ_title};
 }});
 
-define({id: "42afef24", inputs: ["naics_lookup"], outputs: ["lookup_naics_title"], body: (naics_lookup) => {
+define({id: "bbc20766", inputs: ["naics_lookup"], outputs: ["lookup_naics_title"], body: (naics_lookup) => {
 // Lookup function for NAICS codes
 const lookup_naics_title = naics_code => 
-  naics_lookup.find(({ NAICS }) => NAICS === naics_code)?.NAICS_TITLE ?? naics_code;
+  naics_lookup.find(({ NAICS }) => NAICS === naics_code)?.NAICS_TITLE + naics_code ?? naics_code;
 return {lookup_naics_title};
 }});
 
@@ -192,7 +192,7 @@ const occ_code_search = view(occ_code_search_input);
 return {occ_code_search_input,occ_code_search};
 }});
 
-define({id: "9a60a28d", inputs: ["Inputs","occ_code_search","view"], outputs: ["occ_code_table_input","occ_code_table_input_results"], body: (Inputs,occ_code_search,view) => {
+define({id: "4303ee8d", inputs: ["Inputs","occ_code_search","view"], outputs: ["occ_code_table_input","occ_code_table_input_results"], body: (Inputs,occ_code_search,view) => {
 const occ_code_table_input = Inputs.table(
   occ_code_search,
   {
@@ -207,9 +207,6 @@ const occ_code_table_input = Inputs.table(
       OCC_CODE: "Code",
       OCC_TITLE: "Title"
     },
-    format: {
-      // OCC_CODE:
-    }
   }
 );
 const occ_code_table_input_results = view(occ_code_table_input);
@@ -1051,19 +1048,31 @@ delta_change_map()
 <hr style="padding: 0">
 <div class="observablehq observablehq--block"><!--:ba6a16f1:--></div>
 <div class="observablehq observablehq--block"><!--:520c85fa:--></div>
-<div class="observablehq observablehq--block"><!--:42afef24:--></div>
+<div class="observablehq observablehq--block"><!--:bbc20766:--></div>
 <div class="observablehq observablehq--block"><!--:c0d0c1a5:--></div>
 <div class="observablehq observablehq--block"><!--:1c217677:--></div>
 <!-- ## Search Occupation -->
 <!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
 <div class="observablehq observablehq--block"><!--:fe704d0c:--></div>
-<div class="observablehq observablehq--block"><!--:9a60a28d:--></div>
+<div class="observablehq observablehq--block"><!--:4303ee8d:--></div>
 <div class="observablehq observablehq--block"><!--:7c4200c9:--></div>
 <div class="observablehq observablehq--block"><!--:c6243544:--></div>
 <div class="observablehq observablehq--block"><!--:18927053:--></div>
 <h2 id="national-level%3A-trends" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-trends">National-level: Trends</a></h2>
-<p>Bureau of Labor Statistics (BLS) releases annual report via <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener noreferrer">Occupational Employment and Wage Statistics (OEWS)</a> program. In May every year BLS releases aggregated information for the previous calendar year.</p>
-<p>This page aggregates yearly Excel tables from <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Reports</a>.</p>
+<p>Bureau of Labor Statistics (BLS) releases annual report via <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener noreferrer">Occupational Employment and Wage Statistics (OEWS)</a> program. In May every year BLS releases aggregated information for the previous calendar year. The data presented here should match the Excel tables from <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Reports</a>.</p>
+<p>Start by:</p>
+<ul>
+<li>
+<ol>
+<li>Selecting OCC codes below in the <b>Search Results</b></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Set number of <b>categories</b></li>
+</ol>
+</li>
+</ul>
 <div class="observablehq observablehq--block"><!--:fdda96c3:--></div>
 <div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
@@ -1107,6 +1116,7 @@ delta_change_map()
 <p>State-level data is derived from <strong>OEWS Research Estimates</strong>: <a href="https://www.bls.gov/oes/current/oes_research_estimates.htm" target="_blank" rel="noopener noreferrer">https://www.bls.gov/oes/current/oes_research_estimates.htm</a>.</p>
 <p>Disclaimer from the site:
 "The OEWS program provides wage and employment estimates by state and industry beginning with the May 2012 reference period. These estimates are intended for research purposes, and users should be aware of the limitations of the data."</p>
+<p>NAICS categorizes the state-level data more higher level than the national-level. For example <b>Hospitals</b> (622000) category mainly overlaps with <b>General Medical and Surgical Hospitals</b> (622100).</p>
 <div class="observablehq observablehq--block"><!--:0c469820:--></div>
 <div class="observablehq observablehq--block"><!--:b6d100f0:--></div>
 <div class="observablehq observablehq--block"><!--:ef209ce5:--></div>
