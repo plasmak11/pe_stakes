@@ -19,7 +19,8 @@ export default {
       name: "Labor",
       open: true,
       pages: [
-        {name: "Healthcare Labor Statistics", path: "healthcare-labor"}
+        {name: "Healthcare Labor Statistics", path: "healthcare-labor"},
+        {name: "Occupation Explorer", path: "occupation-search"}
       ]
     },
     {
