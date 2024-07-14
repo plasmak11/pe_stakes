@@ -4,10 +4,10 @@
 <title>Healthcare Labor Trends (v2) | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/occupation-search.da7dbb87.css">
+<link rel="preload" as="style" href="./_import/occupation-search.1213ed7c.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/occupation-search.da7dbb87.css">
+<link rel="stylesheet" type="text/css" href="./_import/occupation-search.1213ed7c.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -228,7 +228,7 @@ define({id: "250a25eb", body: () => {
 // const dropdown_selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
 }});
 
-define({id: "cb853dc3", outputs: ["occupations"], body: () => {
+define({id: "d30a6e10", outputs: ["occupations"], body: () => {
 // const selected_codes = Mutable(["29-1111", "29-1141"]);
 
 const occupations = [
@@ -262,7 +262,7 @@ const occupations = [
     codes: ["29-1021", "29-1022", "29-1023", "29-1024", "29-1029"]
   },
   {
-    name: "CRNA",
+    name: "CRNAs",
     codes: ["29-1151"]
   },
   {
@@ -365,7 +365,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "5ef09846", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "4d8264a6", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -382,8 +382,8 @@ const counts_plot = function(data) {
         paddingRight: 0,
         // marginRight: 100, 
         // marginBottom: 30,
-        // width: width,
-        height: (parseInt(grouping_limit_input) == 1) ? 350: (165 * parseInt(grouping_limit_input) + 15),
+        // width: 600,
+        height: (parseInt(grouping_limit_input) == 1) ? 350: (155 * parseInt(grouping_limit_input) + 10),
         backgroundColor: "white",
         color: {
             // legend: true,
@@ -1045,7 +1045,7 @@ const employment_map = function () {
 return {employment_map};
 }});
 
-define({id: "81ff53d7", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","getStateAbbreviation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,getStateAbbreviation,statemesh) => {
+define({id: "097d6bea", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","getStateAbbreviation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,getStateAbbreviation,statemesh) => {
 const delta_change_map = function (){
   return Plot.plot({
     margin: 0,
@@ -1081,11 +1081,14 @@ const delta_change_map = function (){
         strokeWidth: 2,
       })),
       Plot.text(mergedFeatures, Plot.centroid({
-        text: (d) => `\n${d3.format("0.1f")(delta_change_mapping.get(d.id))}%`, 
+        text: (d) => {
+          const value = delta_change_mapping.get(d?.id);
+          return (value === null || value === undefined || isNaN(value)) ? '\n*' : `\n${d3.format("0.1f")(delta_change_mapping.get(d.id))}%`;
+        }, 
         fill: (d) => delta_change_mapping.get(d.id) > 0 ? "blue" : "red", 
         stroke: "white",
-        dy: 8,
-        fontSize: 13,
+        dy: 7,
+        fontSize: 12,
         strokeWidth: 2,
         strokeOpacity: (d) => delta_change_mapping.get(d.id) > 0 ? 0.1 : 0.6
       })),
@@ -1296,7 +1299,7 @@ return {stateAbbreviations,getStateAbbreviation};
 <div class="observablehq observablehq--block"><!--:2fa41573:--></div>
 <div class="observablehq observablehq--block"><!--:8001c005:--></div>
 <div class="observablehq observablehq--block"><!--:250a25eb:--></div>
-<div class="observablehq observablehq--block"><!--:cb853dc3:--></div>
+<div class="observablehq observablehq--block"><!--:d30a6e10:--></div>
 <h2> National-level Trends</h2>
 <p>Bureau of Labor Statistics (BLS) releases annual report via <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener noreferrer">Occupational Employment and Wage Statistics (OEWS)</a> program. In May every year BLS releases aggregated information for the previous calendar year. The data presented here should match the Excel tables from <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Reports</a>.</p>
 <div class="observablehq observablehq--block"><!--:fdda96c3:--></div>
@@ -1308,14 +1311,37 @@ return {stateAbbreviations,getStateAbbreviation};
 <div class="healthcare-occ">
 <observablehq-loading></observablehq-loading><!--:2bbffbab:-->
 </div>
-<div class="card grid grid-cols-4" style="padding: 0;  overflow:hidden;">
-  <div class="card grid-colspan-1" style="border: 0px; border-right: 1px solid #eee; border-radius: 0;">
+<!-- 
+<div class="card grid grid-cols-4" style="padding: 0; overflow:hidden;">
+  <div class="card grid-colspan-1" style="max-width: 100%; border: 0px; border-right: 1px solid #eee; border-radius: 0;">
+    <h1><span style="font-weight: bold">Classification</h1>
+    <span class="muted">Click for detailed BLS page</span>
+    <hr style="padding: 0px; margin-top: 10px">
+    ${selected_codes.map((d) => html`<div style="font-size: 10pt; margin-left: 0px;"><a target="_blank" href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></div>`)}
+  </div>
+  <div class="card grid-colspan-3" style="border: 0px;">
+    <h1 style="border-bottom: 3px solid red;
+          color: #444;
+          padding-bottom: 1px;">${selected_codes_hash.name}</h1>
+    <h1><span style="font-weight: normal;">Nationwide</span> Trends, Overall</h1>
+    Employment over time (Label in <b>Percent (%) change</b> year-over-year)
+    <hr style="padding: 0px; margin-top: 10px">${overall_plot_object}
+    <hr style="padding: 0px; margin-top: 10px">
+    <h1 style="border-bottom: 3px solid red;
+          color: #444;
+          padding-bottom: 1px;">${selected_codes_hash.name}</h1>
+    <h1><span style="font-weight: normal;">Nationwide</span> Trends, By Industries</h1>
+    Employment over time (Label in <b>Percent (%) change</b> year-over-year)
+    <hr style="padding: 0px; margin-top: 10px">${plot_object}
+  </div> -->
+<div class="occupation-card occupation-card-container" style="padding: 0; overflow:hidden;">
+  <div class="occupation-card occupation-card-small" style="max-width: 100%; border: 0px; border-right: 1px solid #eee; border-radius: 0;">
     <h1><span style="font-weight: bold">Classification</span></h1>
     <span class="muted">Click for detailed BLS page</span>
     <hr style="padding: 0px; margin-top: 10px">
     <observablehq-loading></observablehq-loading><!--:69b75b06:-->
   </div>
-  <div class="card  grid-colspan-3" style="border: 0px;">
+  <div class="occupation-card occupation-card-large" style="border: 0px;">
     <h1 style="border-bottom: 3px solid red;
           color: #444;
           padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386:--></h1>
@@ -1335,7 +1361,7 @@ return {stateAbbreviations,getStateAbbreviation};
 <div class="observablehq observablehq--block"><!--:ea6a5532:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p><span class="align: right">Source: Bureau of Labor Statistics</span></p>
-<div class="observablehq observablehq--block"><!--:5ef09846:--></div>
+<div class="observablehq observablehq--block"><!--:4d8264a6:--></div>
 <hr>
 <h2 id="national-level%3A-table" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-table">National-level: Table</a></h2>
 <div class="observablehq observablehq--block"><!--:9975bf56:--></div>
@@ -1406,7 +1432,7 @@ return {stateAbbreviations,getStateAbbreviation};
 <div class="observablehq observablehq--block"><!--:eebc51ed:--></div>
 <div class="observablehq observablehq--block"><!--:f17f348c:--></div>
 <div class="observablehq observablehq--block"><!--:678b8e17:--></div>
-<div class="observablehq observablehq--block"><!--:81ff53d7:--></div>
+<div class="observablehq observablehq--block"><!--:097d6bea:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:579b63cf:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:03f1d4b0:--></div>
 <div class="grid grid-cols-4">
