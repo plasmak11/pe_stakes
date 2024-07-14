@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Occupation Explorer - Industry Trends | Clinicians.fyi</title>
+<title>Healthcare Labor Trends V2 | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-air,alt.css">
+<link rel="preload" as="style" href="./_import/occupation-search.da7dbb87.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,alt.css">
+<link rel="stylesheet" type="text/css" href="./_import/occupation-search.da7dbb87.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/arquero@5.4.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/duckdb.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
@@ -21,6 +22,8 @@
 <link rel="modulepreload" href="./_npm/topojson-client@3.1.0/_esm.js">
 <link rel="modulepreload" href="./_npm/@duckdb/duckdb-wasm@1.28.0/_esm.js">
 <link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/apache-arrow@15.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/acorn@8.11.3/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
@@ -52,10 +55,11 @@
 <link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
 <link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
 <link rel="modulepreload" href="./_npm/apache-arrow@16.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/tslib@2.6.2/_esm.js">
+<link rel="modulepreload" href="./_npm/flatbuffers@23.5.26/_esm.js">
 <link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
 <link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
 <link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
-<link rel="modulepreload" href="./_npm/tslib@2.6.2/_esm.js">
 <link rel="modulepreload" href="./_npm/flatbuffers@24.3.25/_esm.js">
 <link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
 <script type="module">
@@ -101,8 +105,10 @@ const lookup_state_name = code =>
 return {lookup_state_name};
 }});
 
-define({id: "1c217677", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
+define({id: "c4f6bdfb", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
 const get_naics_counts = async function (selected_codes, grouping_limit=5) {
+  const other_industries_label = grouping_limit > 0 ? "Other Industries" : "All Industries";
+  const other_industries_code = grouping_limit > 0 ? "Other" : "All Industries";
   const naics_occ_count = await sql([
     `WITH all_time_ranked_data AS (
   SELECT 
@@ -136,11 +142,11 @@ final_data AS (
     md.REPORT_DATE,
     CASE 
       WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
-      ELSE 'Other'
+      ELSE '${other_industries_code}'
     END AS NAICS,
     CASE 
       WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
-      ELSE 'Other Industries'
+      ELSE '${other_industries_label}'
     END AS NAICS_TITLE,
     SUM(md.total_employment) AS total_employment
   FROM monthly_data md
@@ -149,11 +155,11 @@ final_data AS (
     md.REPORT_DATE,
     CASE 
       WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
-      ELSE 'Other'
+      ELSE '${other_industries_code}'
     END,
     CASE 
       WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
-      ELSE 'Other Industries'
+      ELSE '${other_industries_label}'
     END
 ),
 final_data_with_changes AS (
@@ -185,14 +191,14 @@ ORDER BY
 return {get_naics_counts};
 }});
 
-define({id: "fe704d0c", inputs: ["Inputs","occ_codes","view"], outputs: ["occ_code_search_input","occ_code_search"], body: (Inputs,occ_codes,view) => {
+define({id: "7e6c1cf3", inputs: ["Inputs","occ_codes","Generators"], outputs: ["occ_code_search_input","occ_code_search"], body: (Inputs,occ_codes,Generators) => {
 // OCC Code search box
 const occ_code_search_input = Inputs.search(occ_codes, {width: 100});
-const occ_code_search = view(occ_code_search_input);
+const occ_code_search = Generators.input(occ_code_search_input);
 return {occ_code_search_input,occ_code_search};
 }});
 
-define({id: "1041ca94", inputs: ["Inputs","occ_code_search","view"], outputs: ["occ_code_table_input","occ_code_table_input_results"], body: (Inputs,occ_code_search,view) => {
+define({id: "2fa41573", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
 const occ_code_table_input = Inputs.table(
   occ_code_search,
   {
@@ -210,50 +216,57 @@ const occ_code_table_input = Inputs.table(
     value: [""],
   }
 );
-const occ_code_table_input_results = view(occ_code_table_input);
-return {occ_code_table_input,occ_code_table_input_results};
+
+return {occ_code_table_input};
 }});
 
-define({id: "b8a4976e", inputs: ["occ_code_table_input_results"], outputs: ["dropdown_selected_codes"], body: (occ_code_table_input_results) => {
-const dropdown_selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
-return {dropdown_selected_codes};
+define({id: "8001c005", body: () => {
+// const occ_code_table_input_results = Generators.input(occ_code_table_input);
 }});
 
-define({id: "4ed28d32", inputs: ["Mutable","dropdown_selected_codes"], outputs: ["selected_codes","physician_button","rn_button","np_button","pa_button","reset"], body: (Mutable,dropdown_selected_codes) => {
-const selected_codes = Mutable(dropdown_selected_codes);
-const physician_button = () => selected_codes.value = [
-  "29-1069",
-  "29-1211",
-  "29-1212",
-  "29-1213",
-  "29-1214",
-  "29-1215",
-  "29-1216",
-  "29-1217",
-  "29-1218",
-  "29-1221",
-  "29-1222",
-  "29-1223",
-  "29-1224",
-  "29-1241",
-  "29-1242",
-  "29-1243",
-  "29-1248",
-  "29-1249"
+define({id: "250a25eb", body: () => {
+// const dropdown_selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
+}});
+
+define({id: "7c75a881", outputs: ["occupations"], body: () => {
+// const selected_codes = Mutable(["29-1111", "29-1141"]);
+
+const occupations = [
+  {
+    name: "Physicians",
+    codes: [
+      "29-1211", "29-1212", "29-1213", "29-1214", "29-1215", "29-1216", "29-1217", "29-1218",
+      "29-1221", "29-1222", "29-1223", "29-1224", "29-1229", "29-1241", "29-1242", "29-1243",
+      "29-1248", "29-1249",
+      "29-1061", "29-1062", "29-1063", "29-1064", "29-1065", "29-1066", "29-1067", "29-1069",
+    ]
+  },
+  {
+    name: "Registered Nurses",
+    codes: ["29-1111", "29-1141"]
+  },
+  {
+    name: "Nurse Practitioners",
+    codes: ["29-1171"]
+  },
+  {
+    name: "Physician Assistants",
+    codes: ["29-1071"]
+  },
+  {
+    name: "Pharmacists",
+    codes: ["29-1051"]
+  },
+  {
+    name: "Dentists",
+    codes: ["29-1021", "29-1022", "29-1023", "29-1024", "29-1029"]
+  },
+  {
+    name: "Social Workers",
+    codes: ["21-1021", "21-1022", "21-1023", "21-1029"]
+  },
 ];
-const rn_button = () => selected_codes.value = ["29-1111", "29-1141"];
-const np_button = () => selected_codes.value = ["29-1171"];
-const pa_button = () => selected_codes.value = ["29-1071"];
-const reset = () => selected_codes.value = dropdown_selected_codes  ;
-// const increment = () => ++count.value;
-// const reset = () => count.value = 0;
-return {selected_codes,physician_button,rn_button,np_button,pa_button,reset};
-}});
-
-define({id: "bac16954", inputs: ["selected_codes","display"], body: async (selected_codes,display) => {
-display(await(
-selected_codes
-))
+return {occupations};
 }});
 
 define({id: "fdda96c3", inputs: ["Inputs","htl"], outputs: ["grouping_limit_input"], body: (Inputs,htl) => {
@@ -278,29 +291,51 @@ grouping_limit_input
 ))
 }});
 
-define({id: "7fa4b5a9", inputs: ["Inputs","physician_button","rn_button","np_button","pa_button","reset","display"], body: async (Inputs,physician_button,rn_button,np_button,pa_button,reset,display) => {
-display(await(
-Inputs.button([
-  ["Physicians", physician_button], 
-  ["Registered Nurses", rn_button], 
-  ["Nurse Practioners", np_button], 
-  ["Physician's Assistant", pa_button], 
-  ["Reset", reset]
-  ]
-)         
+define({id: "f93bf5b7", inputs: ["Inputs","occupations","htl"], outputs: ["selected_codes_input"], body: (Inputs,occupations,htl) => {
+const selected_codes_input = Inputs.radio(occupations, {
+  format: x => x.name,
+  label: htl.html`<div style="border-bottom: 1px solid lightgray"><span class="muted">Select healthcare occupation</span></div>`,
+  value: occupations[0]});
+return {selected_codes_input};
+}});
 
+define({id: "9f6856b4", inputs: ["Generators","selected_codes_input"], outputs: ["selected_codes_hash"], body: (Generators,selected_codes_input) => {
+const selected_codes_hash = Generators.input(selected_codes_input)
+return {selected_codes_hash};
+}});
+
+define({id: "4ab5ef7d", inputs: ["selected_codes_hash"], outputs: ["selected_codes"], body: (selected_codes_hash) => {
+const selected_codes = selected_codes_hash.codes
+return {selected_codes};
+}});
+
+define({id: "2bbffbab", mode: "inline", inputs: ["selected_codes_input","display"], body: async (selected_codes_input,display) => {
+display(await(
+selected_codes_input
 ))
 }});
 
-define({id: "29c2b7bf", mode: "inline", inputs: ["occ_code_search_input","display"], body: async (occ_code_search_input,display) => {
+define({id: "69b75b06", mode: "inline", inputs: ["selected_codes","html","lookup_occ_title","display"], body: async (selected_codes,html,lookup_occ_title,display) => {
 display(await(
-occ_code_search_input
+selected_codes.map((d) => html`<div style="font-size: 10pt; margin-left: 0px;"><a target="_blank" href="https://www.bls.gov/oes/current/oes${d.replace('-','')}.htm">${d}: ${lookup_occ_title(d)}</a></div>`)
 ))
 }});
 
-define({id: "ba37dca5", mode: "inline", inputs: ["occ_code_table_input","display"], body: async (occ_code_table_input,display) => {
+define({id: "b3b82386", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
 display(await(
-occ_code_table_input
+selected_codes_hash.name
+))
+}});
+
+define({id: "cc2bfbd3", mode: "inline", inputs: ["overall_plot_object","display"], body: async (overall_plot_object,display) => {
+display(await(
+overall_plot_object
+))
+}});
+
+define({id: "b3b82386-1", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
 ))
 }});
 
@@ -315,17 +350,23 @@ const plot_object = counts_plot(await get_naics_counts(selected_codes, grouping_
 return {plot_object};
 }});
 
+define({id: "ea6a5532", inputs: ["counts_plot","get_naics_counts","selected_codes"], outputs: ["overall_plot_object"], body: async (counts_plot,get_naics_counts,selected_codes) => {
+const overall_plot_object = counts_plot(await get_naics_counts(selected_codes, 0))
+return {overall_plot_object};
+}});
+
 define({id: "1e565f07", inputs: ["plot_object"], outputs: ["legendScale"], body: (plot_object) => {
 // Legend examples: https://observablehq.com/d/a23f6e59f1380df0
 const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "086286cc", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "5ef09846", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
   const grouping_limit_input = (new Set([...data].map((d) => d.NAICS))).size
+  // const plot_height = ;
     return Plot.plot({
         style: {
           fontSize: 13,
@@ -337,8 +378,8 @@ const counts_plot = function(data) {
         paddingRight: 0,
         // marginRight: 100, 
         // marginBottom: 30,
-        height: 165 * parseInt(grouping_limit_input) + 15,
         // width: width,
+        height: (parseInt(grouping_limit_input) == 1) ? 350: (165 * parseInt(grouping_limit_input) + 15),
         backgroundColor: "white",
         color: {
             // legend: true,
@@ -425,7 +466,7 @@ const counts_plot = function(data) {
               x: (d) => new Date(d.REPORT_DATE),
               y: "total_employment",
               textAnchor: "start",
-              fontSize: 13,
+              fontSize: 12,
               dx: -3,
               dy: -3,
               rotate: -60,
@@ -567,6 +608,12 @@ const national_level_table = Inputs.table(await get_naics_counts(selected_codes)
     }}
 )
 return {national_level_table};
+}});
+
+define({id: "b3b82386-2", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
+))
 }});
 
 define({id: "fb7b5c3f", mode: "inline", inputs: ["national_level_table","display"], body: async (national_level_table,display) => {
@@ -789,6 +836,12 @@ unique_states_selector
 ))
 }});
 
+define({id: "b3b82386-3", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
+))
+}});
+
 define({id: "6c9b9d48", mode: "inline", inputs: ["lookup_state_name","unique_states_selector_str","display"], body: async (lookup_state_name,unique_states_selector_str,display) => {
 display(await(
 lookup_state_name(unique_states_selector_str)
@@ -798,6 +851,12 @@ lookup_state_name(unique_states_selector_str)
 define({id: "89480773", mode: "inline", inputs: ["state_trends_plot","display"], body: async (state_trends_plot,display) => {
 display(await(
 state_trends_plot
+))
+}});
+
+define({id: "b3b82386-4", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
 ))
 }});
 
@@ -885,22 +944,23 @@ const yearData = mergedFeaturesData.filter(item => item.year == parseInt(report_
 return {mergedFeaturesData,yearData};
 }});
 
-define({id: "648a2eaf", inputs: ["occ_state_counts"], outputs: ["top_naics"], body: (occ_state_counts) => {
+define({id: "00149eb2", body: () => {
 // const top_naics = [...new Set([...occ_state_counts].filter((d) => new Date(d.REPORT_DATE).getFullYear()==parseInt(report_year_input_str)).map((d) => d.NAICS))]
-const top_naics = [...new Set([...occ_state_counts].filter((d)=>![78,66].includes(d.AREA)).map((d) => d.NAICS))]
+// const top_naics = [...new Set([...occ_state_counts].filter((d)=>![78,66].includes(d.AREA)).map((d) => d.NAICS))]
+}});
+
+define({id: "85b2195e", inputs: ["aq","occ_state_counts"], outputs: ["top_naics"], body: (aq,occ_state_counts) => {
+// Group by category and sum values
+const top_naics = aq.from([...occ_state_counts])
+  .filter((d)=>![78,66].includes(d.AREA))
+  .groupby('AREA', "NAICS", "REPORT_DATE")
+  .count()
+  .groupby('NAICS')
+  .count()
+  .filter(d => d.count > 50)
+  .objects()
+  .map(d => d.NAICS);
 return {top_naics};
-}});
-
-define({id: "8354d6d0", inputs: ["top_naics","display"], body: async (top_naics,display) => {
-display(await(
-top_naics
-))
-}});
-
-define({id: "f689ce54", inputs: ["occ_state_counts","display"], body: async (occ_state_counts,display) => {
-display(await(
-[...occ_state_counts].filter(d=>d.NAICS=="621400")
-))
 }});
 
 define({id: "bef7d7aa", inputs: ["Inputs","top_naics","lookup_naics_title","htl"], outputs: ["selected_naics"], body: (Inputs,top_naics,lookup_naics_title,htl) => {
@@ -949,7 +1009,7 @@ const nation = topojson.feature(us, us.objects.nation)
 return {nation};
 }});
 
-define({id: "14dcc211", inputs: ["Plot","d3","mergedFeatures","employment_mapping","delta_change_n_mapping","naics_mapping","nation","statemesh"], outputs: ["employment_map"], body: (Plot,d3,mergedFeatures,employment_mapping,delta_change_n_mapping,naics_mapping,nation,statemesh) => {
+define({id: "678b8e17", inputs: ["Plot","d3","mergedFeatures","employment_mapping","delta_change_n_mapping","naics_mapping","getStateAbbreviation","nation","statemesh"], outputs: ["employment_map"], body: (Plot,d3,mergedFeatures,employment_mapping,delta_change_n_mapping,naics_mapping,getStateAbbreviation,nation,statemesh) => {
 const employment_map = function () {
   return Plot.plot({
   margin: 0,
@@ -972,6 +1032,7 @@ const employment_map = function () {
         Industry: d => naics_mapping.get(d.id),
       },
     })),
+    Plot.text(mergedFeatures, Plot.centroid({text: (d) => getStateAbbreviation(d.properties.name), fill: "currentColor", stroke: "white"})),
     Plot.geo(nation),
     Plot.geo(statemesh, {stroke: "gray"})
   ]
@@ -980,7 +1041,7 @@ const employment_map = function () {
 return {employment_map};
 }});
 
-define({id: "dbbfd232", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,statemesh) => {
+define({id: "81ff53d7", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","getStateAbbreviation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,getStateAbbreviation,statemesh) => {
 const delta_change_map = function (){
   return Plot.plot({
     margin: 0,
@@ -1008,6 +1069,33 @@ const delta_change_map = function (){
         }
       })),
       Plot.geo(nation),
+      Plot.text(mergedFeatures, Plot.centroid({
+        text: (d) => `${getStateAbbreviation(d.properties.name)}`, 
+        fill: "gray", 
+        stroke: "white",
+        fontSize: 10,
+        strokeWidth: 2,
+      })),
+      Plot.text(mergedFeatures, Plot.centroid({
+        text: (d) => `\n${d3.format("0.1f")(delta_change_mapping.get(d.id))}%`, 
+        fill: (d) => delta_change_mapping.get(d.id) > 0 ? "blue" : "red", 
+        stroke: "white",
+        dy: 8,
+        fontSize: 13,
+        strokeWidth: 2,
+        strokeOpacity: (d) => delta_change_mapping.get(d.id) > 0 ? 0.1 : 0.6
+      })),
+      // Plot.spike(
+      //   mergedFeatures,
+      //   Plot.centroid({
+      //     anchor: "middle",
+      //     dx: -28,
+      //     dy: 6,
+      //     length: 7,
+      //     stroke: (d) => delta_change_mapping.get(d.id) > 0 ? "darkgreen" : "red",
+      //     rotate: (d) => delta_change_mapping.get(d.id) > 0 ? 0 : -180
+      //   })
+      // ),
       Plot.geo(statemesh, {stroke: "gray"}),
     ]
   })
@@ -1024,6 +1112,12 @@ report_year_input
 define({id: "03f1d4b0", inputs: ["selected_naics","display"], body: async (selected_naics,display) => {
 display(await(
 selected_naics
+))
+}});
+
+define({id: "b3b82386-5", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
 ))
 }});
 
@@ -1045,6 +1139,12 @@ employment_map()
 ))
 }});
 
+define({id: "b3b82386-6", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
+))
+}});
+
 define({id: "e2c6acdc-1", mode: "inline", inputs: ["lookup_naics_title","selected_naics_str","display"], body: async (lookup_naics_title,selected_naics_str,display) => {
 display(await(
 lookup_naics_title(selected_naics_str)
@@ -1061,6 +1161,77 @@ define({id: "76583df1", mode: "inline", inputs: ["delta_change_map","display"], 
 display(await(
 delta_change_map()
 ))
+}});
+
+define({id: "fee9f60a", outputs: ["stateAbbreviations","getStateAbbreviation"], body: () => {
+// Object mapping state names to their abbreviations
+const stateAbbreviations = {
+  'Alabama': 'AL',
+  'Alaska': 'AK',
+  'Arizona': 'AZ',
+  'Arkansas': 'AR',
+  'California': 'CA',
+  'Colorado': 'CO',
+  'Connecticut': 'CT',
+  'Delaware': 'DE',
+  'Florida': 'FL',
+  'Georgia': 'GA',
+  'Hawaii': 'HI',
+  'Idaho': 'ID',
+  'Illinois': 'IL',
+  'Indiana': 'IN',
+  'Iowa': 'IA',
+  'Kansas': 'KS',
+  'Kentucky': 'KY',
+  'Louisiana': 'LA',
+  'Maine': 'ME',
+  'Maryland': 'MD',
+  'Massachusetts': 'MA',
+  'Michigan': 'MI',
+  'Minnesota': 'MN',
+  'Mississippi': 'MS',
+  'Missouri': 'MO',
+  'Montana': 'MT',
+  'Nebraska': 'NE',
+  'Nevada': 'NV',
+  'New Hampshire': 'NH',
+  'New Jersey': 'NJ',
+  'New Mexico': 'NM',
+  'New York': 'NY',
+  'North Carolina': 'NC',
+  'North Dakota': 'ND',
+  'Ohio': 'OH',
+  'Oklahoma': 'OK',
+  'Oregon': 'OR',
+  'Pennsylvania': 'PA',
+  'Rhode Island': 'RI',
+  'South Carolina': 'SC',
+  'South Dakota': 'SD',
+  'Tennessee': 'TN',
+  'Texas': 'TX',
+  'Utah': 'UT',
+  'Vermont': 'VT',
+  'Virginia': 'VA',
+  'Washington': 'WA',
+  'West Virginia': 'WV',
+  'Wisconsin': 'WI',
+  'Wyoming': 'WY'
+};
+
+// Function to look up state abbreviation
+function getStateAbbreviation(stateName) {
+  // Convert input to title case for consistency
+  const formattedStateName = stateName.replace(/\w\S*/g, 
+    txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+  
+  return stateAbbreviations[formattedStateName] || 'Not Found';
+}
+
+// Example usage
+console.log(getStateAbbreviation('California')); // Outputs: CA
+console.log(getStateAbbreviation('new york')); // Outputs: NY
+console.log(getStateAbbreviation('Unknown State')); // Outputs: Not Found
+return {stateAbbreviations,getStateAbbreviation};
 }});
 
 </script>
@@ -1082,8 +1253,8 @@ delta_change_map()
     <summary>Labor</summary>
     <ol>
     <li class="observablehq-link"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
-    <li class="observablehq-link"><a href="./healthcare-labor-v2">Healthcare Labor Statistics V2</a></li>
-    <li class="observablehq-link observablehq-link-active"><a href="./occupation-search">Occupation Explorer</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-labor-v2">Healthcare Labor Statistics V2</a></li>
+    <li class="observablehq-link"><a href="./occupation-search">Occupation Explorer</a></li>
     </ol>
   </details>
   <details open>
@@ -1098,7 +1269,6 @@ delta_change_map()
 <nav>
 <div>Contents</div>
 <ol>
-<li class="observablehq-secondary-link"><a href="#national-level%3A-trends">National-level: Trends</a></li>
 <li class="observablehq-secondary-link"><a href="#national-level%3A-table">National-level: Table</a></li>
 <li class="observablehq-secondary-link"><a href="#state-level%3A-trends">State-Level: Trends</a></li>
 <li class="observablehq-secondary-link"><a href="#state-level%3A-map">State-Level: Map</a></li>
@@ -1109,55 +1279,69 @@ delta_change_map()
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1 id="occupation-explorer" tabindex="-1"><a class="observablehq-header-anchor" href="#occupation-explorer">Occupation Explorer</a></h1>
+<h1 id="healthcare-labor-trends-v2" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-labor-trends-v2">Healthcare Labor Trends V2</a></h1>
 <hr style="padding: 0">
 <div class="observablehq observablehq--block"><!--:ba6a16f1:--></div>
 <div class="observablehq observablehq--block"><!--:520c85fa:--></div>
 <div class="observablehq observablehq--block"><!--:42afef24:--></div>
 <div class="observablehq observablehq--block"><!--:c0d0c1a5:--></div>
-<div class="observablehq observablehq--block"><!--:1c217677:--></div>
+<div class="observablehq observablehq--block"><!--:c4f6bdfb:--></div>
 <!-- ## Search Occupation -->
 <!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
-<div class="observablehq observablehq--block"><!--:fe704d0c:--></div>
-<div class="observablehq observablehq--block"><!--:1041ca94:--></div>
-<div class="observablehq observablehq--block"><!--:b8a4976e:--></div>
-<div class="observablehq observablehq--block"><!--:4ed28d32:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bac16954:--></div>
-<h2 id="national-level%3A-trends" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-trends">National-level: Trends</a></h2>
+<div class="observablehq observablehq--block"><!--:7e6c1cf3:--></div>
+<div class="observablehq observablehq--block"><!--:2fa41573:--></div>
+<div class="observablehq observablehq--block"><!--:8001c005:--></div>
+<div class="observablehq observablehq--block"><!--:250a25eb:--></div>
+<div class="observablehq observablehq--block"><!--:7c75a881:--></div>
+<h2> National-level Trends</h2>
 <p>Bureau of Labor Statistics (BLS) releases annual report via <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener noreferrer">Occupational Employment and Wage Statistics (OEWS)</a> program. In May every year BLS releases aggregated information for the previous calendar year. The data presented here should match the Excel tables from <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Reports</a>.</p>
-<p>Start by:</p>
-<ol>
-<li><b>Search</b> and select OCC codes</li>
-<li>Set number of <b>categories</b></li>
-</ol>
 <div class="observablehq observablehq--block"><!--:fdda96c3:--></div>
 <div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:7fa4b5a9:--></div>
-<div class="grid grid-cols-3">
-  <div class="card grid-colspan-1" style="gap:1px; padding: 10px 0px 10px 0px; background: white;">
-    <div style="padding: 10px; margin-left: 8px;"><observablehq-loading></observablehq-loading><!--:29c2b7bf:--></div>
-    <div style="padding: 0px; margin-left: 0px;"><observablehq-loading></observablehq-loading><!--:ba37dca5:--></div>
-  </div>
-  <div class="card grid-colspan-2">
-    <h1><span style="font-weight: normal;">Trends:</span> Nationwide</h1>
-    Employment over time (Label in <b>Percent (%) change</b> year-over-year)
+<div class="observablehq observablehq--block"><!--:f93bf5b7:--></div>
+<div class="observablehq observablehq--block"><!--:9f6856b4:--></div>
+<div class="observablehq observablehq--block"><!--:4ab5ef7d:--></div>
+<div class="healthcare-occ">
+<observablehq-loading></observablehq-loading><!--:2bbffbab:-->
+</div>
+<div class="card grid grid-cols-4" style="padding: 0;">
+  <div class="card grid-colspan-1" style="border: 0px;">
+    <h1><span style="font-weight: bold">Classification</span></h1>
+    <span class="muted">Click for detailed BLS page</span>
     <hr style="padding: 0px; margin-top: 10px">
-    <observablehq-loading></observablehq-loading><!--:933fdb9a:-->
+    <observablehq-loading></observablehq-loading><!--:69b75b06:-->
+  </div>
+  <div class="card  grid-colspan-3" style="border: 0px;">
+    <h1 style="border-bottom: 3px solid red;
+          color: #444;
+          padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386:--></h1>
+    <h1><span style="font-weight: normal;">Nationwide</span> Trends, Overall</h1>
+    Employment over time (Label in <b>Percent (%) change</b> year-over-year)
+    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:cc2bfbd3:-->
+    <hr style="padding: 0px; margin-top: 10px">
+    <h1 style="border-bottom: 3px solid red;
+          color: #444;
+          padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386-1:--></h1>
+    <h1><span style="font-weight: normal;">Nationwide</span> Trends, By Industries</h1>
+    Employment over time (Label in <b>Percent (%) change</b> year-over-year)
+    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:933fdb9a:-->
   </div>
 </div>
 <div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
+<div class="observablehq observablehq--block"><!--:ea6a5532:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
-<p><span class="justify: left">Source: Bureau of Labor Statistics</span></p>
-<div class="observablehq observablehq--block"><!--:086286cc:--></div>
+<p><span class="align: right">Source: Bureau of Labor Statistics</span></p>
+<div class="observablehq observablehq--block"><!--:5ef09846:--></div>
 <hr>
 <h2 id="national-level%3A-table" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-table">National-level: Table</a></h2>
-<p>Tabulated data by OCC groups selected above.</p>
 <div class="observablehq observablehq--block"><!--:9975bf56:--></div>
 <div class="observablehq observablehq--block"><!--:47d73361:--></div>
 <div class="observablehq observablehq--block"><!--:eb291491:--></div>
 <div class="observablehq observablehq--block"><!--:db5f89da:--></div>
 <div class="observablehq observablehq--block"><!--:ba896322:--></div>
+<h1 style="border-bottom: 3px solid red;
+      color: #444;
+      padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386-2:--></h1>
 <div class="card" style="padding: 1px 0px; overflow: hidden;">
 <observablehq-loading></observablehq-loading><!--:fb7b5c3f:-->
 </div>
@@ -1183,11 +1367,17 @@ delta_change_map()
 <div style="padding: 0px; padding-bottom"><observablehq-loading></observablehq-loading><!--:dbc3637a:--></div>
 <div class="grid grid-cols-4">
   <div class="card grid-colspan-2">
+    <h1 style="border-bottom: 3px solid red;
+          color: #444;
+          padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386-3:--></h1>
     <h1><span style="font-weight: normal;">Trends:</span> <observablehq-loading></observablehq-loading><!--:6c9b9d48:--></h1>
     Employment over time (Label in % change year-over-year)
     <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:89480773:-->
   </div>
   <div class="card grid-colspan-2">
+  <h1 style="border-bottom: 3px solid red;
+        color: #444;
+        padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386-4:--></h1>
     <h1><span style="font-weight: normal;">Table:</span> <observablehq-loading></observablehq-loading><!--:6c9b9d48-1:--></h1>
     Employment over time (Label in % change year-over-year)
     <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:2e23893d:-->
@@ -1202,9 +1392,8 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:fb036afb:--></div>
 <div class="observablehq observablehq--block"><!--:427d8d4b:--></div>
 <div class="observablehq observablehq--block"><!--:797a3dff:--></div>
-<div class="observablehq observablehq--block"><!--:648a2eaf:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:8354d6d0:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f689ce54:--></div>
+<div class="observablehq observablehq--block"><!--:00149eb2:--></div>
+<div class="observablehq observablehq--block"><!--:85b2195e:--></div>
 <div class="observablehq observablehq--block"><!--:bef7d7aa:--></div>
 <div class="observablehq observablehq--block"><!--:a7c6f45f:--></div>
 <div class="observablehq observablehq--block"><!--:f194d9b5:--></div>
@@ -1212,37 +1401,48 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:20821247:--></div>
 <div class="observablehq observablehq--block"><!--:eebc51ed:--></div>
 <div class="observablehq observablehq--block"><!--:f17f348c:--></div>
-<div class="observablehq observablehq--block"><!--:14dcc211:--></div>
-<div class="observablehq observablehq--block"><!--:dbbfd232:--></div>
+<div class="observablehq observablehq--block"><!--:678b8e17:--></div>
+<div class="observablehq observablehq--block"><!--:81ff53d7:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:579b63cf:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:03f1d4b0:--></div>
 <div class="grid grid-cols-4">
   <div class="card grid-colspan-2">
-    <h2 style="font-size: 1.6em; color: #444;"><observablehq-loading></observablehq-loading><!--:e2c6acdc:--></h2>
+    <h1 style="border-bottom: 3px solid red;
+          font-size: 1.2rem;
+          color: #444;
+          padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386-5:--></h1>
+    <h1 style="font-size: 1.6em; color: #444; font-weight: normal;"><observablehq-loading></observablehq-loading><!--:e2c6acdc:--></h1>
     <h2 style="font-weight: normal;"><observablehq-loading></observablehq-loading><!--:8236c32c:-->: <b>Total employment</b></h2>
     <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:5ca59dc5:-->
   </div>
   <div class="card grid-colspan-2">
-    <h2 style="font-size: 1.6em; color: #444;"><observablehq-loading></observablehq-loading><!--:e2c6acdc-1:--></h2>
+    <h1 style="border-bottom: 3px solid red;
+          font-size: 1.2rem;
+          color: #444;
+          padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386-6:--></h1>
+    <h1 style="font-size: 1.6em; color: #444; font-weight: normal;"><observablehq-loading></observablehq-loading><!--:e2c6acdc-1:--></h1>
     <h2 style="font-weight: normal;"><observablehq-loading></observablehq-loading><!--:8236c32c-1:-->: <b>Percent (%) change over previous year</b></h2>
     <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:76583df1:-->
   </div>
 </div>
 <hr>
-<h1 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h1>
+<h2 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h2>
 <ul>
 <li><a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Date Tables</a></li>
 <li><a href="https://www.bls.gov/oes/current/oes_research_estimates.htm" target="_blank" rel="noopener noreferrer">OEWS Research Estimates</a></li>
 <li><a href="https://github.com/observablehq/framework" target="_blank" rel="noopener noreferrer">Observable Framework</a></li>
+<li><a href="https://github.com/uwdata/arquero" target="_blank" rel="noopener noreferrer">Arquero</a></li>
 </ul>
 <hr>
-<h1 id="feedback" tabindex="-1"><a class="observablehq-header-anchor" href="#feedback">Feedback</a></h1>
+<h2 id="feedback" tabindex="-1"><a class="observablehq-header-anchor" href="#feedback">Feedback</a></h2>
 <ul>
-<li>Comments, feedback, data issues? Reach out on LinkedIn <a href="https://www.linkedin.com/in/jung-hoon-son/" target="_blank" rel="noopener noreferrer">@Jung Hoon Son</a></li>
+<li>Comments, feedback, data issues?</li>
+<li>Reach out on LinkedIn <a href="https://www.linkedin.com/in/jung-hoon-son/" target="_blank" rel="noopener noreferrer">@Jung Hoon Son</a></li>
 </ul>
+<div class="observablehq observablehq--block"><!--:fee9f60a:--></div>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./healthcare-labor-v2"><span>Healthcare Labor Statistics V2</span></a><a rel="next" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a></nav>
+<nav><a rel="prev" href="./healthcare-labor"><span>Healthcare Labor Statistics</span></a><a rel="next" href="./occupation-search"><span>Occupation Explorer</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>
