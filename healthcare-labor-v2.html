@@ -4,10 +4,10 @@
 <title>Healthcare Labor Trends (v2) | Clinicians.fyi</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/occupation-search.f2f51c52.css">
+<link rel="preload" as="style" href="./_import/occupation-search.6fb0b1f6.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/occupation-search.f2f51c52.css">
+<link rel="stylesheet" type="text/css" href="./_import/occupation-search.6fb0b1f6.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
@@ -365,7 +365,7 @@ const legendScale = plot_object.scale("color")
 return {legendScale};
 }});
 
-define({id: "4d8264a6", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+define({id: "4b1f9be5", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
 const counts_plot = function(data) {
   const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
   const y_max_padding = y_max + 0.4 * y_max
@@ -378,10 +378,11 @@ const counts_plot = function(data) {
         // marginTop: 0,
         // paddingLeft: 1000,
         marginLeft: 75, 
+        marginBottom: 40,
         paddingLeft: 0,
         paddingRight: 0,
         // marginRight: 100, 
-        // marginBottom: 30,
+        marginBottom: 70,
         // width: 600,
         height: (parseInt(grouping_limit_input) == 1) ? 350: (155 * parseInt(grouping_limit_input) + 10),
         backgroundColor: "white",
@@ -397,24 +398,38 @@ const counts_plot = function(data) {
         // sort: {x: "-y"},
         x: {
           type: "band",
-          label: null
+          label: null,
+          axis: null,
         },
+        // marginLeft: 0, // don’t need left-margin since labels are inset
+        // x: {label: null, insetLeft: 36}, // reserve space for inset labels
         y: {
           domain: [0, y_max_padding],
           axis: "left",
           grid: true,
           label: "Total Employment",
-          // labelAnchor: "center",
           tickFormat: d3.format(".3s")
         },
         fy: {
-          margin: 20,
+          label: null,
           axis: null,
         },
         // style: "background: #777;",
         marks: [
             Plot.frame(),
-            Plot.barY(data, {
+            Plot.axisX({
+              rotate: -90,
+              dx: -5,
+              // dy: 20,
+              textAnchor: "end",
+              // ticks: "3 months",
+              tickFormat: d => d3.timeFormat("%Y-%b")(d)
+            }),
+            Plot.gridY({
+              strokeDasharray: "0.75, 5", // dashed
+              strokeOpacity: 1 // opaque
+            }),        
+              Plot.barY(data, {
                 x: (d) => new Date(d.REPORT_DATE),
                 y: "total_employment", 
                 padding: 10,
@@ -434,7 +449,6 @@ const counts_plot = function(data) {
             ),
             // Plot.linearRegressionY(data, {x: (d) => new Date(d.REPORT_DATE), y: "total_employment", 
             //     fy: "NAICS", stroke: "red", width: 1}),
-            Plot.axisX({textAnchor: "end", rotate: -90}),
             Plot.text(data, 
               Plot.selectFirst(
                 {
@@ -634,8 +648,10 @@ const sql_array_str = function (code_array) {
 return {sql_array_str};
 }});
 
-define({id: "44d7df74", inputs: ["sql","sql_array_str"], outputs: ["naics_occ_state_counts"], body: (sql,sql_array_str) => {
+define({id: "a979d767", inputs: ["sql","sql_array_str"], outputs: ["naics_occ_state_counts"], body: (sql,sql_array_str) => {
 const naics_occ_state_counts = async function (selected_codes, grouping_limit=5) {
+  const other_industries_label = grouping_limit > 0 ? "Other Industries" : "All Industries";
+  const other_industries_code = grouping_limit > 0 ? "Other" : "All Industries";
   const occ_state_count_query = await sql([
     `WITH all_time_ranked_data AS (
     SELECT 
@@ -676,11 +692,11 @@ final_data AS (
       md.REPORT_DATE,
       CASE 
         WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
-        ELSE 'Other'
+        ELSE '${other_industries_code}'
       END AS NAICS,
       ANY_VALUE(CASE 
         WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
-        ELSE 'Other Industries'
+        ELSE '${other_industries_label}'
       END) AS NAICS_TITLE,
       SUM(md.total_employment) AS total_employment
     FROM monthly_data md
@@ -691,7 +707,7 @@ final_data AS (
       md.REPORT_DATE,
       CASE 
         WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
-        ELSE 'Other'
+        ELSE '${other_industries_code}'
       END
 ),
 final_data_with_changes AS (
@@ -1013,11 +1029,13 @@ const nation = topojson.feature(us, us.objects.nation)
 return {nation};
 }});
 
-define({id: "678b8e17", inputs: ["Plot","d3","mergedFeatures","employment_mapping","delta_change_n_mapping","naics_mapping","getStateAbbreviation","nation","statemesh"], outputs: ["employment_map"], body: (Plot,d3,mergedFeatures,employment_mapping,delta_change_n_mapping,naics_mapping,getStateAbbreviation,nation,statemesh) => {
+define({id: "b96730c1", inputs: ["Plot","d3","mergedFeatures","employment_mapping","delta_change_n_mapping","naics_mapping","getStateAbbreviation","nation","statemesh"], outputs: ["employment_map"], body: (Plot,d3,mergedFeatures,employment_mapping,delta_change_n_mapping,naics_mapping,getStateAbbreviation,nation,statemesh) => {
 const employment_map = function () {
   return Plot.plot({
   margin: 0,
   padding: 0,
+  align: "center",
+  // width: width/4,
   projection: "albers-usa",
   color: {
     type: "quantize",
@@ -1045,12 +1063,14 @@ const employment_map = function () {
 return {employment_map};
 }});
 
-define({id: "097d6bea", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","getStateAbbreviation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,getStateAbbreviation,statemesh) => {
+define({id: "fef6da38", inputs: ["Plot","d3","mergedFeatures","delta_change_mapping","delta_change_n_mapping","naics_mapping","nation","getStateAbbreviation","statemesh"], outputs: ["delta_change_map"], body: (Plot,d3,mergedFeatures,delta_change_mapping,delta_change_n_mapping,naics_mapping,nation,getStateAbbreviation,statemesh) => {
 const delta_change_map = function (){
   return Plot.plot({
     margin: 0,
     padding: 0,
+    align: "center",
     projection: "albers-usa",
+    // width: "100%",
     color: {
       type: "diverging",
       scheme: "brbg",
@@ -1087,10 +1107,11 @@ const delta_change_map = function (){
         }, 
         fill: (d) => delta_change_mapping.get(d.id) > 0 ? "blue" : "red", 
         stroke: "white",
-        dy: 7,
+        dx: 3,
+        dy: 5,
         fontSize: 12,
         strokeWidth: 2,
-        strokeOpacity: (d) => delta_change_mapping.get(d.id) > 0 ? 0.1 : 0.6
+        strokeOpacity: (d) => delta_change_mapping.get(d.id) > 0 ? 0.5 : 0.7
       })),
       // Plot.spike(
       //   mergedFeatures,
@@ -1287,6 +1308,7 @@ return {stateAbbreviations,getStateAbbreviation};
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <h1 id="healthcare-labor-trends-v2" tabindex="-1"><a class="observablehq-header-anchor" href="#healthcare-labor-trends-v2">Healthcare Labor Trends V2</a></h1>
+<!-- Preload lookup files-->
 <hr style="padding: 0">
 <div class="observablehq observablehq--block"><!--:ba6a16f1:--></div>
 <div class="observablehq observablehq--block"><!--:520c85fa:--></div>
@@ -1361,7 +1383,7 @@ return {stateAbbreviations,getStateAbbreviation};
 <div class="observablehq observablehq--block"><!--:ea6a5532:--></div>
 <div class="observablehq observablehq--block"><!--:1e565f07:--></div>
 <p><span class="align: right">Source: Bureau of Labor Statistics</span></p>
-<div class="observablehq observablehq--block"><!--:4d8264a6:--></div>
+<div class="observablehq observablehq--block"><!--:4b1f9be5:--></div>
 <hr>
 <h2 id="national-level%3A-table" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-table">National-level: Table</a></h2>
 <div class="observablehq observablehq--block"><!--:9975bf56:--></div>
@@ -1377,7 +1399,7 @@ return {stateAbbreviations,getStateAbbreviation};
 </div>
 <hr>
 <div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
-<div class="observablehq observablehq--block"><!--:44d7df74:--></div>
+<div class="observablehq observablehq--block"><!--:a979d767:--></div>
 <div class="observablehq observablehq--block"><!--:4ffdb7b3:--></div>
 <div class="observablehq observablehq--block"><!--:79a6e720:--></div>
 <div class="observablehq observablehq--block"><!--:f1183f46:--></div>
@@ -1431,8 +1453,8 @@ return {stateAbbreviations,getStateAbbreviation};
 <div class="observablehq observablehq--block"><!--:20821247:--></div>
 <div class="observablehq observablehq--block"><!--:eebc51ed:--></div>
 <div class="observablehq observablehq--block"><!--:f17f348c:--></div>
-<div class="observablehq observablehq--block"><!--:678b8e17:--></div>
-<div class="observablehq observablehq--block"><!--:097d6bea:--></div>
+<div class="observablehq observablehq--block"><!--:b96730c1:--></div>
+<div class="observablehq observablehq--block"><!--:fef6da38:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:579b63cf:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:03f1d4b0:--></div>
 <div class="grid grid-cols-4">
@@ -1443,7 +1465,7 @@ return {stateAbbreviations,getStateAbbreviation};
           padding-bottom: 1px;"><observablehq-loading></observablehq-loading><!--:b3b82386-5:--></h1>
     <h1 style="font-size: 1.6em; color: #444; font-weight: normal;"><observablehq-loading></observablehq-loading><!--:e2c6acdc:--></h1>
     <h2 style="font-weight: normal;"><observablehq-loading></observablehq-loading><!--:8236c32c:-->: <b>Total employment</b></h2>
-    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:5ca59dc5:-->
+    <hr style="padding: 0px; margin-top: 10px"><div><observablehq-loading></observablehq-loading><!--:5ca59dc5:--></div>
   </div>
   <div class="card grid-colspan-2">
     <h1 style="border-bottom: 3px solid red;

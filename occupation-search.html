@@ -250,10 +250,8 @@ const reset = () => selected_codes.value = dropdown_selected_codes  ;
 return {selected_codes,physician_button,rn_button,np_button,pa_button,reset};
 }});
 
-define({id: "bac16954", inputs: ["selected_codes","display"], body: async (selected_codes,display) => {
-display(await(
-selected_codes
-))
+define({id: "a140ef08", body: () => {
+// selected_codes
 }});
 
 define({id: "fdda96c3", inputs: ["Inputs","htl"], outputs: ["grouping_limit_input"], body: (Inputs,htl) => {
@@ -1122,7 +1120,7 @@ delta_change_map()
 <div class="observablehq observablehq--block"><!--:1041ca94:--></div>
 <div class="observablehq observablehq--block"><!--:b8a4976e:--></div>
 <div class="observablehq observablehq--block"><!--:4ed28d32:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bac16954:--></div>
+<div class="observablehq observablehq--block"><!--:a140ef08:--></div>
 <h2 id="national-level%3A-trends" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-trends">National-level: Trends</a></h2>
 <p>Bureau of Labor Statistics (BLS) releases annual report via <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener noreferrer">Occupational Employment and Wage Statistics (OEWS)</a> program. In May every year BLS releases aggregated information for the previous calendar year. The data presented here should match the Excel tables from <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Reports</a>.</p>
 <p>Start by:</p>
