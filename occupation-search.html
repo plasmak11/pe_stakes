@@ -67,7 +67,7 @@ import {registerTable} from "./_observablehq/stdlib/duckdb.js";
 registerFile("./data/oes/processed/naics_lookup_from_data.csv", {"name":"./data/oes/processed/naics_lookup_from_data.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/naics_lookup_from_data.0a57814f.csv","lastModified":1720724332694});
 registerFile("./data/oes/processed/occ_code.csv", {"name":"./data/oes/processed/occ_code.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/occ_code.6848eccf.csv","lastModified":1720323702095});
 registerFile("./data/oes/processed/oes_longitudinal_slim.parquet", {"name":"./data/oes/processed/oes_longitudinal_slim.parquet","path":"./_file/data/oes/processed/oes_longitudinal_slim.30d9d5bc.parquet","lastModified":1720323702068});
-registerFile("./data/oes/processed/oews_estimates_slim.parquet", {"name":"./data/oes/processed/oews_estimates_slim.parquet","path":"./_file/data/oes/processed/oews_estimates_slim.2e1882bd.parquet","lastModified":1720671094105});
+registerFile("./data/oes/processed/oews_estimates_slim.parquet", {"name":"./data/oes/processed/oews_estimates_slim.parquet","path":"./_file/data/oes/processed/oews_estimates_slim.2e1882bd.parquet","lastModified":1721473181780});
 registerFile("./data/oes/processed/state_lookup.csv", {"name":"./data/oes/processed/state_lookup.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/state_lookup.d5b680d9.csv","lastModified":1720723183346});
 registerFile("./dataloaders/counties-10m.json", {"name":"./dataloaders/counties-10m.json","mimeType":"application/json","path":"./_file/dataloaders/counties-10m.145aaf5d.json","lastModified":1712986955947});
 registerTable("oes_db", FileAttachment("./data/oes/processed/oes_longitudinal_slim.parquet"));
@@ -1081,6 +1081,7 @@ delta_change_map()
     <ol>
     <li class="observablehq-link"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
     <li class="observablehq-link"><a href="./healthcare-labor-v2">Healthcare Labor Statistics V2</a></li>
+    <li class="observablehq-link"><a href="./healthcare-labor-wages">Healthcare Wages</a></li>
     <li class="observablehq-link observablehq-link-active"><a href="./occupation-search">Occupation Explorer</a></li>
     </ol>
   </details>
@@ -1240,7 +1241,7 @@ delta_change_map()
 </ul>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./healthcare-labor-v2"><span>Healthcare Labor Statistics V2</span></a><a rel="next" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a></nav>
+<nav><a rel="prev" href="./healthcare-labor-wages"><span>Healthcare Wages</span></a><a rel="next" href="./pe_hospitals"><span>PE Hospitals Tracker</span></a></nav>
 <div>Built with Observable.</div>
 </footer>
 </div>

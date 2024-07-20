@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Wage - Healthcare Labor | Clinicians.fyi</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_import/occupation-search.89a370a0.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_import/occupation-search.89a370a0.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/arquero@5.4.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/duckdb.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/topojson-client@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/@duckdb/duckdb-wasm@1.28.0/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/apache-arrow@15.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/acorn@8.11.3/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/apache-arrow@16.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/tslib@2.6.2/_esm.js">
+<link rel="modulepreload" href="./_npm/flatbuffers@23.5.26/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
+<link rel="modulepreload" href="./_npm/flatbuffers@24.3.25/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile, FileAttachment} from "./_observablehq/stdlib.js";
+import {registerTable} from "./_observablehq/stdlib/duckdb.js";
+
+registerFile("./data/oes/processed/naics_lookup_from_data.csv", {"name":"./data/oes/processed/naics_lookup_from_data.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/naics_lookup_from_data.0a57814f.csv","lastModified":1720724332694});
+registerFile("./data/oes/processed/occ_code.csv", {"name":"./data/oes/processed/occ_code.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/occ_code.6848eccf.csv","lastModified":1720323702095});
+registerFile("./data/oes/processed/oes_longitudinal_slim.parquet", {"name":"./data/oes/processed/oes_longitudinal_slim.parquet","path":"./_file/data/oes/processed/oes_longitudinal_slim.30d9d5bc.parquet","lastModified":1720323702068});
+registerFile("./data/oes/processed/oes_longitudinal_wages_long.parquet", {"name":"./data/oes/processed/oes_longitudinal_wages_long.parquet","path":"./_file/data/oes/processed/oes_longitudinal_wages_long.59df99c8.parquet","lastModified":1721380054597});
+registerFile("./data/oes/processed/oews_estimates_slim.parquet", {"name":"./data/oes/processed/oews_estimates_slim.parquet","path":"./_file/data/oes/processed/oews_estimates_slim.2e1882bd.parquet","lastModified":1721473181780});
+registerFile("./data/oes/processed/oews_estimates_state_long.parquet", {"name":"./data/oes/processed/oews_estimates_state_long.parquet","path":"./_file/data/oes/processed/oews_estimates_state_long.1b7fe7a7.parquet","lastModified":1721473289869});
+registerFile("./data/oes/processed/state_lookup.csv", {"name":"./data/oes/processed/state_lookup.csv","mimeType":"text/csv","path":"./_file/data/oes/processed/state_lookup.d5b680d9.csv","lastModified":1720723183346});
+registerFile("./dataloaders/counties-10m.json", {"name":"./dataloaders/counties-10m.json","mimeType":"application/json","path":"./_file/dataloaders/counties-10m.145aaf5d.json","lastModified":1712986955947});
+registerTable("oes_db", FileAttachment("./data/oes/processed/oes_longitudinal_slim.parquet"));
+registerTable("oews_estimates", FileAttachment("./data/oes/processed/oews_estimates_slim.parquet"));
+registerTable("oes_wages", FileAttachment("./data/oes/processed/oes_longitudinal_wages_long.parquet"));
+registerTable("oes_state_wages", FileAttachment("./data/oes/processed/oews_estimates_state_long.parquet"));
+
+define({id: "ba6a16f1", inputs: ["FileAttachment"], outputs: ["occ_codes","naics_lookup","state_lookup"], body: (FileAttachment) => {
+const occ_codes = FileAttachment("./data/oes/processed/occ_code.csv").csv()
+const naics_lookup = FileAttachment("./data/oes/processed/naics_lookup_from_data.csv").csv()
+const state_lookup = FileAttachment("./data/oes/processed/state_lookup.csv").csv()
+return {occ_codes,naics_lookup,state_lookup};
+}});
+
+define({id: "520c85fa", inputs: ["occ_codes"], outputs: ["lookup_occ_title"], body: (occ_codes) => {
+// Lookup function OCC Codes (code to title)
+const lookup_occ_title = occ_code => 
+  occ_codes.find(({ OCC_CODE }) => OCC_CODE === occ_code)?.OCC_TITLE;
+return {lookup_occ_title};
+}});
+
+define({id: "42afef24", inputs: ["naics_lookup"], outputs: ["lookup_naics_title"], body: (naics_lookup) => {
+// Lookup function for NAICS codes
+const lookup_naics_title = naics_code => 
+  naics_lookup.find(({ NAICS }) => NAICS === naics_code)?.NAICS_TITLE ?? naics_code;
+return {lookup_naics_title};
+}});
+
+define({id: "c0d0c1a5", inputs: ["state_lookup"], outputs: ["lookup_state_name"], body: (state_lookup) => {
+// Lookup function for NAICS codes
+const lookup_state_name = code => 
+  state_lookup.find(({ AREA }) => AREA === String(code).padStart(2, '0'))?.AREA_TITLE ?? code;
+return {lookup_state_name};
+}});
+
+define({id: "c4f6bdfb", inputs: ["sql","sql_array_str"], outputs: ["get_naics_counts"], body: (sql,sql_array_str) => {
+const get_naics_counts = async function (selected_codes, grouping_limit=5) {
+  const other_industries_label = grouping_limit > 0 ? "Other Industries" : "All Industries";
+  const other_industries_code = grouping_limit > 0 ? "Other" : "All Industries";
+  const naics_occ_count = await sql([
+    `WITH all_time_ranked_data AS (
+  SELECT 
+    NAICS,
+    ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
+    SUM(TOT_EMP) AS all_time_total_employment,
+    RANK() OVER (ORDER BY SUM(TOT_EMP) DESC) AS all_time_rank
+  FROM oes_db
+  WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+    AND RIGHT(OCC_CODE, 1) != '0'
+  GROUP BY NAICS
+),
+top_x_naics AS (
+  SELECT NAICS
+  FROM all_time_ranked_data
+  WHERE all_time_rank <= ${grouping_limit}
+),
+monthly_data AS (
+  SELECT 
+    REPORT_DATE,
+    NAICS,
+    ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
+    SUM(TOT_EMP) AS total_employment
+  FROM oes_db
+  WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+    AND RIGHT(OCC_CODE, 1) != '0'
+  GROUP BY REPORT_DATE, NAICS
+),
+final_data AS (
+  SELECT
+    md.REPORT_DATE,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
+      ELSE '${other_industries_code}'
+    END AS NAICS,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
+      ELSE '${other_industries_label}'
+    END AS NAICS_TITLE,
+    SUM(md.total_employment) AS total_employment
+  FROM monthly_data md
+  LEFT JOIN top_x_naics txn ON md.NAICS = txn.NAICS
+  GROUP BY 
+    md.REPORT_DATE,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
+      ELSE '${other_industries_code}'
+    END,
+    CASE 
+      WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
+      ELSE '${other_industries_label}'
+    END
+),
+final_data_with_changes AS (
+  SELECT 
+    fd.*,
+    fd.total_employment - LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) AS change_since_previous,
+    CASE 
+      WHEN LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) = 0 THEN NULL
+      ELSE (fd.total_employment - LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE)) / LAG(fd.total_employment) OVER (PARTITION BY fd.NAICS ORDER BY fd.REPORT_DATE) * 100
+    END AS percent_change_since_previous
+  FROM final_data fd
+)
+SELECT 
+  REPORT_DATE,
+  NAICS,
+  NAICS_TITLE,
+  total_employment,
+  change_since_previous,
+  ROUND(percent_change_since_previous, 2) AS percent_change_since_previous,
+FROM final_data_with_changes
+ORDER BY 
+  REPORT_DATE,
+  CASE WHEN NAICS = 'Other' THEN 2 ELSE 1 END,
+  total_employment DESC`
+  ])
+  
+  return await naics_occ_count
+}
+return {get_naics_counts};
+}});
+
+define({id: "7e6c1cf3", inputs: ["Inputs","occ_codes","Generators"], outputs: ["occ_code_search_input","occ_code_search"], body: (Inputs,occ_codes,Generators) => {
+// OCC Code search box
+const occ_code_search_input = Inputs.search(occ_codes, {width: 100});
+const occ_code_search = Generators.input(occ_code_search_input);
+return {occ_code_search_input,occ_code_search};
+}});
+
+define({id: "2fa41573", inputs: ["Inputs","occ_code_search"], outputs: ["occ_code_table_input"], body: (Inputs,occ_code_search) => {
+const occ_code_table_input = Inputs.table(
+  occ_code_search,
+  {
+    align: {
+      OCC_CODE: "left",
+      OCC_TITLE: "left",
+    },
+    width: {
+      OCC_CODE: 55,
+    },
+    header: {
+      OCC_CODE: "Code",
+      OCC_TITLE: "Title"
+    },
+    value: [""],
+  }
+);
+
+return {occ_code_table_input};
+}});
+
+define({id: "8001c005", body: () => {
+// const occ_code_table_input_results = Generators.input(occ_code_table_input);
+}});
+
+define({id: "250a25eb", body: () => {
+// const dropdown_selected_codes = occ_code_table_input_results.map(d => d.OCC_CODE)
+}});
+
+define({id: "d30a6e10", outputs: ["occupations"], body: () => {
+// const selected_codes = Mutable(["29-1111", "29-1141"]);
+
+const occupations = [
+  {
+    name: "Physicians",
+    codes: [
+      "29-1211", "29-1212", "29-1213", "29-1214", "29-1215", "29-1216", "29-1217", "29-1218",
+      "29-1221", "29-1222", "29-1223", "29-1224", "29-1229", "29-1241", "29-1242", "29-1243",
+      "29-1248", "29-1249",
+      "29-1061", "29-1062", "29-1063", "29-1064", "29-1065", "29-1066", "29-1067", "29-1069",
+    ]
+  },
+  {
+    name: "Registered Nurses",
+    codes: ["29-1111", "29-1141"]
+  },
+  {
+    name: "Nurse Practitioners",
+    codes: ["29-1171"]
+  },
+  {
+    name: "Physician Assistants",
+    codes: ["29-1071"]
+  },
+  {
+    name: "Pharmacists",
+    codes: ["29-1051"]
+  },
+  {
+    name: "Dentists",
+    codes: ["29-1021", "29-1022", "29-1023", "29-1024", "29-1029"]
+  },
+  {
+    name: "CRNAs",
+    codes: ["29-1151"]
+  },
+  {
+    name: "Social Workers",
+    codes: ["21-1021", "21-1022", "21-1023", "21-1029"]
+  },
+];
+return {occupations};
+}});
+
+define({id: "10773040", inputs: ["Inputs","htl"], outputs: ["grouping_limit_input"], body: (Inputs,htl) => {
+const grouping_limit_input = Inputs.range([0, 20], 
+  {
+    step: 1, 
+    value: 5,
+    label: htl.html`<div style="border-bottom: 1px solid lightgray"><span class="muted">Number of Top Categories</span></div>`,
+  }
+)
+return {grouping_limit_input};
+}});
+
+define({id: "6941ebb8", inputs: ["Generators","grouping_limit_input"], outputs: ["grouping_limit"], body: (Generators,grouping_limit_input) => {
+const grouping_limit = Generators.input(grouping_limit_input)
+return {grouping_limit};
+}});
+
+define({id: "43344edb", inputs: ["grouping_limit_input","display"], body: async (grouping_limit_input,display) => {
+display(await(
+grouping_limit_input
+))
+}});
+
+define({id: "0262138f", inputs: ["Inputs","occupations","htl"], outputs: ["selected_codes_input"], body: (Inputs,occupations,htl) => {
+const selected_codes_input = Inputs.radio(occupations, {
+  format: x => x.name,
+  label: htl.html`<div style="border-bottom: 1px solid lightgray"><span class="muted">Select healthcare occupation</span></div>`,
+  value: occupations[1]});
+return {selected_codes_input};
+}});
+
+define({id: "9f6856b4", inputs: ["Generators","selected_codes_input"], outputs: ["selected_codes_hash"], body: (Generators,selected_codes_input) => {
+const selected_codes_hash = Generators.input(selected_codes_input)
+return {selected_codes_hash};
+}});
+
+define({id: "4ab5ef7d", inputs: ["selected_codes_hash"], outputs: ["selected_codes"], body: (selected_codes_hash) => {
+const selected_codes = selected_codes_hash.codes
+return {selected_codes};
+}});
+
+define({id: "2bbffbab", mode: "inline", inputs: ["selected_codes_input","display"], body: async (selected_codes_input,display) => {
+display(await(
+selected_codes_input
+))
+}});
+
+define({id: "b3b82386", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
+))
+}});
+
+define({id: "2ee5e656", mode: "inline", inputs: ["naicc_wages_plot","occ_wages","wage_state_selected","display"], body: async (naicc_wages_plot,occ_wages,wage_state_selected,display) => {
+display(await(
+naicc_wages_plot(occ_wages, wage_state_selected)
+))
+}});
+
+define({id: "b3b82386-1", mode: "inline", inputs: ["selected_codes_hash","display"], body: async (selected_codes_hash,display) => {
+display(await(
+selected_codes_hash.name
+))
+}});
+
+define({id: "dbf0129b", mode: "inline", inputs: ["wage_state_selector","display"], body: async (wage_state_selector,display) => {
+display(await(
+wage_state_selector
+))
+}});
+
+define({id: "f4dd21fb", mode: "inline", inputs: ["lookup_state_name","wage_state_selected","display"], body: async (lookup_state_name,wage_state_selected,display) => {
+display(await(
+lookup_state_name(wage_state_selected)
+))
+}});
+
+define({id: "59a94c1b", mode: "inline", inputs: ["naicc_wages_plot","occ_state_wages","wage_state_selected","display"], body: async (naicc_wages_plot,occ_state_wages,wage_state_selected,display) => {
+display(await(
+naicc_wages_plot([...occ_state_wages], wage_state_selected)
+))
+}});
+
+define({id: "686c2ab9", inputs: ["counts_plot","get_naics_counts","selected_codes","grouping_limit"], outputs: ["plot_object"], body: async (counts_plot,get_naics_counts,selected_codes,grouping_limit) => {
+const plot_object = counts_plot(await get_naics_counts(selected_codes, grouping_limit))
+return {plot_object};
+}});
+
+define({id: "ea6a5532", inputs: ["counts_plot","get_naics_counts","selected_codes"], outputs: ["overall_plot_object"], body: async (counts_plot,get_naics_counts,selected_codes) => {
+const overall_plot_object = counts_plot(await get_naics_counts(selected_codes, 0))
+return {overall_plot_object};
+}});
+
+define({id: "1e565f07", inputs: ["plot_object"], outputs: ["legendScale"], body: (plot_object) => {
+// Legend examples: https://observablehq.com/d/a23f6e59f1380df0
+const legendScale = plot_object.scale("color")
+return {legendScale};
+}});
+
+define({id: "4b1f9be5", inputs: ["d3","Plot","lookup_occ_title","lookup_naics_title"], outputs: ["counts_plot"], body: (d3,Plot,lookup_occ_title,lookup_naics_title) => {
+const counts_plot = function(data) {
+  const y_max = d3.max([...data], d => isNaN(+d.total_employment) ? -Infinity : +d.total_employment)
+  const y_max_padding = y_max + 0.4 * y_max
+  const grouping_limit_input = (new Set([...data].map((d) => d.NAICS))).size
+  // const plot_height = ;
+    return Plot.plot({
+        style: {
+          fontSize: 13,
+        },
+        // marginTop: 0,
+        // paddingLeft: 1000,
+        marginLeft: 75, 
+        marginBottom: 40,
+        paddingLeft: 0,
+        paddingRight: 0,
+        // marginRight: 100, 
+        marginBottom: 70,
+        // width: 600,
+        height: (parseInt(grouping_limit_input) == 1) ? 350: (155 * parseInt(grouping_limit_input) + 10),
+        backgroundColor: "white",
+        color: {
+            // legend: true,
+            // type: "diverging",
+            legend: true
+            // scheme: "tableau10"
+        },
+        legend: {
+            tickFormat: lookup_occ_title,
+        },
+        // sort: {x: "-y"},
+        x: {
+          type: "band",
+          label: null,
+          axis: null,
+        },
+        // marginLeft: 0, // don’t need left-margin since labels are inset
+        // x: {label: null, insetLeft: 36}, // reserve space for inset labels
+        y: {
+          domain: [0, y_max_padding],
+          axis: "left",
+          grid: true,
+          label: "Total Employment",
+          tickFormat: d3.format(".3s")
+        },
+        fy: {
+          label: null,
+          axis: null,
+        },
+        // style: "background: #777;",
+        marks: [
+            Plot.frame(),
+            Plot.axisX({
+              rotate: -90,
+              dx: -5,
+              // dy: 20,
+              textAnchor: "end",
+              // ticks: "3 months",
+              tickFormat: d => d3.timeFormat("%Y-%b")(d)
+            }),
+            Plot.gridY({
+              strokeDasharray: "0.75, 5", // dashed
+              strokeOpacity: 1 // opaque
+            }),        
+              Plot.barY(data, {
+                x: (d) => new Date(d.REPORT_DATE),
+                y: "total_employment", 
+                padding: 10,
+                fill: (d) => lookup_naics_title(d.NAICS),
+                tip: true,
+                fy: "NAICS",
+                sort: {y: "x", fy: "-y", order: "descending"},
+                title: (d) => `${d3.timeFormat("%Y-%b")(new Date(d.REPORT_DATE))}\n\n${d.NAICS_TITLE}\n\nEmployment: ${d3.format(",")(d.total_employment)}\nNet Change (YoY): ${d3.format(",.0f")(d.change_since_previous)}\nChange (YoY %): ${d3.format(",.2f")(d.percent_change_since_previous)}%`
+            }),
+            Plot.rectY(data, Plot.pointer({
+                x: (d) => new Date(d.REPORT_DATE),
+                y: "total_employment", 
+                fy: "NAICS", 
+                stroke: "green",
+                fill: "white",
+                width: 10})
+            ),
+            // Plot.linearRegressionY(data, {x: (d) => new Date(d.REPORT_DATE), y: "total_employment", 
+            //     fy: "NAICS", stroke: "red", width: 1}),
+            Plot.text(data, 
+              Plot.selectFirst(
+                {
+                  text: "NAICS_TITLE", 
+                  fy: "NAICS", 
+                  frameAnchor: "top-left",
+                  fontSize: 16,
+                  fill: (d) => lookup_naics_title(d.NAICS),
+                  // fill: "black",
+                  stroke: "white",
+                  backgroundColor: "black",
+                  strokeWidth: 5,
+                  dx: 5, 
+                  dy: 6,
+                }
+              ),
+            ),
+            // Plot.text(data, {
+            //   text: d => `${d3.format(".2s")(d.total_employment)}`,
+            //   x: (d) => new Date(d.REPORT_DATE),
+            //   y: "total_employment",
+            //   textAnchor: "start",
+            //   padding: 10,
+            //   dx: 0,
+            //   dy: -3,
+            //   rotate: -90,
+            //   fy: "NAICS",
+            //   fill: "black",
+            //   sort: {y: "x", order: "descending"},
+            // }),
+            Plot.text(data, {
+              text: d => `${d3.format(".1f")(d.percent_change_since_previous)}%`,
+              x: (d) => new Date(d.REPORT_DATE),
+              y: "total_employment",
+              textAnchor: "start",
+              fontSize: 12,
+              dx: -3,
+              dy: -3,
+              rotate: -60,
+              fy: "NAICS",
+              fill: (d) => (d.percent_change_since_previous) < 0 ? "red" : "black",
+              sort: {y: "x", order: "descending"},
+            }),
+            Plot.ruleY([0])
+        ]
+    })}
+return {counts_plot};
+}});
+
+define({id: "f0fa738e", outputs: ["sql_array_str"], body: () => {
+const sql_array_str = function (code_array) {
+    const selected_codes_str = "\'" + code_array.join("','") + "\'"
+    return selected_codes_str
+}
+return {sql_array_str};
+}});
+
+define({id: "a979d767", inputs: ["sql","sql_array_str"], outputs: ["naics_occ_state_counts"], body: (sql,sql_array_str) => {
+const naics_occ_state_counts = async function (selected_codes, grouping_limit=5) {
+  const other_industries_label = grouping_limit > 0 ? "Other Industries" : "All Industries";
+  const other_industries_code = grouping_limit > 0 ? "Other" : "All Industries";
+  const occ_state_count_query = await sql([
+    `WITH all_time_ranked_data AS (
+    SELECT 
+      AREA,
+      AREA_TITLE,
+      NAICS,
+      ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
+      SUM(TOT_EMP) AS all_time_total_employment,
+      RANK() OVER (PARTITION BY AREA, AREA_TITLE ORDER BY SUM(TOT_EMP) DESC) AS all_time_rank
+    FROM oews_estimates
+    WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+      AND RIGHT(OCC_CODE, 1) != '0'
+      AND LENGTH(NAICS) > 2
+    GROUP BY AREA, AREA_TITLE, NAICS
+),
+top_x_naics AS (
+    SELECT AREA, AREA_TITLE, NAICS
+    FROM all_time_ranked_data
+    WHERE all_time_rank <= ${grouping_limit}
+),
+monthly_data AS (
+    SELECT 
+      AREA,
+      AREA_TITLE,
+      REPORT_DATE,
+      NAICS,
+      ANY_VALUE(NAICS_TITLE) AS NAICS_TITLE,
+      SUM(TOT_EMP) AS total_employment
+    FROM oews_estimates
+    WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+      AND RIGHT(OCC_CODE, 1) != '0'
+    GROUP BY AREA, AREA_TITLE, REPORT_DATE, NAICS
+),
+final_data AS (
+    SELECT
+      md.AREA,
+      md.AREA_TITLE,
+      md.REPORT_DATE,
+      CASE 
+        WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
+        ELSE '${other_industries_code}'
+      END AS NAICS,
+      ANY_VALUE(CASE 
+        WHEN txn.NAICS IS NOT NULL THEN md.NAICS_TITLE
+        ELSE '${other_industries_label}'
+      END) AS NAICS_TITLE,
+      SUM(md.total_employment) AS total_employment
+    FROM monthly_data md
+    LEFT JOIN top_x_naics txn ON md.AREA = txn.AREA AND md.AREA_TITLE = txn.AREA_TITLE AND md.NAICS = txn.NAICS
+    GROUP BY 
+      md.AREA,
+      md.AREA_TITLE,
+      md.REPORT_DATE,
+      CASE 
+        WHEN txn.NAICS IS NOT NULL THEN md.NAICS 
+        ELSE '${other_industries_code}'
+      END
+),
+final_data_with_changes AS (
+    SELECT 
+      fd.*,
+      fd.total_employment - LAG(fd.total_employment) OVER (PARTITION BY fd.AREA, fd.AREA_TITLE, fd.NAICS ORDER BY fd.REPORT_DATE) AS change_since_previous,
+      CASE 
+        WHEN LAG(fd.total_employment) OVER (PARTITION BY fd.AREA, fd.AREA_TITLE, fd.NAICS ORDER BY fd.REPORT_DATE) = 0 THEN NULL
+        ELSE (fd.total_employment - LAG(fd.total_employment) OVER (PARTITION BY fd.AREA, fd.AREA_TITLE, fd.NAICS ORDER BY fd.REPORT_DATE)) / LAG(fd.total_employment) OVER (PARTITION BY fd.AREA, fd.AREA_TITLE, fd.NAICS ORDER BY fd.REPORT_DATE) * 100
+      END AS percent_change_since_previous
+    FROM final_data fd
+)
+SELECT 
+  AREA,
+  AREA_TITLE,
+  REPORT_DATE,
+  NAICS,
+  NAICS_TITLE,
+  total_employment,
+  change_since_previous,
+  ROUND(percent_change_since_previous, 2) AS percent_change_since_previous,
+FROM final_data_with_changes
+ORDER BY 
+  AREA,
+  AREA_TITLE,
+  REPORT_DATE,
+  CASE WHEN NAICS = 'Other' THEN 2 ELSE 1 END,
+  total_employment DESC`
+  ])
+  return occ_state_count_query
+}
+return {naics_occ_state_counts};
+}});
+
+define({id: "4ffdb7b3", inputs: ["naics_occ_state_counts","selected_codes","grouping_limit"], outputs: ["occ_state_counts"], body: async (naics_occ_state_counts,selected_codes,grouping_limit) => {
+const occ_state_counts = await naics_occ_state_counts(selected_codes, grouping_limit)
+return {occ_state_counts};
+}});
+
+define({id: "79a6e720", inputs: ["FileAttachment"], outputs: ["us"], body: (FileAttachment) => {
+const us = FileAttachment("./dataloaders/counties-10m.json").json();
+return {us};
+}});
+
+define({id: "f1183f46", inputs: ["topojson","us","occ_state_counts"], outputs: ["statemesh","fips_map_state_employment"], body: (topojson,us,occ_state_counts) => {
+const statemesh = topojson.mesh(us, us.objects.states, (a, b) => a !== b)
+const fips_map_state_employment = [...occ_state_counts].map((d) => [String(d.AREA).padStart(2, '0'), d.NAICS, d.total_employment,
+  d.REPORT_DATE])
+return {statemesh,fips_map_state_employment};
+}});
+
+define({id: "a6d46289", inputs: ["occ_state_counts"], outputs: ["unique_states"], body: (occ_state_counts) => {
+const unique_states = [...new Set([...occ_state_counts].map((d) => d.AREA))]
+return {unique_states};
+}});
+
+define({id: "4585941f", inputs: ["Inputs","unique_states","htl","lookup_state_name"], outputs: ["unique_states_selector"], body: (Inputs,unique_states,htl,lookup_state_name) => {
+const unique_states_selector = Inputs.select(unique_states, {
+  multiple: false, 
+  label: htl.html`<div style="border-bottom: 1px solid lightgray"><span class="muted">Select a State</span></div>`,
+  format: lookup_state_name}
+);
+return {unique_states_selector};
+}});
+
+define({id: "f0220d9d", inputs: ["Generators","unique_states_selector"], outputs: ["unique_states_selector_str"], body: (Generators,unique_states_selector) => {
+const unique_states_selector_str = Generators.input(unique_states_selector)
+return {unique_states_selector_str};
+}});
+
+define({id: "0c469820", inputs: ["occ_state_counts","unique_states_selector_str"], outputs: ["total_employment_numbers_state","percent_change_since_previous_numbers_state"], body: (occ_state_counts,unique_states_selector_str) => {
+// For calculating max/min
+const total_employment_numbers_state = [...occ_state_counts].filter(d => d.AREA == unique_states_selector_str).map(d => d.total_employment);
+const percent_change_since_previous_numbers_state = [...occ_state_counts].filter(d => d.AREA == unique_states_selector_str).map(d => d.percent_change_since_previous);
+return {total_employment_numbers_state,percent_change_since_previous_numbers_state};
+}});
+
+define({id: "3a9ed6af", body: () => {
+// const state_counts = await [...occ_state_counts].filter((d) => (d.AREA == unique_states_selector_str))
+}});
+
+define({id: "a52eaf5e", body: () => {
+// const state_naics_select = Inputs.select(
+//   [...new Set(state_counts.map(d => d.NAICS))], 
+//   { 
+//     value: [...new Set(state_counts.map(d => d.NAICS))],
+//     multiple: true,
+//     format: lookup_naics_title,
+//     label: htl.html`<div style="border-bottom: 1px solid lightgray"><span class="muted">Filter by Industry<br>Ctrl (⌘) + Click to Choose Multiple</span></div>`,
+//     width: 300
+//   }
+// )
+// const state_naics_select_arr = view(state_naics_select)
+}});
+
+define({id: "a9a5b87e", body: () => {
+// const state_table = Inputs.table(state_counts.filter((d)=>state_naics_select_arr.includes(d.NAICS)), {
+//     format: {
+//       REPORT_DATE: (d) => new Date(d).toISOString().split('T')[0].split("-")[0],
+//       total_employment: sparkbar(
+//         d3.max(total_employment_numbers_state), ",.0f"),
+//       percent_change_since_previous: sparkbarZeroCentered(
+//         d3.min(percent_change_since_previous_numbers_state), 
+//         d3.max(percent_change_since_previous_numbers_state), 
+//         ",.2f")
+//     },
+//     sort: "REPORT_DATE",
+//     reverse: true,
+//     // layout: "auto",
+//     width: {
+//       // AREA_TITLE: 40,
+//       REPORT_DATE: 40,
+//       // NAICS_TITLE: 200,
+//       total_employment: 100,
+//       percent_change_since_previous: 70
+//     },
+//     align: {
+//       total_employment: "right",
+//       REPORT_DATE: "left"
+//     },
+//     columns: ["REPORT_DATE", 
+//       // "NAICS", 
+//       "NAICS_TITLE", "total_employment", "percent_change_since_previous"],
+//     rows: 26,
+//     header: {
+//       AREA_TITLE: "State",
+//       REPORT_DATE: "Year",
+//       NAICS_TITLE: "Industry",
+//       total_employment: "Employment",
+//       percent_change_since_previous: "YoY 𝚫 (%)"
+//     }
+// })
+}});
+
+define({id: "cb0b3d78", outputs: ["stateAbbreviations","getStateAbbreviation"], body: () => {
+// Object mapping state names to their abbreviations
+const stateAbbreviations = {
+  'Alabama': 'AL',
+  'Alaska': 'AK',
+  'Arizona': 'AZ',
+  'Arkansas': 'AR',
+  'California': 'CA',
+  'Colorado': 'CO',
+  'Connecticut': 'CT',
+  'Delaware': 'DE',
+  'Florida': 'FL',
+  'Georgia': 'GA',
+  'Hawaii': 'HI',
+  'Idaho': 'ID',
+  'Illinois': 'IL',
+  'Indiana': 'IN',
+  'Iowa': 'IA',
+  'Kansas': 'KS',
+  'Kentucky': 'KY',
+  'Louisiana': 'LA',
+  'Maine': 'ME',
+  'Maryland': 'MD',
+  'Massachusetts': 'MA',
+  'Michigan': 'MI',
+  'Minnesota': 'MN',
+  'Mississippi': 'MS',
+  'Missouri': 'MO',
+  'Montana': 'MT',
+  'Nebraska': 'NE',
+  'Nevada': 'NV',
+  'New Hampshire': 'NH',
+  'New Jersey': 'NJ',
+  'New Mexico': 'NM',
+  'New York': 'NY',
+  'North Carolina': 'NC',
+  'North Dakota': 'ND',
+  'Ohio': 'OH',
+  'Oklahoma': 'OK',
+  'Oregon': 'OR',
+  'Pennsylvania': 'PA',
+  'Rhode Island': 'RI',
+  'South Carolina': 'SC',
+  'South Dakota': 'SD',
+  'Tennessee': 'TN',
+  'Texas': 'TX',
+  'Utah': 'UT',
+  'Vermont': 'VT',
+  'Virginia': 'VA',
+  'Washington': 'WA',
+  'West Virginia': 'WV',
+  'Wisconsin': 'WI',
+  'Wyoming': 'WY'
+};
+
+// Function to look up state abbreviation
+function getStateAbbreviation(stateName) {
+  // Convert input to title case for consistency
+  const formattedStateName = stateName.replace(/\w\S*/g, 
+    txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+  
+  return stateAbbreviations[formattedStateName] || 'Not Found';
+}
+return {stateAbbreviations,getStateAbbreviation};
+}});
+
+define({id: "358c4f8f", inputs: ["sql","sql_array_str"], outputs: ["naics_occ_wages"], body: (sql,sql_array_str) => {
+const naics_occ_wages = async function (selected_codes, grouping_limit=5) {
+  const other_industries_label = grouping_limit > 0 ? "Other Industries" : "All Industries";
+  const other_industries_code = grouping_limit > 0 ? "Other" : "All Industries";
+  const occ_state_count_query = await sql([`
+  WITH monthly_data AS (
+  SELECT 
+    REPORT_DATE,
+    NAICS,
+    VALUE,
+    OCC_CODE,
+  FROM oes_wages
+  WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+    AND RIGHT(OCC_CODE, 1) != '0'
+    AND RESULT_TYPE = 'A_MEDIAN'
+),
+final_data_with_changes AS (
+  SELECT 
+    md.*,
+    md.VALUE - LAG(md.VALUE) OVER (PARTITION BY md.NAICS ORDER BY md.REPORT_DATE) AS change_since_previous,
+    CASE 
+      WHEN LAG(md.VALUE) OVER (PARTITION BY md.NAICS ORDER BY md.REPORT_DATE) = 0 THEN NULL
+      ELSE (md.VALUE - LAG(md.VALUE) OVER (PARTITION BY md.NAICS ORDER BY md.REPORT_DATE)) / LAG(md.VALUE) OVER (PARTITION BY md.NAICS ORDER BY md.REPORT_DATE) * 100
+    END AS percent_change_since_previous
+  FROM monthly_data md
+)
+SELECT 
+  REPORT_DATE,
+  NAICS,
+  VALUE,
+  OCC_CODE,
+  change_since_previous,
+  ROUND(percent_change_since_previous, 2) AS percent_change_since_previous
+FROM final_data_with_changes
+ORDER BY 
+  REPORT_DATE,
+  VALUE DESC
+  `])
+  return occ_state_count_query
+}
+return {naics_occ_wages};
+}});
+
+define({id: "9ca160ae", inputs: ["sql","sql_array_str"], outputs: ["naics_occ_state_wages"], body: (sql,sql_array_str) => {
+const naics_occ_state_wages = async function (selected_codes, grouping_limit=5) {
+  const other_industries_label = grouping_limit > 0 ? "Other Industries" : "All Industries";
+  const other_industries_code = grouping_limit > 0 ? "Other" : "All Industries";
+  const occ_state_count_query = await sql([`
+  WITH monthly_data AS (
+  SELECT 
+    REPORT_DATE,
+    NAICS,
+    VALUE,
+    OCC_CODE,
+    AREA,
+    AREA_TITLE
+  FROM oes_state_wages
+  WHERE OCC_CODE IN (${sql_array_str(selected_codes)}) 
+    AND RIGHT(OCC_CODE, 1) != '0'
+    AND RESULT_TYPE = 'A_MEDIAN'
+),
+final_data_with_changes AS (
+  SELECT 
+    md.*,
+    md.VALUE - LAG(md.VALUE) OVER (PARTITION BY md.NAICS, md.OCC_CODE, md.AREA ORDER BY md.REPORT_DATE) AS change_since_previous,
+    CASE 
+      WHEN LAG(md.VALUE) OVER (PARTITION BY md.NAICS, md.OCC_CODE, md.AREA ORDER BY md.REPORT_DATE) = 0 THEN NULL
+      ELSE (md.VALUE - LAG(md.VALUE) OVER (PARTITION BY md.NAICS, md.OCC_CODE, md.AREA ORDER BY md.REPORT_DATE)) / LAG(md.VALUE) OVER (PARTITION BY md.NAICS, md.OCC_CODE, md.AREA ORDER BY md.REPORT_DATE) * 100
+    END AS percent_change_since_previous
+  FROM monthly_data md
+)
+SELECT 
+  REPORT_DATE,
+  NAICS,
+  VALUE,
+  OCC_CODE,
+  AREA,
+  AREA_TITLE,
+  change_since_previous,
+  ROUND(percent_change_since_previous, 2) AS percent_change_since_previous
+FROM final_data_with_changes
+ORDER BY 
+  REPORT_DATE,
+  AREA,
+  NAICS,
+  OCC_CODE,
+  VALUE DESC
+  `])
+  return occ_state_count_query
+}
+return {naics_occ_state_wages};
+}});
+
+define({id: "ac054772", inputs: ["naics_occ_wages","selected_codes","grouping_limit"], outputs: ["occ_wages"], body: async (naics_occ_wages,selected_codes,grouping_limit) => {
+const occ_wages = await naics_occ_wages(selected_codes, grouping_limit)
+return {occ_wages};
+}});
+
+define({id: "c6cd8bc6", inputs: ["naics_occ_state_wages","selected_codes","grouping_limit"], outputs: ["occ_state_wages"], body: async (naics_occ_state_wages,selected_codes,grouping_limit) => {
+const occ_state_wages = await naics_occ_state_wages(selected_codes, grouping_limit)
+return {occ_state_wages};
+}});
+
+define({id: "10f1286e", body: () => {
+// occ_state_wages
+}});
+
+define({id: "d07663b1", inputs: ["d3","selected_codes","top_naics","Plot","width","lookup_naics_title","lookup_occ_title"], outputs: ["naicc_wages_plot"], body: (d3,selected_codes,top_naics,Plot,width,lookup_naics_title,lookup_occ_title) => {
+const naicc_wages_plot = (occ_wages, area_code) => {
+  const selected_state_occ_wages = [...occ_wages].some(d => 'AREA' in d) 
+    ? [...occ_wages].filter(d => d.AREA == area_code)
+    : [...occ_wages];
+  const y_max = d3.max([...occ_wages].filter(d=>[...selected_codes].includes(d.OCC_CODE)).map(d => isNaN(+d.VALUE) ? -Infinity : +d.VALUE))
+    // console.log(y_max)
+  const y_max_padding = y_max + 0.10 * y_max
+  const grouping_limit_input = (new Set([...occ_wages].filter(d=>[...top_naics].includes(d.NAICS)).filter(d=>[...selected_codes].includes(d.OCC_CODE)).map((d) => d.NAICS))).size;
+
+  const get_plot = Plot.plot({
+    marginLeft: 50,
+    marginRight: 50,
+    paddingRight: 0,
+    marginBottom: 40,
+    y: {
+      label: "Annual Wages",
+      fontSize: 20,
+      domain: [0, y_max_padding]
+    },
+    x: {
+      type: "band",
+      label: null,
+    },
+    fy: {
+      label: null,
+      axis: null,
+    },
+    fx: {
+      label: null,
+      axis: null,
+    },
+    // height: (parseInt(grouping_limit_input) == 1) ? 110: (100 * parseInt(grouping_limit_input) + 10),
+    height: 300,
+    width: width,
+      marks: [
+      Plot.ruleY([0]),
+      Plot.axisX({
+        rotate: -90,
+        dx: -5,
+        // dy: 20,
+        textAnchor: "end",
+        // ticks: "1 year",
+        tickFormat: d => d3.timeFormat("%Y")(d)
+      }),
+      Plot.gridY({
+        strokeDasharray: ".75, 4", // dashed
+        strokeOpacity: 0.3 // opaque
+      }),
+      Plot.text(
+        selected_state_occ_wages.filter(d=>[...top_naics].includes(d.NAICS)).filter(d=>[...selected_codes].includes(d.OCC_CODE)),
+        Plot.selectFirst(
+          {
+            text: (d) => lookup_naics_title(d.NAICS), 
+            fx: (d) => lookup_naics_title(d.NAICS), 
+            frameAnchor: "top-left",
+            fontSize: 16,
+            z: 100,
+            fill: (d) => lookup_naics_title(d.NAICS),
+            // fill: "black",
+            stroke: "white",
+            backgroundColor: "black",
+            strokeWidth: 5,
+            dx: 5, 
+            dy: 6,
+          }
+        ),
+      ),
+      Plot.line(
+        [...occ_wages].filter(d=>[...top_naics].includes(d.NAICS)).filter(d=>[...selected_codes].includes(d.OCC_CODE)),
+        {y: "VALUE", 
+        x: (d) => new Date(d.REPORT_DATE), 
+        sort: (d) => new Date(d.REPORT_DATE),
+        z: (d) => d.AREA,
+        // strokeColor: (d) => lookup_naics_title(d.NAICS),
+        stroke: 1,
+        // dx: ,
+        fx: (d) => lookup_naics_title(d.NAICS), strokeWidth: 2, 
+        stroke: "#eee",
+        strokeOpacity: 0.4, sort: {y: "-x"}, tip: true}
+      ),
+      Plot.dot(
+        [...occ_wages].filter(d=>[...top_naics].includes(d.NAICS)),
+        {
+          y: "VALUE", 
+          x: (d) => new Date(d.REPORT_DATE), 
+          r: 2,
+          fill: "#ccc",
+          stroke: "#eee",
+          strokeOpacity: 0.5,
+          fillOpacity: 0.5,
+          // tip: true,
+          channels:{
+            test: "VALUE",
+            Name: (d) => lookup_occ_title(d.OCC_CODE),
+          },
+          // fx: (d) => [...selected_codes].includes(d.OCC_CODE) ? lookup_occ_title(d.OCC_CODE) : null, strokeWidth: 4, sort: {y: "-x"}
+        }
+      ),
+      Plot.dot(
+        selected_state_occ_wages.filter(d=>[...top_naics].includes(d.NAICS)).filter(d=>[...selected_codes].includes(d.OCC_CODE)),
+        {y: "VALUE", 
+        x: (d) => new Date(d.REPORT_DATE), 
+        stroke: (d) => d.OCC_CODE,
+        fill: (d) => lookup_naics_title(d.NAICS),
+        r: 3,
+        // dx: ,
+        fx: (d) => lookup_naics_title(d.NAICS), strokeWidth: 4, sort: {y: "-x"}}
+      ),
+      Plot.line(
+        selected_state_occ_wages.filter(d=>[...top_naics].includes(d.NAICS)).filter(d=>[...selected_codes].includes(d.OCC_CODE)),
+        {y: "VALUE", 
+        x: (d) => new Date(d.REPORT_DATE), 
+        sort: (d) => new Date(d.REPORT_DATE),
+        stroke: (d) => d.OCC_CODE,
+        // strokeColor: (d) => lookup_naics_title(d.NAICS),
+        r: 3,
+        // dx: ,
+        fx: (d) => lookup_naics_title(d.NAICS), strokeWidth: 4, sort: {y: "-x"}, tip: true}
+      ),
+      Plot.text(
+        selected_state_occ_wages.filter(d=>[...top_naics].includes(d.NAICS)).filter(d=>[...selected_codes].includes(d.OCC_CODE)),
+        {
+          text: d => `${d3.format("$,.3s")(d.VALUE)}`,
+          x: (d) => new Date(d.REPORT_DATE), 
+          fx: (d) => lookup_naics_title(d.NAICS),
+          y: "VALUE", 
+          z: 100,
+          textAnchor: "center",
+          dy: -10,
+          fontSize: 10,
+          stroke: "white",
+          // backgroundColor: "white",
+          strokeWidth: 1,
+          fill: "black",
+      }),
+      // Plot.tickY(
+      //   [...occ_wages].filter(d=>[...top_naics].includes(d.NAICS)).filter(d=>[...selected_codes].includes(d.OCC_CODE)),
+      //   {y: "VALUE", 
+      //   x: (d) => new Date(d.REPORT_DATE), 
+      //   stroke: (d) => lookup_occ_title(d.OCC_CODE),
+      //   r: 5,
+      //   fx: (d) => lookup_naics_title(d.NAICS), strokeWidth: 4, sort: {y: "-x"}, tip: true}
+      // ),
+    ]
+  })
+  return get_plot
+}
+return {naicc_wages_plot};
+}});
+
+define({id: "39669456", inputs: ["Inputs","unique_states","htl","lookup_state_name"], outputs: ["wage_state_selector"], body: (Inputs,unique_states,htl,lookup_state_name) => {
+const wage_state_selector = Inputs.select(unique_states, {
+  multiple: false, 
+  label: htl.html`<div style="border-bottom: 1px solid lightgray"><span class="muted">Select a State</span></div>`,
+  format: lookup_state_name}
+);
+return {wage_state_selector};
+}});
+
+define({id: "add74dd2", inputs: ["Generators","wage_state_selector"], outputs: ["wage_state_selected"], body: (Generators,wage_state_selector) => {
+const wage_state_selected = Generators.input(wage_state_selector)
+return {wage_state_selected};
+}});
+
+define({id: "85b2195e", inputs: ["aq","occ_state_counts"], outputs: ["top_naics"], body: (aq,occ_state_counts) => {
+// Group by category and sum values
+const top_naics = aq.from([...occ_state_counts])
+  .filter((d)=>![78,66].includes(d.AREA))
+  .groupby('AREA', "NAICS", "REPORT_DATE")
+  .count()
+  .groupby('NAICS')
+  .count()
+  .filter(d => d.count > 50)
+  .objects()
+  .map(d => d.NAICS);
+return {top_naics};
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Clinicians.fyi</a></li>
+  </ol>
+  <details open>
+    <summary>Healthcare Fraud</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-fraud">Criminal Cases</a></li>
+    <li class="observablehq-link"><a href="./healthcare-fraud-startups">Startups/Health Tech</a></li>
+    </ol>
+  </details>
+  <details open class="observablehq-section-active">
+    <summary>Labor</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./healthcare-labor">Healthcare Labor Statistics</a></li>
+    <li class="observablehq-link"><a href="./healthcare-labor-v2">Healthcare Labor Statistics V2</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./healthcare-labor-wages">Healthcare Wages</a></li>
+    <li class="observablehq-link"><a href="./occupation-search">Occupation Explorer</a></li>
+    </ol>
+  </details>
+  <details open>
+    <summary>Hospital Ownership</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./pe_hospitals">PE Hospitals Tracker</a></li>
+    </ol>
+  </details>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#national-level%3A-wages">National-level: Wages</a></li>
+<li class="observablehq-secondary-link"><a href="#state-level%3A-wages">State-level: Wages</a></li>
+<li class="observablehq-secondary-link"><a href="#references">References</a></li>
+<li class="observablehq-secondary-link"><a href="#feedback">Feedback</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="wage%3A-healthcare-labor" tabindex="-1"><a class="observablehq-header-anchor" href="#wage%3A-healthcare-labor">Wage: Healthcare Labor</a></h1>
+<!-- Preload lookup files-->
+<hr style="padding: 0">
+<div class="observablehq observablehq--block"><!--:ba6a16f1:--></div>
+<div class="observablehq observablehq--block"><!--:520c85fa:--></div>
+<div class="observablehq observablehq--block"><!--:42afef24:--></div>
+<div class="observablehq observablehq--block"><!--:c0d0c1a5:--></div>
+<div class="observablehq observablehq--block"><!--:c4f6bdfb:--></div>
+<!-- ## Search Occupation -->
+<!-- Bureau of Labor Statistics uses "OCC" codes to capture occupations in the U.S. for reporting purposes. Full list is here: https://www.bls.gov/oes/current/oes_stru.htm -->
+<div class="observablehq observablehq--block"><!--:7e6c1cf3:--></div>
+<div class="observablehq observablehq--block"><!--:2fa41573:--></div>
+<div class="observablehq observablehq--block"><!--:8001c005:--></div>
+<div class="observablehq observablehq--block"><!--:250a25eb:--></div>
+<div class="observablehq observablehq--block"><!--:d30a6e10:--></div>
+<h2> National-level Trends</h2>
+<p>Bureau of Labor Statistics (BLS) releases annual report via <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener noreferrer">Occupational Employment and Wage Statistics (OEWS)</a> program. In May every year BLS releases aggregated information for the previous calendar year. The data presented here should match the Excel tables from <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Reports</a>.</p>
+<div class="observablehq observablehq--block"><!--:10773040:--></div>
+<div class="observablehq observablehq--block"><!--:6941ebb8:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:43344edb:--></div>
+<div class="observablehq observablehq--block"><!--:0262138f:--></div>
+<div class="observablehq observablehq--block"><!--:9f6856b4:--></div>
+<div class="observablehq observablehq--block"><!--:4ab5ef7d:--></div>
+<div class="healthcare-occ">
+<observablehq-loading></observablehq-loading><!--:2bbffbab:-->
+</div>
+<hr style="padding: 0">
+<h2 id="national-level%3A-wages" tabindex="-1"><a class="observablehq-header-anchor" href="#national-level%3A-wages">National-level: Wages</a></h2>
+<div class="occupation-card occupation-card-container" style="padding: 0; overflow:hidden;">
+  <div class="occupation-card occupation-card-small" style="max-width: 100%; border: 0px; border-right: 1px solid #eee; border-radius: 0;">
+    <h1 style="border-bottom: 3px solid red;
+          color: #444;
+          padding-bottom: 1px; margin-bottom: 10px;"><observablehq-loading></observablehq-loading><!--:b3b82386:--></h1>
+    <h1><span style="font-weight: normal;">Median Wage:</span> National</h1>
+    Light gray markers indicate occupation median wages for that industry for US States.
+    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:2ee5e656:-->
+  </div>
+  <!-- <div class="occupation-card occupation-card-small">
+  </div> -->
+</div>
+<h2 id="state-level%3A-wages" tabindex="-1"><a class="observablehq-header-anchor" href="#state-level%3A-wages">State-level: Wages</a></h2>
+<div class="occupation-card occupation-card-container" style="padding: 0; overflow:hidden;">
+  <div class="occupation-card occupation-card-small" style="max-width: 100%; border: 0px; border-right: 1px solid #eee; border-radius: 0;">
+    <h1 style="border-bottom: 3px solid red;
+          color: #444;
+          padding-bottom: 1px; margin-bottom: 10px;"><observablehq-loading></observablehq-loading><!--:b3b82386-1:--></h1>
+    <observablehq-loading></observablehq-loading><!--:dbf0129b:-->
+    <hr style="padding: 0px; margin-top: 10px">
+    <h1><span style="font-weight: normal;">Median Wage:</span> <observablehq-loading></observablehq-loading><!--:f4dd21fb:--></h1>
+    Background gray markers indicate occupation median wages within that industry.
+    <hr style="padding: 0px; margin-top: 10px"><observablehq-loading></observablehq-loading><!--:59a94c1b:-->
+  </div>
+  <!-- <div class="occupation-card occupation-card-small">
+  </div> -->
+</div>
+<div class="observablehq observablehq--block"><!--:686c2ab9:--></div>
+<div class="observablehq observablehq--block"><!--:ea6a5532:--></div>
+<div class="observablehq observablehq--block"><!--:1e565f07:--></div>
+<p><span class="align: right">Source: Bureau of Labor Statistics</span></p>
+<div class="observablehq observablehq--block"><!--:4b1f9be5:--></div>
+<hr>
+<div class="observablehq observablehq--block"><!--:f0fa738e:--></div>
+<div class="observablehq observablehq--block"><!--:a979d767:--></div>
+<div class="observablehq observablehq--block"><!--:4ffdb7b3:--></div>
+<div class="observablehq observablehq--block"><!--:79a6e720:--></div>
+<div class="observablehq observablehq--block"><!--:f1183f46:--></div>
+<div class="observablehq observablehq--block"><!--:a6d46289:--></div>
+<div class="observablehq observablehq--block"><!--:4585941f:--></div>
+<div class="observablehq observablehq--block"><!--:f0220d9d:--></div>
+<div class="observablehq observablehq--block"><!--:0c469820:--></div>
+<div class="observablehq observablehq--block"><!--:3a9ed6af:--></div>
+<div class="observablehq observablehq--block"><!--:a52eaf5e:--></div>
+<div class="observablehq observablehq--block"><!--:a9a5b87e:--></div>
+<h2 id="references" tabindex="-1"><a class="observablehq-header-anchor" href="#references">References</a></h2>
+<ul>
+<li><a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS Date Tables</a></li>
+<li><a href="https://www.bls.gov/oes/current/oes_research_estimates.htm" target="_blank" rel="noopener noreferrer">OEWS Research Estimates</a></li>
+<li><a href="https://github.com/observablehq/framework" target="_blank" rel="noopener noreferrer">Observable Framework</a></li>
+<li><a href="https://github.com/uwdata/arquero" target="_blank" rel="noopener noreferrer">Arquero</a></li>
+</ul>
+<hr>
+<h2 id="feedback" tabindex="-1"><a class="observablehq-header-anchor" href="#feedback">Feedback</a></h2>
+<ul>
+<li>Comments, feedback, data issues?</li>
+<li>Reach out on LinkedIn <a href="https://www.linkedin.com/in/jung-hoon-son/" target="_blank" rel="noopener noreferrer">@Jung Hoon Son</a></li>
+</ul>
+<div class="observablehq observablehq--block"><!--:cb0b3d78:--></div>
+<div class="observablehq observablehq--block"><!--:358c4f8f:--></div>
+<div class="observablehq observablehq--block"><!--:9ca160ae:--></div>
+<div class="observablehq observablehq--block"><!--:ac054772:--></div>
+<div class="observablehq observablehq--block"><!--:c6cd8bc6:--></div>
+<div class="observablehq observablehq--block"><!--:10f1286e:--></div>
+<div class="observablehq observablehq--block"><!--:d07663b1:--></div>
+<div class="observablehq observablehq--block"><!--:39669456:--></div>
+<div class="observablehq observablehq--block"><!--:add74dd2:--></div>
+<div class="observablehq observablehq--block"><!--:85b2195e:--></div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./healthcare-labor-v2"><span>Healthcare Labor Statistics V2</span></a><a rel="next" href="./occupation-search"><span>Occupation Explorer</span></a></nav>
+<div>Built with Observable.</div>
+</footer>
+</div>
